@@ -8,6 +8,7 @@
 <template>
   <container :isActive="getHeight">
     <div style="color: red;">{{ t('PAGE_APP') }}</div>
+    <div>测试提交</div>
     <iframe style="width: 800px;height:500px" frameborder="0" src="https://epiphanys.me/dashboard/dist/"></iframe>
   </container>
 </template>
