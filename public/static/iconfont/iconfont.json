@@ -1,0 +1,79 @@
+{
+  "id": "3485588",
+  "name": "Vue3 web",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "671296",
+      "name": "系统返回",
+      "font_class": "xitongfanhui",
+      "unicode": "e6b6",
+      "unicode_decimal": 59062
+    },
+    {
+      "icon_id": "7677915",
+      "name": "下拉",
+      "font_class": "xiala",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "104839",
+      "name": "查看",
+      "font_class": "chakan",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "162767",
+      "name": "查看2",
+      "font_class": "chakan2",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "1312354",
+      "name": "icon_clock",
+      "font_class": "icon_clock",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "6966708",
+      "name": "Icon_Magnifier_4px",
+      "font_class": "Icon_Magnifier_px",
+      "unicode": "e69f",
+      "unicode_decimal": 59039
+    },
+    {
+      "icon_id": "5121485",
+      "name": "点赞1",
+      "font_class": "dianzan1",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
+    },
+    {
+      "icon_id": "577312",
+      "name": "加号",
+      "font_class": "jiahao",
+      "unicode": "e726",
+      "unicode_decimal": 59174
+    },
+    {
+      "icon_id": "629339",
+      "name": "时间",
+      "font_class": "shijian",
+      "unicode": "e64d",
+      "unicode_decimal": 58957
+    },
+    {
+      "icon_id": "630126",
+      "name": "眼睛",
+      "font_class": "yanjing",
+      "unicode": "e661",
+      "unicode_decimal": 58977
+    }
+  ]
+}

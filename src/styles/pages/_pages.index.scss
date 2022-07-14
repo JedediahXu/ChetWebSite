@@ -1,0 +1,57 @@
+@import '../commonly.scss';
+
+// Layout adjustment
+.container {
+  min-height: $Commonly-height;
+  display: flex;
+
+  .container-left {
+    height: $Commonly-height;
+    position: fixed;
+    width: 280px;
+    overflow: auto;
+    border-right: 1px solid #fff;
+  }
+
+  .container-right {
+    min-height: $Commonly-height;
+    flex: 1;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin-left: 288px;
+
+    .right-top {
+      width: calc($Commonly-width - 295px);
+      position: fixed;
+      z-index: 99;
+      transition-property: all;
+      transition-duration: .15s;
+      -tw-shadow: $Commonly-shadow;
+      transition-timing-function: $Commonly-function;
+      backdrop-filter: $Commonly-filter;
+      --tw-backdrop-blur: blur(8px);
+    }
+
+    .right-container {
+      width: $Commonly-width;
+      margin-top: 64px;
+      min-width: 1000px;
+      position: absolute;
+      overflow-x: hidden;
+    }
+
+  }
+
+}
+
+.bg-base-100 {
+  background-color: transparent
+}
+
+
+.list-conter {
+  padding: 20px;
+}
+
+

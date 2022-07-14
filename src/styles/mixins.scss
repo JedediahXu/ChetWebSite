@@ -1,0 +1,80 @@
+/// @param {media} none
+@mixin media {
+  .container {
+    min-width: 100%;
+    min-height: 100%;
+  }
+}
+
+
+/// @param {textOverflow} $width
+/// @param {textOverflow} $display
+@mixin textOverflow($width: 100%, $display: block) {
+  width: $width;
+  display: $display;
+  white-space: nowrap;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/// @param {clearfix} none
+@mixin clearfix {
+  &:after {
+    clear: both;
+    content: '.';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+  }
+
+  *height: 1%;
+
+}
+
+
+/// Text Shadow
+/// @param {Size} $x [2px] - X
+/// @param {Size} $y [2px] - Y
+/// @param {Size} $blur [2px] - Blur
+/// @param {Color} $color [rgba(0,0,0,.4)] - Color
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0, 0, 0, 0.4)) {
+  text-shadow: $x $y $blur $color;
+}
+
+
+/// BackgroundColor transition
+@mixin background-transition($time: $transition-time-fast) {
+  transition: background-color $time;
+}
+
+// Scrollbar
+/// @param {Size} $size
+/// @param {BackgroundColor} $bg
+/// @param {ThumbBackgroundColor} $thumb-bg
+/// @param {ThumbBackgroundColorHover} $thumb-bg-hover
+@mixin scrollbar-style($size: $sm-gap,
+  $bg: $white,
+  $thumb-bg: darken($white, 18%),
+  $thumb-bg-hover: darken($white, 26%)) {
+  ::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+    background: $bg;
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background-color: $thumb-bg;
+    @include background-transition();
+
+    &:hover {
+      background-color: $thumb-bg-hover;
+    }
+  }
+}

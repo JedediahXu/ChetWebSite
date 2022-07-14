@@ -1,0 +1,58 @@
+@import '../commonly.scss';
+
+// Sidebar menu
+.sidebar-top {
+  height: $Commonly-height;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .menu-list-top {
+    margin-top: 12px;
+    border: 1px solid #ccc;
+    border-radius: $Commonly-value;
+  }
+
+  .rounded-color {
+    border-radius: 0;
+    background: bottom;
+  }
+
+  .mockup-code {
+    min-width: 13rem;
+    overflow: initial;
+    overflow-x: visible;
+  }
+
+  .sidebar-button {
+    line-height: 6.25rem;
+
+    .sidebar-btn {
+      height: 2.5rem;
+      min-height: 2.5rem;
+      margin-left: 0.3rem;
+    }
+  }
+
+
+  .content {
+    width: $Commonly-width;
+    margin: 0 auto;
+  }
+
+  .text-bottom {
+    flex: 1;
+    background: bottom;
+    align-items: flex-end;
+  }
+
+}
+
+.menu-back {
+  width: 130px;
+  background-image: radial-gradient(hsla(var(--bc)/.2) 0.5px, hsla(var(--b2)/1) 0.5px);
+}
+
+.dropdown>ul>li {
+  margin: 5px 0;
+}

@@ -1,0 +1,46 @@
+/// @name CommonlyUsed
+@use 'sass:math';
+@import './mixins.scss';
+
+$zero: 0;
+$Commonly-height : 100%;
+$Commonly-width : 100%;
+$Commonly-value: 10px;
+$Commonly-shadow : 0 1px 2px 0rgb(0 0 0 / .05);
+$Commonly-function : cubic-bezier(.4, 0, .2, 1);
+$Commonly-filter : var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+
+$transition-time-fast: 0.1s;
+$module-bg-darker-1: hsl(var(--b3));
+$module-bg-darker-2: hsl(var(--b2));
+$module-bg-darker-3: hsl(var(--b3));
+$module-bg: hsl(var(--b1));
+
+$gap: 1rem; // ~12px
+$sm-gap: $gap * 0.618; // ~8px
+$xs-gap: math.div($sm-gap, 2); // ~4px
+$lg-gap: $sm-gap * 2; // ~14px
+
+
+// Adapt to screen size
+@media (min-width: 1280px) {
+  @include media;
+}
+
+@media (min-width: 1020px) {
+  @include media;
+}
+
+
+// scrollbar
+@include scrollbar-style($size: $sm-gap,
+  $bg: $module-bg,
+  $thumb-bg: $module-bg-darker-2,
+  $thumb-bg-hover: $module-bg-darker-3);
+
+body {
+  @include scrollbar-style($size: $xs-gap,
+    $bg: $module-bg,
+    $thumb-bg: $module-bg-darker-1,
+    $thumb-bg-hover: $module-bg-darker-2 );
+}
