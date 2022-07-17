@@ -6,23 +6,60 @@
 * @LastEditTime: 2022-07-11
 */
 <template>
-  <container :isActive="getHeight">
-    <div style="color: red;">{{ t('PAGE_APP') }}</div>
-    <iframe style="width: 900px;height:500px" frameborder="0" src="https://epiphanys.me/dashboard/dist/"></iframe>
-  </container>
+  <div class="component-body">
+    <div class="component">
+      <div class="component-top">测试～</div>
+      <div id="comment"></div>
+    </div>
+  </div>
 </template>
 
 
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n';
-const { t } = useI18n();
-let getHeight = ref(1)
 
+onMounted(() => {
+  let dis = new iDisqus('comment', {
+    forum: 'gaoyuzi-cn',
+    site: 'https://epiphanys.me',
+    api: 'https://epiphanys.me/dashboard/api',
+    mode: 3,
+    timeout: 3000,
+    init: true,
+    title: '总评论'
+  });
+});
 </script>
 
 
 
 
+<style scoped lang="scss">
+.component-body {
+  height: 100%;
+  width: 100%;
+}
 
-<style scoped>
+// tiemselection
+#comment {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+  font-size: 13px;
+}
+
+.component {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.component-top {
+  width: 100%;
+  background-color: antiquewhite;
+  height: 18rem;
+  margin: 0 auto;
+  overflow-x: hidden;
+  font-size: 13px;
+}
 </style>

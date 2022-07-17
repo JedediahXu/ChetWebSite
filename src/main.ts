@@ -11,6 +11,7 @@ import vue3PhotoPreview from 'vue3-photo-preview';
 import 'vue3-photo-preview/dist/index.css';
 import basicContainer from '@/components/globalContainer/container.vue'
 
+
 const app = createApp(App);
 app.component('container', basicContainer);
 app.use(i18n).use(vue3PhotoPreview).use(elementPlus, { i18n: i18n.global.t }).use(router).use(createPinia()).mount('#app');

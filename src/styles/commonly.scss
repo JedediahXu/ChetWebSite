@@ -33,13 +33,15 @@ $lg-gap: $sm-gap * 2; // ~14px
 
 
 // scrollbar
-@include scrollbar-style($size: $sm-gap,
+@include scrollbar-style(
+  $size: $sm-gap,
   $bg: $module-bg,
   $thumb-bg: $module-bg-darker-2,
   $thumb-bg-hover: $module-bg-darker-3);
 
 body {
-  @include scrollbar-style($size: $xs-gap,
+  @include scrollbar-style(
+    $size: $xs-gap,
     $bg: $module-bg,
     $thumb-bg: $module-bg-darker-1,
     $thumb-bg-hover: $module-bg-darker-2 );
