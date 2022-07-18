@@ -18,9 +18,6 @@ import card from '@/components/cardPhoto/index.vue'
 let getHeight = ref(1)
 
 let imgList = reactive([{
-  title: '2022-06-25',
-  img: 'https://api.lorem.space/image/face?hash=3174'
-}, {
   title: '2022-06-24',
   img: '../../../public/static/img/Header.jpg'
 }])

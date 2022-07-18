@@ -9,7 +9,7 @@
   <div class="sidebar-top">
     <div class="avatar" style="margin-top: 10px;">
       <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-        <img src="https://api.lorem.space/image/face?hash=3174" />
+        <img src="../../../../public/static/img/to.jpeg" />
       </div>
     </div>
     <div style="margin-top: 11px;">
