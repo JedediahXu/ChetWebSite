@@ -9,20 +9,50 @@
   <container :isActive="getHeight">
     <div class="component-body">
       <div class="component">
-
         <div class="component-top">
-
           <div class="component-left" v-show="displaySwitch === 1">
-            众而周知 众而周知 众而周知 众而周知
+            <div class="mt-3">
+              <div class="indicator">
+                <span class="indicator-item badge badge-secondary"></span>
+                <div class="bg-base-300 " style="width: 56rem;height: 17.77rem;padding-left: 15px;padding-right: 15px;">
+                  <div class="text-2xl">Statement &amp; FAQ</div>
+                  <hr>
+                  <h3 class="text-xl mt-3 font-bold" style="color: hsl(var(--er));">这是一个什么网站？</h3>
+                  <p class="mt-2 text-base italic">这是一个个人博客网站，用于表达博主希望表达的一切。</p>
+                  <h3 class="text-xl mt-3 font-bold" style="color: hsl(var(--er));">这个网站的程序（模板）是如何实现的？</h3>
+                  <ul class="mt-4 text-base italic bg-gradient-to-r" style="margin-left:20px;">
+                    <li>前端：基于 Vue + Vite + TypeScript </li>
+                    <li>服务端：基于 Node.js 的 express 程序。</li>
+                    <li>管理后台：基于 React + 实现的 Web 应用</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
+
           <div class="component-left" v-show="displaySwitch === 2">
-            友情链接友情链接友情链接友情链接
+            <div class="component-link">
+              <li>赵蛟的博客 <a class="link link-secondary">I'm a simple link</a></li>
+              <li>终身学习<a class="link link-secondary">I'm a simple link</a></li>
+              <li>前端开发 <a class="link link-secondary">I'm a simple link</a></li>
+              <li>后端开发<a class="link link-secondary">I'm a simple link</a></li>
+              <li>毅力小哥 <a class="link link-accent">I'm a simple link</a></li>
+              <li>大厂人员 <a class="link link-accent">I'm a simple link</a></li>
+              <li>业务爱好者 <a class="link link-accent">I'm a simple link</a></li>
+              <li>终身学习<a class="link link-accent">I'm a simple link</a></li>
+              <li>大神级别<a class="link link-primary">I'm a simple link</a></li>
+              <li>最牛前端<a class="link link-primary">I'm a simple link</a></li>
+              <li>无敌存在<a class="link link-primary">I'm a simple link</a></li>
+              <li>源码爱好者<a class="link link-primary">I'm a simple link</a></li>
+            </div>
           </div>
+
           <div class="component-left" v-show="displaySwitch === 3">
-            统计数据统计数据统计数据统计数据
+            统计数据模板后续添加
           </div>
+
           <div class="component-left" v-show="displaySwitch === 4">
-            站长介绍站长介绍站长介绍站长介绍
+            站长介绍站自我介绍
           </div>
 
           <div class="component-right">
@@ -60,19 +90,24 @@ onMounted(() => {
   });
 });
 
-
 let displaySwitch = ref(1)
-
 let displayArea = (index: any) => {
   displaySwitch.value = index
 }
 
-
 </script>
 
 
-
 <style scoped lang="scss">
+// tiemselection
+#comment {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+  font-size: 13px;
+}
+
 .btn-click-outline {
   --tw-border-opacity: 1;
   border-color: hsl(var(--bc) / var(--tw-border-opacity));
@@ -90,7 +125,6 @@ let displayArea = (index: any) => {
   --tw-text-opacity: 1;
   color: hsl(var(--pc) / var(--tw-text-opacity));
 }
-
 
 .btn-click-secondary {
   --tw-border-opacity: 1;
@@ -110,19 +144,9 @@ let displayArea = (index: any) => {
   color: hsl(var(--ac) / var(--tw-text-opacity));
 }
 
-
 .component-body {
   height: 100%;
   width: 100%;
-}
-
-// tiemselection
-#comment {
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
-  overflow-x: hidden;
-  font-size: 13px;
 }
 
 .component {
@@ -154,5 +178,20 @@ let displayArea = (index: any) => {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+ul>li {
+  list-style-type: disc
+}
+
+.component-link {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  line-height: 80px;
+}
+
+.component-link>li {
+  flex: 0 0 24%;
 }
 </style>
