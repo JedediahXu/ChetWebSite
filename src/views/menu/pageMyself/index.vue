@@ -9,7 +9,7 @@
   <container :isActive="getHeight">
     <div class="componentMap">
       <div class="hero  h-0.5 bg-origin-border"
-        style="background-image: url(https://placeimg.com/1000/800/arch);height: 23rem;" v-if="visible">
+        style="background-image: url('../../../../public/static/img/arch.jpeg');height: 23rem;" v-if="visible">
         <div class="hero-overlay bg-opacity-60"></div>
         <div class="hero-content text-center text-neutral-content">
           <div class="max-w-md">

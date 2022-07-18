@@ -14,17 +14,20 @@
             <div class="mt-3">
               <div class="indicator">
                 <span class="indicator-item badge badge-secondary"></span>
-                <div class="bg-base-300 " style="width: 56rem;height: 17.77rem;padding-left: 15px;padding-right: 15px;">
-                  <div class="text-2xl">Statement &amp; FAQ</div>
-                  <hr>
-                  <h3 class="text-xl mt-3 font-bold" style="color: hsl(var(--er));">这是一个什么网站？</h3>
-                  <p class="mt-2 text-base italic">这是一个个人博客网站，用于表达博主希望表达的一切。</p>
-                  <h3 class="text-xl mt-3 font-bold" style="color: hsl(var(--er));">这个网站的程序（模板）是如何实现的？</h3>
-                  <ul class="mt-4 text-base italic bg-gradient-to-r" style="margin-left:20px;">
-                    <li>前端：基于 Vue + Vite + TypeScript </li>
-                    <li>服务端：基于 Node.js 的 express 程序。</li>
-                    <li>管理后台：基于 React + 实现的 Web 应用</li>
-                  </ul>
+                <div class="hero bg-base-300  h-0.5 bg-origin-border heros-bg">
+                  <div class="hero-overlay "></div>
+                  <div class="hero-left">
+                    <div class="text-2xl">Statement &amp; FAQ</div>
+                    <hr>
+                    <div class="text-xl mt-3 font-bold">这是一个什么网站？</div>
+                    <p class="mt-2 text-base italic">这是一个个人博客网站，用于表达博主希望表达的一切。</p>
+                    <h3 class="text-xl mt-3 font-bold">这个网站的程序（模板）是如何实现的？</h3>
+                    <ul class="mt-4 text-base italic bg-gradient-to-r" style="margin-left:20px;">
+                      <li>前端：基于 Vue + Vite + TypeScript </li>
+                      <li>服务端：基于 Node.js 的 express 程序。</li>
+                      <li>管理后台：基于 React + 实现的 Web 应用</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -78,7 +81,8 @@
 <script setup lang="ts">
 let getHeight = ref(1)
 
-onMounted(() => {
+
+/* onMounted(() => {
   let dis = new iDisqus('comment', {
     forum: 'gaoyuzi-cn',
     site: 'https://epiphanys.me',
@@ -88,7 +92,7 @@ onMounted(() => {
     init: true,
     title: '总评论'
   });
-});
+}); */
 
 let displaySwitch = ref(1)
 let displayArea = (index: any) => {
@@ -98,8 +102,7 @@ let displayArea = (index: any) => {
 </script>
 
 
-<style scoped lang="scss">
-// tiemselection
+<style spode lang="scss">
 #comment {
   max-width: 1000px;
   width: 100%;
@@ -180,8 +183,9 @@ let displayArea = (index: any) => {
   align-items: center;
 }
 
-ul>li {
-  list-style-type: disc
+.text-base>li {
+  list-style-type: disc;
+  line-height: 35px;
 }
 
 .component-link {
@@ -193,5 +197,40 @@ ul>li {
 
 .component-link>li {
   flex: 0 0 24%;
+}
+
+.heros {
+  width: 100%;
+  place-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.heros-bg {
+  width: 56rem !important;
+  height: 17.77rem !important;
+  background-image: url('../../../../public/static/img/arch-name.jpeg') !important;
+}
+
+.hero {
+  display: grid;
+  width: 100%;
+  place-items: initial;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  height: 100%;
+  width: 100%;
+  background-color: hsl(var(--n) / var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.8;
+}
+
+.hero-left {
+  margin-top: 10px;
+  margin-left: 20px;
 }
 </style>
