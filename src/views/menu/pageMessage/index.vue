@@ -13,29 +13,28 @@
         <div class="component-top">
 
           <div class="component-left" v-show="displaySwitch === 1">
-            展示内容区域1
+            众而周知 众而周知 众而周知 众而周知
           </div>
           <div class="component-left" v-show="displaySwitch === 2">
-            展示内容区域2
+            友情链接友情链接友情链接友情链接
           </div>
           <div class="component-left" v-show="displaySwitch === 3">
-            展示内容区域3
+            统计数据统计数据统计数据统计数据
           </div>
           <div class="component-left" v-show="displaySwitch === 4">
-            展示内容区域4
+            站长介绍站长介绍站长介绍站长介绍
           </div>
 
           <div class="component-right">
-            <button class="btn btn-outline mt-4 w-40" @click="displayArea(1)"
-              :class="displaySwitch == 1 ? 'btn-click-outline' : ''">Button</button>
-            <button class="btn btn-outline btn-primary mt-4 w-40" @click="displayArea(2)"
-              :class="displaySwitch == 2 ? 'btn-click-primary' : ''">Button</button>
-            <button class="btn btn-outline btn-secondary mt-4 w-40" @click="displayArea(3)"
-              :class="displaySwitch == 3 ? 'btn-click-secondary' : ''">Button</button>
-            <button class="btn btn-outline btn-accent mt-4 w-40" @click="displayArea(4)"
-              :class="displaySwitch == 4 ? 'btn-click' : ''">Button</button>
+            <button class="btn btn-outline mt-5 w-40" @click="displayArea(1)"
+              :class="displaySwitch == 1 ? 'btn-click-outline' : ''">众而周知</button>
+            <button class="btn btn-outline btn-primary mt-5 w-40" @click="displayArea(2)"
+              :class="displaySwitch == 2 ? 'btn-click-primary' : ''">友情链接</button>
+            <button class="btn btn-outline btn-secondary mt-5 w-40" @click="displayArea(3)"
+              :class="displaySwitch == 3 ? 'btn-click-secondary' : ''">统计数据</button>
+            <button class="btn btn-outline btn-accent mt-5 w-40" @click="displayArea(4)"
+              :class="displaySwitch == 4 ? 'btn-click' : ''">站长介绍</button>
           </div>
-
         </div>
 
         <div class="divider"></div>
@@ -137,19 +136,21 @@ let displayArea = (index: any) => {
   overflow-x: hidden;
   font-size: 13px;
   display: flex;
-  padding: 20px;
+  padding-bottom: 25px;
 }
 
 .component-left {
   width: 100%;
   height: 100%;
-  border: 1px solid red;
+  margin-right: 5px;
 }
 
 .component-right {
   height: 100%;
   width: 240px;
-  border: 1px solid red;
+  border: 0.218rem solid hsl(var(--nc));
+  border-radius: 4px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
