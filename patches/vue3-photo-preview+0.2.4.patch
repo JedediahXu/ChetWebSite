@@ -1,0 +1,13 @@
+diff --git a/node_modules/vue3-photo-preview/dist/index.css b/node_modules/vue3-photo-preview/dist/index.css
+index 9c1d81e..314bad4 100644
+--- a/node_modules/vue3-photo-preview/dist/index.css
++++ b/node_modules/vue3-photo-preview/dist/index.css
+@@ -103,8 +103,6 @@
+           align-items: center;
+ }
+ .PhotoView__PhotoWrap .PhotoView__PhotoBox {
+-  width: 0;
+-  height: 0;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
