@@ -81,8 +81,7 @@
 <script setup lang="ts">
 let getHeight = ref(1)
 
-
-/* onMounted(() => {
+onMounted(() => {
   let dis = new iDisqus('comment', {
     forum: 'gaoyuzi-cn',
     site: 'https://epiphanys.me',
@@ -92,7 +91,7 @@ let getHeight = ref(1)
     init: true,
     title: '总评论'
   });
-}); */
+});
 
 let displaySwitch = ref(1)
 let displayArea = (index: any) => {

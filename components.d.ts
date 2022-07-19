@@ -24,6 +24,7 @@ declare module '@vue/runtime-core' {
     ElSkeletonItem: typeof import('element-plus/es')['ElSkeletonItem']
     ElSpace: typeof import('element-plus/es')['ElSpace']
     ElSwitch: typeof import('element-plus/es')['ElSwitch']
+    Gallery: typeof import('./src/components/cardPhoto/gallery.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     InexeS: typeof import('./src/components/map/inexe-s.vue')['default']
     List: typeof import('./src/components/list/index.vue')['default']

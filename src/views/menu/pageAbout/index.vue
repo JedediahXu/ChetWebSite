@@ -20,7 +20,13 @@ let getHeight = ref(1)
 let imgList = reactive([{
   title: '2022-06-24',
   img: '../../../public/static/img/Header.jpg'
-}])
+}, {
+  title: 'JavaScript',
+  img: '../../../public/static/img/js.png'
+}, {
+  title: 'TypeScript',
+  img: '../../../public/static/img/ts.png'
+},])
 
 
 </script>
