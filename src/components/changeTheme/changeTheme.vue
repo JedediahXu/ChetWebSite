@@ -87,12 +87,16 @@
 
 
 <script setup lang="ts">
+import { themeChange } from 'theme-change'
+
 let theme = ((type: string) => {
-  window.document.documentElement.setAttribute("data-theme", type);
+  window.localStorage.setItem('theme', type)
+  themeChange(false)
 })
 
 onMounted(() => {
-  window.document.documentElement.setAttribute("data-theme", 'dark');
+  themeChange(false)
 })
+
 
 </script>

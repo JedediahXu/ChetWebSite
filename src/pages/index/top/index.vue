@@ -41,10 +41,11 @@
 
 
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n';
-const { t } = useI18n();
 import changeTheme from '@/components/changeTheme/changeTheme.vue';
 import changeLanguage from '@/components/changeLanguage/changeLanguage.vue';
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
+
 
 // @ts-ignore：无法被执行的代码的错误
 import { mallGoodsDetailAPI } from "@/api/index";

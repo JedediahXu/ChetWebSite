@@ -70,14 +70,13 @@
     </div>
 
 
-    <div id="player">
+    <!-- <div id="player">
       <div class="player-left">
-        <iframe frameborder="no" width=240 height=86
+        <iframe frameborder="true" muted="muted" width=240 height=86
           src="//music.163.com/outchain/player?type=2&id=362998&auto=1&height=66"></iframe>
       </div>
       <div class="trigger"><i class="iconfont icon-music"></i></div>
-
-    </div>
+    </div> -->
 
 
 

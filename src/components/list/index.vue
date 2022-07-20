@@ -70,7 +70,7 @@ let listArticle = ref([{
 {
   title: '测试文章三',
   time: '2022-06-24',
-  img: 'https://static.likepoems.com/2020/09/19/a2d8121df1a8bc1c3a250ef8fbd11506c.jpg',
+  img: '../../../public/static/img/Header.jpg',
   content: '"Well, not really, no, because although (or,even though or,despite the fact that) the apartments are all modern and clean, there are very few places for children to play outside."',
   language: 'English',
   type: '记载'

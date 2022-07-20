@@ -85,7 +85,7 @@
       <!-- Put this part before </body> tag -->
       <input type="checkbox" id="my-modal-4" class="modal-toggle" />
       <label for="my-modal-4" class="modal cursor-pointer">
-        <label class="modal-box relative" for="">
+        <label class="modal-box relative">
           <div class="qrcode-modal wechat">
             <div class="background"></div>
             <img class="image" src="../../../../public/static/img/wechat.jpg" />
