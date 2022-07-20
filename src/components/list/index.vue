@@ -1,5 +1,6 @@
 <template>
-  <div class="article-list">
+
+  <div class="article-list" v-if="isLoad">
     <div class="article-item list-item" v-for="item, index in listArticle" :key="index" @click="read(item)">
       <div class="item-background" :style="{ backgroundImage: 'url(' + item.img + ')' }">
       </div>
@@ -23,6 +24,25 @@
     </div>
     <loadmore @click="addlist" />
   </div>
+
+  <template v-else>
+    <el-skeleton style="display: flex;margin-bottom: 1.236rem;padding: 10px;" v-for="item, index in listArticle"
+      :key="index" animated>
+      <template #template>
+        <el-skeleton-item variant="image" style="width: 260px; height: 156px" />
+        <div style="padding: 14px;width: 100%;" class="middle-content">
+          <el-skeleton-item variant="p" style="width:20%" />
+          <div>
+            <el-skeleton-item variant="text" style="margin-right: 16px" />
+            <el-skeleton-item variant="text" style="margin-right: 16px" />
+          </div>
+          <el-skeleton-item variant="text" style="width: 30%" />
+        </div>
+      </template>
+    </el-skeleton>
+  </template>
+
+
 </template>
 
 
@@ -37,6 +57,11 @@ const $router = useRouter();
 //   }
 // })
 
+let isLoad = ref(false)
+
+setTimeout(() => {
+  isLoad.value = true
+}, 1000)
 
 const read = ((index: any) => {
   sessionStorage.setItem('read', JSON.stringify(index))
@@ -118,3 +143,12 @@ const addlist = (() => {
 </script>
 
 
+<style lang="scss" scoped>
+.middle-content {
+  padding: 14px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+</style>
