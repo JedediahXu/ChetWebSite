@@ -63,30 +63,38 @@
       </li>
     </ul>
 
-    <div class="mockup-code" style="margin-top: 10px;">
-      <pre data-prefix="$"><code>npm i Like</code></pre>
-      <pre data-prefix=">" class="text-warning"><code>installing...</code></pre>
-      <pre data-prefix=">" class="text-success"><code>Done!</code></pre>
+
+    <div style="margin-top: 10px;">
+      <div class="stats shadow">
+        <div class="stat">
+          <div class="stat-figure text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              class="inline-block w-8 h-8 stroke-current">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+              </path>
+            </svg>
+          </div>
+          <div class="stat-title">总访问量</div>
+          <div class="stat-value text-primary">1983</div>
+          <div class="stat-desc">👋 欢迎访问,我的个人博客~</div>
+        </div>
+      </div>
     </div>
 
 
-    <!-- <div id="player">
+    <div id="player">
       <div class="player-left">
-        <iframe frameborder="true" muted="muted" width=240 height=86
-          src="//music.163.com/outchain/player?type=2&id=362998&auto=1&height=66"></iframe>
+        <iframe frameborder="true" muted="muted" width=240 height=86 
+          src="//music.163.com/outchain/player?type=2&id=362998&auto=0&height=66"></iframe>
       </div>
       <div class="trigger"><i class="iconfont icon-music"></i></div>
-    </div> -->
-
-
-
-    <div class="sidebar-button">
-
     </div>
+
 
 
     <footer class="footer bg-base-200 text-base-content  text-bottom">
-      <div style="margin: 0 auto;margin-bottom:30px">
+      <div style="margin: 0 auto;margin-bottom:20px;margin-top: 10px;">
         <svg width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
           clip-rule="evenodd" class="fill-current">
           <path
@@ -117,6 +125,8 @@ onMounted(() => {
     touch.value = cashBack
   }
 })
+
+
 
 const pushJump = (index: number) => {
   touch.value = index
@@ -181,5 +191,19 @@ const pushJump = (index: number) => {
 
 #player .trigger .iconfont {
   font-size: 16.1px;
+}
+
+.stat {
+  display: inline-grid;
+  width: 100%;
+  grid-template-columns: repeat(1, 1fr);
+  -moz-column-gap: 1rem;
+  column-gap: 1rem;
+  border-color: hsl(var(--bc) / var(--tw-border-opacity));
+  --tw-border-opacity: 0.1;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 </style>

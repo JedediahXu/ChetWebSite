@@ -11,7 +11,7 @@
       <div class="component">
         <div class="component-top">
           <div class="component-left" v-show="displaySwitch === 1">
-            <div class="mt-3">
+            <div class="mt-3  mt-right">
               <div class="indicator">
                 <span class="indicator-item badge badge-secondary"></span>
                 <div class="hero bg-base-300  h-0.5 bg-origin-border heros-bg">
@@ -205,10 +205,20 @@ let displayArea = (index: any) => {
   background-position: center;
 }
 
+.indicator {
+  position: relative;
+  display: auto;
+  width: 100%;
+}
+
 .heros-bg {
-  width: 56rem !important;
+  width: 100% !important;
   height: 17.77rem !important;
   background-image: url('../../../../public/static/img/arch-name.jpeg') !important;
+}
+
+.mt-right {
+  margin-right: 0.75rem;
 }
 
 .hero {
