@@ -9,6 +9,13 @@
   margin: 10px 70px 10px 0px;
 }
 
+.middle-content {
+  padding: 14px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 .article-item {
   position: relative;

@@ -9,7 +9,7 @@
   <div class="sidebar-top">
     <div class="avatar" style="margin-top: 10px;">
       <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-        <img src="../../../../public/static/img/to.jpeg" />
+        <img src="../../../../public/static/img/avatar/to.jpeg" />
       </div>
     </div>
     <div style="margin-top: 11px;">
@@ -62,8 +62,6 @@
         </a>
       </li>
     </ul>
-
-
     <div style="margin-top: 10px;">
       <div class="stats shadow">
         <div class="stat">
@@ -81,8 +79,6 @@
         </div>
       </div>
     </div>
-
-
     <div id="player">
       <div class="player-left">
         <iframe frameborder="true" muted="muted" width=240 height=86 
@@ -90,9 +86,6 @@
       </div>
       <div class="trigger"><i class="iconfont icon-music"></i></div>
     </div>
-
-
-
     <footer class="footer bg-base-200 text-base-content  text-bottom">
       <div style="margin: 0 auto;margin-bottom:20px;margin-top: 10px;">
         <svg width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
@@ -104,8 +97,6 @@
         <p>ACME Industries Ltd.<br>Providing reliable tech since 1992</p>
       </div>
     </footer>
-
-
   </div>
 </template>
 
@@ -125,8 +116,6 @@ onMounted(() => {
     touch.value = cashBack
   }
 })
-
-
 
 const pushJump = (index: number) => {
   touch.value = index
@@ -150,60 +139,4 @@ const pushJump = (index: number) => {
   }
 }
 
-
 </script>
-
-<style scoped lang="scss">
-#player {
-  display: flex;
-  transition: opacity .1s, transform .25s cubic-bezier(.65, .05, .36, 1);
-  position: fixed;
-  left: 0;
-  bottom: 17%;
-  z-index: 9;
-  height: 4rem;
-  transform: translate(-14.5rem);
-  align-items: center;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  opacity: .4;
-}
-
-#player:hover {
-  transform: translate(0rem);
-}
-
-.player-left {
-  width: 14rem;
-  height: 5.4rem;
-}
-
-#player .trigger {
-  width: 2.5rem;
-  height: 4.15rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  writing-mode: tb-rl;
-  color: #fff;
-  background-color: hsl(var(--er));
-}
-
-#player .trigger .iconfont {
-  font-size: 16.1px;
-}
-
-.stat {
-  display: inline-grid;
-  width: 100%;
-  grid-template-columns: repeat(1, 1fr);
-  -moz-column-gap: 1rem;
-  column-gap: 1rem;
-  border-color: hsl(var(--bc) / var(--tw-border-opacity));
-  --tw-border-opacity: 0.1;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-</style>

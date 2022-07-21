@@ -14,9 +14,7 @@
   </div>
 </template>
 
-
 <script setup lang="ts">
-
 const staggerZero = (index: number) => {
   console.log(index);
 };

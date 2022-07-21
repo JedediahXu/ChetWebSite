@@ -16,16 +16,4 @@ const props = defineProps({
   }
 })
 
-
 </script>
-
-
-<style scoped>
-.basic-he {
-  min-height: calc(99vh - 84px);
-}
-
-.height-ti {
-  height: 100%
-}
-</style>

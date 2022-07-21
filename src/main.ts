@@ -4,6 +4,7 @@ import "@/styles/app.css";
 import "@/styles/index.scss";
 import router from './router'
 import elementPlus from 'element-plus';
+import 'element-plus/es/components/message/style/css'
 import i18n from './store/modules/language';
 import { createPinia } from 'pinia'
 import '../public/static/iconfont/iconfont.css'

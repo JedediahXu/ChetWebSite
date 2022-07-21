@@ -64,7 +64,7 @@
               <p class="line-through">See more images from “Welcome to the Neighborhood” below.</p>
             </div>
             <div class="knight">
-              <img src="../../../../public/static/img/preview.gif" style="width: 100%;height: 100%;">
+              <img src="../../../../public/static/img/message/preview.gif" style="width: 100%;height: 100%;">
             </div>
           </div>
           <div class="component-right">

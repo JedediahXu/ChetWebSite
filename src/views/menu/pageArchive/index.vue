@@ -21,28 +21,28 @@ let getHeight = ref(1)
 
 let imgList = reactive([{
   title: 'Vue',
-  img: '../../../public/static/img/vue.png'
+  img: '../../../public/static/img/archive/vue.png'
 }, {
   title: 'JavaScript',
-  img: '../../../public/static/img/js.png'
+  img: '../../../public/static/img/archive/js.png'
 }, {
   title: 'TypeScript',
-  img: '../../../public/static/img/ts.png'
+  img: '../../../public/static/img/archive/ts.png'
 }, {
   title: 'Vite',
-  img: '../../../public/static/img/dm.png'
+  img: '../../../public/static/img/archive/dm.png'
 }, {
   title: '数据结构',
-  img: '../../../public/static/img/sjjg.png'
+  img: '../../../public/static/img/archive/sjjg.png'
 }, {
   title: 'Node',
-  img: '../../../public/static/img/node.png'
+  img: '../../../public/static/img/archive/node.png'
 }, {
   title: 'Webpack',
-  img: '../../../public/static/img/wb.png'
+  img: '../../../public/static/img/archive/wb.png'
 }, {
   title: '我想',
-  img: '../../../public/static/img/wx.png'
+  img: '../../../public/static/img/archive/wx.png'
 }])
 
 </script>

@@ -86,7 +86,7 @@ let listArticle = ref([{
 }, {
   title: 'Chinese',
   time: '2022-06-24',
-  img: '../../../public/static/img/Header.jpg',
+  img: '../../../public/static/img/list/Header.jpg',
   content: '"Yes, Chinese people do like growing flowers but since (or,but because) many people live in apartments in cities it’s not easy to grow flowers although people who have a balcony, especially retired people, sometimes grow flowers on their balcony."Be honest with yourself',
   language: 'English',
   type: '抒情'
@@ -94,7 +94,7 @@ let listArticle = ref([{
 {
   title: '测试文章三',
   time: '2022-06-24',
-  img: '../../../public/static/img/Header.jpg',
+  img: '../../../public/static/img/list/Header.jpg',
   content: '"Well, not really, no, because although (or,even though or,despite the fact that) the apartments are all modern and clean, there are very few places for children to play outside."',
   language: 'English',
   type: '记载'
@@ -138,16 +138,5 @@ const addlist = (() => {
   listArticle.value.push(...xu)
 });
 
-
 </script>
 
-
-<style lang="scss" scoped>
-.middle-content {
-  padding: 14px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-</style>

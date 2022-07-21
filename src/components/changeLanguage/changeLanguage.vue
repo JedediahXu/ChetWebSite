@@ -41,7 +41,6 @@ import useLanguage from '@/store/index';
 const { locale } = useI18n()
 const langName = ref('');
 
-
 const handleCommand = (command: string) => {
   switch (command) {
     case "zh":
@@ -65,17 +64,14 @@ const language = computed(() => {
   return useLanguage().language;
 });
 
-
 const changeLanguage = (lang: string) => {
   locale.value = lang;
   useLanguage().setLanguage(lang);
   setLanguageName(lang);
 };
 
-
 onMounted(() => {
   setLanguageName(language.value);
 });
-
 
 </script>
