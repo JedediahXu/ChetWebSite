@@ -1,6 +1,11 @@
 <template>
-  <div class="container">
-    <h1>404</h1>
+  <div class="container bg-img">
+    <div class="text-4xl">
+        ？？？
+    </div>
+    <div class="text-xl"> 
+      404
+    </div>
   </div>
 </template>
 
@@ -9,4 +14,14 @@
 </script>
 
 <style scoped>
+.bg-img {
+  background-image: url('../../public/static/img/404.gif');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 </style>
