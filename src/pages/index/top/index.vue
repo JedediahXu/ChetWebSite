@@ -11,8 +11,8 @@
       <div class="flex-1" style="justify-content: space-between;">
         <a class="btn btn-ghost normal-case text-xl" style="margin-right: auto;">ChetSerenade</a>
 
-        <div class="sidebar-button">
-          <button class="btn btn-ghost normal-case text-sm">
+        <div class="dropdown dropdown-end">
+          <button class="btn btn-ghost normal-case text-sm" @click="addopen">
             {{ t('CONNECT_GITHUB') }}
             <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
@@ -22,7 +22,7 @@
           </button>
 
           <button class="btn btn-ghost normal-case text-sm">
-            {{ t('CONNECT_MAIL') }}
+            <a class="Link--primary" href="mailto:510374040@qq.com">{{ t('CONNECT_MAIL') }}</a>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -30,7 +30,6 @@
             </svg>
           </button>
         </div>
-
 
         <changeTheme />
         <changeLanguage />
@@ -41,6 +40,7 @@
 
 
 <script setup lang="ts">
+import { ElMessage } from 'element-plus'
 import changeTheme from '@/components/changeTheme/changeTheme.vue';
 import changeLanguage from '@/components/changeLanguage/changeLanguage.vue';
 import { useI18n } from 'vue-i18n';
@@ -60,8 +60,9 @@ import { mallGoodsDetailAPI } from "@/api/index";
 //   });
 // })
 
-
-
+let addopen = (() => {
+  window.open('https://github.com/ChetSerenade', '_blank')
+})
 
 </script>
 

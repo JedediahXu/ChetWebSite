@@ -26,11 +26,11 @@
   </div>
 
   <template v-else>
-    <el-skeleton style="display: flex;margin-bottom: 1.236rem;padding: 10px;" v-for="item, index in listArticle"
+    <el-skeleton style="display: flex;margin: 10px 70px 10px 0px;padding: 20px;" v-for="item, index in listArticle"
       :key="index" animated>
       <template #template>
         <el-skeleton-item variant="image" style="width: 260px; height: 156px" />
-        <div style="padding: 14px;width: 100%;" class="middle-content">
+        <div style="padding: 14px;width: 100%;margin-right: 20px;" class="middle-content">
           <el-skeleton-item variant="p" style="width:20%" />
           <div>
             <el-skeleton-item variant="text" style="margin-right: 16px" />
@@ -41,7 +41,6 @@
       </template>
     </el-skeleton>
   </template>
-
 
 </template>
 
