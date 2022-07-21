@@ -1,9 +1,3 @@
-<br />
-<p align="center">
-  <a href="https://github.com/ChetSerenade/ChetWebSite" target="blank">
-    <img src="/presses/logo.png" height="90" />
-  </a>
-</p>
 
 # Vue 3 + TypeScript + Vite
 
