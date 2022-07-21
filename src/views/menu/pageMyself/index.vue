@@ -88,7 +88,7 @@
         <label class="modal-box relative">
           <div class="qrcode-modal wechat">
             <div class="background"></div>
-            <img class="image" src="../../../../public/static/img/wechat.jpg" />
+            <img class="image" src="../../../../public/static/img/avatar/wechat.jpg" />
             <span class="text">👋 &nbsp; Friend me on WeChat</span>
           </div>
         </label>
