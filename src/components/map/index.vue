@@ -29,7 +29,7 @@
       <div class="legends">
         <div class="now" @click="displayBut">
           <i class="iconfont icon-location"></i>
-          <span class="text">苟活于此，独身一人</span>
+          <span class="text">苟活于此，有个对象</span>
         </div>
         <ul class="folders">
           <li class="item" @click="displayPhot(0)">
