@@ -6,21 +6,20 @@
 * @LastEditTime: 2022-07-11
 */
 <template>
-  <div class="list-conter">
-    <div v-if="homeJudgment === 'pc'">
+  <div class="list-conter" v-if="homeJudgment === 'pc'">
+    <div>
       <selection />
       <carlist :listArticle="listArticle" @getChili="addlist" />
     </div>
-    <div v-if="homeJudgment === 'mobile'">
-      <div>我是手机端代码</div>
-    </div>
   </div>
+  <mobileCarlist v-if="homeJudgment === 'mobile'" :listArticle="listArticle" @getChili="addlist" />
 </template>
 
 
 <script setup lang="ts">
 import selection from '@/components/timeSelection/timeSelection.vue'
 import carlist from '@/components/list/index.vue'
+import mobileCarlist from '@/components/mobile/list/index.vue'
 import { mallGoodsDetailAPI } from '@/api';
 import { useI18n } from 'vue-i18n';
 import { judgment } from '@/utils/judgment'

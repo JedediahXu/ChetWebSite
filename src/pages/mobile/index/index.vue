@@ -107,8 +107,7 @@ let buttonMenuBar = (() => {
     width: 100%;
     min-height: calc(100vh - 2rem);
     margin: 0;
-    padding: 3rem 0 0 0;
+    padding: 3rem .8125rem .8125rem .8125rem;
     transition: width .35s;
-    display: flex;
 }
 </style>
