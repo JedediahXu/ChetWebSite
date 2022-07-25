@@ -9,7 +9,7 @@
   <div class="sidebar-top">
     <div class="avatar" style="margin-top: 10px;">
       <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-        <img src="../../../../public/static/img/avatar/to.jpeg" />
+        <img src="../../../../../public/static/img/avatar/to.jpeg" />
       </div>
     </div>
     <div style="margin-top: 11px;">
@@ -81,7 +81,7 @@
     </div>
     <div id="player">
       <div class="player-left">
-        <iframe frameborder="true" muted="muted" width=240 height=86 
+        <iframe frameborder="true" muted="muted" width=240 height=86
           src="//music.163.com/outchain/player?type=2&id=362998&auto=0&height=66"></iframe>
       </div>
       <div class="trigger"><i class="iconfont icon-music"></i></div>
@@ -109,7 +109,7 @@ let touch: any = ref(0);
 const $router = useRouter();
 
 onMounted(() => {
-  let cashBack: Number = JSON.parse(sessionStorage.getItem('touch'))
+  let cashBack: number = JSON.parse(sessionStorage.getItem('touch') || '0')
   if (cashBack === null) {
     touch.value = 0
   } else {

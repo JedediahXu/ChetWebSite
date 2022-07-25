@@ -19,7 +19,8 @@
         <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
       </svg></div>
     <ul tabindex="0" class="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4 menu-back">
-      <li> <button class="btn " style="background-color: #FFFFFF;" @click.native="theme('light')">
+      <li> <button class="btn " :class="buttonColor == 'light' ? 'buttonColor' : ''" style="background-color: #FFFFFF;"
+          @click.native="theme('light')">
           <div class="col-span-5 row-span-3 row-start-1 flex gap-1 ">
             <div class="flex-grow text-sm font-bold">light</div>
             <div class="flex flex-shrink-0 flex-wrap gap-1">
@@ -29,7 +30,8 @@
             </div>
           </div>
         </button></li>
-      <li> <button class="btn " style="background-color: #EF9994;" @click.native="theme('retro')">
+      <li> <button class="btn " :class="buttonColor == 'retro' ? 'buttonColor' : ''" style="background-color: #EF9994;"
+          @click.native="theme('retro')">
           <div class="col-span-5 row-span-3 row-start-1 flex gap-1 ">
             <div class="flex-grow text-sm font-bold">brow</div>
             <div class="flex flex-shrink-0 flex-wrap gap-1">
@@ -39,7 +41,8 @@
             </div>
           </div>
         </button></li>
-      <li> <button class="btn" style="background-color: #6419E6;" @click.native="theme('dark')">
+      <li> <button class="btn" :class="buttonColor == 'dark' ? 'buttonColor' : ''" style="background-color: #6419E6;"
+          @click.native="theme('dark')">
           <div class="col-span-5 row-span-3 row-start-1 flex gap-1 ">
             <div class="flex-grow text-sm font-bold">dark</div>
             <div class="flex flex-shrink-0 flex-wrap gap-1">
@@ -50,7 +53,8 @@
           </div>
         </button>
       </li>
-      <li><button class="btn" style="background-color: #FF79C6;" @click.native="theme('dracula')">
+      <li><button class="btn" :class="buttonColor == 'dracula' ? 'buttonColor' : ''" style="background-color: #FF79C6;"
+          @click.native="theme('dracula')">
           <div class="col-span-5 row-span-3 row-start-1 flex gap-1 ">
             <div class="flex-grow text-sm font-bold">pink</div>
             <div class="flex flex-shrink-0 flex-wrap gap-1">
@@ -60,8 +64,8 @@
             </div>
           </div>
         </button></li>
-
-      <li><button class="btn" style="background-color: #3ABFF8;" @click.native="theme('night')">
+      <li><button class="btn" :class="buttonColor == 'night' ? 'buttonColor' : ''" style="background-color: #3ABFF8;"
+          @click.native="theme('night')">
           <div class="col-span-5 row-span-3 row-start-1 flex gap-1 ">
             <div class="flex-grow text-sm font-bold">blue</div>
             <div class="flex flex-shrink-0 flex-wrap gap-1">
@@ -71,7 +75,8 @@
             </div>
           </div>
         </button></li>
-      <li> <button class="btn" style="background-color: #5C7F67;" @click.native="theme('garden')">
+      <li> <button class="btn" :class="buttonColor == 'garden' ? 'buttonColor' : ''" style="background-color: #5C7F67;"
+          @click.native="theme('garden')">
           <div class="col-span-5 row-span-3 row-start-1 flex gap-1 ">
             <div class="flex-grow text-sm font-bold">gree</div>
             <div class="flex flex-shrink-0 flex-wrap gap-1">
@@ -89,7 +94,10 @@
 <script setup lang="ts">
 import { themeChange } from 'theme-change'
 
+let buttonColor = ref('dark')
+
 let theme = ((type: string) => {
+  buttonColor.value = type
   window.localStorage.setItem('theme', type)
   themeChange(false)
 })
@@ -99,3 +107,9 @@ onMounted(() => {
 })
 
 </script>
+
+<style scoped lang="scss">
+.buttonColor {
+  border: 2px solid #e3e3e3;
+}
+</style>

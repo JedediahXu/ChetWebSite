@@ -21,13 +21,13 @@
     </div>
     <ul tabindex="0" class="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4 menu-back">
       <li @click="handleCommand('zh')">
-        <button class="flex"><img loading="lazy" width="20" height="20" alt="中文"
-            src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.0/svg/1f1e8-1f1f3.svg">
+        <button class="flex" :class="btuLanguage == 'zh' ? 'buttonColor' : ''"><img loading="lazy" width="20"
+            height="20" alt="中文" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.0/svg/1f1e8-1f1f3.svg">
           <span class="flex flex-1 justify-between">中文</span></button>
       </li>
       <li @click="handleCommand('en')">
-        <button class="flex"><img loading="lazy" width="20" height="20" alt="English"
-            src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.0/svg/1f1ec-1f1e7.svg">
+        <button class="flex" :class="btuLanguage == 'en' ? 'buttonColor' : ''"><img loading="lazy" width="20"
+            height="20" alt="English" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.0/svg/1f1ec-1f1e7.svg">
           <span class="flex flex-1 justify-between">English </span></button>
       </li>
     </ul>
@@ -40,13 +40,16 @@ import { useI18n } from 'vue-i18n';
 import useLanguage from '@/store/index';
 const { locale } = useI18n()
 const langName = ref('');
+let btuLanguage = ref('zh')
 
 const handleCommand = (command: string) => {
   switch (command) {
     case "zh":
+      btuLanguage.value = command
       changeLanguage(command);
       break;
     case "en":
+      btuLanguage.value = command
       changeLanguage(command);
       break;
   }
@@ -75,3 +78,8 @@ onMounted(() => {
 });
 
 </script>
+<style scoped lang="scss">
+.buttonColor {
+  border: 2px solid #e3e3e3;
+}
+</style>
