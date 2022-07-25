@@ -1970,7 +1970,12 @@
   "resolved" "https://r.cnpmjs.org/picomatch/-/picomatch-2.3.1.tgz"
   "version" "2.3.1"
 
-"pinia@^2.0.13":
+"pinia-plugin-persistedstate@^1.6.3":
+  "integrity" "sha512-vwxUca3DZKW6+wnGsgu6hA0ESVKoLovF8vH1jMOPBhaH4VpCSTgn5AsprTxXyg3uMk047m0B+NggeMTcCC8H6w=="
+  "resolved" "https://r.cnpmjs.org/pinia-plugin-persistedstate/-/pinia-plugin-persistedstate-1.6.3.tgz"
+  "version" "1.6.3"
+
+"pinia@^2.0.0", "pinia@^2.0.13":
   "integrity" "sha512-0nPuZR4TetT/WcLN+feMSjWJku3SQU7dBbXC6uw+R6FLQJCsg+/0pzXyD82T1FmAYe0lsx+jnEDQ1BLgkRKlxA=="
   "resolved" "https://r.cnpmjs.org/pinia/-/pinia-2.0.14.tgz"
   "version" "2.0.14"

@@ -93,16 +93,20 @@
 
 <script setup lang="ts">
 import { themeChange } from 'theme-change'
+import useLanguage from '@/store/index';
+const mainStore = useLanguage();
 
-let buttonColor = ref('dark')
-
+let buttonColor = ref('')
 let theme = ((type: string) => {
   buttonColor.value = type
+  useLanguage().setthemeColor(type); //live themeColor
   window.localStorage.setItem('theme', type)
   themeChange(false)
 })
 
+
 onMounted(() => {
+  buttonColor.value = mainStore.themeColor  //Pick themeColor
   themeChange(false)
 })
 
