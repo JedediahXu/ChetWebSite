@@ -7,8 +7,13 @@
 */
 <template>
   <div class="list-conter">
-    <selection />
-    <carlist :listArticle="listArticle" @getChili="addlist" />
+    <div v-if="homeJudgment === 'pc'">
+      <selection />
+      <carlist :listArticle="listArticle" @getChili="addlist" />
+    </div>
+    <div v-if="homeJudgment === 'mobile'">
+      <div>我是手机端代码</div>
+    </div>
   </div>
 </template>
 
@@ -16,9 +21,9 @@
 <script setup lang="ts">
 import selection from '@/components/timeSelection/timeSelection.vue'
 import carlist from '@/components/list/index.vue'
-
 import { mallGoodsDetailAPI } from '@/api';
 import { useI18n } from 'vue-i18n';
+import { judgment } from '@/utils/judgment'
 
 const { t } = useI18n();
 let getHeight = ref()
@@ -98,12 +103,14 @@ const addlist = (() => {
   listArticle.value.push(...xu)
 });
 
+let homeJudgment = ref('')
 
-// onMounted(() => {
-//   mallGoodsDetailAPI({}).then((res: any) => {
-//     listArticle.push(...res.data.result)
-//   });
-// })
+onMounted(() => {
+  homeJudgment.value = judgment()
+  // mallGoodsDetailAPI({}).then((res: any) => {
+  //   listArticle.push(...res.data.result)
+  // });
+})
 
 
 </script>

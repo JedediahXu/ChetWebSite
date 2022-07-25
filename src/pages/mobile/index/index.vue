@@ -3,9 +3,11 @@
         <sidebar class="asider " :class="MenuBar == true ? 'opened' : ''" />
         <div class="main " :class="MenuBar !== false ? 'opened' : ''">
             <div :class="MenuBar !== false ? 'close-mask' : ''" @click="buttonMenuBar"></div>
-            <top class="right-top" @setMenuBar="setMenuBar" :class="monitor !== 0 ? 'shadow-sm' : ''" />
-            <div>
-                1111
+            <top class="right-top mobile-right-top" @setMenuBar="setMenuBar"
+                :class="monitor !== 0 ? 'shadow-sm' : ''" />
+            <div class="mobile-container">
+                <!-- 主视图层级 -->
+                <router-view />
             </div>
         </div>
     </div>
@@ -85,5 +87,28 @@ let buttonMenuBar = (() => {
     background-color: var(--module-bg-translucent);
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
+}
+
+.mobile-right-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3.5rem;
+    background-color: var(--module-bg);
+    z-index: 999;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.mobile-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: calc(100vh - 2rem);
+    margin: 0;
+    padding: 3rem 0 0 0;
+    transition: width .35s;
+    display: flex;
 }
 </style>

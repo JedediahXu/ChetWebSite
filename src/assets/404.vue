@@ -15,7 +15,7 @@
 
 <style scoped>
 .bg-img {
-  background-image: url('../../public/static/img/404.gif');
+  background-image: url('../../public/static/img/404/404.gif');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;

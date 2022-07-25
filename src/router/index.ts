@@ -8,18 +8,12 @@
 import Vue from 'vue'
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import exhibitRoutes from '@/router/modules/exhibit'
-const ua = window.navigator.userAgent;
-let isMobile = false;
-if (ua.indexOf('iPhone') >= 0) isMobile = true;
-if (ua.indexOf('Android') >= 0) isMobile = true;
-if (ua.indexOf('iPad') >= 0) isMobile = true;
-const path = isMobile ? 'mobile/' : 'pc/';
-
-
+import { judgment } from '@/utils/judgment'
+const path = judgment()
 const routes: Array<RouteRecordRaw> = [
     {
         path: "/",
-        component: () => import(`../pages/${path}index/index.vue`),
+        component: () => import(`../pages/${path}/index/index.vue`),
         children: [
             exhibitRoutes
         ],
