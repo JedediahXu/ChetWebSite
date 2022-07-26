@@ -57,7 +57,7 @@
 @mixin scrollbar-style($size: $sm-gap,
   $bg: $white,
   $thumb-bg: darken($white, 18%),
-  $thumb-bg-hover: darken($white, 26%)) {
+  $thumb-bg-hover: darken(26%)) {
   ::-webkit-scrollbar {
     width: $size;
     height: $size;

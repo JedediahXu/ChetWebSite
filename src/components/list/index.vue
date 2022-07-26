@@ -46,12 +46,14 @@
 
 
 <script setup lang="ts">
+import type { PropType } from 'vue';
 import loadmore from '@/components/loadMore/index.vue'
 const $router = useRouter();
 
 const props = defineProps({
   listArticle: {
-    type: Array,
+    type: Array as PropType<any>,
+    required: true,
     default: true,
   }
 })

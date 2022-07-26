@@ -6,7 +6,9 @@
 * @LastEditTime: 2022-07-11
 */
 <template>
-  <container :isActive="getHeight">
+  <!-- padding-right: 10px; -->
+  <container :isActive="getHeight"
+    :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
     <div>
       {{ reserve.title }}
     </div>
@@ -19,16 +21,27 @@
 
 
 <script setup lang="ts">
+import { judgment } from '@/utils/judgment'
+
+
+console.log(judgment());
+
 let getHeight = ref(1)
 const router = useRoute();
-
 let reserve = ref()
-
 reserve.value = JSON.parse(sessionStorage.getItem('read'))
-
-
 
 
 </script>
 
 
+
+<style scoped lang="scss">
+.moblie-top-container {
+  margin-top: 20px;
+}
+
+.moblie-right-container {
+  padding-right: 10px;
+}
+</style>

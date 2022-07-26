@@ -13,15 +13,16 @@
 
 
 <script setup lang="ts">
+import type { PropType } from 'vue';
 
 
 const props = defineProps({
   listPhoto: {
-    type: Array,
+    type: Array as PropType<any>,
+    required: true,
     default: true,
   }
 })
-
 
 </script>
 
