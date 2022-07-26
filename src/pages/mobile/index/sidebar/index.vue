@@ -15,7 +15,7 @@
     <div style="margin-top: 11px;">
       <a class="link link-secondary">{{ t('PAGE_FREELANCER_SLOGAN') }}</a>
     </div>
-    <ul class="menu bg-base-100 w-56 p-2 rounded-box rounded-color">
+    <ul class="menu bg-base-100 p-2 rounded-box rounded-color" style="width:90%;">
       <li @click="pushJump(0)" class="menu-list-top">
         <a :class="touch === 0 ? 'active' : ''">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -62,9 +62,9 @@
         </a>
       </li>
     </ul>
-    <div style="margin-top: 10px;">
-      <div class="stats shadow">
-        <div class="stat">
+    <div style="margin-top: 10px;width:100%;">
+      <div class="stats shadow" style="width:90%;margin-left:10px;">
+        <div class="stat" style="display: inline-block;">
           <div class="stat-figure text-primary">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
               class="inline-block w-8 h-8 stroke-current">

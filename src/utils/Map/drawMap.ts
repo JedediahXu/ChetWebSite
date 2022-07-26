@@ -52,7 +52,7 @@ function mapNew(map: Ref<Map>, mapDivElement: Ref<HTMLDivElement | null>, marker
     });
 
     map.value.on('click', function (e: any) {
-      console.log(e.lngLat, '---------')
+      // console.log(e.lngLat, '---------')
     });
 
     marker.value = new mapboxgl.Marker()

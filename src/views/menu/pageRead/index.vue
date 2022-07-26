@@ -24,8 +24,6 @@
 import { judgment } from '@/utils/judgment'
 
 
-console.log(judgment());
-
 let getHeight = ref(1)
 const router = useRoute();
 let reserve = ref()

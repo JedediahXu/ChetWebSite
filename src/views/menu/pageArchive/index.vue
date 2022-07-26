@@ -6,18 +6,24 @@
 * @LastEditTime: 2022-07-11
 */
 <template>
-  <container :isActive="getHeight">
-    <archive :listPhoto="imgList" />
+  <container :isActive="getHeight" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
+    <archive :listPhoto="imgList" v-if="homeJudgment === 'pc'" />
+    <mobilArchive :listPhoto="imgList" v-if="homeJudgment === 'mobile'" />
   </container>
+
 </template>
 
 
 <script setup lang="ts">
 import archive from '@/components/archive/index.vue'
-// import { useI18n } from 'vue-i18n';
-// const { t } = useI18n();
+import mobilArchive from '@/components/mobile/archive/index.vue'
+import { judgment } from '@/utils/judgment'
 
 let getHeight = ref(1)
+let homeJudgment = ref('')
+onMounted(() => {
+  homeJudgment.value = judgment()
+})
 
 let imgList = reactive([{
   title: 'Vue',
@@ -45,9 +51,17 @@ let imgList = reactive([{
   img: '../../../public/static/img/archive/wx.png'
 }])
 
+
 </script>
 
 
 
 <style scoped>
+ .moblie-top-container {
+   margin-top: 20px;
+ }
+
+ .moblie-right-container {
+   padding-right: 10px;
+ }
 </style>

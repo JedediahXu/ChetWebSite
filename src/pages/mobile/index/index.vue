@@ -30,7 +30,6 @@ const handleScroll = (() => {
 
 let MenuBar = ref(false)
 let setMenuBar = (() => {
-    console.log(MenuBar.value);
     if (!MenuBar.value) {
         MenuBar.value = true
     } else {
@@ -39,7 +38,6 @@ let setMenuBar = (() => {
 })
 
 let buttonMenuBar = (() => {
-    console.log(MenuBar.value);
     if (MenuBar.value) {
         MenuBar.value = false
     }

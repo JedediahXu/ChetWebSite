@@ -16,7 +16,7 @@
 
 <script setup lang="ts">
 const staggerZero = (index: number) => {
-  console.log(index);
+  // console.log(index);
 };
 
 </script>
