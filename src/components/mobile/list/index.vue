@@ -34,12 +34,14 @@
 
 
 <script setup lang="ts">
+import type { PropType } from 'vue';
 import loadmore from '@/components/loadMore/index.vue'
 const $router = useRouter();
 
 const props = defineProps({
   listArticle: {
-    type: Array,
+    type: Array as PropType<any>,
+    required: true,
     default: true,
   }
 })
@@ -64,106 +66,3 @@ const read = ((index: any) => {
 
 </script>
 
-
-
-<style scoped lang="scss">
-.articles .list .list-item {
-  margin-bottom: 1.236rem;
-}
-
-.article-item {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  border-radius: 4px;
-  overflow: hidden;
-  margin-top: 1.875rem;
-  background: #F2F2F2;
-}
-
-.article-item .thumbnail {
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  position: relative;
-}
-
-.article-item .thumbnail .image {
-  min-height: calc((100vw - 2rem)*.34);
-  max-height: 12rem;
-  background-size: cover;
-  background-position: center;
-}
-
-.article-item .content {
-  display: block;
-}
-
-.article-item .content .body {
-  padding: 1rem 1rem 0.618rem;
-}
-
-
-.article-item .content .body .title {
-  margin-top: 0;
-  margin-bottom: 0.618rem;
-  font-weight: 700;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-h4 {
-  font-size: 16.1px;
-  font-weight: 500;
-  margin: 1em 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: inherit;
-  font-family: inherit;
-  line-height: inherit;
-}
-
-.article-item .content .body .description {
-  margin: 0;
-  line-height: 2em;
-  color: var(--text-secondary);
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
-
-p {
-  margin: 0 0 1em;
-}
-
-.article-item .content .meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 1rem;
-  border-top: 1px dashed var(--module-bg-darker-3);
-  overflow: hidden;
-  color: var(--text-disabled);
-  font-size: 12.432px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  word-wrap: normal;
-}
-
-.article-item .content .meta .views {
-  min-width: 4rem;
-}
-
-.article-item .content .meta .likes .article-item .content .meta .comments {
-  min-width: 3em;
-}
-</style>

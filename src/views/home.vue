@@ -102,8 +102,8 @@ const addlist = (() => {
   listArticle.value.push(...xu)
 });
 
-let homeJudgment = ref('')
 
+let homeJudgment = ref('')
 onMounted(() => {
   homeJudgment.value = judgment()
   // mallGoodsDetailAPI({}).then((res: any) => {

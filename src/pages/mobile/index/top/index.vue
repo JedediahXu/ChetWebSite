@@ -34,7 +34,6 @@ import changeLanguage from '@/components/changeLanguage/changeLanguage.vue';
 import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
 
-
 // @ts-ignore：无法被执行的代码的错误
 import { mallGoodsDetailAPI } from "@/api/index";
 
@@ -48,6 +47,8 @@ import { mallGoodsDetailAPI } from "@/api/index";
 //   });
 // })
 
+
+
 let addopen = (() => {
   window.open('https://github.com/ChetSerenade', '_blank')
 })
@@ -58,11 +59,5 @@ let menuBar = (() => {
   emits('setMenuBar')
 })
 
+
 </script>
-
-
-<style>
-.player-sm {
-  height: 10px;
-}
-</style>
