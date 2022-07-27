@@ -6,8 +6,9 @@
 * @LastEditTime: 2022-07-11
 */
 <template>
-  <container :isActive="getHeight">
-    <div class="componentMap">
+  <container :isActive="getHeight" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
+
+    <div class="componentMap" v-if="homeJudgment === 'pc'">
       <div class="hero  h-0.5 bg-origin-border"
         style="background-image: url('../../../../public/static/img/avatar/arch.jpeg');height: 23rem;" v-if="visible">
         <div class="hero-overlay bg-opacity-60"></div>
@@ -93,10 +94,75 @@
           </div>
         </label>
       </label>
-
       <trajectoryMap />
+    </div>
+
+
+    <div class="componentMap" v-if="homeJudgment === 'mobile'">
+      <div class="hero  h-0.5 bg-origin-border"
+        style="background-image: url('../../../../public/static/img/avatar/arch.jpeg');height: 23rem;" v-if="visible">
+        <div class="hero-overlay bg-opacity-60"></div>
+        <div class="moblie-hero-content text-center text-neutral-content moblie-content">
+          <div class="max-w-md">
+            <h1 class="mb-5 text-4xl font-bold" style="color:#fff;">ChetSerenade</h1>
+            <p class="role"> To sum up you in a word </p>
+          </div>
+          <div class="socials">
+            <span class="moblie-normal  mt-3">
+              <a class="moblie-item github" rel="external nofollow noopener" target="_blank"
+                href="https://github.com/ChetSerenade">
+                <i class="iconfont icon-github">
+                </i>
+                <span class="text">GitHub</span>
+              </a>
+              <a class="moblie-item twitter" rel="external nofollow noopener" target="_blank"
+                href="https://twitter.com/Lc0916x">
+                <i class="iconfont icon-twitter">
+                </i>
+                <span class="text">Twitter</span>
+              </a>
+              <a class="moblie-item youtube" rel="external nofollow noopener" target="_blank"
+                href="https://www.youtube.com/channel/UCpdQkDyM_c2rLeFNJWc0crQ">
+                <i class="iconfont icon-youtube"></i>
+                <span class="text">YouTube</span>
+              </a>
+            </span>
+          </div>
+          <label class="item wechat" for="my-modal-4">
+            <i class="iconfont icon-quill">点击查看简历</i>
+          </label>
+        </div>
+      </div>
+
+
+      <!-- Put this part before </body> tag -->
+      <input type="checkbox" id="my-modal-4" class="modal-toggle" />
+      <label for="my-modal-4" class="modal cursor-pointer">
+        <label class="modal-box relative">
+          <div class="qrcode-modal wechat">
+            <div class="background"></div>
+            <span class="text">👋 &nbsp; Friend me on WeChat</span>
+            <ul class="text-ul" style="margin-top: 1px;font-size: 10px;">
+              <li>理解并掌握 JavaScript 核心知识及大部分 ES6 新特性，掌握 TypeScript</li>
+              <li>熟练掌握 React 全家桶技术体系，了解 vue 及相关技术栈，有完整项目实践经验</li>
+              <li>掌握 React Native、微信(Taro/原生)小程序，有移动端项目开发经验</li>
+              <li>理解前端工程化，掌握 Webpack 配置与构建，能够根据项目进行适度优化</li>
+              <li>了解浏览器渲染、数据可视化、前端性能优化等方面知识</li>
+              <li>了解 HTTP 协议，Node.js，熟练使用 Git</li>
+            </ul>
+          </div>
+        </label>
+      </label>
+
+      <div class="qrcodes" data-v-60fcfbfc="">
+        <div class="item" data-v-60fcfbfc=""><img draggable="false"
+            src="../../../../public/static/img/avatar/wechat.jpg" class="image" data-v-60fcfbfc=""></div>
+        <div class="item" data-v-60fcfbfc=""><img draggable="false"
+            src="../../../../public/static/img/avatar/wechat.jpg" class="image" data-v-60fcfbfc=""></div>
+      </div>
 
     </div>
+
   </container>
 </template>
 
@@ -104,9 +170,17 @@
 <script setup lang="ts">
 import trajectoryMap from '@/components/map/index.vue'
 import { useI18n } from 'vue-i18n';
+import { judgment } from '@/utils/judgment'
+
 const { t } = useI18n();
 let getHeight = ref(1)
 let visible = ref(true)
+
+
+let homeJudgment = ref('')
+onMounted(() => {
+  homeJudgment.value = judgment()
+})
 
 let switchCV = ((index: number) => {
   switch (index) {
@@ -174,9 +248,7 @@ let switchCV = ((index: number) => {
     display: flex;
   }
 
-  .socials .normal .item.github {
-    background-color: #24282d;
-  }
+
 
   .socials .normal .item {
     padding: 0 1rem;
@@ -191,6 +263,10 @@ let switchCV = ((index: number) => {
 
   .socials .normal .item.twitter {
     background-color: #1b95e0;
+  }
+
+  .socials .normal .item.github {
+    background-color: #24282d;
   }
 
   .socials .normal .item.instagram {
@@ -290,6 +366,90 @@ let switchCV = ((index: number) => {
     max-width: 16rem;
     padding: 1rem;
   }
+}
+
+.moblie-top-container {
+  margin-top: 20px;
+}
+
+.moblie-right-container {
+  padding-right: 10px;
+}
+
+.moblie-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.moblie-normal {
+  display: inline-flex;
+  align-items: center;
+}
+
+.moblie-item {
+  padding: 0 0.2rem;
+  margin-right: 1rem;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  color: #fff;
+  transition: all 0.1s;
+}
+
+.moblie-item.twitter {
+  color: #fff;
+  background-color: #1b95e0;
+}
+
+.moblie-item.github {
+  color: #fff;
+  background-color: #24282d;
+}
+
+.moblie-item.youtube {
+  margin: 0;
+  color: #fff;
+  background-color: #ec3323;
+}
+
+.moblie-hero-content {
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 80rem;
+  gap: 1rem;
+}
+
+.qrcodes {
+  margin-top: 1.236rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.236rem;
+}
+
+.qrcodes .item {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #444444;
+}
+
+.qrcodes .item .image {
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
 }
 </style>
 

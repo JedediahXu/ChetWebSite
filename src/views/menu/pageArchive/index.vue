@@ -10,7 +10,6 @@
     <archive :listPhoto="imgList" v-if="homeJudgment === 'pc'" />
     <mobilArchive :listPhoto="imgList" v-if="homeJudgment === 'mobile'" />
   </container>
-
 </template>
 
 
