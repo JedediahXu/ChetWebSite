@@ -6,10 +6,10 @@
 * @LastEditTime: 2022-07-11
 */
 <template>
-  <container :isActive="getHeight">
+  <container :isActive="getHeight" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
     <div class="component-body">
       <div class="component">
-        <div class="component-top">
+        <div class="component-top" v-if="homeJudgment === 'pc'">
           <div class="component-left" v-show="displaySwitch === 3">
             <div class="mt-3  mt-right">
               <div class="indicator">
@@ -78,17 +78,33 @@
               :class="displaySwitch == 4 ? 'btn-click-primary' : ''">友情链接</button>
           </div>
         </div>
+
+        <div class="mobile-component-top" v-if="homeJudgment === 'mobile'">
+          <div class="banner dark mobile mobile-banner"
+            style="background-image: url('../../../../public/static/img/list/dm.png'); background-repeat: no-repeat;background-size: 100% 100%;">
+            <div class="content">
+              <h2 class="title">留言</h2>
+              <div class="description">此心光明 亦复何言</div>
+            </div>
+          </div>
+        </div>
+
         <div class="divider"></div>
         <div id="comment"></div>
       </div>
     </div>
+
   </container>
 </template>
 
 <script setup lang="ts">
+import { judgment } from '@/utils/judgment'
 let getHeight = ref(1)
 
+let homeJudgment = ref('')
+
 onMounted(() => {
+  homeJudgment.value = judgment()
   let dis = new iDisqus('comment', {
     forum: 'gaoyuzi-cn',
     site: 'https://epiphanys.me',
@@ -116,7 +132,6 @@ let displayArea = (index: any) => {
   overflow-x: hidden;
   font-size: 13px;
 }
-
 
 .component-body {
   height: 100%;
@@ -270,5 +285,57 @@ let displayArea = (index: any) => {
   background-color: hsl(var(--af, var(--a)) / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: hsl(var(--ac) / var(--tw-text-opacity));
+}
+
+.mobile-component-top {
+  height: 14rem;
+  overflow-x: hidden;
+  font-size: 13px;
+  display: flex;
+  padding-bottom: 25px;
+
+  .content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .banner {
+    width: 100%;
+  }
+
+  .banner.mobile .title {
+    font-size: 2em;
+  }
+
+  .content .title {
+    font-size: 3em;
+    margin-top: 0;
+    color: #fff;
+    margin-bottom: 2.472rem;
+  }
+
+  h2 {
+    font-size: 20.3px;
+    font-weight: 700;
+    margin: 1em 0;
+  }
+
+  .content .description {
+    font-size: 16.1px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .moblie-top-container {
+    margin-top: 20px;
+  }
+
+  .moblie-right-container {
+    padding-right: 10px;
+  }
 }
 </style>

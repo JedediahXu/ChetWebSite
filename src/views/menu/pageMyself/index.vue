@@ -97,7 +97,6 @@
       <trajectoryMap />
     </div>
 
-
     <div class="componentMap" v-if="homeJudgment === 'mobile'">
       <div class="hero  h-0.5 bg-origin-border"
         style="background-image: url('../../../../public/static/img/avatar/arch.jpeg');height: 23rem;" v-if="visible">
