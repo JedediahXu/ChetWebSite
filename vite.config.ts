@@ -24,7 +24,8 @@ export default defineConfig({
     },
   },
   server: {
-    port: 3000,
+    host:'10.101.126.3',
+    port: 8000,
     open: true,
     proxy: {
       '/apis': {
@@ -34,6 +35,6 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/apis/, ''),
       },
     },
-  }
+  },
 })
 

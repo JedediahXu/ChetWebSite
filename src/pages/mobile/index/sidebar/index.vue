@@ -62,8 +62,8 @@
         </a>
       </li>
     </ul>
-    <div style="margin-top: 10px;width:100%;">
-      <div class="stats shadow" style="width:90%;margin-left:10px;">
+    <div style="margin-top: 10px;">
+      <div class="stats shadow">
         <div class="stat" style="display: inline-block;">
           <div class="stat-figure text-primary">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"

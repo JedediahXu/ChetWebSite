@@ -22,7 +22,6 @@
     width: 100%;
     display: flex;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 2rem;
     flex-direction: column;
   }
 
@@ -31,6 +30,7 @@
     display: block;
     height: 200px;
     width: 100%;
+    margin-top: 1.3rem;
     cursor: pointer;
     border-radius: 10px;
     overflow: hidden;
@@ -86,22 +86,4 @@
     transform: scale(1.05);
     transition: transform .25s;
   }
-
-  .medias .media:hover .background {
-    transform: scale(1.15);
-  }
-
-  .medias .media:hover .mask .icon {
-    transform: scale(1);
-  }
-
-  .medias .media:hover .mask {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .medias .media:hover {
-    background-color: var(--module-bg-opaque);
-  }
-
 }
