@@ -7,13 +7,28 @@ const path = require('path');
 
 
 export default defineConfig({
+  build: {
+    chunkSizeWarningLimit: 1500,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return id.toString().split('node_modules/')[1].split('/')[0].toString();
+          }
+        }
+      }
+    }
+  },
   plugins: [vue(), AutoImport({
     imports: ["vue", "vue-router"],
     dts: "src/auto-import.d.ts",
     resolvers: [ElementPlusResolver()],
   }),
   Components({
+    dirs: ['src/components'],
     resolvers: [ElementPlusResolver()],
+    extensions: ['vue'],
+    directoryAsNamespace: true,
   }),],
   define: {
     'process.env': {},
@@ -24,7 +39,7 @@ export default defineConfig({
     },
   },
   server: {
-    host:'10.101.126.3',
+    // host: '10.101.126.3',
     port: 8000,
     open: true,
     proxy: {

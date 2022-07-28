@@ -3,7 +3,7 @@
 * @Author: xuhuazhi
 * @Date: 2022-06-01
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-07-25 11:22:13
+ * @LastEditTime: 2022-07-28 10:09:00
 */
 import Vue from 'vue'
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
@@ -15,13 +15,67 @@ const routes: Array<RouteRecordRaw> = [
         path: "/",
         component: () => import(`../pages/${path}/index/index.vue`),
         children: [
-            exhibitRoutes
+            {
+                path: "/:pathMatch(.*)",
+                redirect: "/home"
+            },
+            {
+                path: "/",
+                name: 'home',
+                component: () => import("@/views/home.vue"),
+            },
+            {
+                path: "/archive",
+                name: 'archive',
+                component: () => import("@/views/menu/pageArchive/index.vue"),
+                meta: {
+                    keepAlive: true,
+                }
+            },
+            {
+                path: "/about",
+                name: 'about',
+                component: () => import("@/views/menu/pageAbout/index.vue"),
+                meta: {
+                    keepAlive: true,
+                }
+            },
+            {
+                path: "/myself",
+                name: 'myself',
+                component: () => import("@/views/menu/pageMyself/index.vue"),
+                meta: {
+                    keepAlive: true,
+                }
+            },
+            {
+                path: "/message",
+                name: 'message',
+                component: () => import("@/views/menu/pageMessage/index.vue"),
+                meta: {
+                    keepAlive: true,
+                }
+            },
+            {
+                path: "/read",
+                name: 'read',
+                component: () => import("@/views/menu/pageRead/index.vue"),
+                meta: {
+                    keepAlive: true,
+                }
+            }
         ],
+        meta: {
+            keepAlive: true,
+        }
     },
     {
         path: "/:pathMatch(.*)*",
         name: "404",
-        component: import('@/assets/404.vue')
+        component: import('@/assets/404.vue'),
+        meta: {
+            keepAlive: true,
+        }
     }
 ]
 

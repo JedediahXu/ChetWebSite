@@ -9,7 +9,7 @@
   <div class="sidebar-top">
     <div class="avatar" style="margin-top: 10px;">
       <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-        <img src="../../../../../public/static/img/avatar/to.jpeg" />
+        <img src="../../../../../public/static/img/avatar/WechatIMG.jpeg" />
       </div>
     </div>
     <div style="margin-top: 11px;">
@@ -52,7 +52,7 @@
           {{ t('PAGE_SPONSOR') }}
         </a>
       </li>
-      <li @click="pushJump(4)" class="menu-list-top">
+      <li @click="pushJump(4)" class="menu-list-top" id="list-comentas">
         <a :class="touch === 4 ? 'active' : ''">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

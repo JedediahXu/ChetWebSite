@@ -16,7 +16,7 @@
 </template>
 
 
-<script setup lang="ts">
+<script setup lang="ts" name="home">
 import selection from '@/components/timeSelection/timeSelection.vue'
 import carlist from '@/components/list/index.vue'
 import mobileCarlist from '@/components/mobile/list/index.vue'
@@ -30,7 +30,6 @@ let getHeight = ref()
 getHeight = computed(() => {
   return getHeight.value++
 });
-
 
 let listArticle = ref([{
   title: '最古老的事',
@@ -72,7 +71,6 @@ let listArticle = ref([{
   language: 'English',
   type: '随笔'
 }])
-
 
 const addlist = (() => {
   let xu = [{

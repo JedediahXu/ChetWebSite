@@ -3,7 +3,7 @@ const zhLocale = {
   PAGE_HOME: '行思坐想', 
   PAGE_ARCHIVE: '杂文归档',
   PAGE_ABOUT: '万象更新',
-  PAGE_SPONSOR: '我亦是我 ',
+  PAGE_SPONSOR: '素履以往',
   PAGE_APP: '留言',
   CONNECT_MAIL: '邮箱',
   CONNECT_GITHUB: 'GitHub'

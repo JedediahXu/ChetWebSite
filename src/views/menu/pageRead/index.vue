@@ -7,8 +7,7 @@
 */
 <template>
   <!-- padding-right: 10px; -->
-  <container :isActive="getHeight"
-    :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
+  <container :isActive="getHeight" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
     <div>
       {{ reserve.title }}
     </div>
@@ -34,7 +33,7 @@ reserve.value = JSON.parse(sessionStorage.getItem('read'))
 
 
 
-<style scoped lang="scss">
+<style scoped lang="scss" name="read">
 .moblie-top-container {
   margin-top: 20px;
 }

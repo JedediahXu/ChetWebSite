@@ -11,7 +11,7 @@
   </container>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts" name="about">
 import selection from '@/components/timeSelection/timeSelection.vue'
 import card from '@/components/cardPhoto/index.vue'
 import { judgment } from '@/utils/judgment'

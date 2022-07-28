@@ -97,15 +97,21 @@
   </container>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
+export default {
+  name: "message",
+};
+</script>
+
+
+<script lang="ts" setup>
 import { judgment } from '@/utils/judgment'
-let getHeight = ref(1)
+const getHeight = ref(1)
 
-let homeJudgment = ref('')
-
+const homeJudgment = ref('')
 onMounted(() => {
   homeJudgment.value = judgment()
-  let dis = new iDisqus('comment', {
+  new iDisqus('comment', {
     forum: 'gaoyuzi-cn',
     site: 'https://epiphanys.me',
     api: 'https://epiphanys.me/dashboard/api',
@@ -116,11 +122,12 @@ onMounted(() => {
   });
 });
 
-let displaySwitch = ref(1)
+
+
+const displaySwitch = ref(1)
 let displayArea = (index: any) => {
   displaySwitch.value = index
 }
-
 </script>
 
 

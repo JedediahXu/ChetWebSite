@@ -196,7 +196,7 @@ let switchCV = ((index: number) => {
 
 
 
-<style spode lang="scss">
+<style spode lang="scss" name="myself">
 .componentMap {
   p {
     margin: 10px;

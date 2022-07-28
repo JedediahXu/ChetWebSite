@@ -13,7 +13,7 @@
 </template>
 
 
-<script setup lang="ts">
+<script setup lang="ts"  name="archive">
 import archive from '@/components/archive/index.vue'
 import mobilArchive from '@/components/mobile/archive/index.vue'
 import { judgment } from '@/utils/judgment'
@@ -56,11 +56,11 @@ let imgList = reactive([{
 
 
 <style scoped>
- .moblie-top-container {
-   margin-top: 20px;
- }
+.moblie-top-container {
+  margin-top: 20px;
+}
 
- .moblie-right-container {
-   padding-right: 10px;
- }
+.moblie-right-container {
+  padding-right: 10px;
+}
 </style>
