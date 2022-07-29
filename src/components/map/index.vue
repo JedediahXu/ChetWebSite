@@ -82,7 +82,7 @@ let geoPhoto = {
       properties: {
         id: 2,
         description:
-          `<img src="../../../public/static/img/list/Header.jpg"/>
+          `<img src="/static/img/list/Header.jpg"/>
             <p>我在这里住了1年</p>`,
       },
       geometry: {

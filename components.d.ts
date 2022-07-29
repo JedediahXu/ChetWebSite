@@ -9,7 +9,6 @@ declare module '@vue/runtime-core' {
     CardPhoto: typeof import('./src/components/cardPhoto/index.vue')['default']
     ChangeLanguageChangeLanguage: typeof import('./src/components/changeLanguage/changeLanguage.vue')['default']
     ChangeThemeChangeTheme: typeof import('./src/components/changeTheme/changeTheme.vue')['default']
-    ElButton: typeof import('element-plus/es')['ElButton']
     ElContainer: typeof import('element-plus/es')['ElContainer']
     ElMain: typeof import('element-plus/es')['ElMain']
     ElSkeleton: typeof import('element-plus/es')['ElSkeleton']

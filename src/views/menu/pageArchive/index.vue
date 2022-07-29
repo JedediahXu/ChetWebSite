@@ -26,28 +26,28 @@ onMounted(() => {
 
 let imgList = reactive([{
   title: 'Vue',
-  img: '../../../public/static/img/archive/vue.png'
+  img: '/static/img/archive/vue.png'
 }, {
   title: 'JavaScript',
-  img: '../../../public/static/img/archive/js.png'
+  img: '/static/img/archive/js.png'
 }, {
   title: 'TypeScript',
-  img: '../../../public/static/img/archive/ts.png'
+  img: '/static/img/archive/ts.png'
 }, {
   title: 'Vite',
-  img: '../../../public/static/img/archive/dm.png'
+  img: '/static/img/archive/dm.png'
 }, {
   title: '数据结构',
-  img: '../../../public/static/img/archive/sjjg.png'
+  img: '/static/img/archive/sjjg.png'
 }, {
   title: 'Node',
-  img: '../../../public/static/img/archive/node.png'
+  img: '/static/img/archive/node.png'
 }, {
   title: 'Webpack',
-  img: '../../../public/static/img/archive/wb.png'
+  img: '/static/img/archive/wb.png'
 }, {
   title: '我想',
-  img: '../../../public/static/img/archive/wx.png'
+  img: '/static/img/archive/wx.png'
 }])
 
 

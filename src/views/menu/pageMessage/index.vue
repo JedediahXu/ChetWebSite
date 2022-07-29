@@ -64,7 +64,7 @@
               <p class="line-through">See more images from “Welcome to the Neighborhood” below.</p>
             </div>
             <div class="knight">
-              <img src="../../../../public/static/img/message/preview.gif" style="width: 100%;height: 100%;">
+              <img src="/static/img/message/preview.gif" style="width: 100%;height: 100%;">
             </div>
           </div>
           <div class="component-right">
@@ -81,7 +81,7 @@
 
         <div class="mobile-component-top" v-if="homeJudgment === 'mobile'">
           <div class="banner dark mobile mobile-banner"
-            style="background-image: url('../../../../public/static/img/list/dm.png'); background-repeat: no-repeat;background-size: 100% 100%;">
+            style="background-image: url('/static/img/list/dm.png'); background-repeat: no-repeat;background-size: 100% 100%;">
             <div class="content">
               <h2 class="title">留言</h2>
               <div class="description">此心光明 亦复何言</div>
@@ -100,18 +100,20 @@
 <script lang="ts">
 export default {
   name: "message",
-};
-</script>
 
+};
+declare const window: Window & { iDisqus: any };
+</script>
 
 <script lang="ts" setup>
 import { judgment } from '@/utils/judgment'
+
 const getHeight = ref(1)
 
 const homeJudgment = ref('')
 onMounted(() => {
   homeJudgment.value = judgment()
-  new iDisqus('comment', {
+  let asd = new window.iDisqus('comment', {
     forum: 'gaoyuzi-cn',
     site: 'https://epiphanys.me',
     api: 'https://epiphanys.me/dashboard/api',
@@ -208,7 +210,7 @@ let displayArea = (index: any) => {
   .heros-bg {
     width: 100% !important;
     height: 17.77rem !important;
-    background-image: url('../../../../public/static/img/arch-name.jpeg') !important;
+    background-image: url('/static/img/arch-name.jpeg') !important;
   }
 
   .mt-right {

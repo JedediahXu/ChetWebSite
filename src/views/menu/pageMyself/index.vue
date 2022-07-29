@@ -10,7 +10,7 @@
 
     <div class="componentMap" v-if="homeJudgment === 'pc'">
       <div class="hero  h-0.5 bg-origin-border"
-        style="background-image: url('../../../../public/static/img/avatar/arch.jpeg');height: 23rem;" v-if="visible">
+        style="background-image: url('/static/img/avatar/arch.jpeg');height: 23rem;" v-if="visible">
         <div class="hero-overlay bg-opacity-60"></div>
         <div class="hero-content text-center text-neutral-content">
           <div class="max-w-md">
@@ -89,7 +89,7 @@
         <label class="modal-box relative">
           <div class="qrcode-modal wechat">
             <div class="background"></div>
-            <img class="image" src="../../../../public/static/img/avatar/wechat.jpg" />
+            <img class="image" src="/static/img/avatar/wechat.jpg" />
             <span class="text">👋 &nbsp; Friend me on WeChat</span>
           </div>
         </label>
@@ -99,7 +99,7 @@
 
     <div class="componentMap" v-if="homeJudgment === 'mobile'">
       <div class="hero  h-0.5 bg-origin-border"
-        style="background-image: url('../../../../public/static/img/avatar/arch.jpeg');height: 23rem;" v-if="visible">
+        style="background-image: url('/static/img/avatar/arch.jpeg');height: 23rem;" v-if="visible">
         <div class="hero-overlay bg-opacity-60"></div>
         <div class="moblie-hero-content text-center text-neutral-content moblie-content">
           <div class="max-w-md">
@@ -154,10 +154,10 @@
       </label>
 
       <div class="qrcodes" data-v-60fcfbfc="">
-        <div class="item" data-v-60fcfbfc=""><img draggable="false"
-            src="../../../../public/static/img/avatar/wechat.jpg" class="image" data-v-60fcfbfc=""></div>
-        <div class="item" data-v-60fcfbfc=""><img draggable="false"
-            src="../../../../public/static/img/avatar/wechat.jpg" class="image" data-v-60fcfbfc=""></div>
+        <div class="item" data-v-60fcfbfc=""><img draggable="false" src="/static/img/avatar/wechat.jpg" class="image"
+            data-v-60fcfbfc=""></div>
+        <div class="item" data-v-60fcfbfc=""><img draggable="false" src="/static/img/avatar/wechat.jpg" class="image"
+            data-v-60fcfbfc=""></div>
       </div>
 
     </div>

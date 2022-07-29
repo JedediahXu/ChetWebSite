@@ -19,17 +19,18 @@ export default defineConfig({
       }
     }
   },
-  plugins: [vue(), AutoImport({
-    imports: ["vue", "vue-router"],
-    dts: "src/auto-import.d.ts",
-    resolvers: [ElementPlusResolver()],
-  }),
-  Components({
-    dirs: ['src/components'],
-    resolvers: [ElementPlusResolver()],
-    extensions: ['vue'],
-    directoryAsNamespace: true,
-  }),],
+  plugins: [
+    vue(), AutoImport({
+      imports: ["vue", "vue-router"],
+      dts: "src/auto-import.d.ts",
+      resolvers: [ElementPlusResolver()],
+    }),
+    Components({
+      dirs: ['src/components'],
+      resolvers: [ElementPlusResolver()],
+      extensions: ['vue'],
+      directoryAsNamespace: true,
+    }),],
   define: {
     'process.env': {},
   },
@@ -38,6 +39,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  // base: '/',
   server: {
     // host: '10.101.126.3',
     port: 8000,

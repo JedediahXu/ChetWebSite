@@ -1,9 +1,9 @@
 <template>
   <div class="container bg-img">
     <div class="text-4xl">
-        ？？？
+      ？？？
     </div>
-    <div class="text-xl"> 
+    <div class="text-xl">
       404
     </div>
   </div>
@@ -15,7 +15,7 @@
 
 <style scoped>
 .bg-img {
-  background-image: url('../../public/static/img/404/404.gif');
+  background-image: url('/static/img/404/404.gif');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -23,5 +23,4 @@
   justify-content: center;
   align-items: center;
 }
-
 </style>

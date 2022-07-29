@@ -7,7 +7,7 @@
     "strictNullChecks": false,
     "strict": true,
     "jsx": "preserve",
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "sourceMap": true,
     "resolveJsonModule": true,
     "isolatedModules": true,

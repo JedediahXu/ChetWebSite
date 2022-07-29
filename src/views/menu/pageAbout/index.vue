@@ -25,13 +25,13 @@ onMounted(() => {
 
 let imgList = reactive([{
   title: '2022-06-24',
-  img: '../../../public/static/img/about/Wechat1.jpeg'
+  img: '/static/img/about/Wechat1.jpeg'
 }, {
   title: 'JavaScript',
-  img: '../../../public/static/img/about/Wechat2.jpeg'
+  img: '/static/img/about/Wechat2.jpeg'
 }, {
   title: 'TypeScript',
-  img: '../../../public/static/img/about/Wechat3.jpeg'
+  img: '/static/img/about/Wechat3.jpeg'
 },])
 
 </script>
