@@ -46,7 +46,7 @@ export default defineConfig({
     open: true,
     proxy: {
       '/apis': {
-        target: 'http://127.0.0.1:2022',
+        target: 'http://127.0.0.1:3007',
         ws: true,
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/apis/, ''),

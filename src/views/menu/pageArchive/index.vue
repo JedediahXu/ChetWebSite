@@ -17,42 +17,23 @@
 import archive from '@/components/archive/index.vue'
 import mobilArchive from '@/components/mobile/archive/index.vue'
 import { judgment } from '@/utils/judgment'
+import { mallGoodsCates } from '@/api';
+
 
 let getHeight = ref(1)
 let homeJudgment = ref('')
+let imgList: any = ref([])
+
 onMounted(() => {
   homeJudgment.value = judgment()
+  mallGoodsCates().then((res: any) => {
+    imgList.value.push(...res.data.data)
+  });
+  console.log(imgList);
 })
-
-let imgList = reactive([{
-  title: 'Vue',
-  img: '/static/img/archive/vue.png'
-}, {
-  title: 'JavaScript',
-  img: '/static/img/archive/js.png'
-}, {
-  title: 'TypeScript',
-  img: '/static/img/archive/ts.png'
-}, {
-  title: 'Vite',
-  img: '/static/img/archive/dm.png'
-}, {
-  title: '数据结构',
-  img: '/static/img/archive/sjjg.png'
-}, {
-  title: 'Node',
-  img: '/static/img/archive/node.png'
-}, {
-  title: 'Webpack',
-  img: '/static/img/archive/wb.png'
-}, {
-  title: '我想',
-  img: '/static/img/archive/wx.png'
-}])
 
 
 </script>
-
 
 
 <style scoped>
