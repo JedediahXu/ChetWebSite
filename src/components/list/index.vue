@@ -25,7 +25,7 @@
         </div>
       </div>
     </div>
-    <loadmore @click="toEmits" />
+    <loadmore :totale="totale" @click="toEmits" />
   </div>
 
   <template v-else>
@@ -46,15 +46,6 @@
   </template>
 
 </template>
-<!-- Id: 1
-author_id: "2"
-cate_id: 1
-content: "文章内容"
-cover_img: "1"
-is_delete: "0"
-pub_date: "2022-07-31 01:17:32.666"
-state: "已发布"
-title: "标题" -->
 
 <script setup lang="ts">
 import type { PropType } from 'vue';
@@ -64,6 +55,10 @@ const $router = useRouter();
 const props = defineProps({
   listArticle: {
     type: Array as PropType<any>,
+    required: true,
+    default: true,
+  },
+  totale: {
     required: true,
     default: true,
   }

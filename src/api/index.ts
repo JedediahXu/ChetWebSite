@@ -3,14 +3,15 @@
 * @Author: xuhuazhi
 * @Date: 2022-06-01
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-08-03 21:51:25
+ * @LastEditTime: 2022-08-04 22:44:27
 */
 import request from "../utils/request"
 
-export function queryArticle() {
+export function queryArticle(params: object) {
   return request({
-    url: '/apis/api/article/queryArticle',
+    url: '/apis/api/article/queryPagination',
     method: 'get',
+    params
   })
 }
 
