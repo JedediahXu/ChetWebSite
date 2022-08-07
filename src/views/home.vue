@@ -23,6 +23,8 @@ import mobileCarlist from '@/components/mobile/list/index.vue'
 import { queryArticle } from '@/api';
 import { useI18n } from 'vue-i18n';
 import { judgment } from '@/utils/judgment'
+import { emitter } from '@/utils/eventBus'
+import { addAbortSignal } from 'stream';
 
 const { t } = useI18n();
 let getHeight = ref()
@@ -31,33 +33,43 @@ getHeight = computed(() => {
   return getHeight.value++
 });
 
+
 let listArticle = ref([])
 let totale: any = ref('')
+let indexed: any = ref(0)
+
+
+emitter.on('taskPageId', (index) => indexed.value = index);
 let array = ref({
   page_num: 0,
-  page_size: 6
+  page_size: 6,
+  page_id: 0
 })
+
+//分页
+const addlist = (() => {
+  array.value.page_num++
+  console.log(array.value.page_num);
+  queryArticle(array.value).then((res: any) => {
+    listArticle.value.push(...res.data.data)
+    totale.value = { ...res.data.paging }
+    totale.value.page_size = listArticle.value.length
+  });
+});
+
+watch(indexed, (newValue) => {
+  array.value.page_id = indexed
+  array.value.page_num = 0
+  listArticle.value = [];
+  addlist()
+}, { immediate: true })
+
 
 let homeJudgment = ref('')
 
 onMounted(() => {
   homeJudgment.value = judgment()
 })
-
-//分页
-const addlist = (() => {
-  array.value.page_num++
-  queryArticle(array.value).then((res: any) => {
-    listArticle.value.push(...res.data.data)
-    totale.value = { ...res.data.paging }
-    console.log(totale);
-    totale.value.page_size = listArticle.value.length
-  });
-});
-
-addlist()
-
-
 
 
 

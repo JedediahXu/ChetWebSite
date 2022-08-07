@@ -3,7 +3,7 @@
 * @Author: xuhuazhi
 * @Date: 2022-06-01
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-07-28 10:09:00
+ * @LastEditTime: 2022-08-07 14:34:03
 */
 import Vue from 'vue'
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
@@ -78,8 +78,6 @@ const routes: Array<RouteRecordRaw> = [
         }
     }
 ]
-
-
 
 
 const router = createRouter({

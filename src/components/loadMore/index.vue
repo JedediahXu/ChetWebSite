@@ -20,7 +20,6 @@ import { PropType } from '@vue/runtime-core';
 
 const props = defineProps({
   totale: {
-    type: String as PropType<any>,
     required: true,
     default: true,
   }

@@ -85,10 +85,10 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
+import { emitter } from '@/utils/eventBus'
+const router = useRouter();
 const { t } = useI18n();
-
 let touch: any = ref(0);
-const $router = useRouter();
 
 onMounted(() => {
   let cashBack: number = JSON.parse(sessionStorage.getItem('touch') || '0')
@@ -99,26 +99,34 @@ onMounted(() => {
   }
 })
 
+emitter.on('taskTouch', (e) => {
+  touch.value = e
+})
+
 const pushJump = (index: number) => {
   touch.value = index
   sessionStorage.setItem('touch', JSON.stringify(index))
   switch (index) {
     case 0:
-      $router.push({ name: 'home' })
+      router.push({ name: 'home' })
       break;
     case 1:
-      $router.push({ name: 'archive' })
+      router.push({ name: 'archive' })
       break;
     case 2:
-      $router.push({ name: 'about' })
+      router.push({ name: 'about' })
       break;
     case 3:
-      $router.push({ name: 'myself' })
+      router.push({ name: 'myself' })
       break;
     case 4:
-      $router.push({ name: 'message' })
+      router.push({ name: 'message' })
       break;
   }
 }
+
+
+
+
 
 </script>
