@@ -34,7 +34,7 @@ onMounted(() => {
 })
 
 const getTransfer = ((e: number) => {
-  router.push({ name: 'home' });
+  router.push({ name: 'home', query: { id: e } });
   emitter.emit('taskTouch', 0);
   emitter.emit('taskPageId', e);
 })

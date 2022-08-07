@@ -103,6 +103,7 @@ emitter.on('taskTouch', (e) => {
   touch.value = e
 })
 
+
 const pushJump = (index: number) => {
   touch.value = index
   sessionStorage.setItem('touch', JSON.stringify(index))
@@ -124,9 +125,5 @@ const pushJump = (index: number) => {
       break;
   }
 }
-
-
-
-
 
 </script>
