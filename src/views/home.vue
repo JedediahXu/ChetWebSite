@@ -24,22 +24,19 @@ import { queryArticle } from '@/api';
 import { useI18n } from 'vue-i18n';
 import { judgment } from '@/utils/judgment'
 import { emitter } from '@/utils/eventBus'
-const route = useRoute(); // 第一步
-
+const route = useRoute();
 const { t } = useI18n();
-let getHeight = ref()
 
+let getHeight = ref()
 getHeight = computed(() => {
   return getHeight.value++
 });
 
 let homeJudgment = ref('')
+homeJudgment.value = judgment()
 
 let listArticle = ref([])
 let totale: any = ref('')
-
-
-
 let array: any = ref({
   page_num: 0,
   page_size: 6,
@@ -56,8 +53,8 @@ const addlist = (() => {
   });
 });
 
-
-if (false) {
+if (homeJudgment.value == 'pc') {
+  addlist()
   emitter.on('taskPageId', function (index) {
     array.value.page_id = index
     array.value.page_num = 0
@@ -66,23 +63,17 @@ if (false) {
   });
 }
 
-if (true) {
+if (homeJudgment.value == 'mobile') {
   let queryId: any = ref(0)
   queryId = route.query.id
-  watchEffect(() => {
+  if (queryId === undefined) {
+    array.value.page_id = 0
+  } else {
     array.value.page_id = queryId
-    array.value.page_num = 0
-    listArticle.value = [];
-    addlist()
-  })
+  }
+  array.value.page_num = 0
+  listArticle.value = [];
+  addlist()
 }
-
-
-addlist()
-onMounted(() => {
-  homeJudgment.value = judgment()
-})
-
-
 
 </script>
