@@ -1,16 +1,16 @@
 <template>
   <div class="p-3.5 type-archive">
     <ul class="medias">
-      <li class="media media-relative" v-for="(src, index) in listPhoto" :intro="src.img" :key="index">
-        <h3 class="text-overlay">{{ src.title }}</h3>
-        <div data-background-image={{src.img}} data-loaded="true" class="background loaded"
-          :style="{ backgroundImage: 'url(' + src.img + ')' }">
+      <li class="media media-relative" v-for="(src, index) in listPhoto" :intro="src.img" :key="index"
+        @click="toJump(index)">
+        <h3 class="text-overlay">{{ src.name }}</h3>
+        <div data-background-image={{src.cate_photos}} data-loaded="true" class="background loaded"
+          :style="{ backgroundImage: 'url(' + '/apis' + src.cate_photos + ')' }">
         </div>
       </li>
     </ul>
   </div>
 </template>
-
 
 <script setup lang="ts">
 import type { PropType } from 'vue';
@@ -24,5 +24,12 @@ const props = defineProps({
   }
 })
 
-</script>
+console.log(props.listPhoto);
 
+
+const emits = defineEmits(['getTransfer']);
+const toJump = (index) => {
+  emits('getTransfer', index)
+}
+
+</script>

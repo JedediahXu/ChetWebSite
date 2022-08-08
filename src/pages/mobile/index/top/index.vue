@@ -34,19 +34,10 @@ import changeLanguage from '@/components/changeLanguage/changeLanguage.vue';
 import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
 
-// @ts-ignore：无法被执行的代码的错误
-import { mallGoodsDetailAPI } from "@/api/index";
 
 // let iframe = document.getElementById("mainframe");
 // var iWindow = (<HTMLIFrameElement>iframe).contentWindow;
 // iWindow.document.body.style.background = 'blue'
-
-// onMounted(() => {
-//   mallGoodsDetailAPI({}).then((res: any) => {
-//     console.log(res, "res");
-//   });
-// })
-
 
 
 let addopen = (() => {

@@ -2,7 +2,7 @@
   <div class="articles">
     <button class="article-load">
       <div class="background"><span class="left"></span><span class="right"></span></div>
-      <div class="content"><span class="left">xx / NaN</span><span class="right">
+      <div class="content"><span class="left">{{ totale.page_size }} / {{ totale.total }}</span><span class="right">
           <span class="webfont bolder zh boldEn uppercase">
             山河入梦
           </span>
@@ -11,3 +11,19 @@
     </button>
   </div>
 </template>
+
+
+<script setup lang="ts">
+import { PropType } from '@vue/runtime-core';
+
+
+
+const props = defineProps({
+  totale: {
+    required: true,
+    default: true,
+  }
+})
+
+
+</script>

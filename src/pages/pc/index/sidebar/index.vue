@@ -103,7 +103,9 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
+import { emitter } from '@/utils/eventBus'
 const { t } = useI18n();
+
 
 let touch: any = ref(0);
 const $router = useRouter();
@@ -115,6 +117,10 @@ onMounted(() => {
   } else {
     touch.value = cashBack
   }
+})
+
+emitter.on('taskTouch', (e) => {
+  touch.value = e
 })
 
 const pushJump = (index: number) => {
