@@ -14,7 +14,6 @@ export function queryArticle(params: object) {
     params
   })
 }
-
 export function mallGoodsCates() {
   return request({
     url: '/apis/api/article/cates',
