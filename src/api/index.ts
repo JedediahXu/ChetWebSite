@@ -3,7 +3,7 @@
 * @Author: xuhuazhi
 * @Date: 2022-06-01
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-08-08 09:23:35
+ * @LastEditTime: 2022-08-09 21:14:09
 */
 import request from "../utils/request"
 
@@ -19,5 +19,20 @@ export function mallGoodsCates() {
   return request({
     url: '/apis/api/article/cates',
     method: 'get',
+  })
+}
+
+
+export function queryPhoto() {
+  return request({
+    url: '/apis/api/article/queryPhoto',
+    method: 'get',
+  })
+}
+
+export function queryLink() {
+  return request({
+    url: '/apis/api/article/queryLink',
+    method: 'get'
   })
 }

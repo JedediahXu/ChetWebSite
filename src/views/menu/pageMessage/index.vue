@@ -34,18 +34,9 @@
           </div>
           <div class="component-left" v-show="displaySwitch === 4">
             <div class="component-link text-base">
-              <li>赵蛟的博客 <a class="link link-secondary">I'm a simple link</a></li>
-              <li>终身学习<a class="link link-secondary">I'm a simple link</a></li>
-              <li>前端开发 <a class="link link-secondary">I'm a simple link</a></li>
-              <li>后端开发<a class="link link-secondary">I'm a simple link</a></li>
-              <li>毅力小哥 <a class="link link-accent">I'm a simple link</a></li>
-              <li>大厂人员 <a class="link link-accent">I'm a simple link</a></li>
-              <li>业务爱好者 <a class="link link-accent">I'm a simple link</a></li>
-              <li>终身学习<a class="link link-accent">I'm a simple link</a></li>
-              <li>大神级别<a class="link link-primary">I'm a simple link</a></li>
-              <li>最牛前端<a class="link link-primary">I'm a simple link</a></li>
-              <li>无敌存在<a class="link link-primary">I'm a simple link</a></li>
-              <li>源码爱好者<a class="link link-primary">I'm a simple link</a></li>
+              <p v-for="(item, index) in dataquerylink" :key="index">
+                <li>{{ item.title }} <a class="link link-secondary">{{ item.link }}</a></li>
+              </p>
             </div>
           </div>
           <!-- <div class="component-left" v-show="displaySwitch === 2">
@@ -107,10 +98,11 @@ declare const window: Window & { iDisqus: any };
 
 <script lang="ts" setup>
 import { judgment } from '@/utils/judgment'
-
+import { queryLink } from '@/api';
 const getHeight = ref(1)
-
 const homeJudgment = ref('')
+
+
 onMounted(() => {
   homeJudgment.value = judgment()
   let asd = new window.iDisqus('comment', {
@@ -124,12 +116,20 @@ onMounted(() => {
   });
 });
 
-
-
 const displaySwitch = ref(1)
 let displayArea = (index: any) => {
   displaySwitch.value = index
 }
+
+let dataquerylink: any = ref()
+const dataLink = (() => {
+  queryLink().then((res: any) => {
+    dataquerylink.value = res.data.data
+  });
+});
+dataLink()
+
+
 </script>
 
 

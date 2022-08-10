@@ -15,24 +15,23 @@
 import selection from '@/components/timeSelection/timeSelection.vue'
 import card from '@/components/cardPhoto/index.vue'
 import { judgment } from '@/utils/judgment'
+import { queryPhoto } from '@/api';
 
 let getHeight = ref(1)
 let homeJudgment = ref('')
+let imgList: any = ref()
+
+const addPhoto = (() => {
+  queryPhoto().then((res: any) => {
+    imgList.value = res.data.data
+  });
+});
+
+addPhoto()
 
 onMounted(() => {
   homeJudgment.value = judgment()
 })
-
-let imgList = reactive([{
-  title: '2022-06-24',
-  img: '/static/img/about/Wechat1.jpeg'
-}, {
-  title: 'JavaScript',
-  img: '/static/img/about/Wechat2.jpeg'
-}, {
-  title: 'TypeScript',
-  img: '/static/img/about/Wechat3.jpeg'
-},])
 
 </script>
 

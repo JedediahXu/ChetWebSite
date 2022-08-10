@@ -3,11 +3,11 @@
   <div class="p-3.5 type-setting" v-if="homeJudgment === 'pc'">
     <ul class="medias">
       <photo-provider>
-        <photo-consumer v-for="src in listPhoto" :intro="src.img" :key="src" :src="src.img">
+        <photo-consumer v-for="src in listPhoto" :intro="`/apis` + src.photo" :key="src" :src="`/apis` + src.photo">
           <li class="media">
             <div class="mask"><span class="icon"><i class="iconfont icon-chakan"></i></span></div>
-            <div data-background-image={{src.img}} data-loaded="true" class="background loaded"
-              :style="{ backgroundImage: 'url(' + src.img + ')' }">
+            <div data-background-image={{src.photo}} data-loaded="true" class="background loaded"
+              :style="{ backgroundImage: 'url(' + '/apis' + src.photo + ')' }">
             </div>
           </li>
         </photo-consumer>
@@ -19,11 +19,11 @@
     <div class="p-3.5  type-setting">
       <ul class="moblie-medias">
         <photo-provider>
-          <photo-consumer v-for="src in listPhoto" :intro="src.img" :key="src" :src="src.img">
+          <photo-consumer v-for="src in listPhoto" :intro="`/apis` + src.photo" :key="src" :src="`/apis` + src.photo">
             <li class="moblie-media">
               <div class="mask"><span class="icon"><i class="iconfont icon-chakan"></i></span></div>
-              <div data-background-image={{src.img}} data-loaded="true" class="background loaded"
-                :style="{ backgroundImage: 'url(' + src.img + ')' }">
+              <div data-background-image={{src.photo}} data-loaded="true" class="background loaded"
+                :style="{ backgroundImage: 'url(' + '/apis' + src.photo + ')' }">
               </div>
             </li>
           </photo-consumer>

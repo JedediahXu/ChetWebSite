@@ -1,5 +1,5 @@
 diff --git a/node_modules/vue3-photo-preview/dist/index.css b/node_modules/vue3-photo-preview/dist/index.css
-index 9c1d81e..10935cd 100644
+index 9c1d81e..f3107de 100644
 --- a/node_modules/vue3-photo-preview/dist/index.css
 +++ b/node_modules/vue3-photo-preview/dist/index.css
 @@ -1,167 +1,199 @@
@@ -284,7 +284,7 @@ index 9c1d81e..10935cd 100644
  .PhotoSlider__Wrapper .PhotoSlider__BannerWrap {
    position: absolute;
    left: 0;
-@@ -211,56 +249,50 @@
+@@ -211,56 +249,51 @@
    display: -ms-flexbox;
    display: flex;
    -webkit-box-pack: justify;
@@ -321,18 +321,20 @@ index 9c1d81e..10935cd 100644
  .PhotoSlider__Wrapper .PhotoSlider__BannerWrap .PhotoSlider__BannerRight {
    display: -webkit-box;
    display: -ms-flexbox;
-   display: flex;
+-  display: flex;
    -webkit-box-pack: center;
 -      -ms-flex-pack: center;
 -          justify-content: center;
 +  -ms-flex-pack: center;
-+  justify-content: center;
    -webkit-box-align: center;
 -      -ms-flex-align: center;
 -          align-items: center;
 +  -ms-flex-align: center;
++  display: flex;
++  justify-content: flex-end;
 +  align-items: center;
    height: 100%;
++  width: 80%;
  }
 +
  .PhotoSlider__Wrapper .PhotoSlider__BannerWrap .PhotoSlider__BannerRight .PhotoSlider__BannerIcon {
@@ -356,7 +358,7 @@ index 9c1d81e..10935cd 100644
  .PhotoSlider__Wrapper .PhotoSlider__PhotoBox {
    position: absolute;
    top: 0;
-@@ -271,20 +303,23 @@
+@@ -271,20 +304,23 @@
    display: -ms-flexbox;
    display: flex;
    -webkit-box-pack: center;
@@ -384,7 +386,7 @@ index 9c1d81e..10935cd 100644
  .PhotoSlider__Wrapper .PhotoSlider__ArrowLeft,
  .PhotoSlider__Wrapper .PhotoSlider__ArrowRight {
    position: absolute;
-@@ -302,37 +337,40 @@
+@@ -302,37 +338,40 @@
    display: -ms-flexbox;
    display: flex;
    -webkit-box-pack: center;
@@ -434,7 +436,7 @@ index 9c1d81e..10935cd 100644
    line-height: 1.5;
    font-size: 14px;
    text-align: justify;
-@@ -342,6 +380,7 @@
+@@ -342,6 +381,7 @@
    transition: opacity 0.2s ease-out;
    z-index: 20;
  }
