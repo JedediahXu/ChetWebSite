@@ -50,18 +50,10 @@ h4 {
   margin: 1em 0;
 }
 
-h2,
-h4,
-h6 {
-  color: hsl(var(--b2));
-  font-family: inherit;
-  line-height: inherit;
-}
 
 .article-item .content .body .description {
   margin: 0;
   line-height: 2em;
-  color: hsl(var(--n));
   text-overflow: ellipsis;
   display: -webkit-box;
   overflow: hidden;
@@ -78,10 +70,8 @@ p {
   justify-content: space-between;
   align-items: baseline;
   padding: 1rem;
-  border-top: 1px dashed hsl(var(--b3));
-  ;
+  border-top: 1px dashed rgb(229, 231, 235);
   overflow: hidden;
-  color: hsl(var(--b2));
   font-size: 12.432px;
   text-overflow: ellipsis;
   white-space: nowrap;
