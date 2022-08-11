@@ -10,6 +10,14 @@
     <div class="navbar bg-base-100">
       <div class="flex-1" style="justify-content: space-between;">
         <a class="btn btn-ghost normal-case text-xl" style="margin-right: auto;">ChetSerenade</a>
+        <div class="relative mr-6">
+          <input type="text" v-model="dataSearch" @keyup.enter.native="onSearch(dataSearch)" placeholder="Search"
+            class="input input-bordered w-80" />
+          <button class="btn btn-primary absolute top-0 right-0 rounded-l-none"
+            @click="onSearch(dataSearch)">Search</button>
+        </div>
+
+
 
         <div class="dropdown dropdown-end">
           <button class="btn btn-ghost normal-case text-sm" @click="addopen">
@@ -46,11 +54,21 @@ import changeLanguage from '@/components/changeLanguage/changeLanguage.vue';
 import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
 
+let dataSearch = ref('')
+let temporarily = ref()
+
+const onSearch = ((e) => {
+  if (e.length === temporarily.value) {
+    console.log('多次点击，不可以！');
+  } else {
+    console.log(dataSearch.value);
+  }
+  temporarily.value = dataSearch.value.length
+})
 
 
-// let iframe = document.getElementById("mainframe");
-// var iWindow = (<HTMLIFrameElement>iframe).contentWindow;
-// iWindow.document.body.style.background = 'blue'
+
+
 
 let addopen = (() => {
   window.open('https://github.com/ChetSerenade', '_blank')
