@@ -30,7 +30,8 @@ All notable changes to this project will be documented in this file.
 - 增加评论功能
 
 （持续中）
-- 搜索检索
+- 修改通过回车进行跳转页面 而 菜单不跳转的问题
+- 修改专题墙样式
 - 统计访问
 - 头像动画添加
 - 评论系统集成

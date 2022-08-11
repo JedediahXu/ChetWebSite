@@ -149,4 +149,29 @@ const pushJump = (index: number) => {
   }
 }
 
+//防止从URl直接输入路由地址
+let array: string = window.location.pathname
+const urlJump = (() => {
+  switch (array) {
+    case '/':
+      pushJump(0)
+      break;
+    case '/archive':
+      pushJump(1)
+      break;
+    case '/about':
+      pushJump(2)
+      break;
+    case '/myself':
+      pushJump(3)
+      break;
+    case '/message':
+      pushJump(4)
+      break;
+  }
+})
+urlJump()
+
+
+
 </script>
