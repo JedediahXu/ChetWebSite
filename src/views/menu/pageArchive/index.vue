@@ -37,8 +37,8 @@ const getTransfer = ((e: number) => {
   router.push({ name: 'home', query: { id: e } });
   emitter.emit('taskTouch', 0);
   emitter.emit('taskPageId', e);
+  emitter.emit('searchHide', 0);
 })
-
 
 
 </script>

@@ -15,7 +15,6 @@
   <mobileCarlist v-if="homeJudgment === 'mobile'" :listArticle="listArticle" :totale="totale" @getChili="addlist" />
 </template>
 
-
 <script setup lang="ts" name="home">
 import selection from '@/components/timeSelection/timeSelection.vue'
 import carlist from '@/components/list/index.vue'
@@ -26,6 +25,7 @@ import { judgment } from '@/utils/judgment'
 import { emitter } from '@/utils/eventBus'
 const route = useRoute();
 const { t } = useI18n();
+
 
 let getHeight = ref()
 getHeight = computed(() => {
@@ -40,7 +40,8 @@ let totale: any = ref('')
 let array: any = ref({
   page_num: 0,
   page_size: 6,
-  page_id: 0
+  page_id: 0,
+  text: ''
 })
 
 //分页
@@ -61,6 +62,13 @@ if (homeJudgment.value == 'pc') {
     listArticle.value = [];
     addlist()
   });
+  emitter.on('searchCondition', function (index) {
+    array.value.text = index
+    array.value.page_id = 0
+    array.value.page_num = 0
+    listArticle.value = [];
+    addlist()
+  });
 }
 
 if (homeJudgment.value == 'mobile') {
@@ -75,5 +83,7 @@ if (homeJudgment.value == 'mobile') {
   listArticle.value = [];
   addlist()
 }
+
+
 
 </script>
