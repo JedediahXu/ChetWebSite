@@ -9,7 +9,7 @@
   border-radius: 4px;
   overflow: hidden;
   margin-top: 1.875rem;
-  background: hsl(var(--bc));
+  background: hsl(var(--b2));
 }
 
 .article-item .thumbnail {
@@ -52,7 +52,6 @@ h4 {
 
 h2,
 h4,
-h5,
 h6 {
   color: hsl(var(--b2));
   font-family: inherit;
