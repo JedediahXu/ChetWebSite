@@ -63,11 +63,13 @@ if (homeJudgment.value == 'pc') {
     addlist()
   });
   emitter.on('searchCondition', function (index) {
+    console.log('111');
     array.value.text = index
     array.value.page_id = 0
     array.value.page_num = 0
     listArticle.value = [];
     addlist()
+    array.value.text = ''
   });
 }
 
@@ -82,6 +84,20 @@ if (homeJudgment.value == 'mobile') {
   array.value.page_num = 0
   listArticle.value = [];
   addlist()
+
+  emitter.on('searchCondition', function (index) {
+    array.value.text = index
+    array.value.page_id = 0
+    array.value.page_num = 0
+    listArticle.value = [];
+    addlist()
+  });
+  emitter.on('all', function () {
+    array.value.text = ''
+    array.value.page_id = 0
+    array.value.page_num = 0
+    addlist()
+  });
 }
 
 

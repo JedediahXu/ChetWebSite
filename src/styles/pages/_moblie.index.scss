@@ -1,4 +1,3 @@
-
 .mobile-main .asider {
   width: 66%;
   height: 100%;
@@ -61,4 +60,19 @@
   transition: width .35s;
 }
 
+.search-hide {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 8px;
+  align-items: center;
+}
+
+.navbar-flex {
+  justify-content: space-between;
+}
+
+.navbar-display {
+  display: flex;
+  align-items: center;
+}
 
