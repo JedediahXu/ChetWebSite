@@ -101,6 +101,7 @@ if (homeJudgment.value == 'mobile') {
     array.value.page_id = 0
     array.value.page_num = 0
     addlist()
+    listArticle.value = [];
   });
 }
 
