@@ -32,15 +32,38 @@
               </div>
             </div>
           </div>
-          <div class="component-left" v-show="displaySwitch === 4">
-            <div class="component-link text-base">
+
+          <div class="component-left" v-show="displaySwitch === 4" style="display: flex;">
+            <!-- <div class="component-link text-base">
               <p v-for="(item, index) in dataquerylink" :key="index">
                 <li>{{ item.title }} <a class="link link-secondary">{{ item.link }}</a></li>
               </p>
+            </div> -->
+            <div class="pricing__includes__apps">
+              <div class="pricing__includes__apps__app__chapter" v-for="(item, index) in dataquerylink" :key="index">
+                <div class="pricing__includes__apps__app__chapter__icon">
+                  <svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.333 16.333H9.666v2.334h12.667v-2.334ZM19 20.333H9.665v2.334h9.333v-2.334Z" fill="#fff">
+                    </path>
+                    <path d="m19.333 8.667 3.436.166 3.897-.166-7.333-7.334-.167 4.477.167 2.857Z" fill="#0066DA">
+                    </path>
+                    <path d="M22.333 12.333H9.666v2.334h12.667v-2.334Z" fill="#fff"></path>
+                    <path
+                      d="M19.334 8.667V1.333h-12a2 2 0 0 0-2 2v25.334a2 2 0 0 0 2 2h17.333a2 2 0 0 0 2-2v-20h-7.333Zm-.667 13.666h-8.666v-1.666h8.666v1.666Zm3.334-4H10v-1.666h12v1.666Zm0-4H10v-1.666h12v1.666Z"
+                      fill="#2684FC">
+                    </path>
+                  </svg>
+                </div>
+                <a :href="'https://' + item.link" target="_blank">徐哥网站</a>
+              </div>
             </div>
           </div>
-          <!-- <div class="component-left" v-show="displaySwitch === 2">
-          </div> -->
+
+
+
+
+          <div class="component-left" v-show="displaySwitch === 2">
+          </div>
           <div class="component-left knight-left" v-show="displaySwitch === 1">
             <div class="self rounded bg-base-300 shadow-2xl">
               <p class="overflow-ellipsis overflow-hidden font-bold">
@@ -59,13 +82,13 @@
             </div>
           </div>
           <div class="component-right">
-            <button class="btn btn-outline btn-accent mt-8 w-40" @click="displayArea(1)"
+            <button class="btn btn-outline btn-accent mt-5 w-40" @click="displayArea(1)"
               :class="displaySwitch == 1 ? 'btn-click' : ''">小站介绍</button>
-            <!-- <button class="btn btn-outline btn-secondary mt-5 w-40" @click="displayArea(2)"
-              :class="displaySwitch == 2 ? 'btn-click-secondary' : ''">统计数据</button> -->
-            <button class="btn btn-outline mt-8 w-40" @click="displayArea(3)"
+            <button class="btn btn-outline btn-secondary mt-5 w-40" @click="displayArea(2)"
+              :class="displaySwitch == 2 ? 'btn-click-secondary' : ''">掘金文章</button>
+            <button class="btn btn-outline mt-5 w-40" @click="displayArea(3)"
               :class="displaySwitch == 3 ? 'btn-click-outline' : ''">众而周知</button>
-            <button class="btn btn-outline btn-primary mt-8 w-40" @click="displayArea(4)"
+            <button class="btn btn-outline btn-primary mt-5 w-40" @click="displayArea(4)"
               :class="displaySwitch == 4 ? 'btn-click-primary' : ''">友情链接</button>
           </div>
         </div>
@@ -166,7 +189,7 @@ dataLink()
   .component-left {
     width: 100%;
     height: 100%;
-    margin-right: 5px;
+    margin-right: 15px;
   }
 
   .component-right {
@@ -348,5 +371,21 @@ dataLink()
   .moblie-right-container {
     padding-right: 10px;
   }
+}
+
+.pricing__includes__apps {
+  column-gap: 80px;
+  display: inline-flex;
+  flex-direction: row;
+  margin: 0 auto;
+  row-gap: 22px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pricing__includes__apps__app__chapter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>
