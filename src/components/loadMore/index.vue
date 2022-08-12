@@ -1,3 +1,10 @@
+/*
+* @Description: 分页按钮
+* @Author: xuhuazhi
+* @Date: 2022-08-12
+* @LastEditors: xuhuazhi
+* @LastEditTime: 2022-08-12
+*/
 <template>
   <div class="articles">
     <button class="article-load">
@@ -16,14 +23,11 @@
 <script setup lang="ts">
 import { PropType } from '@vue/runtime-core';
 
-
-
 const props = defineProps({
   totale: {
     required: true,
     default: true,
   }
 })
-
 
 </script>

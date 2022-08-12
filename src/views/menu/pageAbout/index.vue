@@ -12,7 +12,6 @@
 </template>
 
 <script setup lang="ts" name="about">
-import selection from '@/components/timeSelection/timeSelection.vue'
 import card from '@/components/cardPhoto/index.vue'
 import { judgment } from '@/utils/judgment'
 import { queryPhoto } from '@/api';
@@ -26,7 +25,6 @@ const addPhoto = (() => {
     imgList.value = res.data.data
   });
 });
-
 addPhoto()
 
 onMounted(() => {

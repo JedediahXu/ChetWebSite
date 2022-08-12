@@ -111,9 +111,3 @@ onMounted(() => {
 })
 
 </script>
-
-<style scoped lang="scss">
-.buttonColor {
-  border: 2px solid #e3e3e3;
-}
-</style>

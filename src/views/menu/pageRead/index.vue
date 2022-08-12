@@ -1,7 +1,14 @@
+/*
+* @Description: 显示文字内容模块
+* @Author: xuhuazhi
+* @Date: 2022-08-12
+* @LastEditors: xuhuazhi
+* @LastEditTime: 2022-08-12
+*/
 <template>
   <div class="ueditor">
     <article class="prose dark:prose-invert">
-        <div v-html=codeData></div>
+      <div v-html=codeData></div>
     </article>
     <br>
   </div>

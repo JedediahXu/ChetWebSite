@@ -102,7 +102,7 @@ import { queryLink } from '@/api';
 const getHeight = ref(1)
 const homeJudgment = ref('')
 
-
+//评论系统 （不稳定）
 onMounted(() => {
   homeJudgment.value = judgment()
   let asd = new window.iDisqus('comment', {
@@ -116,11 +116,13 @@ onMounted(() => {
   });
 });
 
+//切换菜单
 const displaySwitch = ref(1)
 let displayArea = (index: any) => {
   displaySwitch.value = index
 }
 
+//友情链接
 let dataquerylink: any = ref()
 const dataLink = (() => {
   queryLink().then((res: any) => {

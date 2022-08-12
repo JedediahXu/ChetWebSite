@@ -181,6 +181,7 @@ onMounted(() => {
   homeJudgment.value = judgment()
 })
 
+
 let switchCV = ((index: number) => {
   switch (index) {
     case 1:

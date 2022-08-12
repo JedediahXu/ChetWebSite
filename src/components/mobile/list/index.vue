@@ -1,3 +1,10 @@
+/*
+* @Description: 手机端列表
+* @Author: xuhuazhi
+* @Date: 2022-08-12
+* @LastEditors: xuhuazhi
+* @LastEditTime: 2022-08-12
+*/
 <template>
   <div class="list">
     <div class="article-item list-item" v-for="item, index in listArticle" :key="index" @click="read(item)">
@@ -53,7 +60,7 @@ const props = defineProps({
 })
 
 let isLoad = ref(false)
-
+//骨架显示时间  暂时未添加骨架
 setTimeout(() => {
   isLoad.value = true
 }, 1000)
@@ -64,7 +71,7 @@ const toEmits = () => {
   emits('getChili')
 }
 
-
+//选中文章 带着内容跳转展示
 const read = ((index: any) => {
   sessionStorage.setItem('read', JSON.stringify(index))
   $router.push({ name: 'read' })

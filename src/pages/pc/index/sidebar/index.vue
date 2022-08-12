@@ -110,6 +110,7 @@ let touch: any = ref(0);
 const $router = useRouter();
 
 onMounted(() => {
+  //Default Routes
   let cashBack: number = JSON.parse(sessionStorage.getItem('touch') || '0')
   if (cashBack === null) {
     touch.value = 0
@@ -122,6 +123,7 @@ emitter.on('taskTouch', (e) => {
   touch.value = e
 })
 
+//Routes Data
 const pushJump = (index: number) => {
   touch.value = index
   sessionStorage.setItem('touch', JSON.stringify(index))

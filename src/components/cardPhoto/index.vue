@@ -35,7 +35,6 @@
 
 </template>
 
-
 <script setup lang="ts">
 import type { PropType } from 'vue';
 import { judgment } from '@/utils/judgment'

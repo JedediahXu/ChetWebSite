@@ -1,3 +1,10 @@
+/*
+* @Description: Mapbox
+* @Author: xuhuazhi
+* @Date: 2022-08-12
+* @LastEditors: xuhuazhi
+* @LastEditTime: 2022-08-12
+*/
 <template>
   <div class="footprint">
     <div class="footprint-map">
@@ -73,11 +80,13 @@ const popup = new mapboxgl.Popup({
   closeOnClick: false
 });
 
+//地图数据
 const {
   map,
   mapDivElement,
   marker } = initDragMap(mapboxgl, popup, geoPhoto, geoData);
 
+//地图按钮
 const great = (() => {
   ElMessage({
     message: h('p', null, [
@@ -87,10 +96,12 @@ const great = (() => {
   })
 })
 
+//主菜单
 let displayBut = (() => {
   map.value.flyTo({ center: [Number(118.04290297151124), Number(36.80807022921253)], zoom: 12 })
 })
 
+//地图左侧菜单
 let displayPhot = ((i: any) => {
   let mapContainer = geoPhoto.features[i].geometry.coordinates
   map.value.flyTo({ center: [mapContainer[0], mapContainer[1]], zoom: 14 })

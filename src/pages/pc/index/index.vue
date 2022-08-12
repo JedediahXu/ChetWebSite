@@ -27,10 +27,10 @@ import { ref, onMounted } from "vue";
 
 let monitor: any = ref(0);
 
+//scroll
 onMounted(() => {
     window.addEventListener('scroll', handleScroll, true)
 })
-
 
 const handleScroll = (() => {
     let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;

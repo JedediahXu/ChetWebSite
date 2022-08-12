@@ -89,7 +89,9 @@ import { emitter } from '@/utils/eventBus'
 const $router = useRouter();
 const { t } = useI18n();
 let touch: any = ref(0);
+
 onMounted(() => {
+  //Default Routes
   let cashBack: number = JSON.parse(sessionStorage.getItem('touch') || '0')
   if (cashBack === null) {
     touch.value = 0
@@ -98,11 +100,12 @@ onMounted(() => {
   }
 })
 
+//Routes Data
 emitter.on('taskTouch', (e) => {
   touch.value = e
 })
 
-
+//Routes   searchHide effect Hidden search
 const pushJump = (index: number) => {
   touch.value = index
   sessionStorage.setItem('touch', JSON.stringify(index))

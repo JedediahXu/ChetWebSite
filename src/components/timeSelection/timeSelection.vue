@@ -1,3 +1,10 @@
+/*
+* @Description: 年份 （展示启用）
+* @Author: xuhuazhi
+* @Date: 2022-08-12
+* @LastEditors: xuhuazhi
+* @LastEditTime: 2022-08-12
+*/
 <template>
   <div class="time-selection">
     <div class="container">
@@ -15,6 +22,7 @@
 </template>
 
 <script setup lang="ts">
+
 const staggerZero = (index: number) => {
   // console.log(index);
 };

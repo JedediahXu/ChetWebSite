@@ -1,3 +1,10 @@
+/*
+* @Description: 暂时没有用到（之后删除）
+* @Author: xuhuazhi
+* @Date: 2022-08-12
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-08-12 21:44:23
+*/
 import { RouteRecordRaw, RouterView } from 'vue-router'
 
 const routes: RouteRecordRaw = {

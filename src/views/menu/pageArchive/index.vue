@@ -21,11 +21,11 @@ import { mallGoodsCates } from '@/api';
 import { emitter } from '@/utils/eventBus'
 const router = useRouter();
 
-
 let getHeight = ref(1)
 let homeJudgment = ref('')
 let imgList: any = ref([])
 
+//获取文章分类
 onMounted(() => {
   homeJudgment.value = judgment()
   mallGoodsCates().then((res: any) => {
@@ -33,6 +33,7 @@ onMounted(() => {
   });
 })
 
+//分类跳转
 const getTransfer = ((e: number) => {
   router.push({ name: 'home', query: { id: e } });
   emitter.emit('taskTouch', 0);

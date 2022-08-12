@@ -2,8 +2,8 @@
 * @Description: network request
 * @Author: xuhuazhi
 * @Date: 2022-06-01
- * @LastEditors: xuhuazhi
- * @LastEditTime: 2022-06-01 15:40:00
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-08-12 21:45:25
 */
 import axios from 'axios'
 
@@ -15,7 +15,7 @@ const service = axios.create({
   headers: {
     'Content-Type': 'application/json;charset=utf-8' // 配置OAuth 2.0的认证头
   },
-  withCredentials: false 
+  withCredentials: false
 })
 
 

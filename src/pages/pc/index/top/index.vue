@@ -60,17 +60,16 @@ emitter.on('searchHide', (e) => {
 let dataSearch = ref('')
 let temporarily = ref()
 
-
-
+//输入同样的内容 不执行搜索方法
 let oldInput;
 const onSearch = ((e) => {
-  if (e == oldInput) { //输入同样的内容
+  if (e == oldInput) {
     //禁用提交按钮
     console.log('- -');
   } else {
     temporarily.value = dataSearch.value.length
     emitter.emit('searchCondition', dataSearch.value);
-    oldInput = e; //赋新值
+    oldInput = e
   }
 })
 

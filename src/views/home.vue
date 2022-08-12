@@ -26,12 +26,13 @@ import { emitter } from '@/utils/eventBus'
 const route = useRoute();
 const { t } = useI18n();
 
-
+//背景行高
 let getHeight = ref()
 getHeight = computed(() => {
   return getHeight.value++
 });
 
+//mobile and pc
 let homeJudgment = ref('')
 homeJudgment.value = judgment()
 
@@ -56,12 +57,14 @@ const addlist = (() => {
 
 if (homeJudgment.value == 'pc') {
   addlist()
+  //主题
   emitter.on('taskPageId', function (index) {
     array.value.page_id = index
     array.value.page_num = 0
     listArticle.value = [];
     addlist()
   });
+  //搜索
   emitter.on('searchCondition', function (index) {
     console.log('111');
     array.value.text = index
@@ -74,6 +77,7 @@ if (homeJudgment.value == 'pc') {
 }
 
 if (homeJudgment.value == 'mobile') {
+  //主题
   let queryId: any = ref(0)
   queryId = route.query.id
   if (queryId === undefined) {
@@ -84,7 +88,7 @@ if (homeJudgment.value == 'mobile') {
   array.value.page_num = 0
   listArticle.value = [];
   addlist()
-
+  //搜索
   emitter.on('searchCondition', function (index) {
     array.value.text = index
     array.value.page_id = 0

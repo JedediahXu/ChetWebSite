@@ -1,3 +1,10 @@
+/*
+* @Description: 背景
+* @Author: xuhuazhi
+* @Date: 2022-08-12
+* @LastEditors: xuhuazhi
+* @LastEditTime: 2022-08-12
+*/
 <template>
   <el-container class="basic-container">
     <el-main class="basic-container__card" :class="[isActive === 1 ? 'basic-he' : 'height-ti']">

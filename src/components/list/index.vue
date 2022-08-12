@@ -1,5 +1,11 @@
+/*
+* @Description: 文章样式
+* @Author: xuhuazhi
+* @Date: 2022-08-12
+* @LastEditors: xuhuazhi
+* @LastEditTime: 2022-08-12
+*/
 <template>
-
   <div class="article-list" v-if="isLoad">
     <div class="article-item list-item" v-for="item, index in listArticle" :key="index" @click="read(item)">
       <div class="item-background" :style="{ backgroundImage: 'url(' + '/apis' + item.cover_img + ')' }">
@@ -66,17 +72,18 @@ const props = defineProps({
 
 let isLoad = ref(false)
 
+//骨架显示时间
 setTimeout(() => {
   isLoad.value = true
 }, 1000)
 
 const emits = defineEmits(['getChili']);
-
 const toEmits = () => {
   emits('getChili')
 }
 
 
+//选中文章 带着内容跳转展示
 const read = ((index: any) => {
   sessionStorage.setItem('read', JSON.stringify(index))
   $router.push({ name: 'read' })

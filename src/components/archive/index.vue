@@ -18,7 +18,6 @@
 <script setup lang="ts">
 import type { PropType } from 'vue';
 
-
 const props = defineProps({
   listPhoto: {
     type: Array as PropType<any>,
@@ -27,6 +26,7 @@ const props = defineProps({
   }
 })
 
+//分类跳转
 const emits = defineEmits(['getTransfer']);
 const toJump = (index) => {
   emits('getTransfer', index)
