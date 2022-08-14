@@ -22,9 +22,14 @@
 </template>
 
 <script setup lang="ts">
-
+import { ElMessage } from 'element-plus'
 const staggerZero = (index: number) => {
-  // console.log(index);
+  ElMessage({
+    message: h('p', null, [
+      h('span', null, '功能暂时未开发...'),
+      h('i', { style: 'color: teal' }, 'd[ o_0 ]b'),
+    ]),
+  })
 };
 
 </script>
