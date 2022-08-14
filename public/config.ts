@@ -8,7 +8,7 @@ export let geoPhoto = {
       properties: {
         id: 2,
         description:
-          `<img src="/static/img/list/Header.jpg"/>
+          `<img src="/static/img/message/wx.png"/>
             <p>我在这里住了一年</p>`,
       },
       geometry: {

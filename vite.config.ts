@@ -50,7 +50,7 @@ export default defineConfig({
         ws: true,
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/apis/, ''),
-      },
+      }
     },
   },
 })

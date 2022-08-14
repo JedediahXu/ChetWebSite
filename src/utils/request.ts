@@ -3,7 +3,7 @@
 * @Author: xuhuazhi
 * @Date: 2022-06-01
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-08-12 21:45:25
+ * @LastEditTime: 2022-08-14 15:55:07
 */
 import axios from 'axios'
 
@@ -15,7 +15,7 @@ const service = axios.create({
   headers: {
     'Content-Type': 'application/json;charset=utf-8' // 配置OAuth 2.0的认证头
   },
-  withCredentials: false
+  withCredentials: true
 })
 
 
