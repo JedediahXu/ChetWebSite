@@ -37,12 +37,11 @@
             <button class="btn btn-outline btn-primary mt-5 w-40" @click="displayArea(4)"
               :class="displaySwitch == 4 ? 'btn-click-primary' : ''">友情链接</button>
           </div>
-
         </div>
 
         <div class="mobile-component-top" v-if="homeJudgment === 'mobile'">
           <div class="banner dark mobile mobile-banner"
-            style="background-image: url('/static/img/list/dm.png'); background-repeat: no-repeat;background-size: 100% 100%;">
+            style="background-image: url('/static/img/message/dm.png'); background-repeat: no-repeat;background-size: 100% 100%;">
             <div class="content">
               <h2 class="title">留言</h2>
               <div class="description">此心光明 亦复何言</div>

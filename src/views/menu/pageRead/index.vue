@@ -21,6 +21,8 @@ import { emitter } from '@/utils/eventBus'
 import { judgment } from '@/utils/judgment'
 import pcread from '@/components/read/pcread.vue'
 import mobileread from '@/components/read/mobileread.vue'
+const router = useRouter();
+
 
 onMounted(() => {
   window.scrollTo(0, 0);
@@ -32,11 +34,8 @@ homeJudgment.value = judgment()
 let reserve = ref()
 reserve.value = JSON.parse(sessionStorage.getItem('read'))
 
-
-
 </script>
  
-
 
 
 

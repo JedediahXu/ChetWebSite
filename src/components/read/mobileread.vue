@@ -1,5 +1,5 @@
 /*
-* @Description: 显示文字内容模块 pc端
+* @Description: 显示文字内容模块 移动端
 * @Date: 2022-08-12
 * @LastEditors: xuhuazhi
 * @LastEditTime: 2022-08-12
@@ -7,7 +7,7 @@
 <template>
   <div class="module margin background overflow">
     <div class="detail" id="A_article_content">
-      <div class="knowledge">
+      <div class="knowledge" id="xu">
         <div class="title">
           <h2 class="text">{{ reserve.title }}</h2>
           <div class="meta"><i class="iconfont icon-t"></i>共 1100 字，需阅读 3 分钟
@@ -28,20 +28,19 @@
             </figure>
           </div>
           <article class="prose dark:prose-invert" style="margin: 0;">
-            {{ reserve.content }}
-            <!-- <div v-html=></div> -->
+            <div v-html=reserve.content></div>
           </article>
         </section>
         <section class="global-markdown-html"></section>
       </div>
     </div>
     <div class="divider" @click="returntTop">点击回到顶部</div>
-
   </div>
 </template>
 
 
 <script setup lang="ts">
+
 const props = defineProps({
   reserve: {
     type: Object,
@@ -53,6 +52,7 @@ const props = defineProps({
 let returntTop = (() => {
   window.scrollTo(0, 0);
 })
+
 </script>
  
 

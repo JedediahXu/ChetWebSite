@@ -35,9 +35,9 @@
         <section class="global-markdown-html"></section>
       </div>
     </div>
-    <div class="divider" @click="returntTop">点击回到顶部
-    </div>
+    <div class="divider"></div>
   </div>
+  <el-backtop :right="100" :bottom="100" />
 </template>
 
 
@@ -51,9 +51,6 @@ const props = defineProps({
   }
 })
 
-let returntTop = (() => {
-  window.scrollTo(0, 0);
-})
 </script>
  
 

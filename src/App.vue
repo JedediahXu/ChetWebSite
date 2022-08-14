@@ -14,6 +14,5 @@ body,
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  height: 100%;
 }
 </style>
