@@ -5,37 +5,50 @@
 * @LastEditTime: 2022-08-12
 */
 <template>
-  <div class="ueditor">
-
-    <pcread :reserve="reserve" v-if="homeJudgment === 'pc'" />
-
-    <mobileread :reserve="reserve" v-if="homeJudgment === 'mobile'" />
-
-    <div class="divider-pc" v-if="homeJudgment === 'pc'">
-      我是评论系统！
+  <div class="module margin background overflow">
+    <div class="detail" id="A_article_content">
+      <div class="knowledge">
+        <div class="title">
+          <h2 class="text">{{ reserve.title }}</h2>
+          <div class="meta"><i class="iconfont icon-t"></i>共 1100 字，需阅读 3 分钟
+            <span><i class="iconfont icon-clock-outline"></i>{{ reserve.pub_date }}
+            </span>
+            <div role="separator" class="divider vertical default vertical" data-v-a3ed304c="">
+            </div><span><i class="iconfont icon-eye"></i><span>234&nbsp;</span>次阅读</span>
+          </div>
+        </div>
+        <section class="global-markdown-html">
+          <div class="figure-wrapper">
+            <figure class="image " data-status="loaded">
+              <div class="placeholder error">
+                <i class="iconfont icon-image-error"></i>
+              </div>
+              <img class="lozad loaded" onload="this.parentElement.dataset.status = 'loaded'"
+                :src="'/apis' + reserve.cover_img">
+            </figure>
+          </div>
+          <article class="prose dark:prose-invert" style="margin: 0;">
+            <div v-html=reserve.content></div>
+          </article>
+        </section>
+        <section class="global-markdown-html"></section>
+      </div>
     </div>
-
-    <div class="divider-mobile" v-if="homeJudgment === 'mobile'">
-      我是评论系统！
-    </div>
-
-    <br>
+    <div class="divider"></div>
   </div>
 </template>
 
 
 <script setup lang="ts">
-import { judgment } from '@/utils/judgment'
-import pcread from '@/components/read/pcread.vue'
-import mobileread from '@/components/read/mobileread.vue'
+
+const props = defineProps({
+  reserve: {
+    required: true,
+    default: true,
+  }
+})
 
 
-let homeJudgment = ref('')
-homeJudgment.value = judgment()
-console.log(judgment());
-let reserve = ref()
-reserve.value = JSON.parse(sessionStorage.getItem('read'))
-console.log(reserve);
 
 
 </script>
@@ -82,7 +95,6 @@ console.log(reserve);
 }
 
 .detail {
-  padding: 1rem 8rem;
   position: relative;
   overflow: hidden;
   height: auto;
@@ -157,18 +169,6 @@ h2 {
 
 .divider {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  padding: 1rem 8rem;
-}
-
-.divider-pc {
-  margin: 0;
-  padding: 0;
-  padding: 1rem 8rem;
-}
-
-.divider-mobile {
   margin: 0;
   padding: 0;
 }

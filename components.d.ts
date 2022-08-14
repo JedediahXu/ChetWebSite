@@ -23,6 +23,8 @@ declare module '@vue/runtime-core' {
     MessageWellknown: typeof import('./src/components/message/wellknown.vue')['default']
     MobileArchive: typeof import('./src/components/mobile/archive/index.vue')['default']
     MobileList: typeof import('./src/components/mobile/list/index.vue')['default']
+    ReadMobileread: typeof import('./src/components/read/mobileread.vue')['default']
+    ReadPcread: typeof import('./src/components/read/pcread.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TimeSelectionTimeSelection: typeof import('./src/components/timeSelection/timeSelection.vue')['default']
