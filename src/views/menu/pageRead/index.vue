@@ -6,36 +6,32 @@
 */
 <template>
   <div class="ueditor">
-
     <pcread :reserve="reserve" v-if="homeJudgment === 'pc'" />
-
     <mobileread :reserve="reserve" v-if="homeJudgment === 'mobile'" />
-
-    <div class="divider-pc" v-if="homeJudgment === 'pc'">
+    <div :class="homeJudgment === 'mobile' ? 'divider-mobile' : 'divider-pc'">
       我是评论系统！
     </div>
-
-    <div class="divider-mobile" v-if="homeJudgment === 'mobile'">
-      我是评论系统！
-    </div>
-
     <br>
   </div>
 </template>
 
 
 <script setup lang="ts">
+import { emitter } from '@/utils/eventBus'
 import { judgment } from '@/utils/judgment'
 import pcread from '@/components/read/pcread.vue'
 import mobileread from '@/components/read/mobileread.vue'
 
+onMounted(() => {
+  window.scrollTo(0, 0);
+  emitter.emit('searchHide', 1);
+})
 
 let homeJudgment = ref('')
 homeJudgment.value = judgment()
-console.log(judgment());
 let reserve = ref()
 reserve.value = JSON.parse(sessionStorage.getItem('read'))
-console.log(reserve);
+
 
 
 </script>

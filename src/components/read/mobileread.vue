@@ -28,35 +28,33 @@
             </figure>
           </div>
           <article class="prose dark:prose-invert" style="margin: 0;">
-            <div v-html=reserve.content></div>
+            {{ reserve.content }}
+            <!-- <div v-html=></div> -->
           </article>
         </section>
         <section class="global-markdown-html"></section>
       </div>
     </div>
-    <div class="divider"></div>
+    <div class="divider" @click="returntTop">点击回到顶部</div>
+
   </div>
 </template>
 
 
 <script setup lang="ts">
-
 const props = defineProps({
   reserve: {
+    type: Object,
     required: true,
     default: true,
   }
 })
 
-
-
-
+let returntTop = (() => {
+  window.scrollTo(0, 0);
+})
 </script>
  
-
-
-
-
 
 <style lang="scss" scoped>
 .ueditor-left {

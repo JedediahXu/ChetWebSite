@@ -17,16 +17,17 @@
             </div><span><i class="iconfont icon-eye"></i><span>234&nbsp;</span>次阅读</span>
           </div>
         </div>
+        <div class="divider" style="padding:0"></div>
         <section class="global-markdown-html">
           <!-- <div class="figure-wrapper">
-              <figure class="image " data-status="loaded">
-                <div class="placeholder error">
-                  <i class="iconfont icon-image-error"></i>
-                </div>
-                <img class="lozad loaded" onload="this.parentElement.dataset.status = 'loaded'"
-                  :src="'/apis' + reserve.cover_img">
-              </figure>
-            </div> -->
+            <figure class="image " data-status="loaded">
+              <div class="placeholder error">
+                <i class="iconfont icon-image-error"></i>
+              </div>
+              <img class="lozad loaded" onload="this.parentElement.dataset.status = 'loaded'"
+                :src="'/apis' + reserve.cover_img">
+            </figure>
+          </div> -->
           <article class="prose dark:prose-invert" style="margin: 0;">
             <div v-html=reserve.content></div>
           </article>
@@ -34,7 +35,8 @@
         <section class="global-markdown-html"></section>
       </div>
     </div>
-    <div class="divider"></div>
+    <div class="divider" @click="returntTop">点击回到顶部
+    </div>
   </div>
 </template>
 
@@ -43,14 +45,15 @@
 
 const props = defineProps({
   reserve: {
+    type: Object,
     required: true,
     default: true,
   }
 })
 
-
-
-
+let returntTop = (() => {
+  window.scrollTo(0, 0);
+})
 </script>
  
 
@@ -175,10 +178,15 @@ h2 {
   padding: 1rem 8rem;
 }
 
-.divider-pl {
+.divider-pc {
   margin: 0;
   padding: 0;
   padding: 1rem 8rem;
+}
+
+.divider-top-pc {
+  margin: 0;
+  padding: 0;
 }
 
 

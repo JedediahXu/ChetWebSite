@@ -20,7 +20,7 @@
               <a class="link">{{ item.title }}</a>
               <span class="language">{{ item.language }}</span>
             </h5>
-            <p class="description" style="-webkit-box-orient:vertical;">{{ item.content }}</p>
+            <p class="description" v-html="item.content" style="-webkit-box-orient:vertical;"></p>
           </div>
           <div class="item-meta"><span class="date">
               <i class="iconfont icon-icon_clock"></i>{{ item.pub_date }}</span>
