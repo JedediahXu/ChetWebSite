@@ -19,19 +19,19 @@
             <comlink />
           </div>
 
-          <div class="component-left knight-left" v-show="displaySwitch === 2">
+          <div class="component-left knight-left" v-show="displaySwitch === 1">
             <comjuejin />
           </div>
 
-          <div class="component-left knight-left" v-show="displaySwitch === 1">
+          <div class="component-left knight-left" v-show="displaySwitch === 2">
             <comintroduce />
           </div>
 
           <div class="component-right">
-            <button class="btn btn-outline btn-accent mt-5 w-40" @click="displayArea(1)"
-              :class="displaySwitch == 1 ? 'btn-click' : ''">小站介绍</button>
-            <button class="btn btn-outline btn-secondary mt-5 w-40" @click="displayArea(2)"
-              :class="displaySwitch == 2 ? 'btn-click-secondary' : ''">掘金文章</button>
+            <button class="btn btn-outline btn-secondary mt-5 w-40" @click="displayArea(1)"
+              :class="displaySwitch == 1 ? 'btn-click-secondary' : ''">掘金文章</button>
+            <button class="btn btn-outline btn-accent mt-5 w-40" @click="displayArea(2)"
+              :class="displaySwitch == 2 ? 'btn-click' : ''">小站介绍</button>
             <button class="btn btn-outline mt-5 w-40" @click="displayArea(3)"
               :class="displaySwitch == 3 ? 'btn-click-outline' : ''">众而周知</button>
             <button class="btn btn-outline btn-primary mt-5 w-40" @click="displayArea(4)"

@@ -5,7 +5,7 @@
         <li class="item">
           <span class="index" data-index="1">1</span>
           <div class="content">
-            <a href="/article/27" class="title" title="别他妈聊前端了">别他妈聊前端了</a>
+            <a href="/article/27" class="title" title="别他妈聊前端了" @mouseenter="leave('0')">别他妈聊前端了</a>
             <div class="meta">
               <span class="item date">2017-03-24</span>
               <span class="item views"><i class="iconfont icon-eye"></i> 27.67k</span>
@@ -16,7 +16,7 @@
         <li class="item">
           <span class="index" data-index="2">2</span>
           <div class="content">
-            <a href="/article/48" class="title" title="实现基于 Nuxt.js 的 SSR 应用">实现基于 Nuxt.js 的
+            <a href="/article/48" class="title" title="实现基于 Nuxt.js 的 SSR 应用" @mouseenter="leave('1')">实现基于 Nuxt.js 的
               SSR 应用</a>
             <div class="meta">
               <span class="item date">2017-04-21</span>
@@ -30,7 +30,8 @@
           </div>
         </li>
         <li class="item"><span class="index" data-index="3">3</span>
-          <div class="content"><a href="/article/136" class="title" title="2019 年第一个月，我完成了这些事">2019
+          <div class="content"><a href="/article/136" class="title" title="2019 年第一个月，我完成了这些事"
+              @mouseenter="leave('2')">2019
               年第一个月，我完成了这些事</a>
             <div class="meta"><span class="item date">2019-01-24</span><span class="item views"><i
                   class="iconfont icon-eye"></i> 12.76k</span><span class="item comments"><i
@@ -38,14 +39,15 @@
           </div>
         </li>
         <li class="item"><span class="index" data-index="4">4</span>
-          <div class="content"><a href="/article/94" class="title" title="这一次，我为自己招人！">这一次，我为自己招人！</a>
+          <div class="content"><a href="/article/94" class="title" title="这一次，我为自己招人！"
+              @mouseenter="leave('3')">这一次，我为自己招人！</a>
             <div class="meta"><span class="item date">2018-04-05</span><span class="item views"><i
                   class="iconfont icon-eye"></i> 13.83k</span><span class="item comments"><i
                   class="iconfont icon-comment"></i> 44</span></div>
           </div>
         </li>
         <li class="item"><span class="index" data-index="5">5</span>
-          <div class="content"><a href="/article/144" class="title" title="何以为家">何以为家</a>
+          <div class="content"><a href="/article/144" class="title" title="何以为家" @mouseenter="leave('4')">何以为家</a>
             <div class="meta"><span class="item date">2019-04-27</span><span class="item views"><i
                   class="iconfont icon-eye"></i> 8.6k</span><span class="item comments"><i
                   class="iconfont icon-comment"></i> 43</span></div>
@@ -55,11 +57,35 @@
     </div>
   </div>
   <div class="knight">
-    <img src="/static/img/message/preview.gif" style="width: 100%;height: 100%;">
+    <div class="pic" style="width: 560px;height: 100%;">
+      <img :src="bannerList[showNumber].img" style="height: 100%;width: 100%;">
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+
+let showNumber = ref(0)
+let bannerList = reactive([{
+  img: '../../../public/static/img/list/Header.jpg'
+},
+{
+  img: '../../../public/static/img/list/git.png'
+},
+{
+  img: '../../../public/static/img/list/dm.png'
+},
+{
+  img: '../../../public/static/img/list/js.png'
+},
+{
+  img: '../../../public/static/img/list/Header.jpg'
+},]
+)
+
+let leave = ((index) => {
+  showNumber.value = index
+})
 
 </script>
 
@@ -71,7 +97,7 @@
 
 .article .article-list {
   list-style: none;
-  padding: 0.618rem 0;
+  padding: 0;
   margin-bottom: 0;
 }
 
