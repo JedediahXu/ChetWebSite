@@ -32,7 +32,6 @@
             <div v-html=reserve.content></div>
           </article>
         </section>
-        <section class="global-markdown-html"></section>
       </div>
     </div>
     <div class="divider"></div>

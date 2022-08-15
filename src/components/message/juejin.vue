@@ -1,5 +1,5 @@
 <template>
-  <div class=" bg-base-300 shadow-2xl" style="width: 50%;">
+  <div class=" bg-base-300 shadow-2xl" style="width: 100%;">
     <div class="article">
       <ul class="article-list">
         <li class="item">
@@ -58,7 +58,7 @@
       </ul>
     </div>
   </div>
-  <div class="knight">
+  <div class="knight" style="width: 100%;">
     <div class="pic" style="width: 100%;height: 100%;">
       <img :src="bannerList[showNumber].img" style="height: 100%;width: 100%;">
     </div>

@@ -50,6 +50,12 @@ export default defineConfig({
         ws: true,
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/apis/, ''),
+      },
+      '/githubassets': {
+        target: 'https://github.githubassets.com',
+        ws: true,
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/githubassets/, ''),
       }
     },
   },

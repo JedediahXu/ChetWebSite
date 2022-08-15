@@ -1,5 +1,4 @@
 <template>
-
   <div class="p-3.5 type-setting" v-if="homeJudgment === 'pc'">
     <ul class="medias">
       <photo-provider>
