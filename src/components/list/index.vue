@@ -67,7 +67,7 @@ const props = defineProps({
   totale: {
     type: Object,
     required: true,
-    default: true,
+    default: Object,
   }
 })
 

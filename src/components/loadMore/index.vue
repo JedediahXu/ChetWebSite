@@ -21,13 +21,12 @@
 
 
 <script setup lang="ts">
-import { PropType } from '@vue/runtime-core';
 
 const props = defineProps({
   totale: {
     type: Object,
     required: true,
-    default: true,
+    default: Object,
   }
 })
 

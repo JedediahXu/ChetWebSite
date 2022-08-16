@@ -35,6 +35,7 @@ interface info {
   page_size: number;
   total: number
 }
+
 interface pagination {
   page_num: number;
   page_size: number;
