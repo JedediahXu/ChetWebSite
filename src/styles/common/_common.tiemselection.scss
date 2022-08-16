@@ -3,51 +3,52 @@
 ///selection period
 .time-selection {
   padding-right: 70px;
-}
 
-.container {
-  overflow-x: hidden;
-  width: $Commonly-width;
-  display: flex;
-  flex-direction: column;
-  flex-direction: row;
-}
+  .container {
+    overflow-x: hidden;
+    width: $Commonly-width;
+    display: flex;
+    flex-direction: column;
+    flex-direction: row;
+  }
 
-.menu-toggler {
-  display: none;
-}
+  .menu-toggler {
+    display: none;
+  }
 
-.menu-toggler-label {
-  cursor: pointer;
-  font-size: 17px;
-  font-weight: bold;
-}
+  .menu-toggler-label {
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+  }
 
-.stagger-menu {
-  padding: $zero;
-  display: inherit;
-  margin-left: 40px;
-}
+  .stagger-menu {
+    padding: $zero;
+    display: inherit;
+    margin-left: 40px;
+  }
 
-.container:hover .stagger-menu li:not(:hover) {
-  opacity: 0.4;
-}
+  .container:hover .stagger-menu li:not(:hover) {
+    opacity: 0.4;
+  }
 
-.stagger-menu li {
-  padding: $zero 16px;
-  transition: opacity 0.3s;
-  text-decoration: underline;
-  margin-left: 10px;
-  font-size: 18px;
-  list-style: disc;
-  transform: translateY(-100%);
-  transition-property: opacity, transform;
-  transition-duration: 0.3s;
-  transition-timing-function: cubic-bezier(0.750, -0.015, 0.565, 1.055);
-}
+  .stagger-menu li {
+    padding: $zero 16px;
+    transition: opacity 0.3s;
+    text-decoration: underline;
+    margin-left: 10px;
+    font-size: 18px;
+    list-style: disc;
+    transform: translateY(-100%);
+    transition-property: opacity, transform;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.750, -0.015, 0.565, 1.055);
+  }
 
-.menu-toggler:checked~.stagger-menu li {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: calc(0.085s * var(--i));
+  .menu-toggler:checked~.stagger-menu li {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: calc(0.085s * var(--i));
+  }
+
 }

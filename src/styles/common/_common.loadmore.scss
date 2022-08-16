@@ -1,93 +1,94 @@
 .articles {
   background: linear-gradient(-50deg, hsl(var(--pf)) 0%, hsl(var(--pf)) 20%, transparent 10%, transparent 21%, hsl(var(--b3)) 0%);
   border-radius: 5px;
-}
 
-.articles .article-load {
-  width: 100%;
-  height: 3rem;
-  position: relative;
-  display: block;
-  border-radius: 4px;
-  overflow: hidden;
-  color: inherit;
-  cursor: pointer;
-  display: inline-block;
-  text-align: center;
-  white-space: nowrap;
-}
+  & .article-load {
+    width: 100%;
+    height: 3rem;
+    position: relative;
+    display: block;
+    border-radius: 4px;
+    overflow: hidden;
+    color: inherit;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
 
+    &.background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
 
-.articles .article-load .background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-}
+    & .background .left {
+      flex: 1;
+      margin-left: -1rem;
+      margin-right: 1rem;
+      background: var(--module-bg);
+      transform: skew(-20deg);
+    }
 
+    & .background .left,
+    & .background .right {
+      height: 100%;
+      border-radius: 2px;
+      transition: background-color .1s;
+    }
 
-.articles .article-load .background .left {
-  flex: 1;
-  margin-left: -1rem;
-  margin-right: 1rem;
-  background: var(--module-bg);
-  transform: skew(-20deg);
-}
+    & .background .right {
+      width: 12rem;
+      margin-right: -1rem;
+      background: var(--module-bg-opaque);
+      transform: skew(-20deg);
+    }
 
-
-.articles .article-load .background .left,
-.articles .article-load .background .right {
-  height: 100%;
-  border-radius: 2px;
-  transition: background-color .1s;
-}
-
-.articles .article-load .background .right {
-  width: 12rem;
-  margin-right: -1rem;
-  background: var(--module-bg-opaque);
-  transform: skew(-20deg);
-}
-
-.articles .article-load .background .left,
-.articles .article-load .background .right {
-  height: 100%;
-  border-radius: 2px;
-  transition: background-color .1s;
-}
+    & .background .left,
+    & .background .right {
+      height: 100%;
+      border-radius: 2px;
+      transition: background-color .1s;
+    }
 
 
-.articles .article-load .content {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+    & .content {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-.articles .article-load .content .left {
-  font-weight: 700;
-  color: var(--text-disabled);
-  margin-left: 2em;
-}
+    & .content .left {
+      font-weight: 700;
+      color: var(--text-disabled);
+      margin-left: 2em;
+    }
 
-.articles .article-load .content .left,
-.articles .article-load .content .right {
-  transition: color .1s;
-}
+    & .content .left,
+    & .content .right {
+      transition: color .1s;
+    }
 
 
-.articles .article-load .content .right {
-  width: 10rem;
-  color: var(--text-disabled);
-}
+    & .content .right {
+      width: 10rem;
+      color: var(--text-disabled);
+    }
 
-.articles .article-load .content .left,
-.articles .article-load .content .right {
-  transition: color .1s;
+    & .content .left,
+    & .content .right {
+      transition: color .1s;
+    }
+
+    & .content .right .iconfont {
+      margin-left: 1rem;
+    }
+  }
 }
 
 .webfont.zh.bolder {
@@ -97,10 +98,6 @@
 .webfont.zh {
   font-weight: 400;
   margin-top: -1px;
-}
-
-.articles .article-load .content .right .iconfont {
-  margin-left: 1rem;
 }
 
 .iconfont {

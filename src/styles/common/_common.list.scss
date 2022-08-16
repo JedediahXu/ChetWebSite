@@ -30,42 +30,88 @@
     // background-color: rgba(255, 255, 255, .6);
     background-color: rgba(68, 68, 68, 0.6);
     transition: background-color .1s;
+
+    &>.item-thumb {
+      flex-shrink: $zero;
+      width: 210px;
+      height: 9.764rem;
+      margin-right: 1.236rem;
+      position: relative;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    &>.item-body {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 9.764rem;
+      padding-right: 0.309rem;
+    }
+
+    &>.item-thumb .image {
+      height: 100%;
+      min-width: 100%;
+      width: 189px;
+      max-width: 189px;
+      border-color: transparent;
+      background-color: var(--module-bg-darker-2);
+      background-size: cover;
+      background-position: center;
+      opacity: 1;
+      transform: translate(0);
+      transition: transform .25s, opacity .25s;
+    }
+
+    &>.item-body .title {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 3px;
+      margin-bottom: 0.618rem;
+      font-weight: 700;
+    }
+
+    &>.item-body .description {
+      margin: $zero;
+      line-height: 1.8em;
+      text-overflow: ellipsis;
+      font-size: 13.58px;
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+
+    &>.item-body>.item-meta {
+      height: 2em;
+      line-height: 2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      overflow: hidden;
+      font-size: 12.432px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      word-wrap: normal;
+      color: var(--text-secondary);
+    }
+
+    &>.item-body>.item-meta>.likes,
+    &>.item-body>.item-meta>.comments {
+      width: 3em;
+    }
+
+    &>.item-body>.item-meta>.likes,
+    &>.item-body>.item-meta>.comments {
+      width: 3em;
+    }
+
   }
 
-  &>.item-content>.item-thumb {
-    flex-shrink: $zero;
-    width: 210px;
-    height: 9.764rem;
-    margin-right: 1.236rem;
-    position: relative;
-    border-radius: 2px;
-    overflow: hidden;
-  }
-
-
-
-  &>.item-content>.item-body {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 9.764rem;
-    padding-right: 0.309rem;
-  }
-
-
-  &>.item-content>.item-thumb .image {
-    height: 100%;
-    min-width: 100%;
-    width: 189px;
-    max-width: 189px;
-    border-color: transparent;
-    background-color: var(--module-bg-darker-2);
-    background-size: cover;
-    background-position: center;
-    opacity: 1;
-    transform: translate(0);
-    transition: transform .25s, opacity .25s;
+  &>.item-content:hover {
+    background-color: var(--module-bg-opaque);
   }
 
   & .item-background {
@@ -82,67 +128,10 @@
     transition: opacity .7s;
   }
 
-
-  &>.item-content>.item-body .title {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 3px;
-    margin-bottom: 0.618rem;
-    font-weight: 700;
-  }
-
-
-
-
-  &>.item-content>.item-body .description {
-    margin: $zero;
-    line-height: 1.8em;
-    text-overflow: ellipsis;
-    font-size: 13.58px;
-    display: -webkit-box;
-    overflow: hidden;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-  }
-
-
-  &>.item-content>.item-body>.item-meta {
-    height: 2em;
-    line-height: 2em;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    overflow: hidden;
-    font-size: 12.432px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    word-wrap: normal;
-    color: var(--text-secondary);
-  }
-
-
-
-  &>.item-content>.item-body>.item-meta>.likes,
-  &>.item-content>.item-body>.item-meta>.comments {
-    width: 3em;
-  }
-
-  &>.item-content>.item-body>.item-meta>.likes,
-  &>.item-content>.item-body>.item-meta>.comments {
-    width: 3em;
-  }
-
-
-  &>.item-content:hover {
-    background-color: var(--module-bg-opaque);
-  }
-
   // &  >.item-content>.item-body>.item-meta>.views {
   //   width: 5em;
   // }
 }
-
-
 
 a {
   color: var(--link-color);
