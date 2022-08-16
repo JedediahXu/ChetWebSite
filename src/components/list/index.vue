@@ -15,7 +15,7 @@
           <div class="image " :style="{ backgroundImage: 'url(' + '/apis' + item.cover_img + ')' }"></div>
         </a>
         <div class="item-body">
-          <div class="item-content">
+          <div class="item-content " style="display: grid;width: 100%;">
             <h5 class="title">
               <a class="link">{{ item.title }}</a>
               <span class="language">{{ item.language }}</span>
