@@ -28,8 +28,7 @@ const props = defineProps({
 
 //分类跳转
 const emits = defineEmits(['getTransfer']);
-const toJump = (index) => {
+const toJump = (index: number) => {
   emits('getTransfer', index)
 }
-
 </script>

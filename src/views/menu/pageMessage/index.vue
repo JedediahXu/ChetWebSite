@@ -71,10 +71,9 @@ import comjuejin from '@/components/message/juejin.vue'
 import comlink from '@/components/message/link.vue'
 import comwellKnown from '@/components/message/wellknown.vue'
 import { judgment } from '@/utils/judgment'
-const getHeight = ref(1)
-const homeJudgment = ref('')
+let getHeight = ref<number>(1)
+const homeJudgment = ref<string>()
 
-//评论系统 （不稳定）
 onMounted(() => {
   homeJudgment.value = judgment()
   let asd = new window.iDisqus('comment', {
@@ -93,7 +92,6 @@ const displaySwitch = ref(1)
 let displayArea = (index: any) => {
   displaySwitch.value = index
 }
-
 </script>
 
 
@@ -109,7 +107,6 @@ let displayArea = (index: any) => {
 .component-body {
   height: 100%;
   width: 100%;
-
 
   .component {
     display: flex;

@@ -17,21 +17,18 @@
 import top from "./top/index.vue";
 import sidebar from "./sidebar/index.vue";
 
-let monitor: any = ref(0);
-
+let monitor = ref<number>(0);
 //scroll
 onMounted(() => {
     window.addEventListener('scroll', handleScroll, true)
 })
-
 const handleScroll = (() => {
     let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     monitor.value = scrollTop
 })
 
-
 //Menu  手机端左侧显示隐藏
-let MenuBar = ref(false)
+let MenuBar = ref<boolean>(false)
 let setMenuBar = (() => {
     if (!MenuBar.value) {
         MenuBar.value = true
@@ -39,13 +36,9 @@ let setMenuBar = (() => {
         MenuBar.value = false
     }
 })
-
-
 let buttonMenuBar = (() => {
     if (MenuBar.value) {
         MenuBar.value = false
     }
 })
-
-
 </script>

@@ -39,8 +39,9 @@
 import { useI18n } from 'vue-i18n';
 import useLanguage from '@/store/index';
 const { locale } = useI18n()
-const langName = ref('')
 
+const langName = ref<string>()
+const btuLanguage = ref<string>()
 const handleCommand = (command: string) => {
   switch (command) {
     case "zh":
@@ -72,12 +73,10 @@ const changeLanguage = (lang: string) => {
   setLanguageName(lang);
 };
 
-let btuLanguage = ref('')
 const mainStore = useLanguage();
 onMounted(() => {
   btuLanguage.value = mainStore.language
   setLanguageName(language.value);
 });
-
 </script>
 

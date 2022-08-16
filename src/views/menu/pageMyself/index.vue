@@ -172,11 +172,11 @@ import { useI18n } from 'vue-i18n';
 import { judgment } from '@/utils/judgment'
 
 const { t } = useI18n();
-let getHeight = ref(1)
-let visible = ref(true)
+let getHeight = ref<number>(1)
+let visible = ref<boolean>(true)
 
 
-let homeJudgment = ref('')
+let homeJudgment = ref<string>()
 onMounted(() => {
   homeJudgment.value = judgment()
 })

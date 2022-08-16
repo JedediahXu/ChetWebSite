@@ -29,7 +29,7 @@ const props = defineProps({
 
 //手机端分类跳转
 const emits = defineEmits(['getTransfer']);
-const toJump = (index) => {
+const toJump = (index: number) => {
   emits('getTransfer', index)
 }
 

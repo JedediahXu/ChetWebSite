@@ -16,9 +16,9 @@ import card from '@/components/cardPhoto/index.vue'
 import { judgment } from '@/utils/judgment'
 import { queryPhoto } from '@/api';
 
-let getHeight = ref(1)
-let homeJudgment = ref('')
-let imgList: any = ref()
+let getHeight = ref<number>(1)
+let homeJudgment = ref<string>()
+let imgList = ref<Array<object>>()
 
 const addPhoto = (() => {
   queryPhoto().then((res: any) => {
@@ -30,9 +30,7 @@ addPhoto()
 onMounted(() => {
   homeJudgment.value = judgment()
 })
-
 </script>
-
 
 <style scoped>
 .moblie-top-container {

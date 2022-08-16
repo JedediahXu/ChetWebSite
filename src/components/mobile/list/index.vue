@@ -54,24 +54,24 @@ const props = defineProps({
     default: true,
   },
   totale: {
+    type: Object,
     required: true,
     default: true,
   }
 })
 
-let isLoad = ref(false)
+let isLoad = ref<boolean>(false)
 //骨架显示时间  暂时未添加骨架
 setTimeout(() => {
   isLoad.value = true
 }, 1000)
 
 const emits = defineEmits(['getChili']);
-
 const toEmits = () => {
   emits('getChili')
 }
 
-//选中文章 带着内容跳转展示
+//选中文章
 const read = ((index: any) => {
   sessionStorage.setItem('read', JSON.stringify(index))
   $router.push({ name: 'read' })

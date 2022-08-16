@@ -25,16 +25,14 @@ import top from "./top/index.vue";
 import sidebar from "./sidebar/index.vue";
 import { ref, onMounted } from "vue";
 
-let monitor: any = ref(0);
-
-//scroll
-onMounted(() => {
-    window.addEventListener('scroll', handleScroll, true)
-})
-
+let monitor = ref<number>(0);
 const handleScroll = (() => {
     let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     monitor.value = scrollTop
 })
 
+//scroll
+onMounted(() => {
+    window.addEventListener('scroll', handleScroll, true)
+})
 </script>

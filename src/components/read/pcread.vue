@@ -53,10 +53,6 @@ const props = defineProps({
 </script>
  
 
-
-
-
-
 <style lang="scss" scoped>
 .ueditor-left {
   width: 80%;

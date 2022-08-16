@@ -6,7 +6,7 @@
           <span class="index" data-index="1">1</span>
           <div class="content">
             <a href="https://juejin.cn/post/7041038709906472974" target="_blank" class="title"
-              @mouseenter="leave('0')">Vue3.2的setup语法糖和Hook函数 (强烈推荐)</a>
+              @mouseenter="leave(0)">Vue3.2的setup语法糖和Hook函数 (强烈推荐)</a>
             <div class="meta">
               <span class="item date">2021-12-13</span>
               <span class="item views"><i class="iconfont icon-eye"></i> 1.3w</span>
@@ -18,7 +18,7 @@
           <span class="index" data-index="2">2</span>
           <div class="content">
             <a href="https://juejin.cn/post/7032832901213323271" target="_blank" class="title"
-              @mouseenter="leave('1')">[最详细的Watch介绍]- Vue3中Watch的使用详情和注意事项</a>
+              @mouseenter="leave(1)">[最详细的Watch介绍]- Vue3中Watch的使用详情和注意事项</a>
             <div class="meta">
               <span class="item date">2021-11-21</span>
               <span class="item views">
@@ -32,7 +32,7 @@
         </li>
         <li class="item"><span class="index" data-index="3">3</span>
           <div class="content"><a href="https://juejin.cn/post/7031808193344831518" target="_blank" class="title"
-              @mouseenter="leave('2')">2019
+              @mouseenter="leave(2)">2019
               Vue，从Object.defineProperty到Proxy的演变......</a>
             <div class="meta"><span class="item date">2021-11-18</span><span class="item views"><i
                   class="iconfont icon-eye"></i> 1.3k</span><span class="item comments"><i
@@ -41,7 +41,7 @@
         </li>
         <li class="item"><span class="index" data-index="4">4</span>
           <div class="content"><a href="https://juejin.cn/post/7054729782944071711" target="_blank" class="title"
-              @mouseenter="leave('3')">深入理解Vue异步更新策略及 nextTick原理机制</a>
+              @mouseenter="leave(3)">深入理解Vue异步更新策略及 nextTick原理机制</a>
             <div class="meta"><span class="item date">2022-01-19</span><span class="item views"><i
                   class="iconfont icon-eye"></i> 132</span><span class="item comments"><i
                   class="iconfont icon-comment"></i> 5</span></div>
@@ -49,7 +49,7 @@
         </li>
         <li class="item"><span class="index" data-index="5">5</span>
           <div class="content"><a href="https://juejin.cn/post/7032244693798748174" target="_blank" class="title"
-              @mouseenter="leave('4')">同事使用的WebUploader而我用的ElementUpload......</a>
+              @mouseenter="leave(4)">同事使用的WebUploader而我用的ElementUpload......</a>
             <div class="meta"><span class="item date">2021-11-19</span><span class="item views"><i
                   class="iconfont icon-eye"></i> 466</span><span class="item comments"><i
                   class="iconfont icon-comment"></i> 4</span></div>
@@ -68,7 +68,7 @@
 <script lang="ts" setup>
 // import { queryJuejin } from '@/api';
 
-let showNumber = ref(0)
+let showNumber = ref<number>(0)
 let bannerList = reactive([{
   img: '../../../public/static/img/message/dm.png'
 },
@@ -86,7 +86,7 @@ let bannerList = reactive([{
 },]
 )
 
-let leave = ((index) => {
+let leave = ((index: number) => {
   showNumber.value = index
 })
 

@@ -102,7 +102,7 @@ let displayBut = (() => {
 })
 
 //地图左侧菜单
-let displayPhot = ((i: any) => {
+let displayPhot = ((i: number) => {
   let mapContainer = geoPhoto.features[i].geometry.coordinates
   map.value.flyTo({ center: [mapContainer[0], mapContainer[1]], zoom: 14 })
   popup.setLngLat([mapContainer[0], mapContainer[1]]).setHTML(

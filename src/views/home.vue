@@ -20,25 +20,32 @@ import selection from '@/components/timeSelection/timeSelection.vue'
 import carlist from '@/components/list/index.vue'
 import mobileCarlist from '@/components/mobile/list/index.vue'
 import { queryArticle } from '@/api';
-import { useI18n } from 'vue-i18n';
 import { judgment } from '@/utils/judgment'
 import { emitter } from '@/utils/eventBus'
+import { Ref } from 'vue';
 const route = useRoute();
-const { t } = useI18n();
-
-//背景行高
-let getHeight = ref()
-getHeight = computed(() => {
-  return getHeight.value++
-});
 
 //mobile and pc
-let homeJudgment = ref('')
+let homeJudgment = ref<string>()
 homeJudgment.value = judgment()
 
+//定义接口
+interface info {
+  page_num: string;
+  page_size: number;
+  total: number
+}
+interface pagination {
+  page_num: number;
+  page_size: number;
+  page_id: number;
+  text: string
+}
+
+
 let listArticle = ref([])
-let totale: any = ref('')
-let array: any = ref({
+let totale = ref<info>();
+let paginationData: Ref = ref<pagination>({
   page_num: 0,
   page_size: 6,
   page_id: 0,
@@ -47,8 +54,8 @@ let array: any = ref({
 
 //分页
 const addlist = (() => {
-  array.value.page_num++
-  queryArticle(array.value).then((res: any) => {
+  paginationData.value.page_num++
+  queryArticle(paginationData.value).then((res: any) => {
     listArticle.value.push(...res.data.data)
     totale.value = { ...res.data.paging }
     totale.value.page_size = listArticle.value.length
@@ -57,54 +64,49 @@ const addlist = (() => {
 
 if (homeJudgment.value == 'pc') {
   addlist()
-  //主题
   emitter.on('taskPageId', function (index) {
-    array.value.page_id = index
-    array.value.page_num = 0
+    paginationData.value.page_id = index
+    paginationData.value.page_num = 0
     listArticle.value = [];
     addlist()
   });
   //搜索
   emitter.on('searchCondition', function (index) {
     console.log('111');
-    array.value.text = index
-    array.value.page_id = 0
-    array.value.page_num = 0
+    paginationData.value.text = index
+    paginationData.value.page_id = 0
+    paginationData.value.page_num = 0
     listArticle.value = [];
     addlist()
-    array.value.text = ''
+    paginationData.value.text = ''
   });
 }
 
 if (homeJudgment.value == 'mobile') {
-  //主题
   let queryId: any = ref(0)
   queryId = route.query.id
   if (queryId === undefined) {
-    array.value.page_id = 0
+    paginationData.value.page_id = 0
   } else {
-    array.value.page_id = queryId
+    paginationData.value.page_id = queryId
   }
-  array.value.page_num = 0
+  paginationData.value.page_num = 0
   listArticle.value = [];
   addlist()
   //搜索
   emitter.on('searchCondition', function (index) {
-    array.value.text = index
-    array.value.page_id = 0
-    array.value.page_num = 0
+    paginationData.value.text = index
+    paginationData.value.page_id = 0
+    paginationData.value.page_num = 0
     listArticle.value = [];
     addlist()
   });
   emitter.on('all', function () {
-    array.value.text = ''
-    array.value.page_id = 0
-    array.value.page_num = 0
+    paginationData.value.text = ''
+    paginationData.value.page_id = 0
+    paginationData.value.page_num = 0
     addlist()
     listArticle.value = [];
   });
 }
-
-
-
 </script>

@@ -21,9 +21,9 @@ import { mallGoodsCates } from '@/api';
 import { emitter } from '@/utils/eventBus'
 const router = useRouter();
 
-let getHeight = ref(1)
-let homeJudgment = ref('')
-let imgList: any = ref([])
+let getHeight = ref<number>(1)
+let homeJudgment = ref<string>()
+let imgList = ref<Array<object>>([])
 
 //获取文章分类
 onMounted(() => {
@@ -40,8 +40,6 @@ const getTransfer = ((e: number) => {
   emitter.emit('taskPageId', e);
   emitter.emit('searchHide', 0);
 })
-
-
 </script>
 
 

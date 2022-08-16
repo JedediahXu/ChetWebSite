@@ -65,12 +65,13 @@ const props = defineProps({
     default: true,
   },
   totale: {
+    type: Object,
     required: true,
     default: true,
   }
 })
 
-let isLoad = ref(false)
+let isLoad = ref<boolean>(false)
 
 //骨架显示时间
 setTimeout(() => {
@@ -82,13 +83,10 @@ const toEmits = () => {
   emits('getChili')
 }
 
-
 //选中文章 带着内容跳转展示
-const read = ((index: any) => {
+const read = ((index: number) => {
   sessionStorage.setItem('read', JSON.stringify(index))
   $router.push({ name: 'read' })
 })
-
-
 </script>
 

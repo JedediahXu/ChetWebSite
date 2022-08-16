@@ -52,15 +52,14 @@ import { useI18n } from 'vue-i18n';
 import { emitter } from '@/utils/eventBus'
 const { t } = useI18n();
 
-let num: any = ref(0);
+let temporarily = ref<number>()
+let dataSearch = ref<string>()
+let num = ref<unknown>(0);
+
 emitter.on('searchHide', (e) => {
   num.value = e
 })
 
-let dataSearch = ref('')
-let temporarily = ref()
-
-//输入同样的内容 不执行搜索方法
 let oldInput;
 const onSearch = ((e) => {
   if (e == oldInput) {
@@ -73,11 +72,9 @@ const onSearch = ((e) => {
   }
 })
 
-
 let addopen = (() => {
   window.open('https://github.com/ChetSerenade', '_blank')
 })
-
 </script>
 
 

@@ -96,7 +96,7 @@ import { themeChange } from 'theme-change'
 import useLanguage from '@/store/index';
 const mainStore = useLanguage();
 
-let buttonColor = ref('')
+let buttonColor = ref<string>()
 let theme = ((type: string) => {
   buttonColor.value = type
   useLanguage().setthemeColor(type); //live themeColor
@@ -104,10 +104,8 @@ let theme = ((type: string) => {
   themeChange(false)
 })
 
-
 onMounted(() => {
   buttonColor.value = mainStore.themeColor  //Pick themeColor
   themeChange(false)
 })
-
 </script>

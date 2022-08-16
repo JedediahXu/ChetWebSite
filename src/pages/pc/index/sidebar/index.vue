@@ -105,24 +105,12 @@
 import { useI18n } from 'vue-i18n';
 import { emitter } from '@/utils/eventBus'
 const { t } = useI18n();
-
-let touch: any = ref(0);
 const $router = useRouter();
 
-onMounted(() => {
-  //Default Routes
-  let cashBack: number = JSON.parse(sessionStorage.getItem('touch') || '0')
-  if (cashBack === null) {
-    touch.value = 0
-  } else {
-    touch.value = cashBack
-  }
-})
-
+let touch = ref<unknown>(0);
 emitter.on('taskTouch', (e) => {
   touch.value = e
 })
-
 //Routes Data
 const pushJump = (index: number) => {
   touch.value = index
@@ -150,7 +138,6 @@ const pushJump = (index: number) => {
       break;
   }
 }
-
 //防止从URl直接输入路由地址
 let array: string = window.location.pathname
 const urlJump = (() => {
@@ -174,6 +161,13 @@ const urlJump = (() => {
 })
 urlJump()
 
-
-
+onMounted(() => {
+  //Default Routes
+  let cashBack: number = JSON.parse(sessionStorage.getItem('touch') || '0')
+  if (cashBack === null) {
+    touch.value = 0
+  } else {
+    touch.value = cashBack
+  }
+})
 </script>

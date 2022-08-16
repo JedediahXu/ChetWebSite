@@ -8,7 +8,7 @@
 <template>
   <div>
 
-    <div class="search actived" v-if="ss === 1">
+    <div class="search actived" v-if="search === 1">
       <div class="search-hide">
         <input type="text" v-model="dataSearch" @keyup.enter.native="onSearch(dataSearch)" placeholder="Search"
           class="input  w-80  h-10" />
@@ -19,7 +19,7 @@
       </div>
     </div>
 
-    <div class="navbar bg-base-100" v-if="ss !== 1">
+    <div class="navbar bg-base-100" v-if="search !== 1">
       <div class="flex-1 navbar-flex">
         <div class="navbar-display">
           <button class="btn btn-square btn-ghost" @click="menuBar">
@@ -47,42 +47,36 @@ import changeTheme from '@/components/changeTheme/changeTheme.vue';
 import changeLanguage from '@/components/changeLanguage/changeLanguage.vue';
 import { emitter } from '@/utils/eventBus'
 
+let oldInput: number;
+let dataSearch = ref<any>()
+let temporarily = ref<number>()
+let num = ref<unknown>(0);
+let search = ref<number>(0)
 
-let dataSearch = ref('')
-let temporarily = ref()
-let num: any = ref(0);
-
-//第一个菜单 才会显示搜索
+//显示搜索
 emitter.on('searchHide', (e) => {
   num.value = e
 })
+const displaySearch = (() => {
+  search.value = 1
+})
+const hideSearch = (() => {
+  search.value = 0
+  emitter.emit('all');
+})
 
-
-let oldInput;
-const onSearch = ((e) => {
-  if (e == oldInput) { //输入同样的内容
-    //禁用提交按钮
+const onSearch = ((e: number) => {
+  if (e == oldInput) {
     console.log('- -');
   } else {
     temporarily.value = dataSearch.value.length
     emitter.emit('searchCondition', dataSearch.value);
-    oldInput = e; //赋新值
+    oldInput = e;
   }
 })
 
-
-//搜索显示隐藏
-let ss = ref(0)
-const displaySearch = (() => {
-  ss.value = 1
-})
-const hideSearch = (() => {
-  ss.value = 0
-  emitter.emit('all');
-})
-
 //点击按钮Menu
-const emits = defineEmits(['setMenuBar']);
+const emits = defineEmits<string>(['setMenuBar']);
 let menuBar = (() => {
   emits('setMenuBar')
 })
@@ -90,5 +84,4 @@ let menuBar = (() => {
 let addopen = (() => {
   window.open('https://github.com/ChetSerenade', '_blank')
 })
-
 </script>

@@ -88,18 +88,8 @@ import { useI18n } from 'vue-i18n';
 import { emitter } from '@/utils/eventBus'
 const $router = useRouter();
 const { t } = useI18n();
-let touch: any = ref(0);
 
-onMounted(() => {
-  //Default Routes
-  let cashBack: number = JSON.parse(sessionStorage.getItem('touch') || '0')
-  if (cashBack === null) {
-    touch.value = 0
-  } else {
-    touch.value = cashBack
-  }
-})
-
+let touch = ref<unknown>(0);
 //Routes Data
 emitter.on('taskTouch', (e) => {
   touch.value = e
@@ -132,5 +122,16 @@ const pushJump = (index: number) => {
       break;
   }
 }
+
+onMounted(() => {
+  //Default Routes
+  let cashBack: number = JSON.parse(sessionStorage.getItem('touch') || '0')
+  if (cashBack === null) {
+    touch.value = 0
+  } else {
+    touch.value = cashBack
+  }
+})
+
 
 </script>

@@ -38,7 +38,7 @@
 import type { PropType } from 'vue';
 import { judgment } from '@/utils/judgment'
 
-let homeJudgment = ref('')
+let homeJudgment = ref<string>()
 const props = defineProps({
   listPhoto: {
     type: Array as PropType<any>,
@@ -50,5 +50,4 @@ const props = defineProps({
 onMounted(() => {
   homeJudgment.value = judgment()
 })
-
 </script>

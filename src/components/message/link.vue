@@ -10,7 +10,7 @@
 import { queryLink } from '@/api';
 
 //友情链接
-let dataquerylink: any = ref()
+let dataquerylink = ref<any>()
 const dataLink = (() => {
   queryLink().then((res: any) => {
     dataquerylink.value = res.data.data
