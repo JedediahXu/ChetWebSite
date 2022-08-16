@@ -28,11 +28,13 @@ All notable changes to this project will be documented in this file.
 - 个人简历
 - 文章列表加载骨架
 - 增加评论功能
+- 修改专题墙样式
+- 评论系统集成
+- 手机版本的搜索实现
+- 链接
 
 （持续中）
-- 修改专题墙样式
 - 统计访问
 - 头像动画添加
-- 评论系统集成
 - google 统计代码
-- 手机版本的搜索实现
+

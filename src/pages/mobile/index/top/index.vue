@@ -76,7 +76,7 @@ const onSearch = ((e: number) => {
 })
 
 //点击按钮Menu
-const emits = defineEmits<string>(['setMenuBar']);
+const emits = defineEmits(['setMenuBar']);
 let menuBar = (() => {
   emits('setMenuBar')
 })
