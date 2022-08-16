@@ -102,12 +102,92 @@ let leave = ((index: number) => {
 <style lang="scss" scoped>
 .article {
   overflow: auto;
-}
 
-.article .article-list {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 0;
+  & .article-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+
+    >.item {
+      display: flex;
+      padding: 0 1rem;
+      margin-bottom: 0.618rem;
+      color: var(--text-darker);
+    }
+
+    >.item .index[data-index="1"] {
+      background-color: #0088f5;
+    }
+
+    >.item .index[data-index="2"] {
+      background-color: #4caf50b3;
+    }
+
+    >.item .index[data-index="3"] {
+      background-color: #ff572299;
+    }
+
+    >.item .index[data-index="1"],
+    >.item .index[data-index="2"],
+    >.item .index[data-index="3"] {
+      color: #fff;
+      font-size: 9.9456px;
+    }
+
+    >.item .index {
+      width: 14px;
+      height: 14px;
+      line-height: 14px;
+      margin-top: 4px;
+      display: inline-block;
+      flex-shrink: 0;
+      margin-right: 0.618rem;
+      text-align: center;
+      border-radius: 2px;
+      color: var(--text-disabled);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    >.item .content {
+      flex-shrink: 1;
+      overflow: hidden;
+    }
+
+    >.item .title {
+      display: inline-block;
+      max-width: 100%;
+      border-top: 1px solid transparent;
+      border-bottom: 1px solid transparent;
+      font-size: 13.58px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    >.item .meta {
+      font-size: 12.432px;
+      color: var(--text-disabled);
+    }
+
+    >.item .meta .item.date {
+      margin-right: 1.236rem;
+    }
+
+    >.item .meta .item {
+      display: inline-block;
+    }
+
+    >.item .meta .item.views {
+      width: 5rem;
+      margin-right: 0.618rem;
+    }
+
+    >.item .title:hover {
+      text-decoration: none;
+      border-bottom-color: initial;
+    }
+  }
 }
 
 ul,
@@ -115,85 +195,5 @@ ol {
   margin-bottom: 1em;
   padding-left: 3em;
   vertical-align: baseline;
-}
-
-.article .article-list>.item {
-  display: flex;
-  padding: 0 1rem;
-  margin-bottom: 0.618rem;
-  color: var(--text-darker);
-}
-
-.article .article-list>.item .index[data-index="1"] {
-  background-color: #0088f5;
-}
-
-.article .article-list>.item .index[data-index="2"] {
-  background-color: #4caf50b3;
-}
-
-.article .article-list>.item .index[data-index="3"] {
-  background-color: #ff572299;
-}
-
-.article .article-list>.item .index[data-index="1"],
-.article .article-list>.item .index[data-index="2"],
-.article .article-list>.item .index[data-index="3"] {
-  color: #fff;
-  font-size: 9.9456px;
-}
-
-.article .article-list>.item .index {
-  width: 14px;
-  height: 14px;
-  line-height: 14px;
-  margin-top: 4px;
-  display: inline-block;
-  flex-shrink: 0;
-  margin-right: 0.618rem;
-  text-align: center;
-  border-radius: 2px;
-  color: var(--text-disabled);
-  font-weight: 700;
-  font-size: 13px;
-}
-
-.article .article-list>.item .content {
-  flex-shrink: 1;
-  overflow: hidden;
-}
-
-.article .article-list>.item .title {
-  display: inline-block;
-  max-width: 100%;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-  font-size: 13.58px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.article .article-list>.item .meta {
-  font-size: 12.432px;
-  color: var(--text-disabled);
-}
-
-.article .article-list>.item .meta .item.date {
-  margin-right: 1.236rem;
-}
-
-.article .article-list>.item .meta .item {
-  display: inline-block;
-}
-
-.article .article-list>.item .meta .item.views {
-  width: 5rem;
-  margin-right: 0.618rem;
-}
-
-.article .article-list>.item .title:hover {
-  text-decoration: none;
-  border-bottom-color: initial;
 }
 </style>

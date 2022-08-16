@@ -26,46 +26,74 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 2rem;
-  }
 
-  .medias .media {
-    position: relative;
-    display: block;
-    height: 255px;
-    width: 220px;
-    cursor: pointer;
-    border-radius: 10px;
-    overflow: hidden;
-    background-color: var(--module-bg);
-    transition: background-color .25s;
-  }
+    & .media .background {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.05);
+      transition: transform .25s;
+    }
 
+    & .media:hover .background {
+      transform: scale(1.15);
+    }
 
-  .medias .media .mask {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    background-color: #0000004d;
-    color: #fffc;
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .1s, visibility .1s;
-  }
+    & .media:hover .mask .icon {
+      transform: scale(1);
+    }
+
+    & .media:hover .mask {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    & .media:hover {
+      background-color: var(--module-bg-opaque);
+    }
 
 
-  .medias .media .mask .icon {
-    font-size: 3em;
-    transform: scale(1.2);
-    transition: transform .25s;
+    & .media {
+      position: relative;
+      display: block;
+      height: 255px;
+      width: 220px;
+      cursor: pointer;
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: var(--module-bg);
+      transition: background-color .25s;
+    }
+
+
+    & .media .mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      background-color: #0000004d;
+      color: #fffc;
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .1s, visibility .1s;
+    }
+
+
+    & .media .mask .icon {
+      font-size: 3em;
+      transform: scale(1.2);
+      transition: transform .25s;
+    }
+
   }
 
   .iconfont {
@@ -79,31 +107,4 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-
-  .medias .media .background {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    transform: scale(1.05);
-    transition: transform .25s;
-  }
-
-  .medias .media:hover .background {
-    transform: scale(1.15);
-  }
-
-  .medias .media:hover .mask .icon {
-    transform: scale(1);
-  }
-
-  .medias .media:hover .mask {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .medias .media:hover {
-    background-color: var(--module-bg-opaque);
-  }
-
 }
