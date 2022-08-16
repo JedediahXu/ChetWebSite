@@ -153,7 +153,7 @@
         </label>
       </label>
 
-      <div class="qrcodes" data-v-60fcfbfc="">
+      <div class="arcades" data-v-60fcfbfc="">
         <div class="item" data-v-60fcfbfc=""><img draggable="false" src="/static/img/avatar/wechat.jpg" class="image"
             data-v-60fcfbfc=""></div>
         <div class="item" data-v-60fcfbfc=""><img draggable="false" src="/static/img/avatar/wechat.jpg" class="image"
@@ -197,7 +197,7 @@ let switchCV = ((index: number) => {
 
 
 
-<style spode lang="scss" name="myself">
+<style spode lang="scss">
 .componentMap {
   p {
     margin: 10px;
@@ -242,53 +242,51 @@ let switchCV = ((index: number) => {
     display: inline-flex;
     align-items: center;
     margin-right: 1rem;
+
+    & .item {
+      padding: 0 1rem;
+      margin-right: 1rem;
+      height: 100%;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 4px;
+      color: #fff;
+      transition: all .1s;
+    }
+
+    & .item.twitter {
+      background-color: #1b95e0;
+    }
+
+    & .item.github {
+      background-color: #24282d;
+    }
+
+    & .item.instagram {
+      opacity: .8;
+      background: #ed4956;
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    }
+
+    & .item .iconfont {
+      font-size: 16.1px;
+      margin-right: 0.618rem;
+    }
+
+    & .iconfont {
+      font-family: iconfont !important;
+      font-size: 16px;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
   }
 
   .socials>.mini {
     display: flex;
   }
 
-
-
-  .socials .normal .item {
-    padding: 0 1rem;
-    margin-right: 1rem;
-    height: 100%;
-    display: inline-flex;
-    align-items: center;
-    border-radius: 4px;
-    color: #fff;
-    transition: all .1s;
-  }
-
-  .socials .normal .item.twitter {
-    background-color: #1b95e0;
-  }
-
-  .socials .normal .item.github {
-    background-color: #24282d;
-  }
-
-  .socials .normal .item.instagram {
-    opacity: .8;
-    background: #ed4956;
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  }
-
-  .socials .normal .item .iconfont {
-    font-size: 16.1px;
-    margin-right: 0.618rem;
-  }
-
-  .iconfont {
-    font-family: iconfont !important;
-    font-size: 16px;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  .socials .normal .item {
+  .socials .normal .socials .normal .item {
     padding: 0 1rem;
     margin-right: 1rem;
     height: 100%;
@@ -322,17 +320,6 @@ let switchCV = ((index: number) => {
 
   a {
     color: var(--link-color);
-  }
-
-  a,
-  area,
-  button,
-  input,
-  label,
-  select,
-  textarea,
-  [tabindex] {
-    touch-action: manipulation;
   }
 
   a {
@@ -395,22 +382,22 @@ let switchCV = ((index: number) => {
   border-radius: 4px;
   color: #fff;
   transition: all 0.1s;
-}
 
-.moblie-item.twitter {
-  color: #fff;
-  background-color: #1b95e0;
-}
+  &.twitter {
+    color: #fff;
+    background-color: #1b95e0;
+  }
 
-.moblie-item.github {
-  color: #fff;
-  background-color: #24282d;
-}
+  &.github {
+    color: #fff;
+    background-color: #24282d;
+  }
 
-.moblie-item.youtube {
-  margin: 0;
-  color: #fff;
-  background-color: #ec3323;
+  &.youtube {
+    margin: 0;
+    color: #fff;
+    background-color: #ec3323;
+  }
 }
 
 .moblie-hero-content {
@@ -422,34 +409,25 @@ let switchCV = ((index: number) => {
   gap: 1rem;
 }
 
-.qrcodes {
+.arcades {
   margin-top: 1.236rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1.236rem;
-}
 
-.qrcodes .item {
-  width: 100%;
-  padding: 1rem;
-  border-radius: 6px;
-  overflow: hidden;
-  background-color: #444444;
-}
+  & .item {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #444444;
+  }
 
-.qrcodes .item .image {
-  width: 100%;
-  height: 100%;
-  border-radius: 2px;
-}
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
+  & .image {
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+  }
 }
 </style>
 
