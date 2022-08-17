@@ -5,6 +5,9 @@
   <meta charset="UTF-8" />
   <link rel="icon" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
   <title>ChetSerenade</title>
   <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
 </head>
@@ -14,6 +17,37 @@
   <script type="module" src="/src/main.ts"></script>
   <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
   <script type="text/javascript" src="/Disqus/iDisqus.js"></script>
+  <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+  <script type="text/javascript">
+    var Ip = returnCitySN['cip']
+    var cityname = returnCitySN['cname']
+    localStorage.setItem('Ip', Ip)
+    localStorage.setItem('cityname', cityname)
+  </script>
+  <script>
+    window.onload = function () {
+      document.addEventListener("touchstart", function (event) {
+        if (event.touches.length > 1) {
+          event.preventDefault();
+        }
+      });
+      var lastTouchEnd = 0;
+      document.addEventListener(
+        "touchend",
+        function (event) {
+          var now = new Date().getTime();
+          if (now - lastTouchEnd <= 300) {
+            event.preventDefault();
+          }
+          lastTouchEnd = now;
+        },
+        false
+      );
+      document.addEventListener("gesturestart", function (event) {
+        event.preventDefault();
+      });
+    };
+  </script>
 </body>
 
 </html>

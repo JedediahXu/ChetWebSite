@@ -25,6 +25,8 @@ import { emitter } from '@/utils/eventBus'
 import { Ref } from 'vue';
 const route = useRoute();
 
+
+
 //mobile and pc
 let homeJudgment = ref<string>()
 homeJudgment.value = judgment()
@@ -61,6 +63,7 @@ const addlist = (() => {
     totale.value = { ...res.data.paging }
     totale.value.page_size = listArticle.value.length
   });
+
 });
 
 if (homeJudgment.value == 'pc') {
@@ -110,4 +113,7 @@ if (homeJudgment.value == 'mobile') {
     listArticle.value = [];
   });
 }
+
+
+
 </script>

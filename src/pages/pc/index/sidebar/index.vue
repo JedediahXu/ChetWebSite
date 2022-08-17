@@ -9,7 +9,7 @@
   <div class="sidebar-top">
     <div class="avatar" style="margin-top: 10px;">
       <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-        <img src="/public/static/img/avatar/chet.jpg" />
+        <img src="/public/static/img/avatar/to.png" />
       </div>
     </div>
     <div style="margin-top: 11px;">
@@ -79,6 +79,16 @@
         </div>
       </div>
     </div>
+
+    <div style="margin-top: 10px; display: flex;flex-direction: column;align-items: center;">
+      <div class="stats shadow">
+        {{ cityname }}
+      </div>
+      <div class="stats shadow">
+        <listvar />
+      </div>
+    </div>
+
     <div id="player">
       <div class="player-left">
         <iframe frameborder="true" muted="muted" width=240 height=86
@@ -102,10 +112,20 @@
 
 
 <script setup lang="ts">
+import listvar from '@/components/list/listvar.vue'
 import { useI18n } from 'vue-i18n';
 import { emitter } from '@/utils/eventBus'
+import { queryIP } from '@/api';
+
 const { t } = useI18n();
 const $router = useRouter();
+
+//ip 地址
+const cityname = ref<string>()
+queryIP(localStorage.getItem('Ip')).then((res: any) => {
+  cityname.value = res.data.data[0].location
+});
+
 
 let touch = ref<unknown>(0);
 emitter.on('taskTouch', (e) => {

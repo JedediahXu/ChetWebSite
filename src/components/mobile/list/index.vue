@@ -17,7 +17,7 @@
           <h4 class="title">
             <a class="link">{{ item.title }}</a>
           </h4>
-          <p class="description" v-html="item.content" style="-webkit-box-orient: vertical;"></p>
+          <p class="description">{{ item.introduce }}</p>
         </div>
         <div class="meta">
           <span class="date">

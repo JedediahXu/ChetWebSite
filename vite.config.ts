@@ -56,8 +56,14 @@ export default defineConfig({
         ws: true,
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/githubassets/, ''),
+      },
+      '/IP': {
+        target: 'https://opendata.baidu.com/',
+        ws: true,
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/IP/, ''),
       }
-    },
+    }
   },
 })
 

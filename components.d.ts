@@ -40,6 +40,8 @@ declare module '@vue/runtime-core' {
     ElSkeletonItem: typeof import('element-plus/es')['ElSkeletonItem']
     GlobalContainerContainer: typeof import('./src/components/globalContainer/container.vue')['default']
     List: typeof import('./src/components/list/index.vue')['default']
+    ListListua: typeof import('./src/components/list/listua.vue')['default']
+    ListListvar: typeof import('./src/components/list/listvar.vue')['default']
     LoadMore: typeof import('./src/components/loadMore/index.vue')['default']
     Map: typeof import('./src/components/map/index.vue')['default']
     MessageIntroduce: typeof import('./src/components/message/introduce.vue')['default']
