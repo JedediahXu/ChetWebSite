@@ -84,9 +84,10 @@ const toEmits = () => {
 }
 
 //选中文章 带着内容跳转展示
-const read = ((index: number) => {
+const read = ((index: object) => {
   sessionStorage.setItem('read', JSON.stringify(index))
   $router.push({ name: 'read' })
 })
+
 </script>
 

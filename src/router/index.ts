@@ -3,7 +3,7 @@
 * @Author: xuhuazhi
 * @Date: 2022-06-01
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-08-11 16:00:49
+ * @LastEditTime: 2022-08-17 09:43:44
 */
 import Vue from 'vue'
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
@@ -61,7 +61,7 @@ const routes: Array<RouteRecordRaw> = [
                 name: 'read',
                 component: () => import("@/views/menu/pageRead/index.vue"),
                 meta: {
-                    keepAlive: true,
+                    keepAlive: false,
                 }
             }
         ],

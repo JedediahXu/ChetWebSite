@@ -48,9 +48,10 @@ const props = defineProps({
   reserve: {
     type: Object,
     required: true,
-    default: true,
   }
 })
+
+
 
 </script>
  

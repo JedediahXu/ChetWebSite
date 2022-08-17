@@ -76,7 +76,7 @@ const homeJudgment = ref<string>()
 
 onMounted(() => {
   homeJudgment.value = judgment()
-  let asd = new window.iDisqus('comment', {
+  let Disqus = new window.iDisqus('comment', {
     forum: 'gaoyuzi-cn',
     site: 'https://epiphanys.me',
     api: 'https://epiphanys.me/dashboard/api',

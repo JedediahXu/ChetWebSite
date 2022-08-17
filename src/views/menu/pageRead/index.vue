@@ -9,12 +9,19 @@
     <pcread :reserve="reserve" v-if="homeJudgment === 'pc'" />
     <mobileread :reserve="reserve" v-if="homeJudgment === 'mobile'" />
     <div :class="homeJudgment === 'mobile' ? 'divider-mobile' : 'divider-pc'">
-      我是评论系统！
+      <div id="comment"></div>
     </div>
     <br>
   </div>
 </template>
 
+<script lang="ts">
+export default {
+  name: "message",
+
+};
+declare const window: Window & { iDisqus: any };
+</script>
 
 <script setup lang="ts">
 import { emitter } from '@/utils/eventBus'
@@ -38,11 +45,35 @@ let homeJudgment = ref<string>()
 homeJudgment.value = judgment()
 let reserve = ref<reserve>()
 reserve.value = JSON.parse(sessionStorage.getItem('read'))
+onActivated(() => {
+  reserve.value = JSON.parse(sessionStorage.getItem('read'))
+  let Disqus = new window.iDisqus('comment', {
+    forum: 'gaoyuzi',
+    site: 'https://gaoyuzi.cn',
+    api: 'https://epiphanys.me/dashboard/api',
+    mode: 2,
+    timeout: 6000,
+    init: true,
+    url: 'http://gaoyuzi.cn/read?Id=' + reserve.value.Id,
+    title: reserve.value.title
+  });
+})
 
 onMounted(() => {
   window.scrollTo(0, 0);
   emitter.emit('searchHide', 1);
+  let Disqus = new window.iDisqus('comment', {
+    forum: 'gaoyuzi',
+    site: 'https://gaoyuzi.cn',
+    api: 'https://epiphanys.me/dashboard/api',
+    mode: 2,
+    timeout: 6000,
+    init: true,
+    url: 'http://gaoyuzi.cn/read?Id=' + reserve.value.Id,
+    title: reserve.value.title
+  });
 })
+
 </script>
 
 <style lang="scss" scoped>
