@@ -38,3 +38,8 @@ All notable changes to this project will be documented in this file.
 - 头像动画添加
 - google 统计代码
 
+
+
+手机端 用户前进后退操作需要进行监听！
+真机上面 头像显示问题！
+

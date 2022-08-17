@@ -43,7 +43,7 @@ const props = defineProps({
   listPhoto: {
     type: Array as PropType<any>,
     required: true,
-    default: true,
+    default: Array,
   }
 })
 

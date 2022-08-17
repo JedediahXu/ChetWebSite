@@ -16,7 +16,7 @@
           </div>
 
           <div class="component-left" v-show="displaySwitch === 4" style="display: flex;">
-            <comlink />
+            <messageFriendly />
           </div>
 
           <div class="component-left knight-left" v-show="displaySwitch === 1">
@@ -68,7 +68,7 @@ declare const window: Window & { iDisqus: any };
 <script lang="ts" setup>
 import comintroduce from '@/components/message/introduce.vue'
 import comjuejin from '@/components/message/juejin.vue'
-import comlink from '@/components/message/link.vue'
+import messageFriendly from '@/components/message/friendlylink.vue'
 import comwellKnown from '@/components/message/wellknown.vue'
 import { judgment } from '@/utils/judgment'
 let getHeight = ref<number>(1)

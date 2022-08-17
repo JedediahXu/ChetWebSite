@@ -113,7 +113,4 @@ if (homeJudgment.value == 'mobile') {
     listArticle.value = [];
   });
 }
-
-
-
 </script>
