@@ -85,7 +85,6 @@
   </div>
 </template>
 
-
 <script setup lang="ts">
 import listvar from '@/components/list/listvar.vue'
 import { useI18n } from 'vue-i18n';

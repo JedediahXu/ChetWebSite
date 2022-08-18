@@ -7,7 +7,6 @@
 */
 <template>
   <container :isActive="getHeight" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
-
     <div class="componentMap" v-if="homeJudgment === 'pc'">
       <div class="hero  h-0.5 bg-origin-border"
         style="background-image: url('/static/img/avatar/arch.jpeg');height: 23rem;" v-if="visible">
@@ -96,7 +95,6 @@
       </label>
       <trajectoryMap />
     </div>
-
     <div class="componentMap" v-if="homeJudgment === 'mobile'">
       <div class="hero  h-0.5 bg-origin-border"
         style="background-image: url('/static/img/avatar/arch.jpeg');height: 23rem;" v-if="visible">
@@ -161,7 +159,6 @@
       </div>
 
     </div>
-
   </container>
 </template>
 

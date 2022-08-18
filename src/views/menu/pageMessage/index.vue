@@ -38,7 +38,6 @@
               :class="displaySwitch == 4 ? 'btn-click-primary' : ''">友情链接</button>
           </div>
         </div>
-
         <div class="mobile-component-top" v-if="homeJudgment === 'mobile'">
           <div class="banner dark mobile mobile-banner"
             style="background-image: url('/static/img/message/dm.png'); background-repeat: no-repeat;background-size: 100% 100%;">
@@ -48,12 +47,10 @@
             </div>
           </div>
         </div>
-
         <div class="divider"></div>
         <div id="comment"></div>
       </div>
     </div>
-
   </container>
 </template>
 
