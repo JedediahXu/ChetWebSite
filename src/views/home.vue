@@ -17,11 +17,12 @@
 
 <script setup lang="ts" name="home">
 import selection from '@/components/timeSelection/timeSelection.vue'
-import carlist from '@/components/list/index.vue'
 import mobileCarlist from '@/components/mobile/list/index.vue'
-import { queryArticle } from '@/api';
+import carlist from '@/components/list/index.vue'
 import { judgment } from '@/utils/judgment'
 import { emitter } from '@/utils/eventBus'
+import { ElMessage } from 'element-plus'
+import { queryArticle } from '@/api';
 import { Ref } from 'vue';
 const route = useRoute();
 
@@ -62,6 +63,14 @@ const addlist = (() => {
     listArticle.value.push(...res.data.data)
     totale.value = { ...res.data.paging }
     totale.value.page_size = listArticle.value.length
+    if (res.data.data.length === 0) {
+      ElMessage({
+        message: h('p', null, [
+          h('span', null, '山穷水尽...'),
+        ]),
+        type: 'warning',
+      })
+    }
   });
 
 });
@@ -76,7 +85,6 @@ if (homeJudgment.value == 'pc') {
   });
   //搜索
   emitter.on('searchCondition', function (index) {
-    console.log('111');
     paginationData.value.text = index
     paginationData.value.page_id = 0
     paginationData.value.page_num = 0
@@ -114,3 +122,9 @@ if (homeJudgment.value == 'mobile') {
   });
 }
 </script>
+
+<style>
+:deep(.el-message) {
+  min-width: 180px !important;
+}
+</style>

@@ -31,9 +31,9 @@
             <button class="btn btn-outline btn-secondary mt-5 w-40" @click="displayArea(1)"
               :class="displaySwitch == 1 ? 'btn-click-secondary' : ''">掘金文章</button>
             <button class="btn btn-outline btn-accent mt-5 w-40" @click="displayArea(2)"
-              :class="displaySwitch == 2 ? 'btn-click' : ''">小站介绍</button>
+              :class="displaySwitch == 2 ? 'btn-click' : ''">众而周知</button>
             <button class="btn btn-outline mt-5 w-40" @click="displayArea(3)"
-              :class="displaySwitch == 3 ? 'btn-click-outline' : ''">众而周知</button>
+              :class="displaySwitch == 3 ? 'btn-click-outline' : ''">小站介绍</button>
             <button class="btn btn-outline btn-primary mt-5 w-40" @click="displayArea(4)"
               :class="displaySwitch == 4 ? 'btn-click-primary' : ''">友情链接</button>
           </div>
@@ -64,12 +64,13 @@ declare const window: Window & { iDisqus: any };
 
 <script lang="ts" setup>
 import comintroduce from '@/components/message/introduce.vue'
-import comjuejin from '@/components/message/juejin.vue'
 import messageFriendly from '@/components/message/friendlylink.vue'
 import comwellKnown from '@/components/message/wellknown.vue'
+import comjuejin from '@/components/message/juejin.vue'
 import { judgment } from '@/utils/judgment'
-let getHeight = ref<number>(1)
 const homeJudgment = ref<string>()
+let getHeight = ref<number>(1)
+
 
 onMounted(() => {
   homeJudgment.value = judgment()
@@ -210,7 +211,7 @@ let displayArea = (index: any) => {
     }
 
     p {
-      font-size: 1.2em;
+      font-size: 1.19em;
       margin-bottom: 1em;
       font-family: BrandonGrotesqueWeb-Regular, sans-serif;
     }
