@@ -76,7 +76,7 @@
           <br />
           <div style="display:flex;flex-direction: column;align-items: center;">
             <div class="stat-title">总访问量</div>
-            <div class="stat-value text-primary">1983</div>
+            <div class="stat-value text-primary">{{ mainStore.getTotalAmount }}</div>
             <div class="stat-desc">👋 欢迎访问,我的个人博客~</div>
           </div>
         </div>
@@ -89,23 +89,20 @@
 import listvar from '@/components/list/listvar.vue'
 import { useI18n } from 'vue-i18n';
 import { emitter } from '@/utils/eventBus'
-import { queryIP } from '@/api';
+import useIP from '@/utils/useIP'
+import useLanguage from '@/store/index';
 
-const $router = useRouter();
 const { t } = useI18n();
+const $router = useRouter();
+const { cityname } = useIP()
+const mainStore = useLanguage();
 
-//ip 地址
-const cityname = ref<string>()
-queryIP(localStorage.getItem('Ip')).then((res: any) => {
-  cityname.value = res.data.data[0].location
-});
 
 let touch = ref<unknown>(0);
 //Routes Data
 emitter.on('taskTouch', (e) => {
   touch.value = e
 })
-
 
 const emit = defineEmits(['clickChild'])
 //Routes   searchHide effect Hidden search

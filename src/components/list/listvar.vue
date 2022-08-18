@@ -3,12 +3,10 @@
     <span class="os">
       <i v-if="osIconName" class="iconfont" :class="osIconName" />
       <span>{{ uaResult.result.os.name }}</span>
-      <!-- <span>{{ uaResult.result.os.version }}</span> -->
     </span>
     <span class="browser">
       <i v-if="browserIconName" class="iconfont" :class="browserIconName" />
       <span>{{ uaResult.result.browser.name }}</span>
-      <!-- <span>{{ uaResult.result.browser.version }}</span> -->
     </span>
   </span>
 </template>
@@ -43,7 +41,7 @@ export default {
 </script>
 
 <script lang="ts" setup>
-import { uaParser } from '@/utils/ua'
+import { uaParser } from '@/utils/useDetails'
 let userAgent = ref<any>('')
 
 const uaResult = computed(() => uaParser(userAgent))

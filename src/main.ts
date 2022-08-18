@@ -14,13 +14,14 @@ import 'vue3-photo-preview/dist/index.css';
 import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
 import basicContainer from '@/components/globalContainer/container.vue'
+import VueCookies from 'vue-cookies'
 
 
 const app = createApp(App);
 const pinia = createPinia();
 pinia.use(piniaPluginPersistedstate);
 app.component('container', basicContainer);
-app.use(pinia)
+app.use(pinia).use(VueCookies)
 app.use(i18n).use(vue3PhotoPreview).use(mavonEditor).use(elementPlus, { i18n: i18n.global.t }).use(router).mount('#app');
 
 

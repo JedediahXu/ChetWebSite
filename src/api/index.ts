@@ -3,7 +3,7 @@
 * @Author: xuhuazhi
 * @Date: 2022-06-01
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-08-17 23:58:13
+ * @LastEditTime: 2022-08-18 17:31:55
 */
 import request from "../utils/request"
 
@@ -39,6 +39,16 @@ export function queryLink() {
     method: 'get'
   })
 }
+
+
+
+export function queryAmount() {
+  return request({
+    url: '/apicookie/api/article/queryAmount',
+    method: 'get'
+  })
+}
+
 
 export function queryIP(ip) {
   return request({

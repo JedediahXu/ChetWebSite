@@ -1,5 +1,4 @@
 import parser from 'ua-parser-js'
-// import { Language } from '/@/language'
 
 export const uaParser = (userAgent: string) => {
   const parseResult = parser(userAgent || '')
@@ -20,18 +19,3 @@ export const uaParser = (userAgent: string) => {
     isMobile: parseResult.device.type === 'mobile'
   }
 }
-
-// const isTargetLanguageUser = (language: UaLanguage, targetLang: string) => {
-//   if (typeof language === 'string') {
-//     return language.includes(targetLang)
-//   }
-//   if (Array.isArray(language)) {
-//     return language.some((lang) => lang.includes(targetLang))
-//   }
-//   return false
-// }
-// export type UaLanguage = string | string[]
-// export const isEnUser = (language: UaLanguage) => isTargetLanguageUser(language, Language.English)
-// export const isZhUser = (language: UaLanguage) => {
-//   return language ? isTargetLanguageUser(language, Language.Chinese) : true
-// }

@@ -51,6 +51,12 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/apis/, ''),
       },
+      '/apicookie': {
+        target: 'http://127.0.0.1:3008',
+        ws: true,
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/apicookie/, ''),
+      },
       '/githubassets': {
         target: 'https://github.githubassets.com',
         ws: true,
