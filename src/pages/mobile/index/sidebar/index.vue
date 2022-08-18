@@ -9,7 +9,7 @@
   <div class="sidebar-top">
     <div class="avatar" style="margin-top: 10px;">
       <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-        <img src="/static/img/avatar/chet.jpg" />
+        <img src="/public/static/img/avatar/xu.jpeg" />
       </div>
     </div>
     <div style="margin-top: 11px;">
