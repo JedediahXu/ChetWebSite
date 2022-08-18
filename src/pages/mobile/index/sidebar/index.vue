@@ -135,6 +135,26 @@ const pushJump = (index: number) => {
   }
 }
 
+watch(() => $router.currentRoute.value.path, (newValue) => {
+  switch (newValue) {
+    case '/':
+      pushJump(0)
+      break;
+    case '/archive':
+      pushJump(1)
+      break;
+    case '/about':
+      pushJump(2)
+      break;
+    case '/myself':
+      pushJump(3)
+      break;
+    case '/message':
+      pushJump(4)
+      break;
+  }
+}, { immediate: true })
+
 onMounted(() => {
   //Default Routes
   let cashBack: number = JSON.parse(sessionStorage.getItem('touch') || '0')

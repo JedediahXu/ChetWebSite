@@ -16,7 +16,6 @@ import 'mavon-editor/dist/css/index.css'
 import basicContainer from '@/components/globalContainer/container.vue'
 
 
-
 const app = createApp(App);
 const pinia = createPinia();
 pinia.use(piniaPluginPersistedstate);

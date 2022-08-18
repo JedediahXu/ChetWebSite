@@ -1,9 +1,3 @@
-/**
- * @file UA parser
- * @module transform.ua
- * @author Surmon <https://github.com/surmon-china>
- */
-
 import parser from 'ua-parser-js'
 // import { Language } from '/@/language'
 

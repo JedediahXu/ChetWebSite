@@ -9,7 +9,7 @@
   <div class="sidebar-top">
     <div class="avatar" style="margin-top: 10px;">
       <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-        <img src="/public/static/img/avatar/to.png" />
+        <img src="/public/static/img/avatar/chet.jpg" />
       </div>
     </div>
     <div style="margin-top: 11px;">
@@ -126,11 +126,11 @@ queryIP(localStorage.getItem('Ip')).then((res: any) => {
   cityname.value = res.data.data[0].location
 });
 
-
 let touch = ref<unknown>(0);
 emitter.on('taskTouch', (e) => {
   touch.value = e
 })
+
 //Routes Data
 const pushJump = (index: number) => {
   touch.value = index
@@ -180,6 +180,26 @@ const urlJump = (() => {
   }
 })
 urlJump()
+
+watch(() => $router.currentRoute.value.path, (newValue) => {
+  switch (newValue) {
+    case '/':
+      pushJump(0)
+      break;
+    case '/archive':
+      pushJump(1)
+      break;
+    case '/about':
+      pushJump(2)
+      break;
+    case '/myself':
+      pushJump(3)
+      break;
+    case '/message':
+      pushJump(4)
+      break;
+  }
+}, { immediate: true })
 
 onMounted(() => {
   //Default Routes
