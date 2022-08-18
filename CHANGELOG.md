@@ -10,11 +10,11 @@ All notable changes to this project will be documented in this file.
 - 博客内容填充
 - 更换服务端渲染
 - 性能优化
+- 逻辑抽离 hooks
 
 
 
 ### v1.0.0 （执行中）
-
 - README 完善
 - 图片要有 hover 渐变效果
 - 相关文章的样式不足一行时是需要优化的
@@ -39,7 +39,4 @@ All notable changes to this project will be documented in this file.
 - google 统计代码
 
 
-
-手机端 用户前进后退操作需要进行监听！
-真机上面 头像显示问题！
 

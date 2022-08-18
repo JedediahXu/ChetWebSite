@@ -1,6 +1,6 @@
 <template>
     <div class="mobile-main">
-        <sidebar class="asider " :class="MenuBar == true ? 'opened' : ''" />
+        <sidebar class="asider " @clickChild="clickEven" :class="MenuBar == true ? 'opened' : ''" />
         <div class="main " :class="MenuBar !== false ? 'opened' : ''">
             <div :class="MenuBar !== false ? 'close-mask' : ''" @click="buttonMenuBar"></div>
             <top class="right-top mobile-right-top" @setMenuBar="setMenuBar"
@@ -36,9 +36,19 @@ let setMenuBar = (() => {
         MenuBar.value = false
     }
 })
+
+
 let buttonMenuBar = (() => {
     if (MenuBar.value) {
         MenuBar.value = false
     }
 })
+
+const clickEven = () => {
+    if (MenuBar.value) {
+        MenuBar.value = false
+    }
+}
+
+
 </script>

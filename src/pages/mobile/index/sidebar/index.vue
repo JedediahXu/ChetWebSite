@@ -107,28 +107,36 @@ emitter.on('taskTouch', (e) => {
   touch.value = e
 })
 
+
+const emit = defineEmits(['clickChild'])
+
 //Routes   searchHide effect Hidden search
 const pushJump = (index: number) => {
   touch.value = index
   sessionStorage.setItem('touch', JSON.stringify(index))
   switch (index) {
     case 0:
+      emit('clickChild')
       emitter.emit('searchHide', 0);
       $router.push({ name: 'home' })
       break;
     case 1:
+      emit('clickChild')
       emitter.emit('searchHide', 1);
       $router.push({ name: 'archive' })
       break;
     case 2:
+      emit('clickChild')
       emitter.emit('searchHide', 1);
       $router.push({ name: 'about' })
       break;
     case 3:
+      emit('clickChild')
       emitter.emit('searchHide', 1);
       $router.push({ name: 'myself' })
       break;
     case 4:
+      emit('clickChild')
       emitter.emit('searchHide', 1);
       $router.push({ name: 'message' })
       break;
