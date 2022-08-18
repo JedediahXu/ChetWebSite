@@ -26,6 +26,7 @@
           </span>
           <span class="views">
             <i class="iconfont icon-eye">
+              999
             </i>
             <span>{{ item.language }}</span>
           </span>

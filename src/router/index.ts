@@ -3,12 +3,13 @@
 * @Author: xuhuazhi
 * @Date: 2022-06-01
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-08-17 09:43:44
+ * @LastEditTime: 2022-08-18 11:26:57
 */
 import Vue from 'vue'
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import exhibitRoutes from '@/router/modules/exhibit'
 import { judgment } from '@/utils/judgment'
+
 const path = judgment()
 const routes: Array<RouteRecordRaw> = [
     {
@@ -84,5 +85,14 @@ const router = createRouter({
     routes,
 })
 
+//埋点
+router.beforeEach(async (to, from, next) => {
+    if (to.path) {
+        if (window._hmt) {
+            window._hmt.push(['_trackPageview', '/#' + to.fullPath]);
+        }
+    }
+    next();
+});
 
 export default router

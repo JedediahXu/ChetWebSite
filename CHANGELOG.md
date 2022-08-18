@@ -37,6 +37,6 @@ All notable changes to this project will be documented in this file.
 - 统计访问
 - 头像动画添加
 - google 统计代码
-
+- 骨架屏
 
 
