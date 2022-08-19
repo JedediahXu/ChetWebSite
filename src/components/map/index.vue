@@ -70,10 +70,10 @@
 </template>
 
 <script lang="ts" setup>
+import { geoPhoto, geoData } from '../../../public/config'
 import { initDragMap } from '@/utils/Map/drawMap';
 import { ElMessage } from 'element-plus'
 import mapboxgl from "mapbox-gl";
-import { geoPhoto, geoData } from '../../../public/config'
 
 const popup = new mapboxgl.Popup({
   closeButton: false,

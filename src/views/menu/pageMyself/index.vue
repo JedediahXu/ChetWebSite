@@ -165,8 +165,8 @@
 
 <script setup lang="ts">
 import trajectoryMap from '@/components/map/index.vue'
-import { useI18n } from 'vue-i18n';
 import { judgment } from '@/utils/judgment'
+import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
 let getHeight = ref<number>(1)

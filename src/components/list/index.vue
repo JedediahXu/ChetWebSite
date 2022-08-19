@@ -20,7 +20,7 @@
               <a class="link">{{ item.title }}</a>
               <span class="language">{{ item.language }}</span>
             </h5>
-            <p class="description" v-html="item.content" style="-webkit-box-orient:vertical;"></p>
+            <p class="description">{{ item.introduce }}</p>
           </div>
           <div class="item-meta"><span class="date">
               <i class="iconfont icon-icon_clock"></i>{{ item.pub_date }}</span>
@@ -54,11 +54,11 @@
 </template>
 
 <script setup lang="ts">
-import type { PropType } from 'vue';
-import { useShow } from '@/utils/useLoad'
 import loadmore from '@/components/loadMore/index.vue'
-const $router = useRouter();
+import { useShow } from '@/utils/useLoad'
+import type { PropType } from 'vue';
 
+const $router = useRouter();
 const props = defineProps({
   listArticle: {
     type: Array as PropType<any>,
@@ -83,8 +83,8 @@ const read = ((index: object) => {
   $router.push({ name: 'read' })
 })
 
-const { listArticleLoad } = useShow()
 let isLoad = ref<boolean>(false)
+const { listArticleLoad } = useShow()
 const listShow = () => {
   isLoad.value = true
 }

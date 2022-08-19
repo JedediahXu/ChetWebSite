@@ -12,13 +12,12 @@
   </container>
 </template>
 
-
 <script setup lang="ts"  name="archive">
-import archive from '@/components/archive/index.vue'
 import mobilArchive from '@/components/mobile/archive/index.vue'
+import archive from '@/components/archive/index.vue'
 import { judgment } from '@/utils/judgment'
-import { mallGoodsCates } from '@/api';
 import { emitter } from '@/utils/eventBus'
+import { mallGoodsCates } from '@/api';
 const router = useRouter();
 
 let getHeight = ref<number>(1)

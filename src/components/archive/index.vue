@@ -26,8 +26,8 @@
 </template>
 
 <script setup lang="ts">
-import type { PropType } from 'vue';
 import { useShow } from '@/utils/useLoad'
+import type { PropType } from 'vue';
 
 
 const props = defineProps({

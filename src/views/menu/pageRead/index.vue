@@ -24,10 +24,10 @@ declare const window: Window & { iDisqus: any };
 </script>
 
 <script setup lang="ts">
-import { emitter } from '@/utils/eventBus'
-import { judgment } from '@/utils/judgment'
-import pcread from '@/components/read/pcread.vue'
 import mobileread from '@/components/read/mobileread.vue'
+import pcread from '@/components/read/pcread.vue'
+import { judgment } from '@/utils/judgment'
+import { emitter } from '@/utils/eventBus'
 
 interface reserve {
   Id: number;
@@ -46,6 +46,7 @@ homeJudgment.value = judgment()
 let reserve = ref<reserve>()
 reserve.value = JSON.parse(sessionStorage.getItem('read'))
 onActivated(() => {
+  emitter.emit('searchHide', 1);
   reserve.value = JSON.parse(sessionStorage.getItem('read'))
   let Disqus = new window.iDisqus('comment', {
     forum: 'gaoyuzi',

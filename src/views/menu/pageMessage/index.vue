@@ -10,23 +10,18 @@
     <div class="component-body">
       <div class="component">
         <div class="component-top" v-if="homeJudgment === 'pc'">
-
           <div class="component-left" v-show="displaySwitch === 3">
             <comwellKnown />
           </div>
-
           <div class="component-left" v-show="displaySwitch === 4" style="display: flex;">
             <messageFriendly />
           </div>
-
           <div class="component-left knight-left" v-show="displaySwitch === 1">
             <comjuejin />
           </div>
-
           <div class="component-left knight-left" v-show="displaySwitch === 2">
             <comintroduce />
           </div>
-
           <div class="component-right">
             <button class="btn btn-outline btn-secondary mt-5 w-40" @click="displayArea(1)"
               :class="displaySwitch == 1 ? 'btn-click-secondary' : ''">掘金文章</button>
@@ -63,8 +58,8 @@ declare const window: Window & { iDisqus: any };
 </script>
 
 <script lang="ts" setup>
-import comintroduce from '@/components/message/introduce.vue'
 import messageFriendly from '@/components/message/friendlylink.vue'
+import comintroduce from '@/components/message/introduce.vue'
 import comwellKnown from '@/components/message/wellknown.vue'
 import comjuejin from '@/components/message/juejin.vue'
 import { judgment } from '@/utils/judgment'
