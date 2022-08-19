@@ -27,6 +27,7 @@
 
 
 <script setup lang="ts">
+import { useShow } from '@/utils/useLoad'
 import type { PropType } from 'vue';
 
 const props = defineProps({
@@ -43,46 +44,15 @@ const toJump = (index: number) => {
   emits('getTransfer', index)
 }
 
+
 let isLoad = ref<boolean>(false)
-
-const listPhotoLoad = ref([{
-  Id: 0,
-},
-{
-  Id: 0,
-}, {
-  Id: 0,
-}
-  , {
-  Id: 0,
-},
-{
-  Id: 0,
-},
-{
-  Id: 0,
-},
-{
-  Id: 0,
-},
-{
-  Id: 0,
-},
-{
-  Id: 0,
-}, {
-  Id: 0,
-}])
-
+const { listPhotoLoad } = useShow()
 //骨架显示
 const archiveShow = () => {
   isLoad.value = true
 }
-
-
 defineExpose({
   archiveShow
 })
-
 </script>
 

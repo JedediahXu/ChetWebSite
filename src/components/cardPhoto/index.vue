@@ -49,15 +49,13 @@
       </ul>
     </div>
   </div>
-
-
 </template>
 
 <script setup lang="ts">
-import type { PropType } from 'vue';
 import { judgment } from '@/utils/judgment'
+import { useShow } from '@/utils/useLoad'
+import type { PropType } from 'vue';
 
-let isLoad = ref<boolean>(false)
 
 let homeJudgment = ref<string>()
 const props = defineProps({
@@ -67,97 +65,16 @@ const props = defineProps({
     default: Array,
   }
 })
-
 onMounted(() => {
   homeJudgment.value = judgment()
 })
 
-const listPhotoLoad = ref([{
-  Id: 0,
-},
-{
-  Id: 0,
-}, {
-  Id: 0,
-}
-  , {
-  Id: 0,
-},
-{
-  Id: 0,
-},
-{
-  Id: 0,
-},
-{
-  Id: 0,
-},
-{
-  Id: 0,
-},
-{
-  Id: 0,
-}, {
-  Id: 0,
-},
-{
-  Id: 0,
-},
-{
-  Id: 0,
-},
-{
-  Id: 0,
-}, {
-  Id: 0,
-}, {
-  Id: 0,
-},
-{
-  Id: 0,
-},
-{
-  Id: 0,
-}, {
-  Id: 0,
-}, {
-  Id: 0,
-},
-{
-  Id: 0,
-},
-{
-  Id: 0,
-}, {
-  Id: 0,
-}, {
-  Id: 0,
-},
-{
-  Id: 0,
-},
-{
-  Id: 0,
-}, {
-  Id: 0,
-}, {
-  Id: 0,
-},
-{
-  Id: 0,
-},
-{
-  Id: 0,
-}, {
-  Id: 0,
-}])
-
+let isLoad = ref<boolean>(false)
+const { listPhotoLoad } = useShow()
 //骨架显示
 const archiveShow = () => {
   isLoad.value = true
 }
-
-
 defineExpose({
   archiveShow
 })

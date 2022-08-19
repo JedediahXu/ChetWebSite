@@ -55,6 +55,7 @@
 
 <script setup lang="ts">
 import type { PropType } from 'vue';
+import { useShow } from '@/utils/useLoad'
 import loadmore from '@/components/loadMore/index.vue'
 const $router = useRouter();
 
@@ -71,10 +72,6 @@ const props = defineProps({
   }
 })
 
-let isLoad = ref<boolean>(false)
-
-
-
 const emits = defineEmits(['getChili']);
 const toEmits = () => {
   emits('getChili')
@@ -86,7 +83,8 @@ const read = ((index: object) => {
   $router.push({ name: 'read' })
 })
 
-//骨架显示时间
+const { listArticleLoad } = useShow()
+let isLoad = ref<boolean>(false)
 const listShow = () => {
   isLoad.value = true
 }
@@ -94,84 +92,5 @@ const listShow = () => {
 defineExpose({
   listShow
 })
-
-let listArticleLoad = ref([{
-  Id: 5,
-  author_id: "ChetSerenade",
-  cate_id: 2,
-  content: "文章赵蛟",
-  cover_img: "/uploads/e38127eb7b4c83814ab20a2219eb7ba3",
-  introduce: "一句中心点",
-  is_delete: "0",
-  pub_date: "2022-07-19",
-  state: "已发布",
-  title: "标题",
-}, {
-  Id: 5,
-  author_id: "ChetSerenade",
-  cate_id: 2,
-  content: "文章赵蛟",
-  cover_img: "/uploads/e38127eb7b4c83814ab20a2219eb7ba3",
-  introduce: "一句中心点",
-  is_delete: "0",
-  pub_date: "2022-07-19",
-  state: "已发布",
-  title: "标题",
-}, {
-  Id: 5,
-  author_id: "ChetSerenade",
-  cate_id: 2,
-  content: "文章赵蛟",
-  cover_img: "/uploads/e38127eb7b4c83814ab20a2219eb7ba3",
-  introduce: "一句中心点",
-  is_delete: "0",
-  pub_date: "2022-07-19",
-  state: "已发布",
-  title: "标题",
-}, {
-  Id: 5,
-  author_id: "ChetSerenade",
-  cate_id: 2,
-  content: "文章赵蛟",
-  cover_img: "/uploads/e38127eb7b4c83814ab20a2219eb7ba3",
-  introduce: "一句中心点",
-  is_delete: "0",
-  pub_date: "2022-07-19",
-  state: "已发布",
-  title: "标题",
-}, {
-  Id: 5,
-  author_id: "ChetSerenade",
-  cate_id: 2,
-  content: "文章赵蛟",
-  cover_img: "/uploads/e38127eb7b4c83814ab20a2219eb7ba3",
-  introduce: "一句中心点",
-  is_delete: "0",
-  pub_date: "2022-07-19",
-  state: "已发布",
-  title: "标题",
-}, {
-  Id: 5,
-  author_id: "ChetSerenade",
-  cate_id: 2,
-  content: "文章赵蛟",
-  cover_img: "/uploads/e38127eb7b4c83814ab20a2219eb7ba3",
-  introduce: "一句中心点",
-  is_delete: "0",
-  pub_date: "2022-07-19",
-  state: "已发布",
-  title: "标题",
-}, {
-  Id: 5,
-  author_id: "ChetSerenade",
-  cate_id: 2,
-  content: "文章赵蛟",
-  cover_img: "/uploads/e38127eb7b4c83814ab20a2219eb7ba3",
-  introduce: "一句中心点",
-  is_delete: "0",
-  pub_date: "2022-07-19",
-  state: "已发布",
-  title: "标题",
-}])
 </script>
 
