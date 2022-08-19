@@ -7,7 +7,7 @@
 */
 <template>
   <container :isActive="getHeight" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
-    <card :listPhoto="imgList" />
+    <card :listPhoto="imgList" ref="dialogShow" />
   </container>
 </template>
 
@@ -15,6 +15,7 @@
 import card from '@/components/cardPhoto/index.vue'
 import { judgment } from '@/utils/judgment'
 import { queryPhoto } from '@/api';
+const dialogShow = ref(null)
 
 let getHeight = ref<number>(1)
 let homeJudgment = ref<string>()
@@ -23,6 +24,9 @@ let imgList = ref<Array<object>>()
 const addPhoto = (() => {
   queryPhoto().then((res: any) => {
     imgList.value = res.data.data
+    setTimeout(() => {
+      dialogShow.value.archiveShow()
+    }, 500)
   });
 });
 addPhoto()

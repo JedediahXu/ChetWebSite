@@ -7,8 +7,8 @@
 */
 <template>
   <container :isActive="getHeight" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
-    <archive :listPhoto="imgList" v-if="homeJudgment === 'pc'" @getTransfer="getTransfer" />
-    <mobilArchive :listPhoto="imgList" v-if="homeJudgment === 'mobile'" @getTransfer="getTransfer" />
+    <archive :listPhoto="imgList" ref="dialogShow" v-if="homeJudgment === 'pc'" @getTransfer="getTransfer" />
+    <mobilArchive :listPhoto="imgList" ref="dialogShow" v-if="homeJudgment === 'mobile'" @getTransfer="getTransfer" />
   </container>
 </template>
 
@@ -23,6 +23,7 @@ const router = useRouter();
 
 let getHeight = ref<number>(1)
 let homeJudgment = ref<string>()
+const dialogShow = ref(null)
 let imgList = ref<Array<object>>([])
 
 //获取文章分类
@@ -30,6 +31,9 @@ onMounted(() => {
   homeJudgment.value = judgment()
   mallGoodsCates().then((res: any) => {
     imgList.value.push(...res.data.data)
+    setTimeout(() => {
+      dialogShow.value.archiveShow()
+    }, 500)
   });
 })
 

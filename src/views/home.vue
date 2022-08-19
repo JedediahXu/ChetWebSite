@@ -59,10 +59,12 @@ let paginationData: Ref = ref<pagination>({
 const addlist = (() => {
   paginationData.value.page_num++
   queryArticle(paginationData.value).then((res: any) => {
-    dialogShow.value.listShow()
     listArticle.value.push(...res.data.data)
     totale.value = { ...res.data.paging }
     totale.value.page_size = listArticle.value.length
+    setTimeout(() => {
+      dialogShow.value.listShow()
+    }, 500)
     if (res.data.data.length === 0) {
       ElMessage({
         message: h('p', null, [

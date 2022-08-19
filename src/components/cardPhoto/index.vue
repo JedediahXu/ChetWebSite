@@ -1,7 +1,7 @@
 <template>
   <div class="p-3.5 type-setting" v-if="homeJudgment === 'pc'">
     <ul class="medias">
-      <photo-provider>
+      <photo-provider v-if="isLoad">
         <photo-consumer v-for="src in listPhoto" :intro="`/apis` + src.photo" :key="src" :src="`/apis` + src.photo">
           <li class="media">
             <div class="mask"><span class="icon"><i class="iconfont icon-chakan"></i></span></div>
@@ -11,13 +11,22 @@
           </li>
         </photo-consumer>
       </photo-provider>
+      <template v-else>
+        <el-skeleton class="card border-2 border-base-100 card-compact bg-white/5 hover:bg-gray-300/10 
+        transition-all duration-200 hover:shadow hover:-translate-y-1" v-for="(src, index) in listPhotoLoad"
+          :key="index" animated>
+          <template #template>
+            <el-skeleton-item variant="image" style="height: 9rem" />
+          </template>
+        </el-skeleton>
+      </template>
     </ul>
   </div>
 
   <div class="moblie" v-if="homeJudgment === 'mobile'">
     <div class="p-3.5  type-setting">
       <ul class="moblie-medias">
-        <photo-provider>
+        <photo-provider v-if="isLoad">
           <photo-consumer v-for="src in listPhoto" :intro="`/apis` + src.photo" :key="src" :src="`/apis` + src.photo">
             <li class="moblie-media">
               <div class="mask"><span class="icon"><i class="iconfont icon-chakan"></i></span></div>
@@ -27,6 +36,16 @@
             </li>
           </photo-consumer>
         </photo-provider>
+
+        <template v-else>
+          <el-skeleton class="card border-2 border-base-100 card-compact bg-white/5 hover:bg-gray-300/10 
+        transition-all duration-200 hover:shadow hover:-translate-y-1" v-for="(src, index) in listPhotoLoad"
+            :key="index" animated>
+            <template #template>
+              <el-skeleton-item variant="image" style="height: 9rem" />
+            </template>
+          </el-skeleton>
+        </template>
       </ul>
     </div>
   </div>
@@ -37,6 +56,8 @@
 <script setup lang="ts">
 import type { PropType } from 'vue';
 import { judgment } from '@/utils/judgment'
+
+let isLoad = ref<boolean>(false)
 
 let homeJudgment = ref<string>()
 const props = defineProps({
@@ -49,5 +70,95 @@ const props = defineProps({
 
 onMounted(() => {
   homeJudgment.value = judgment()
+})
+
+const listPhotoLoad = ref([{
+  Id: 0,
+},
+{
+  Id: 0,
+}, {
+  Id: 0,
+}
+  , {
+  Id: 0,
+},
+{
+  Id: 0,
+},
+{
+  Id: 0,
+},
+{
+  Id: 0,
+},
+{
+  Id: 0,
+},
+{
+  Id: 0,
+}, {
+  Id: 0,
+},
+{
+  Id: 0,
+},
+{
+  Id: 0,
+},
+{
+  Id: 0,
+}, {
+  Id: 0,
+}, {
+  Id: 0,
+},
+{
+  Id: 0,
+},
+{
+  Id: 0,
+}, {
+  Id: 0,
+}, {
+  Id: 0,
+},
+{
+  Id: 0,
+},
+{
+  Id: 0,
+}, {
+  Id: 0,
+}, {
+  Id: 0,
+},
+{
+  Id: 0,
+},
+{
+  Id: 0,
+}, {
+  Id: 0,
+}, {
+  Id: 0,
+},
+{
+  Id: 0,
+},
+{
+  Id: 0,
+}, {
+  Id: 0,
+}])
+
+//骨架显示
+const archiveShow = () => {
+  isLoad.value = true
+}
+
+
+defineExpose({
+  archiveShow
 })
 </script>

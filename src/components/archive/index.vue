@@ -14,10 +14,10 @@
 
       <template v-else>
         <el-skeleton class="card border-2 border-base-100 card-compact bg-white/5 hover:bg-gray-300/10 
-        transition-all duration-200 hover:shadow hover:-translate-y-1" style="height: 100%;"
-          v-for="(src, index) in listPhoto" :key="index" animated>
+        transition-all duration-200 hover:shadow hover:-translate-y-1" v-for="(src, index) in listPhotoLoad"
+          :key="index" animated>
           <template #template>
-            <el-skeleton-item variant="image" style="height: 13rem" />
+            <el-skeleton-item variant="image" style="height: 12rem" />
           </template>
         </el-skeleton>
       </template>
@@ -37,6 +37,36 @@ const props = defineProps({
   }
 })
 
+const listPhotoLoad = ref([{
+  Id: 0,
+},
+{
+  Id: 0,
+}, {
+  Id: 0,
+}
+  , {
+  Id: 0,
+},
+{
+  Id: 0,
+},
+{
+  Id: 0,
+},
+{
+  Id: 0,
+},
+{
+  Id: 0,
+},
+{
+  Id: 0,
+}, {
+  Id: 0,
+}])
+
+
 //分类跳转
 const emits = defineEmits(['getTransfer']);
 const toJump = (index: number) => {
@@ -48,11 +78,10 @@ const archiveShow = () => {
   isLoad.value = true
 }
 
-setTimeout(() => {
-  isLoad.value = true
-}, 1500)
 
 defineExpose({
   archiveShow
 })
+
+
 </script>
