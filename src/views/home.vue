@@ -9,10 +9,11 @@
   <div class="list-conter" v-if="homeJudgment === 'pc'">
     <div>
       <selection />
-      <carlist :listArticle="listArticle" :totale="totale" @getChili="addlist" />
+      <carlist :listArticle="listArticle" ref="dialogShow" :totale="totale" @getChili="addlist" />
     </div>
   </div>
-  <mobileCarlist v-if="homeJudgment === 'mobile'" :listArticle="listArticle" :totale="totale" @getChili="addlist" />
+  <mobileCarlist v-if="homeJudgment === 'mobile'" ref="dialogShow" :listArticle="listArticle" :totale="totale"
+    @getChili="addlist" />
 </template>
 
 <script setup lang="ts" name="home">
@@ -25,8 +26,6 @@ import { ElMessage } from 'element-plus'
 import { queryArticle } from '@/api';
 import { Ref } from 'vue';
 const route = useRoute();
-
-
 
 //mobile and pc
 let homeJudgment = ref<string>()
@@ -46,9 +45,9 @@ interface pagination {
   text: string
 }
 
-
 let listArticle = ref([])
 let totale = ref<info>();
+const dialogShow = ref(null)
 let paginationData: Ref = ref<pagination>({
   page_num: 0,
   page_size: 6,
@@ -60,6 +59,7 @@ let paginationData: Ref = ref<pagination>({
 const addlist = (() => {
   paginationData.value.page_num++
   queryArticle(paginationData.value).then((res: any) => {
+    dialogShow.value.listShow()
     listArticle.value.push(...res.data.data)
     totale.value = { ...res.data.paging }
     totale.value.page_size = listArticle.value.length
@@ -122,9 +122,3 @@ if (homeJudgment.value == 'mobile') {
   });
 }
 </script>
-
-<style>
-:deep(.el-message) {
-  min-width: 180px !important;
-}
-</style>
