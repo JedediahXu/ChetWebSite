@@ -70,19 +70,19 @@
 
 let showNumber = ref<number>(0)
 let bannerList = reactive([{
-  img: '/public/static/img/message/dm.png'
+  img: '/static/img/message/dm.png'
 },
 {
-  img: '/public/static/img/message/gch.png'
+  img: '/static/img/message/gch.png'
 },
 {
-  img: '/public/static/img/message/jh.png'
+  img: '/static/img/message/jh.png'
 },
 {
-  img: '/public/static/img/message/vue.png'
+  img: '/static/img/message/vue.png'
 },
 {
-  img: '/public/static/img/message/wx.png'
+  img: '/static/img/message/wx.png'
 },]
 )
 

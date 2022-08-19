@@ -117,11 +117,35 @@ import { useI18n } from 'vue-i18n';
 import { emitter } from '@/utils/eventBus'
 import useIP from '@/utils/useIP'
 import useLanguage from '@/store/index';
+// import useDebouncedRef  from '@/utils/debounce'
 
 const { t } = useI18n();
-const $router = useRouter();
 const { cityname } = useIP()
+const $router = useRouter();
+let remind = ref<boolean>(true)
 const mainStore = useLanguage();
+let IP = localStorage.getItem('Ip')
+
+
+document.onkeydown = function (event) {
+  let e = event || arguments.callee.caller.arguments[0];
+  if (e && e.keyCode == 123) {
+    if (remind.value == true) {
+      ElMessage({
+        dangerouslyUseHTMLString: true,
+        message: `<strong>不对劲🤨,这位<i style="color:red">${cityname.value}-IP:${IP}</i>的朋友,您好!如果反复操作,将会被封IP</strong>`,
+        type: 'warning',
+        duration: 0,
+        showClose: true,
+      })
+    }
+    remind.value = false
+    return false;
+  }
+};
+
+
+
 
 
 let touch = ref<unknown>(0);
@@ -198,6 +222,7 @@ watch(() => $router.currentRoute.value.path, (newValue) => {
       break;
   }
 }, { immediate: true })
+
 
 onMounted(() => {
   //Default Routes
