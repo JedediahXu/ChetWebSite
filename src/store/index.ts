@@ -32,7 +32,7 @@ const useLanguage = defineStore({
   },
   persist: {
     key: 'storekey', //缓存key
-    storage: window.sessionStorage, //缓存方式
+    storage: window.localStorage, //缓存方式
     // 部分持久化状态的点符号路径数组，默认持久化所有数据 
     paths: ['language', 'themeColor', 'totalAmount'],  //持久化counter 字段
   },

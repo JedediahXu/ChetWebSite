@@ -7,7 +7,7 @@
 */
 <template>
   <div class="article-list" v-if="isLoad">
-    <div class="article-item list-item" v-for="item, index in listArticle" :key="index" @click="read(item)">
+    <div class="article-item list-item" v-for="item, index in listArticle" :key="index" @click="read(item, index + 1)">
       <div class="item-background" :style="{ backgroundImage: 'url(' + '/apis' + item.cover_img + ')' }">
       </div>
       <div class="item-content">
@@ -22,9 +22,19 @@
             </h5>
             <p class="description">{{ item.introduce }}</p>
           </div>
-          <div class="item-meta"><span class="date">
-              <i class="iconfont icon-icon_clock"></i>{{ item.pub_date }}</span>
+          <div class="item-meta">
+            <span class="date">
+              <i class="iconfont icon-icon_clock"></i>
+              {{ item.pub_date }}
+            </span>
             <span class="views">
+              <i class="iconfont icon-eye">
+                {{ item.visitor_volume }}
+              </i>
+              <span>{{ item.language }}</span>
+            </span>
+            <span class="views">
+              <i class="iconfont icon-category" data-v-70ac518a=""></i>
               <a>{{ item.author_id }}</a>
             </span>
           </div>
@@ -56,6 +66,7 @@
 <script setup lang="ts">
 import loadmore from '@/components/loadMore/index.vue'
 import { useShow } from '@/utils/useLoad'
+import { updateVolume } from '@/api';
 import type { PropType } from 'vue';
 
 const $router = useRouter();
@@ -78,9 +89,12 @@ const toEmits = () => {
 }
 
 //选中文章 带着内容跳转展示
-const read = ((index: object) => {
-  sessionStorage.setItem('read', JSON.stringify(index))
+const read = ((item: object, id) => {
+  sessionStorage.setItem('read', JSON.stringify(item))
   $router.push({ name: 'read' })
+  updateVolume(id).then((res: any) => {
+    console.log(res);
+  });
 })
 
 let isLoad = ref<boolean>(false)
