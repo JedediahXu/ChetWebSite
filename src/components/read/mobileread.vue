@@ -34,7 +34,8 @@
           </section>
         </div>
       </div>
-      <div class="divider" @click="returntTop">点击回到顶部</div>
+      <div class="divider" @click="returntTop"></div>
+      <!-- 点击回到顶部 -->
     </div>
   </div>
 </template>

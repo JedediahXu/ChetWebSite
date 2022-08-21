@@ -3,7 +3,7 @@
 * @Author: xuhuazhi
 * @Date: 2022-06-01
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-08-18 11:26:57
+ * @LastEditTime: 2022-08-21 22:24:06
 */
 import Vue from 'vue'
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
@@ -16,10 +16,10 @@ const routes: Array<RouteRecordRaw> = [
         path: "/",
         component: () => import(`../pages/${path}/index/index.vue`),
         children: [
-            {
-                path: "/:pathMatch(.*)",
-                redirect: "/home"
-            },
+            // {
+            //     path: "/:pathMatch(.*)",
+            //     redirect: "/home"
+            // },
             {
                 path: "/",
                 name: 'home',
@@ -64,20 +64,10 @@ const routes: Array<RouteRecordRaw> = [
                 meta: {
                     keepAlive: false,
                 }
-            }
-        ],
-        meta: {
-            keepAlive: true,
-        }
+            },
+        ]
     },
-    {
-        path: "/:pathMatch(.*)*",
-        name: "404",
-        component: import('@/assets/404.vue'),
-        meta: {
-            keepAlive: true,
-        }
-    }
+    { path: '/:pathMatch(.*)*', name: '404', component: () => import('../assets/404.vue') },
 ]
 
 const router = createRouter({

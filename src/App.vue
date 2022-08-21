@@ -15,5 +15,6 @@ body,
   overflow-x: hidden;
   top: 0;
   bottom: 0;
+  height: 100%;
 }
 </style>

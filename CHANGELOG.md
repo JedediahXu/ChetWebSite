@@ -32,11 +32,14 @@ All notable changes to this project will be documented in this file.
 - 评论系统集成
 - 手机版本的搜索实现
 - 链接
-
-（持续中）
 - 统计访问
-- 头像动画添加
 - google 统计代码
 - 骨架屏
+
+（持续中）
+- 头像动画添加
+- 启动时间
+- 性能优化
+
 
 

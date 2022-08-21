@@ -68,7 +68,7 @@ const addlist = (() => {
     if (res.data.data.length === 0) {
       ElMessage({
         message: h('p', null, [
-          h('span', null, '山穷水尽...'),
+          h('span', null, '山穷水尽'),
         ]),
         type: 'warning',
       })
