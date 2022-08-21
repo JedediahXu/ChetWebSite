@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import AutoImport from "unplugin-auto-import/vite"
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import visualizer from 'rollup-plugin-visualizer'
 const path = require('path');
 
 
@@ -20,10 +21,16 @@ export default defineConfig({
     }
   },
   plugins: [
-    vue(), AutoImport({
+    vue(),
+    AutoImport({
       imports: ["vue", "vue-router"],
       dts: "src/auto-import.d.ts",
       resolvers: [ElementPlusResolver()],
+    }),
+    visualizer({
+      open: true,  //注意这里要设置为true，否则无效
+      gzipSize: true,
+      brotliSize: true
     }),
     Components({
       dirs: ['src/components'],
