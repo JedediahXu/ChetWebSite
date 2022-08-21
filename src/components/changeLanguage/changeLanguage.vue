@@ -7,7 +7,7 @@
 */
 <template>
   <div class="dropdown dropdown-end">
-    <div tabindex="0" class="btn btn-ghost gap-1 normal-case"><svg
+    <div tabindex="0" @click="select()" class="btn btn-ghost gap-1 normal-case"><svg
         class="inline-block h-4 w-4 fill-current md:h-5 md:w-5" xmlns="http://www.w3.org/2000/svg" width="20"
         height="20" viewBox="0 0 512 512">
         <path d="M363,176,246,464h47.24l24.49-58h90.54l24.49,58H480ZM336.31,362,363,279.85,389.69,362Z"></path>
@@ -19,7 +19,8 @@
         <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
       </svg>
     </div>
-    <ul tabindex="0" class="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4 menu-back">
+    <ul tabindex="0" v-if="selectlangName === false"
+      class="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4 menu-back">
       <li @click="handleCommand('zh')">
         <button class="flex" :class="btuLanguage == 'zh' ? 'buttonColor' : ''"><img loading="lazy" width="20"
             height="20" alt="中文" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.0/svg/1f1e8-1f1f3.svg">
@@ -40,6 +41,7 @@ import useLanguage from '@/store/index';
 import { useI18n } from 'vue-i18n';
 const { locale } = useI18n()
 
+const selectlangName = ref<boolean>(false)
 const langName = ref<string>()
 const btuLanguage = ref<string>()
 const handleCommand = (command: string) => {
@@ -52,6 +54,9 @@ const handleCommand = (command: string) => {
       btuLanguage.value = command
       changeLanguage(command);
       break;
+  }
+  if (selectlangName.value === false) {
+    selectlangName.value = true
   }
 };
 
@@ -78,5 +83,11 @@ onMounted(() => {
   btuLanguage.value = mainStore.language
   setLanguageName(language.value);
 });
+
+let select = (() => {
+  if (selectlangName.value === true) {
+    selectlangName.value = false
+  }
+})
 </script>
 

@@ -44,41 +44,6 @@ export function useShow() {
   },
   {
     Id: 0,
-  },
-  {
-    Id: 0,
-  }, {
-    Id: 0,
-  }, {
-    Id: 0,
-  },
-  {
-    Id: 0,
-  },
-  {
-    Id: 0,
-  }, {
-    Id: 0,
-  }, {
-    Id: 0,
-  },
-  {
-    Id: 0,
-  },
-  {
-    Id: 0,
-  }, {
-    Id: 0,
-  }, {
-    Id: 0,
-  },
-  {
-    Id: 0,
-  },
-  {
-    Id: 0,
-  }, {
-    Id: 0,
   }])
   const listArchiveLoad = ref([{
     Id: 0,
@@ -108,7 +73,7 @@ export function useShow() {
   }, {
     Id: 0,
   }])
-  let listArticleLoad = ref([{
+  const listArticleLoad = ref([{
     Id: 5,
     author_id: "ChetSerenade",
     cate_id: 2,
