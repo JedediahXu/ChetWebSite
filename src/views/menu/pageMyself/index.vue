@@ -50,7 +50,7 @@
         <div class="hero-overlay bg-opacity-60"></div>
         <div class="hero-content text-center text-neutral-content">
           <div class="w-16 h-10 btn-primary btn-switch rounded-sm opacity-75" @click="switchCV(2)">
-            <i class="iconfont icon-xitongfanhui"></i>
+            <i class="iconfont icon-prev"></i>
           </div>
           <div class="max-w-text text-left ">
             <div style="font-size: 1.4rem;">Hi，以下是我的技能～🎉</div>
@@ -88,7 +88,7 @@
         <label class="modal-box relative">
           <div class="qrcode-modal wechat">
             <div class="background"></div>
-            <img class="image" src="/static/img/avatar/wechat.jpg" />
+            <img class="image" src="/static/img/avatar/wechat.jpeg" />
             <span class="text">👋 &nbsp; Friend me on WeChat</span>
           </div>
         </label>
@@ -152,9 +152,9 @@
       </label>
 
       <div class="arcades" data-v-60fcfbfc="">
-        <div class="item" data-v-60fcfbfc=""><img draggable="false" src="/static/img/avatar/wechat.jpg" class="image"
+        <div class="item" data-v-60fcfbfc=""><img draggable="false" src="/static/img/avatar/wechat.jpeg" class="image"
             data-v-60fcfbfc=""></div>
-        <div class="item" data-v-60fcfbfc=""><img draggable="false" src="/static/img/avatar/wechat.jpg" class="image"
+        <div class="item" data-v-60fcfbfc=""><img draggable="false" src="/static/img/avatar/wechat.jpeg" class="image"
             data-v-60fcfbfc=""></div>
       </div>
 
