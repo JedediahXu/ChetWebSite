@@ -6,14 +6,16 @@
 * @LastEditTime: 2022-07-11
 */
 <template>
-  <div class="list-conter" v-if="homeJudgment === 'pc'">
-    <div>
-      <selection />
-      <carlist :listArticle="listArticle" ref="dialogShow" :totale="totale" @getChili="addlist" />
+  <container :isActive="getHeight" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
+    <div class="list-conter" v-if="homeJudgment === 'pc'">
+      <div>
+        <selection />
+        <carlist :listArticle="listArticle" ref="dialogShow" :totale="totale" @getChili="addlist" />
+      </div>
     </div>
-  </div>
-  <mobileCarlist v-if="homeJudgment === 'mobile'" ref="dialogShow" :listArticle="listArticle" :totale="totale"
-    @getChili="addlist" />
+    <mobileCarlist v-if="homeJudgment === 'mobile'" ref="dialogShow" :listArticle="listArticle" :totale="totale"
+      @getChili="addlist" />
+  </container>
 </template>
 
 <script setup lang="ts" name="home">
@@ -27,6 +29,7 @@ import { queryArticle } from '@/api';
 import { Ref } from 'vue';
 const route = useRoute();
 
+let getHeight = ref<number>(1)
 //mobile and pc
 let homeJudgment = ref<string>()
 homeJudgment.value = judgment()

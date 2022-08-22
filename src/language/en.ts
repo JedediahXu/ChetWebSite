@@ -1,5 +1,5 @@
 const enLocale = {
-  PAGE_FREELANCER_SLOGAN: 'Talk is cheap. Show me the code',
+  PAGE_FREELANCER_SLOGAN: 'Metaphysics',
   PAGE_HOME: 'I think',
   PAGE_ARCHIVE: 'Archive',
   PAGE_ABOUT: 'About',

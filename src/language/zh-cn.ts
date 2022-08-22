@@ -1,6 +1,6 @@
 const zhLocale = {
-  PAGE_FREELANCER_SLOGAN: '为我一挥手，如临万壑松',
-  PAGE_HOME: '行思坐想', 
+  PAGE_FREELANCER_SLOGAN: '形而上者谓之道，形而下者谓之器',
+  PAGE_HOME: '行思坐想',
   PAGE_ARCHIVE: '杂文归档',
   PAGE_ABOUT: '万象更新',
   PAGE_SPONSOR: '素履以往',
