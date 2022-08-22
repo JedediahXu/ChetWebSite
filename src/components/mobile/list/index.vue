@@ -26,8 +26,8 @@
           </span>
           <span class="views">
             <i class="iconfont icon-eye">
-              {{ item.visitor_volume }}
             </i>
+            {{ item.visitor_volume }}
           </span>
           <span class="comments">
             <i class="iconfont icon-category" data-v-70ac518a=""></i>

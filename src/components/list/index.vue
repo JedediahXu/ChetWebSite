@@ -29,9 +29,8 @@
             </span>
             <span class="views">
               <i class="iconfont icon-eye">
-                {{ item.visitor_volume }}
               </i>
-              <span>{{ item.language }}</span>
+              {{ item.visitor_volume }}
             </span>
             <span class="views">
               <i class="iconfont icon-category" data-v-70ac518a=""></i>
