@@ -22,6 +22,9 @@ app.component('container', basicContainer);
 app.use(pinia).use(VueCookies)
 app.use(i18n).use(vue3PhotoPreview).use(mavonEditor).use(router).mount('#app');
 
+router.afterEach((to, from, next) => {
+  window.scrollTo(0, 0);
+});
 
 
 

@@ -30,7 +30,6 @@ const route = useRoute();
 //mobile and pc
 let homeJudgment = ref<string>()
 homeJudgment.value = judgment()
-
 //定义接口
 interface info {
   page_num: string;

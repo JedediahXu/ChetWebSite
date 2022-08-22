@@ -167,7 +167,7 @@
 import trajectoryMap from '@/components/map/index.vue'
 import { judgment } from '@/utils/judgment'
 import { useI18n } from 'vue-i18n';
-
+window.scrollTo(0, 0);
 const { t } = useI18n();
 let getHeight = ref<number>(1)
 let visible = ref<boolean>(true)
