@@ -13,7 +13,7 @@
           <span class="webfont bolder zh boldEn uppercase">
             山河入梦
           </span>
-          <i class="iconfont icon-xiala"></i></span>
+          <i class="iconfont icon-loadmore"></i></span>
       </div>
     </button>
   </div>

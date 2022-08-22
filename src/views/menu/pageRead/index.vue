@@ -50,8 +50,8 @@ onActivated(() => {
   reserve.value = JSON.parse(sessionStorage.getItem('read'))
   let Disqus = new window.iDisqus('comment', {
     forum: 'gaoyuzi',
-    site: 'https://gaoyuzi.cn',
-    api: 'https://epiphanys.me/dashboard/api',
+    site: '/epi',
+    api: '/epi/dashboard/api',
     mode: 2,
     timeout: 6000,
     init: true,
@@ -65,8 +65,8 @@ onMounted(() => {
   emitter.emit('searchHide', 1);
   let Disqus = new window.iDisqus('comment', {
     forum: 'gaoyuzi',
-    site: 'https://gaoyuzi.cn',
-    api: 'https://epiphanys.me/dashboard/api',
+    site: '/epi',
+    api: '/epi/dashboard/api',
     mode: 2,
     timeout: 6000,
     init: true,

@@ -73,8 +73,16 @@ export default defineConfig({
       '/IP': {
         target: 'https://opendata.baidu.com/',
         ws: true,
+        secure: false,
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/IP/, ''),
+      },
+      '/epi': {
+        target: 'https://epiphanys.me/',
+        ws: true,
+        secure: false,
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/epi/, ''),
       }
     }
   },

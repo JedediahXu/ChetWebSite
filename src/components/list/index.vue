@@ -24,7 +24,7 @@
           </div>
           <div class="item-meta">
             <span class="date">
-              <i class="iconfont icon-icon_clock"></i>
+              <i class="iconfont icon-clock"></i>
               {{ item.pub_date }}
             </span>
             <span class="views">

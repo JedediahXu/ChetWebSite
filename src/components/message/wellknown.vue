@@ -3,7 +3,6 @@
     <div class="indicator">
       <span class="indicator-item badge badge-secondary"></span>
       <div class="hero bg-base-300  h-0.5 bg-origin-border heros-bg">
-        <div class="hero-overlay "></div>
         <div class="hero-left">
           <div class="text-2xl">Statement &amp; FAQ</div>
           <hr>

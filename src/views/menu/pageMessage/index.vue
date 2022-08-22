@@ -71,8 +71,8 @@ onMounted(() => {
   homeJudgment.value = judgment()
   let Disqus = new window.iDisqus('comment', {
     forum: 'gaoyuzi-cn',
-    site: 'https://epiphanys.me',
-    api: 'https://epiphanys.me/dashboard/api',
+    site: '/epi',
+    api: '/epi/dashboard/api',
     mode: 2,
     timeout: 6000,
     init: true,
