@@ -102,8 +102,14 @@ const listShow = () => {
   isLoad.value = true
 }
 
+//搜索骨架显示
+const listSearchShow = () => {
+  isLoad.value = false
+}
+
 defineExpose({
-  listShow
+  listShow,
+  listSearchShow
 })
 </script>
 

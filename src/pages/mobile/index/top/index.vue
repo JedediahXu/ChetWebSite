@@ -7,7 +7,6 @@
 */
 <template>
   <div>
-
     <div class="search actived" v-if="search === 1">
       <div class="search-hide">
         <input type="text" v-model="dataSearch" @keyup.enter.native="onSearch(dataSearch)" placeholder="Search"
@@ -57,9 +56,11 @@ let search = ref<number>(0)
 emitter.on('searchHide', (e) => {
   num.value = e
 })
+
 const displaySearch = (() => {
   search.value = 1
 })
+
 const hideSearch = (() => {
   search.value = 0
   emitter.emit('all');
