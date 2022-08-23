@@ -63,6 +63,7 @@ const displaySearch = (() => {
 
 const hideSearch = (() => {
   search.value = 0
+  dataSearch.value = ''
   emitter.emit('all');
 })
 
