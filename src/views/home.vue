@@ -76,7 +76,6 @@ const addlist = (() => {
       })
     }
   });
-
 });
 
 if (homeJudgment.value == 'pc') {
@@ -92,10 +91,9 @@ if (homeJudgment.value == 'pc') {
     paginationData.value.text = index
     paginationData.value.page_id = 0
     paginationData.value.page_num = 0
-    dialogShow.value.listSearchShow()
     listArticle.value = [];
+    dialogShow.value.listSearchShow()
     addlist()
-    paginationData.value.text = ''
   });
 }
 
@@ -115,8 +113,8 @@ if (homeJudgment.value == 'mobile') {
     paginationData.value.text = index
     paginationData.value.page_id = 0
     paginationData.value.page_num = 0
-    dialogShow.value.listSearchShow()
     listArticle.value = [];
+    dialogShow.value.listSearchShow()
     addlist()
   });
   emitter.on('all', function () {

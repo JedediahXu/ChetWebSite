@@ -33,7 +33,7 @@
               {{ item.visitor_volume }}
             </span>
             <span class="views">
-              <i class="iconfont icon-category" data-v-70ac518a=""></i>
+              <i class="iconfont icon-category"></i>
               <a>{{ item.author_id }}</a>
             </span>
           </div>
@@ -92,7 +92,7 @@ const read = ((item: object, id) => {
   sessionStorage.setItem('read', JSON.stringify(item))
   $router.push({ name: 'read' })
   updateVolume(id).then((res: any) => {
-    console.log(res);
+    // console.log(res);
   });
 })
 

@@ -85,7 +85,7 @@ const read = ((item: object, id) => {
   sessionStorage.setItem('read', JSON.stringify(item))
   $router.push({ name: 'read' })
   updateVolume(id).then((res: any) => {
-    console.log(res);
+    // console.log(res);
   });
 })
 
