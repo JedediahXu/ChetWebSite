@@ -24,7 +24,7 @@
   </div>
 
   <div class="moblie" v-if="homeJudgment === 'mobile'">
-    <div class="p-3.5  type-setting">
+    <div class="type-setting">
       <ul class="moblie-medias">
         <photo-provider v-if="isLoad">
           <photo-consumer v-for="src in listPhoto" :intro="`/apis` + src.photo" :key="src" :src="`/apis` + src.photo">

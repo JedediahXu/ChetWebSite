@@ -56,11 +56,11 @@
             <div style="font-size: 1.4rem;">Hi，以下是我的技能～🎉</div>
             <ul class="text-ul" style="margin-top: 10px;">
               <li>理解并掌握 JavaScript 核心知识及大部分 ES6 新特性，掌握 TypeScript</li>
-              <li>熟练掌握 React 全家桶技术体系，了解 vue 及相关技术栈，有完整项目实践经验</li>
-              <li>掌握 React Native、微信(Taro/原生)小程序，有移动端项目开发经验</li>
-              <li>理解前端工程化，掌握 Webpack 配置与构建，能够根据项目进行适度优化</li>
+              <li>熟练掌握 Vue 全家桶技术体系，了解 React 及相关技术栈，有完整项目实践经验</li>
+              <li>掌握 Uni-app、(微信/支付宝)小程序，有移动端项目开发经验</li>
+              <li>理解前端工程化，掌握 Webpack、Vite配置与构建，能够根据项目进行适度优化</li>
               <li>了解浏览器渲染、数据可视化、前端性能优化等方面知识</li>
-              <li>了解 HTTP 协议，Node.js，熟练使用 Git</li>
+              <li>了解 HTTP 协议，Node.js，PHP，Mysql，Linux，Shell，Jenkins，熟练使用 Git</li>
               <!-- <li style="color: hsl(var(--er));">想要了解更多点击下方微信,欢迎与我畅谈～</li> -->
             </ul>
             <div class="socials">
@@ -141,21 +141,19 @@
             <span class="text">👋 &nbsp; Friend me on WeChat</span>
             <ul class="text-ul" style="margin-top: 1px;font-size: 10px;">
               <li>理解并掌握 JavaScript 核心知识及大部分 ES6 新特性，掌握 TypeScript</li>
-              <li>熟练掌握 React 全家桶技术体系，了解 vue 及相关技术栈，有完整项目实践经验</li>
-              <li>掌握 React Native、微信(Taro/原生)小程序，有移动端项目开发经验</li>
-              <li>理解前端工程化，掌握 Webpack 配置与构建，能够根据项目进行适度优化</li>
+              <li>熟练掌握 Vue 全家桶技术体系，了解 React 及相关技术栈，有完整项目实践经验</li>
+              <li>掌握 Uni-app、(微信/支付宝)小程序，有移动端项目开发经验</li>
+              <li>理解前端工程化，掌握 Webpack、Vite配置与构建，能够根据项目进行适度优化</li>
               <li>了解浏览器渲染、数据可视化、前端性能优化等方面知识</li>
-              <li>了解 HTTP 协议，Node.js，熟练使用 Git</li>
+              <li>了解 HTTP 协议，Node.js，PHP，Mysql，Linux，Shell，Jenkins，熟练使用 Git</li>
             </ul>
           </div>
         </label>
       </label>
 
-      <div class="arcades" data-v-60fcfbfc="">
-        <div class="item" data-v-60fcfbfc=""><img draggable="false" src="/static/img/avatar/wechat.jpeg" class="image"
-            data-v-60fcfbfc=""></div>
-        <div class="item" data-v-60fcfbfc=""><img draggable="false" src="/static/img/avatar/wechat.jpeg" class="image"
-            data-v-60fcfbfc=""></div>
+      <div class="arcades">
+        <div class="item"><img draggable="false" src="/static/img/avatar/wechat.jpeg" class="image"></div>
+        <div class="item"><img draggable="false" src="/static/img/avatar/bilibili.jpeg" class="image"></div>
       </div>
 
     </div>
@@ -350,10 +348,6 @@ let switchCV = ((index: number) => {
     max-width: 16rem;
     padding: 1rem;
   }
-}
-
-.moblie-top-container {
-  margin-top: 20px;
 }
 
 .moblie-right-container {

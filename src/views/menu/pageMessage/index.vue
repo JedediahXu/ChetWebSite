@@ -35,7 +35,7 @@
         </div>
         <div class="mobile-component-top" v-if="homeJudgment === 'mobile'">
           <div class="banner dark mobile mobile-banner"
-            style="background-image: url('/static/img/message/dm.png'); background-repeat: no-repeat;background-size: 100% 100%;">
+            style="background-image: url('/static/img/message/dm.jpeg'); background-repeat: no-repeat;background-size: 100% 100%;">
             <div class="content">
               <h2 class="title">留言</h2>
               <div class="description">此心光明 亦复何言</div>
@@ -291,10 +291,6 @@ let displayArea = (index: any) => {
     font-size: 16.1px;
     font-weight: 700;
     color: #fff;
-  }
-
-  .moblie-top-container {
-    margin-top: 20px;
   }
 
   .moblie-right-container {

@@ -47,10 +47,6 @@ const getTransfer = ((e: number) => {
 
 
 <style scoped>
-.moblie-top-container {
-  margin-top: 20px;
-}
-
 .moblie-right-container {
   padding-right: 10px;
 }
