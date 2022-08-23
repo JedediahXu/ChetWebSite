@@ -6,7 +6,7 @@
 * @LastEditTime: 2022-07-11
 */
 <template>
-  <container :isActive="getHeight" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
+  <container :isActive="isActive" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
     <div class="componentMap" v-if="homeJudgment === 'pc'">
       <div class="hero  h-0.5 bg-origin-border"
         style="background-image: url('/static/img/avatar/arch.jpeg');height: 23rem;" v-if="visible">
@@ -167,7 +167,7 @@ import { judgment } from '@/utils/judgment'
 import { useI18n } from 'vue-i18n';
 window.scrollTo(0, 0);
 const { t } = useI18n();
-let getHeight = ref<number>(1)
+let isActive = ref<number>(1)
 let visible = ref<boolean>(true)
 
 

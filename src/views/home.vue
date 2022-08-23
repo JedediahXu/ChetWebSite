@@ -6,7 +6,7 @@
 * @LastEditTime: 2022-07-11
 */
 <template>
-  <container :isActive="getHeight" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
+  <container :isActive="isActive" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
     <div class="list-conter" v-if="homeJudgment === 'pc'">
       <div>
         <selection />
@@ -29,7 +29,7 @@ import { queryArticle } from '@/api';
 import { Ref } from 'vue';
 const route = useRoute();
 
-let getHeight = ref<number>(1)
+let isActive = ref<number>(1)
 //mobile and pc
 let homeJudgment = ref<string>()
 homeJudgment.value = judgment()

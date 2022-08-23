@@ -6,7 +6,7 @@
 * @LastEditTime: 2022-07-11
 */
 <template>
-  <container :isActive="getHeight" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
+  <container :isActive="isActive" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
     <div class="component-body">
       <div class="component">
         <div class="component-top" v-if="homeJudgment === 'pc'">
@@ -64,7 +64,7 @@ import comwellKnown from '@/components/message/wellknown.vue'
 import comjuejin from '@/components/message/juejin.vue'
 import { judgment } from '@/utils/judgment'
 const homeJudgment = ref<string>()
-let getHeight = ref<number>(1)
+let isActive = ref<number>(1)
 
 
 onMounted(() => {

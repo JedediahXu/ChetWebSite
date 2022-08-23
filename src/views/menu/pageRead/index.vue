@@ -5,7 +5,7 @@
 * @LastEditTime: 2022-08-12
 */
 <template>
-  <container :isActive="getHeight" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
+  <container :isActive="isActive" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
     <div class="ueditor">
       <pcread :reserve="reserve" v-if="homeJudgment === 'pc'" />
       <mobileread :reserve="reserve" v-if="homeJudgment === 'mobile'" />
@@ -31,7 +31,7 @@ import pcread from '@/components/read/pcread.vue'
 import { judgment } from '@/utils/judgment'
 import { emitter } from '@/utils/eventBus'
 
-let getHeight = ref<number>(1)
+let isActive = ref<number>(1)
 
 interface reserve {
   Id: number;

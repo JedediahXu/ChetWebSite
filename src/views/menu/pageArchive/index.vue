@@ -6,9 +6,9 @@
 * @LastEditTime: 2022-07-11
 */
 <template>
-  <container :isActive="getHeight" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
-    <archive :listPhoto="imgList" ref="dialogShow" v-if="homeJudgment === 'pc'" @getTransfer="getTransfer" />
-    <mobilArchive :listPhoto="imgList" ref="dialogShow" v-if="homeJudgment === 'mobile'" @getTransfer="getTransfer" />
+  <container :isActive="isActive" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
+    <archive :listPhoto="listPhoto" ref="dialogShow" v-if="homeJudgment === 'pc'" @getTransfer="getTransfer" />
+    <mobilArchive :listPhoto="listPhoto" ref="dialogShow" v-if="homeJudgment === 'mobile'" @getTransfer="getTransfer" />
   </container>
 </template>
 
@@ -20,16 +20,16 @@ import { emitter } from '@/utils/eventBus'
 import { mallGoodsCates } from '@/api';
 const router = useRouter();
 
-let getHeight = ref<number>(1)
+let isActive = ref<number>(1)
 let homeJudgment = ref<string>()
 const dialogShow = ref(null)
-let imgList = ref<Array<object>>([])
+let listPhoto = ref<Array<object>>([])
 
 //获取文章分类
 onMounted(() => {
   homeJudgment.value = judgment()
   mallGoodsCates().then((res: any) => {
-    imgList.value.push(...res.data.data)
+    listPhoto.value.push(...res.data.data)
     setTimeout(() => {
       dialogShow.value.archiveShow()
     }, 500)

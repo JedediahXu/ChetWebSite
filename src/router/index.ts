@@ -3,11 +3,10 @@
 * @Author: xuhuazhi
 * @Date: 2022-06-01
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-08-21 22:24:06
+ * @LastEditTime: 2022-08-23 09:31:27
 */
 import Vue from 'vue'
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import exhibitRoutes from '@/router/modules/exhibit'
 import { judgment } from '@/utils/judgment'
 
 const path = judgment()
@@ -16,10 +15,6 @@ const routes: Array<RouteRecordRaw> = [
         path: "/",
         component: () => import(`../pages/${path}/index/index.vue`),
         children: [
-            // {
-            //     path: "/:pathMatch(.*)",
-            //     redirect: "/home"
-            // },
             {
                 path: "/",
                 name: 'home',
