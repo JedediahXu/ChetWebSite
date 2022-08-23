@@ -38,7 +38,7 @@ onMounted(() => {
 
 //分类跳转
 const getTransfer = ((e: number) => {
-  router.push({ name: 'home', query: { id: e } });
+  router.push({ name: 'home' });
   emitter.emit('taskTouch', 0);
   emitter.emit('taskPageId', e);
   emitter.emit('searchHide', 0);

@@ -99,17 +99,12 @@ if (homeJudgment.value == 'pc') {
 }
 
 if (homeJudgment.value == 'mobile') {
-  let queryId: any = ref(0)
-  queryId = route.query.id
-  if (queryId === undefined) {
-    paginationData.value.page_id = 0
-    paginationData.value.text = ''
-  } else {
-    paginationData.value.page_id = queryId
-    paginationData.value.text = ''
-  }
-  paginationData.value.page_num = 0
-  listArticle.value = [];
+  emitter.on('taskPageId', function (index) {
+    paginationData.value.page_id = index
+    paginationData.value.page_num = 0
+    listArticle.value = [];
+    addlist()
+  });
   addlist()
   //搜索
   emitter.on('searchCondition', function (index) {
