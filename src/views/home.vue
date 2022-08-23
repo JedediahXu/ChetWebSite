@@ -29,6 +29,7 @@ import { queryArticle } from '@/api';
 import { Ref } from 'vue';
 const route = useRoute();
 
+
 let isActive = ref<number>(1)
 //mobile and pc
 let homeJudgment = ref<string>()
@@ -49,7 +50,7 @@ interface pagination {
 
 let listArticle = ref([])
 let totale = ref<info>();
-const dialogShow = ref(null)
+const dialogShow = ref()
 let paginationData: Ref = ref<pagination>({
   page_num: 0,
   page_size: 6,
@@ -57,7 +58,7 @@ let paginationData: Ref = ref<pagination>({
   text: ''
 })
 
-//分页
+//获取数据
 const addlist = (() => {
   paginationData.value.page_num++
   queryArticle(paginationData.value).then((res: any) => {
@@ -102,8 +103,10 @@ if (homeJudgment.value == 'mobile') {
   queryId = route.query.id
   if (queryId === undefined) {
     paginationData.value.page_id = 0
+    paginationData.value.text = ''
   } else {
     paginationData.value.page_id = queryId
+    paginationData.value.text = ''
   }
   paginationData.value.page_num = 0
   listArticle.value = [];
@@ -117,6 +120,7 @@ if (homeJudgment.value == 'mobile') {
     dialogShow.value.listSearchShow()
     addlist()
   });
+
   emitter.on('all', function () {
     paginationData.value.text = ''
     paginationData.value.page_id = 0

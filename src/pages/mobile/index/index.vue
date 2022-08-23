@@ -7,7 +7,11 @@
                 :class="monitor !== 0 ? 'shadow-sm' : ''" />
             <div class="mobile-container">
                 <!-- 主视图层级 -->
-                <router-view />
+                <router-view v-slot="{ Component }">
+                    <keep-alive :include="['home', 'message', 'about', 'archive',]">
+                        <component :is="Component" />
+                    </keep-alive>
+                </router-view>
             </div>
         </div>
     </div>
