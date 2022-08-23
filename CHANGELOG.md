@@ -40,6 +40,7 @@ All notable changes to this project will be documented in this file.
 - 头像动画添加
 - 启动时间
 - 性能优化
+- 搜索为全局搜索 并没有关联放到具体分类文章
 
 
 
