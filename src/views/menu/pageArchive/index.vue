@@ -22,7 +22,7 @@ const router = useRouter();
 
 let isActive = ref<number>(1)
 let homeJudgment = ref<string>()
-const dialogShow = ref(null)
+const dialogShow = ref()
 let listPhoto = ref<Array<object>>([])
 
 //获取文章分类

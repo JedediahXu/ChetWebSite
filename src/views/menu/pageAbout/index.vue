@@ -15,7 +15,7 @@
 import card from '@/components/cardPhoto/index.vue'
 import { judgment } from '@/utils/judgment'
 import { queryPhoto } from '@/api';
-const dialogShow = ref(null)
+const dialogShow = ref()
 
 let isActive = ref<number>(1)
 let homeJudgment = ref<string>()
