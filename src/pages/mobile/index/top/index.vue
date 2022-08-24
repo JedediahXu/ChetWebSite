@@ -1,8 +1,8 @@
 /*
 * @Description: 顶部导航
-* @Author: xuhuazhi
+* @Author: Chetxu
 * @Date: 2022-06-09
-* @LastEditors: xuhuazhi
+* @LastEditors: Chetxu
 * @LastEditTime: 2022-06-09
 */
 <template>

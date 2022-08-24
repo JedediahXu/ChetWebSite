@@ -1,6 +1,6 @@
 /*
 * @Description: i18n
-* @Author: xuhuazhi
+* @Author: Chetxu
 * @Date: 2022-06-16
  * @LastEditors: Please set LastEditors
  * @LastEditTime: 2022-06-23 15:36:41

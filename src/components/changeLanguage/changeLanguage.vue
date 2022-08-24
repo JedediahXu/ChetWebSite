@@ -1,8 +1,8 @@
 /*
 * @Description: Switch language
-* @Author: xuhuazhi
+* @Author: Chetxu
 * @Date: 2022-06-15
-* @LastEditors: xuhuazhi
+* @LastEditors: Chetxu
 * @LastEditTime: 2022-06-15
 */
 <template>

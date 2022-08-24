@@ -1,7 +1,7 @@
 /*
 * @Description: 显示文字内容模块 移动端
 * @Date: 2022-08-12
-* @LastEditors: xuhuazhi
+* @LastEditors: Chetxu
 * @LastEditTime: 2022-08-12
 */
 <template>

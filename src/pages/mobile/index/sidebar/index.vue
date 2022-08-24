@@ -1,8 +1,8 @@
 /*
 * @Description: Sidebar （The code needs to be optimized, and the initial completion！）
-* @Author: xuhuazhi
+* @Author: Chetxu
 * @Date: 2022-06-09
-* @LastEditors: xuhuazhi
+* @LastEditors: Chetxu
 * @LastEditTime: 2022-06-09
 */
 <template>

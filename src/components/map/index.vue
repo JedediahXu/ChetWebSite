@@ -1,8 +1,8 @@
 /*
 * @Description: Mapbox
-* @Author: xuhuazhi
+* @Author: Chetxu
 * @Date: 2022-08-12
-* @LastEditors: xuhuazhi
+* @LastEditors: Chetxu
 * @LastEditTime: 2022-08-12
 */
 <template>

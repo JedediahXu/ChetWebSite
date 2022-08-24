@@ -1,7 +1,7 @@
 
 /*
 * @Description: 判断机型
-* @Author: xuhuazhi
+* @Author: Chetxu
 * @Date: 2022-08-12
  * @LastEditors: Please set LastEditors
  * @LastEditTime: 2022-08-12 21:45:00
