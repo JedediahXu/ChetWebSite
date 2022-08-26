@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "bytemd": "^1.17.2",
     "lozad": "^1.16.0",
     "mapbox-gl": "^2.9.1",
     "mavon-editor": "^3.0.0-beta",

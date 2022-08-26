@@ -1,7 +1,7 @@
 /*
 * @Description: 显示文字内容模块 pc端
 * @Date: 2022-08-12
-* @LastEditors: Chetxu
+* @LastViewers: Chetxu
 * @LastEditTime: 2022-08-12
 */
 <template>
