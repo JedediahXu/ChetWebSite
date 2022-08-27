@@ -2,15 +2,20 @@
 $monospace-font: Menlo, Monaco, Consolas, 'Courier New', monospace;
 $line-space: 22px;
 
+.pcContent article,
+.pcContent section {
+  margin: 0 auto;
+  width: 100%;
+}
+
 .prose {
   word-break: break-word;
   line-height: 1.75;
   font-weight: 400;
   font-size: 16px;
   overflow-x: hidden;
-  color: #333;
 
-  h1,
+  color:hsl(var(--pf)) h1,
   h2,
   h3,
   h4,
@@ -73,8 +78,8 @@ $line-space: 22px;
     word-break: break-word;
     border-radius: 2px;
     overflow-x: auto;
-    background-color: #fff5f5;
-    color: #ff502c;
+    // background-color: #fff5f5;
+    color: hsl(var(--er));
     font-size: 0.87em;
     padding: 0.065em 0.4em;
   }
@@ -92,7 +97,7 @@ $line-space: 22px;
       word-break: normal;
       display: block;
       overflow-x: auto;
-      background: #f8f8f8;
+      // background: #f8f8f8;
     }
   }
 
