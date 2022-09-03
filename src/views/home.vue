@@ -10,11 +10,11 @@
     <div class="list-conter" v-if="homeJudgment === 'pc'">
       <div>
         <selection />
-        <carlist :listArticle="listArticle" ref="dialogShow" :totale="totale" @getChili="addlist" />
+        <carlist :listArticle="listArticle" ref="dialogShow" :totale="totale" @getChili="addList" />
       </div>
     </div>
     <mobileCarlist v-if="homeJudgment === 'mobile'" ref="dialogShow" :listArticle="listArticle" :totale="totale"
-      @getChili="addlist" />
+      @getChili="addList" />
   </container>
 </template>
 
@@ -27,14 +27,12 @@ import { emitter } from '@/utils/eventBus'
 import { ElMessage } from 'element-plus'
 import { queryArticle } from '@/api';
 import { Ref } from 'vue';
-const route = useRoute();
-
 
 let isActive = ref<number>(1)
 //mobile and pc
 let homeJudgment = ref<string>()
 homeJudgment.value = judgment()
-//定义接口
+
 interface info {
   page_num: string;
   page_size: number;
@@ -59,7 +57,7 @@ let paginationData: Ref = ref<pagination>({
 })
 
 //获取数据
-const addlist = (() => {
+const addList = (() => {
   paginationData.value.page_num++
   queryArticle(paginationData.value).then((res: any) => {
     listArticle.value.push(...res.data.data)
@@ -80,12 +78,12 @@ const addlist = (() => {
 });
 
 if (homeJudgment.value == 'pc') {
-  addlist()
+  addList()
   emitter.on('taskPageId', function (index) {
     paginationData.value.page_id = index
     paginationData.value.page_num = 0
     listArticle.value = [];
-    addlist()
+    addList()
   });
   //搜索
   emitter.on('searchCondition', function (index) {
@@ -94,7 +92,7 @@ if (homeJudgment.value == 'pc') {
     paginationData.value.page_num = 0
     listArticle.value = [];
     dialogShow.value.listSearchShow()
-    addlist()
+    addList()
   });
 }
 
@@ -103,9 +101,9 @@ if (homeJudgment.value == 'mobile') {
     paginationData.value.page_id = index
     paginationData.value.page_num = 0
     listArticle.value = [];
-    addlist()
+    addList()
   });
-  addlist()
+  addList()
   //搜索
   emitter.on('searchCondition', function (index) {
     paginationData.value.text = index
@@ -113,14 +111,14 @@ if (homeJudgment.value == 'mobile') {
     paginationData.value.page_num = 0
     listArticle.value = [];
     dialogShow.value.listSearchShow()
-    addlist()
+    addList()
   });
 
   emitter.on('all', function () {
     paginationData.value.text = ''
     paginationData.value.page_id = 0
     paginationData.value.page_num = 0
-    addlist()
+    addList()
     listArticle.value = [];
   });
 }

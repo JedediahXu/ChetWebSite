@@ -6,7 +6,7 @@
           <li class="media">
             <div class="mask"><span class="icon"><i class="iconfont icon-chakan"></i></span></div>
             <div data-background-image={{src.photo}} data-loaded="true" class="background loaded"
-              :style="{ backgroundImage: 'url(' + '/apis' + src.photo + ')' }">
+              :style="{ backgroundImage: 'url(' + '/apis' + src.thumbnail_photo + ')' }">
             </div>
           </li>
         </photo-consumer>
@@ -31,7 +31,7 @@
             <li class="moblie-media">
               <div class="mask"><span class="icon"><i class="iconfont icon-chakan"></i></span></div>
               <div data-background-image={{src.photo}} data-loaded="true" class="background loaded"
-                :style="{ backgroundImage: 'url(' + '/apis' + src.photo + ')' }">
+                :style="{ backgroundImage: 'url(' + '/apis' + src.thumbnail_photo + ')' }">
               </div>
             </li>
           </photo-consumer>

@@ -3,7 +3,7 @@
 * @Author: Chetxu
 * @Date: 2022-06-01
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-08-23 09:31:27
+ * @LastEditTime: 2022-08-29 16:28:26
 */
 import Vue from 'vue'
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
