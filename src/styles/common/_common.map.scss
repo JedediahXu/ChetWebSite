@@ -216,4 +216,17 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  .mapboxgl-canary {
+    visibility: hidden;
+  }
+
+  .mapContainer {
+    width: 100%;
+    height: 39vh;
+  }
+
+  .mapboxgl-ctrl {
+    display: block;
+  }
+
 }

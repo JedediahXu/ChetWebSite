@@ -9,7 +9,7 @@
           <div class="text-xl mt-3 font-bold">这是一个什么网站？</div>
           <p class="mt-2 text-base italic">这是一个个人博客网站，用于表达博主希望表达的一切。</p>
           <h3 class="text-xl mt-3 font-bold">这个网站的程序（模板）是如何实现的？</h3>
-          <ul class="mt-4 text-base italic bg-gradient-to-r" style="margin-left:20px;">
+          <ul class="mt-4 text-base italic bg-gradient-to-r ml-5">
             <li>前端：基于 Vue + Vite + TypeScript </li>
             <li>服务端：基于 Node.js 的 express 程序。</li>
             <li>管理后台：基于 React + 实现的 Web 应用</li>
@@ -19,7 +19,3 @@
     </div>
   </div>
 </template>
-
-<script lang="ts" setup>
-
-</script>

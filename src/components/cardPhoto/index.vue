@@ -16,7 +16,7 @@
         transition-all duration-200 hover:shadow hover:-translate-y-1" v-for="(src, index) in listPhotoLoad"
           :key="index" animated>
           <template #template>
-            <el-skeleton-item variant="image" style="height: 9rem" />
+            <el-skeleton-item variant="image" class="template-height" />
           </template>
         </el-skeleton>
       </template>
@@ -42,7 +42,7 @@
         transition-all duration-200 hover:shadow hover:-translate-y-1" v-for="(src, index) in listPhotoLoad"
             :key="index" animated>
             <template #template>
-              <el-skeleton-item variant="image" style="height: 9rem" />
+              <el-skeleton-item variant="image" class="template-height" />
             </template>
           </el-skeleton>
         </template>

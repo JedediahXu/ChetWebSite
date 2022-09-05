@@ -27,8 +27,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
           </button>
-          <button v-show="num === 0" class="btn btn-sm btn-tran"
-            style="border-color: transparent;background-color: transparent;" @click="displaySearch">搜索</button>
+          <button v-show="num === 0" class="btn btn-sm btn-tran  btn-style" @click="displaySearch">搜索</button>
         </div>
 
       </div>
@@ -87,3 +86,11 @@ let addopen = (() => {
   window.open('https://github.com/ChetSerenade', '_blank')
 })
 </script>
+
+
+<style>
+.btn-style {
+  border-color: transparent;
+  background-color: transparent;
+}
+</style>

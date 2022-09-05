@@ -14,11 +14,9 @@
 
   </div>
   <div class="knight">
-    <img src="/static/img/message/preview.gif" style="width: 100%;height: 100%;">
+    <img src="/static/img/message/preview.gif" class="knight-image w-full h-full">
   </div>
 
 </template>
 
-<script lang="ts" setup>
-
-</script>
+  

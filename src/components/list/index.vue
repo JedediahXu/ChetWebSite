@@ -15,7 +15,7 @@
           <div class="image " :style="{ backgroundImage: 'url(' + '/apis' + item.cover_img + ')' }"></div>
         </a>
         <div class="item-body">
-          <div class="item-content " style="display: grid;width: 100%;">
+          <div class="item-content item-grid">
             <h5 class="title">
               <a class="link">{{ item.title }}</a>
               <span class="language">{{ item.language }}</span>
@@ -44,17 +44,16 @@
   </div>
 
   <template v-else>
-    <el-skeleton style="display: flex;margin: 10px 70px 10px 0px;padding: 20px;" v-for="item, index in listArticleLoad"
-      :key="index" animated>
+    <el-skeleton class="item-skeleton" v-for="item, index in listArticleLoad" :key="index" animated>
       <template #template>
-        <el-skeleton-item variant="image" style="width: 260px; height: 156px" />
-        <div style="padding: 14px;width: 100%;margin-right: 20px;" class="middle-content">
-          <el-skeleton-item variant="p" style="width:20%" />
+        <el-skeleton-item variant="image" class="item-skeleton-image" />
+        <div class="middle-content">
+          <el-skeleton-item variant="p" class="middle-skeleton-item" />
           <div>
-            <el-skeleton-item variant="text" style="margin-right: 16px" />
-            <el-skeleton-item variant="text" style="margin-right: 16px" />
+            <el-skeleton-item variant="text" class="middle-skeleton-right" />
+            <el-skeleton-item variant="text" class="middle-skeleton-right" />
           </div>
-          <el-skeleton-item variant="text" style="width: 30%" />
+          <el-skeleton-item variant="text" class="middle-skeleton-width" />
         </div>
       </template>
     </el-skeleton>
@@ -112,4 +111,3 @@ defineExpose({
   listSearchShow
 })
 </script>
-

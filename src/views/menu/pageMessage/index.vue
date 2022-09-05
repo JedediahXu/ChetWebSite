@@ -13,7 +13,7 @@
           <div class="component-left" v-show="displaySwitch === 3">
             <comwellKnown />
           </div>
-          <div class="component-left" v-show="displaySwitch === 4" style="display: flex;">
+          <div class="component-left component-flex" v-show="displaySwitch === 4">
             <messageFriendly />
           </div>
           <div class="component-left knight-left" v-show="displaySwitch === 1">
@@ -303,5 +303,9 @@ let displayArea = (index: any) => {
   overflow: hidden;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+}
+
+.component-flex {
+  display: flex;
 }
 </style>

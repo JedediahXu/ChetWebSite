@@ -8,18 +8,18 @@
 <template>
   <div class="footprint">
     <div class="footprint-map">
-      <div class="mapbox-wrapper" placeholder="路为纸，地成册，行作笔，心当墨；思无界，行有疆">
+      <div class="mapbox-wrapper">
         <div class="mapbox mapboxgl-map">
-          <div class="mapboxgl-canary" style="visibility: hidden;"></div>
+          <div class="mapboxgl-canary"></div>
           <div
             class="mapboxgl-canvas-container mapboxgl-interactive mapboxgl-touch-drag-pan mapboxgl-touch-zoom-rotate">
             <div id="mapContainer" ref="mapDivElement" tabindex="0" aria-label="Map" role="region" width="100%"
-              height="39vh;" style="width: 100%; height: 39vh;"></div>
+              class="mapContainer" height="39vh;"></div>
           </div>
           <div class="mapboxgl-control-container">
             <div class="mapboxgl-ctrl-bottom-left">
-              <div class="mapboxgl-ctrl" style="display: block;"><a class="mapboxgl-ctrl-logo" target="_blank"
-                  rel="noopener nofollow" href="https://www.mapbox.com/" aria-label="Mapbox logo"></a></div>
+              <div class="mapboxgl-ctrl"><a class="mapboxgl-ctrl-logo" target="_blank" rel="noopener nofollow"
+                  href="https://www.mapbox.com/" aria-label="Mapbox logo"></a></div>
             </div>
           </div>
         </div>

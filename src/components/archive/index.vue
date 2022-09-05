@@ -17,7 +17,7 @@
         transition-all duration-200 hover:shadow hover:-translate-y-1" v-for="(src, index) in listArchiveLoad"
           :key="index" animated>
           <template #template>
-            <el-skeleton-item variant="image" style="height: 12rem" />
+            <el-skeleton-item variant="image" class="template-pc-height" />
           </template>
         </el-skeleton>
       </template>

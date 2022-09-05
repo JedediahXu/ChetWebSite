@@ -74,6 +74,10 @@
     & .media:hover {
       background-color: var(--module-bg-opaque);
     }
+
+    .template-height {
+      height: 9rem;
+    }
   }
 
 
@@ -162,6 +166,10 @@
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  .template-height {
+    height: 9rem;
   }
 
 }

@@ -36,7 +36,7 @@
         </div>
       </div>
     </div>
-    <loadmore :totale="totale" @click="toEmits" style="margin-top: 1.25rem;" />
+    <loadmore :totale="totale" @click="toEmits" class="mt-5" />
   </div>
   <template v-else>
     <el-skeleton class="article-item list-item" v-for="item, index in listArticleLoad" :key="index" animated>
@@ -44,10 +44,10 @@
         <div class="thumbnail">
           <el-skeleton-item variant="image" class="image" />
         </div>
-        <div style="width: 100%;" class="middle-content">
-          <el-skeleton-item variant="p" style="width:20%" />
-          <el-skeleton-item variant="p" style="width:50%;margin-top: 10px;" />
-          <el-skeleton-item variant="text" style="width: 100%;margin-top: 10px;" />
+        <div class="middle-content w-full">
+          <el-skeleton-item variant="p" class="w-1/4" />
+          <el-skeleton-item variant="p" class="middle-content-p" />
+          <el-skeleton-item variant="text" class="middle-content-el" />
         </div>
       </template>
     </el-skeleton>

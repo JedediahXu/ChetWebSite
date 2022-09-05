@@ -7,15 +7,15 @@
 */
 <template>
   <div class="sidebar-top">
-    <div class="avatar" style="margin-top: 10px;">
+    <div class="avatar  mt-2.5">
       <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
         <img src="/public/static/img/avatar/xu.jpeg" />
       </div>
     </div>
-    <div style="margin-top: 11px;">
+    <div class="mt-2.5">
       <a class="link link-secondary">{{ t('PAGE_FREELANCER_SLOGAN') }}</a>
     </div>
-    <ul class="menu bg-base-100 p-2 rounded-box rounded-color" style="width:90%;">
+    <ul class="menu bg-base-100 p-2 rounded-box rounded-color w-11/12">
       <li @click="pushJump(0)" class="menu-list-top">
         <a :class="touch === 0 ? 'active' : ''">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -62,10 +62,10 @@
         </a>
       </li>
     </ul>
-    <div style="margin-top: 10px;">
+    <div class="mt-2.5">
       <div class="stats shadow">
         <div class="stat">
-          <div style="display:flex;flex-direction: column;align-items: center;">
+          <div class="stat-div">
             <div class="stats shadow">
               {{ cityname }}
             </div>
@@ -74,7 +74,7 @@
             </div>
           </div>
           <br />
-          <div style="display:flex;flex-direction: column;align-items: center;">
+          <div class="stat-div">
             <div class="stat-title">总访问量</div>
             <div class="stat-value text-primary">{{ mainStore.getTotalAmount }}</div>
             <div class="stat-desc">👋 欢迎访问,我的个人博客~</div>
@@ -170,3 +170,12 @@ onMounted(() => {
 
 
 </script>
+
+
+<style lang="scss">
+.stat-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+</style>

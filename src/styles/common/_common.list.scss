@@ -7,6 +7,29 @@
   & .list-item {
     margin-bottom: 1.236rem;
   }
+
+  .item-skeleton {
+    display: flex;
+    margin: 10px 70px 10px 0px;
+    padding: 20px;
+
+    .item-skeleton-image {
+      width: 260px;
+      height: 156px
+    }
+
+    .middle-skeleton-item {
+      width: 20%
+    }
+
+    .middle-skeleton-right {
+      margin-right: 16px
+    }
+
+    .middle-skeleton-width {
+      width: 30%
+    }
+  }
 }
 
 .middle-content {
@@ -14,6 +37,9 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  padding: 14px;
+  width: 100%;
+  margin-right: 20px;
   justify-content: space-between;
 }
 
@@ -154,4 +180,9 @@ h5 {
   color: inherit;
   font-family: inherit;
   line-height: inherit;
+}
+
+.item-grid {
+  display: grid;
+  width: 100%;
 }

@@ -46,15 +46,15 @@
         </div>
       </div>
 
-      <div class="hero  h-0.5 bg-origin-border" style="height: 23rem" v-else>
+      <div class="hero  h-0.5 bg-origin-border hero-height" v-else>
         <div class="hero-overlay bg-opacity-60"></div>
         <div class="hero-content text-center text-neutral-content">
           <div class="w-16 h-10 btn-primary btn-switch rounded-sm opacity-75" @click="switchCV(2)">
             <i class="iconfont icon-prev"></i>
           </div>
           <div class="max-w-text text-left ">
-            <div style="font-size: 1.4rem;">Hi，以下是我的技能～🎉</div>
-            <ul class="text-ul" style="margin-top: 10px;">
+            <div class="text-size ">Hi，以下是我的技能～🎉</div>
+            <ul class="text-ul mt-2.5">
               <li>理解并掌握 JavaScript 核心知识及大部分 ES6 新特性，掌握 TypeScript</li>
               <li>熟练掌握 Vue 全家桶技术体系，了解 React 及相关技术栈，有完整项目实践经验</li>
               <li>掌握 Uni-app、(微信/支付宝)小程序，有移动端项目开发经验</li>
@@ -101,7 +101,7 @@
         <div class="hero-overlay bg-opacity-60"></div>
         <div class="moblie-hero-content text-center text-neutral-content moblie-content">
           <div class="max-w-md">
-            <h1 class="mb-5 text-4xl font-bold" style="color:#fff;">ChetSerenade</h1>
+            <h1 class="mb-5 text-4xl font-bold  font-color">ChetSerenade</h1>
             <p class="role"> To sum up you in a word </p>
           </div>
           <div class="socials">
@@ -139,7 +139,7 @@
           <div class="qrcode-modal wechat">
             <div class="background"></div>
             <span class="text">👋 &nbsp; Friend me on WeChat</span>
-            <ul class="text-ul" style="margin-top: 1px;font-size: 10px;">
+            <ul class="text-ul text-top">
               <li>理解并掌握 JavaScript 核心知识及大部分 ES6 新特性，掌握 TypeScript</li>
               <li>熟练掌握 Vue 全家桶技术体系，了解 React 及相关技术栈，有完整项目实践经验</li>
               <li>掌握 Uni-app、(微信/支付宝)小程序，有移动端项目开发经验</li>
@@ -419,6 +419,23 @@ let switchCV = ((index: number) => {
     height: 100%;
     border-radius: 2px;
   }
+}
+
+.hero-height {
+  height: 23rem;
+}
+
+.text-size {
+  font-size: 1.4rem;
+}
+
+.text-top {
+  margin-top: 1px;
+  font-size: 10px;
+}
+
+.font-color {
+  color: #fff;
 }
 </style>
 

@@ -8,8 +8,8 @@
 <template>
   <div>
     <div class="navbar bg-base-100">
-      <div class="flex-1" style="justify-content: space-between;">
-        <a class="btn btn-ghost normal-case text-xl" style="margin-right: auto;">ChetSerenade</a>
+      <div class="flex-1 flex-space">
+        <a class="btn btn-ghost normal-case text-xl flex-right">ChetSerenade</a>
         <div class="relative mr-6" v-show="num === 0">
           <input type="text" v-model="dataSearch" @keyup.enter.native="onSearch(dataSearch)" placeholder="Search"
             class="input input-bordered w-80" />
@@ -82,5 +82,13 @@ let addopen = (() => {
 <style>
 .player-sm {
   height: 10px;
+}
+
+.flex-space {
+  justify-content: space-between;
+}
+
+.flex-right {
+  margin-right: auto;
 }
 </style>

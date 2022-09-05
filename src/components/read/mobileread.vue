@@ -28,7 +28,7 @@
                   :src="'/apis' + reserve.cover_img">
               </figure>
             </div>
-            <article class="prose dark:prose-invert" style="margin: 0;">
+            <article class="prose dark:prose-invert m-0">
               <div v-html=reserve.content></div>
             </article>
           </section>
