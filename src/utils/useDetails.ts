@@ -1,3 +1,10 @@
+/*
+* @Description: 设备型号
+* @Author: xuhuazhi
+* @Date: 2022-09-05
+* @LastEditors: xuhuazhi
+* @LastEditTime: 2022-09-05
+*/
 import parser from 'ua-parser-js'
 
 export const uaParser = (userAgent: string) => {

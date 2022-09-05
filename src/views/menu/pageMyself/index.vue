@@ -54,7 +54,7 @@
           </div>
           <div class="max-w-text text-left ">
             <div class="text-size ">Hi，以下是我的技能～🎉</div>
-            <ul class="text-ul mt-2.5">
+            <ul class="text-ul">
               <li>理解并掌握 JavaScript 核心知识及大部分 ES6 新特性，掌握 TypeScript</li>
               <li>熟练掌握 Vue 全家桶技术体系，了解 React 及相关技术栈，有完整项目实践经验</li>
               <li>掌握 Uni-app、(微信/支付宝)小程序，有移动端项目开发经验</li>
@@ -138,8 +138,8 @@
         <label class="modal-box relative">
           <div class="qrcode-modal wechat">
             <div class="background"></div>
-            <span class="text">👋 &nbsp; Friend me on WeChat</span>
-            <ul class="text-ul text-top">
+            <span class="text-moblie-size">👋 &nbsp; Friend me on WeChat</span>
+            <ul class="text-mobile-ul text-top ">
               <li>理解并掌握 JavaScript 核心知识及大部分 ES6 新特性，掌握 TypeScript</li>
               <li>熟练掌握 Vue 全家桶技术体系，了解 React 及相关技术栈，有完整项目实践经验</li>
               <li>掌握 Uni-app、(微信/支付宝)小程序，有移动端项目开发经验</li>
@@ -220,6 +220,13 @@ let switchCV = ((index: number) => {
     padding: 0;
     font-size: 1.1rem;
     line-height: 40px;
+  }
+
+  .text-mobile-ul {
+    list-style: circle;
+    margin: 0;
+    padding: 0;
+    line-height: 25px;
   }
 
   .max-w-text {
@@ -427,6 +434,10 @@ let switchCV = ((index: number) => {
 
 .text-size {
   font-size: 1.4rem;
+}
+
+.text-moblie-size {
+  font-size: 1.2rem;
 }
 
 .text-top {

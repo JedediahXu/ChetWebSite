@@ -1,3 +1,10 @@
+/*
+* @Description: IP
+* @Author: xuhuazhi
+* @Date: 2022-09-05
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-09-05 17:07:32
+*/
 import { queryIP, queryAmount } from '@/api';
 import Cookies from 'js-cookie';
 import useLanguage from '@/store/index';

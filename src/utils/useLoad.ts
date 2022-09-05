@@ -1,3 +1,10 @@
+/*
+* @Description: 骨架数据
+* @Author: xuhuazhi
+* @Date: 2022-09-05
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-09-05 17:07:48
+*/
 import { ref } from "vue";
 
 export function useShow() {
