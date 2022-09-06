@@ -20,7 +20,7 @@ import { emitter } from '@/utils/eventBus'
 import { queryArticle } from '@/api'
 
 const isActive = ref<number>(1)
-// mobile and pc  6666
+// mobile and pc
 const homeJudgment = ref<string>()
 homeJudgment.value = judgment()
 
