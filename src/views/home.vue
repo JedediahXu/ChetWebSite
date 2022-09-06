@@ -9,7 +9,6 @@
 		<MobileCarlist v-if="homeJudgment === 'mobile'" ref="dialogShow" :list-article="listArticle" :totale="totale" @getChili="addList" />
 	</Container>
 </template>
-
 <script setup lang="ts" name="home">
 import { ElMessage } from 'element-plus'
 import { ref, Ref } from 'vue'
