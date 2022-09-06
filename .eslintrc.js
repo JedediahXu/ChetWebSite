@@ -1,3 +1,4 @@
+// @see: http://eslint.cn
 const { defineConfig } = require('eslint-define-config')
 module.exports = defineConfig({
   root: true,
@@ -37,6 +38,11 @@ module.exports = defineConfig({
       },
     },
   ],
+  /*
+   * "off" 或 0    ==>  关闭规则
+   * "warn" 或 1   ==>  打开的规则作为警告（不影响代码执行）
+   * "error" 或 2  ==>  规则作为一个错误（代码不能执行，界面报错）
+   */
   rules: {
     // 禁止使用 var
     'no-var': 'error',
@@ -86,7 +92,7 @@ module.exports = defineConfig({
       },
     ],
     // 强制使用驼峰
-    camelcase: ["error", { properties: "always" }],
+    // camelcase: ["error", { properties: "always" }],
     // 优先使用 const
     'prefer-const': [
       'error',
