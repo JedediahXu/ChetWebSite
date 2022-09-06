@@ -23,9 +23,5 @@ dataLink()
 <style lang="scss">
 .btn {
 	margin-left: 10px;
-
-	a {
-		color: #fff;
-	}
 }
 </style>

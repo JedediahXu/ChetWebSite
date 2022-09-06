@@ -7,6 +7,7 @@ const enLocale = {
 	PAGE_APP: 'Message',
 	CONNECT_MAIL: 'Mail',
 	CONNECT_GITHUB: 'GitHub',
+	SENTENCE: 'Live,and Let live.',
 }
 
 export default enLocale

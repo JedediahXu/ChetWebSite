@@ -33,7 +33,7 @@ All notable changes to this project will be documented in this file.
 - 手机版本的搜索实现
 - 链接
 - 统计访问
-- google 统计代码
+- 百度统计
 - 骨架屏
 
 （持续中）

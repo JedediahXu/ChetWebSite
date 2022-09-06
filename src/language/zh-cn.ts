@@ -7,6 +7,7 @@ const zhLocale = {
 	PAGE_APP: '留言',
 	CONNECT_MAIL: '邮箱',
 	CONNECT_GITHUB: 'GitHub',
+	SENTENCE: '生活,也让他人生活',
 }
 
 export default zhLocale

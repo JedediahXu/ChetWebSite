@@ -9,7 +9,7 @@
 	border-radius: 4px;
 	overflow: hidden;
 	margin-top: 0.975rem;
-	background: hsl(var(--b1));
+	background: hsl(var(--b3));
 
 	& .thumbnail {
 		width: 100%;
@@ -58,7 +58,7 @@
 		justify-content: space-between;
 		align-items: baseline;
 		padding: 1rem;
-		border-top: 1px dashed rgb(229, 231, 235);
+		border-top: 1px dashed hsl(var(--nc));
 		overflow: hidden;
 		font-size: 12.432px;
 		text-overflow: ellipsis;
@@ -79,6 +79,7 @@
 .middle-width {
 	width: 20% !important;
 }
+
 
 .middle-content-p {
 	width: 50% !important;

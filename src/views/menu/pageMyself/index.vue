@@ -6,8 +6,8 @@
 				<div class="hero-content text-center text-neutral-content">
 					<div class="max-w-md">
 						<h1 class="mb-5 text-5xl font-bold">ChetSerenade</h1>
-						<p class="role">Engineer / 篮球爱好者 / Digital nomad</p>
-						<span class="webfont bolder zh boldEn mt-4">我暂时不知道用什么语言代替～ 不知道想要说什么</span>
+						<p class="role">Basketball Lover / Web Developer / Scavenger</p>
+						<span class="webfont bolder zh boldEn mt-4">{{ t('SENTENCE') }}</span>
 						<div class="socials">
 							<span class="normal mt-3">
 								<a class="item github" rel="external nofollow noopener" target="_blank" href="https://github.com/ChetSerenade">
@@ -86,7 +86,7 @@
 				<div class="moblie-hero-content text-center text-neutral-content moblie-content">
 					<div class="max-w-md">
 						<h1 class="mb-5 text-4xl font-bold font-color">ChetSerenade</h1>
-						<p class="role">To sum up you in a word</p>
+						<p class="role">{{ t('SENTENCE') }}</p>
 					</div>
 					<div class="socials">
 						<span class="moblie-normal mt-3">
@@ -116,14 +116,14 @@
 				<label class="modal-box relative">
 					<div class="qrcode-modal wechat">
 						<div class="background"></div>
-						<span class="text-moblie-size">👋 &nbsp; Friend me on WeChat</span>
+						<span class="text-moblie-size">Hi,以下是我的技能～🎉</span>
 						<ul class="text-mobile-ul text-top">
 							<li>理解并掌握 JavaScript 核心知识及大部分 ES6 新特性,掌握 TypeScript</li>
 							<li>熟练掌握 Vue 全家桶技术体系,了解 React 及相关技术栈,有完整项目实践经验</li>
 							<li>掌握 Uni-app、(微信/支付宝)小程序,有移动端项目开发经验</li>
 							<li>理解前端工程化,掌握 Webpack、Vite配置与构建,能够根据项目进行适度优化</li>
 							<li>了解浏览器渲染、数据可视化、前端性能优化等方面知识</li>
-							<li>了解 HTTP 协议,Node.js,PHP,Mysql,Linux,Shell,Jenkins,熟练使用 Git</li>
+							<li>了解 HTTP 协议，Node.js，PHP，Mysql，Linux，Shell，Jenkins，熟练使用Git</li>
 						</ul>
 					</div>
 				</label>
@@ -144,6 +144,8 @@
 <script setup lang="ts">
 import TrajectoryMap from '@/components/map/index.vue'
 import { judgment } from '@/utils/judgment'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 window.scrollTo(0, 0)
 const isActive = ref<number>(1)
 const visible = ref<boolean>(true)
@@ -325,7 +327,7 @@ const switchCV = (index: number) => {
 	}
 
 	.modal-box {
-		max-width: 16rem;
+		max-width: 17rem;
 		padding: 1rem;
 	}
 }
