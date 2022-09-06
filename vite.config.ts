@@ -3,12 +3,27 @@ import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import viteCompression from 'vite-plugin-compression'
 import visualizer from 'rollup-plugin-visualizer'
 
 const path = require('path')
 
 export default defineConfig({
 	build: {
+		outDir: 'dist',
+		// esbuild 打包更快，但是不能去除 console.log，去除 console 使用 terser 模式
+		minify: 'esbuild',
+		// 进行压缩计算
+		brotliSize: false,
+		terserOptions: {
+			compress: {
+				// 打包自动删除console
+				drop_console: true,
+				drop_debugger: true,
+			},
+			keep_classnames: true,
+		},
+		//chunk 大小警告的限制
 		chunkSizeWarningLimit: 1500,
 		rollupOptions: {
 			output: {
@@ -17,6 +32,9 @@ export default defineConfig({
 						return id.toString().split('node_modules/')[1].split('/')[0].toString()
 					}
 				},
+				chunkFileNames: 'assets/js/[name]-[hash].js',
+				entryFileNames: 'assets/js/[name]-[hash].js',
+				assetFileNames: 'assets/[ext]/[name]-[hash].[ext]',
 			},
 		},
 	},
@@ -32,6 +50,7 @@ export default defineConfig({
 				globalsPropValue: true, // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
 			},
 		}),
+		//体积分析
 		visualizer({
 			open: true, // 设置为true，否则无效
 			gzipSize: true,
@@ -42,6 +61,14 @@ export default defineConfig({
 			resolvers: [ElementPlusResolver()],
 			extensions: ['vue'],
 			directoryAsNamespace: true,
+		}),
+		//gzip静态资源压缩
+		viteCompression({
+			verbose: true,
+			disable: false,
+			threshold: 10240,
+			algorithm: 'gzip',
+			ext: '.gz',
 		}),
 	],
 	define: {
