@@ -1,58 +1,55 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
-    <div class="mobile-main">
-        <sidebar class="asider " @clickChild="clickEven" :class="MenuBar == true ? 'opened' : ''" />
-        <div class="main " :class="MenuBar !== false ? 'opened' : ''">
-            <div :class="MenuBar !== false ? 'close-mask' : ''" @click="buttonMenuBar"></div>
-            <top class="right-top mobile-right-top" @setMenuBar="setMenuBar"
-                :class="monitor !== 0 ? 'shadow-sm' : ''" />
-            <div class="mobile-container">
-                <!-- 主视图层级 -->
-                <router-view v-slot="{ Component }">
-                    <keep-alive :include="['home', 'message', 'about', 'archive',]">
-                        <component :is="Component" />
-                    </keep-alive>
-                </router-view>
-            </div>
-        </div>
-    </div>
+	<div class="mobile-main">
+		<Sidebar class="asider" :class="MenuBar == true ? 'opened' : ''" @clickChild="clickEven" />
+		<div class="main" :class="MenuBar !== false ? 'opened' : ''">
+			<div :class="MenuBar !== false ? 'close-mask' : ''" @click="buttonMenuBar"></div>
+			<Top class="right-top mobile-right-top" :class="monitor !== 0 ? 'shadow-sm' : ''" @setMenuBar="setMenuBar" />
+			<div class="mobile-container">
+				<!-- 主视图层级 -->
+				<router-view v-slot="{ Component }">
+					<KeepAlive :include="['home', 'message', 'about', 'archive']">
+						<Component :is="Component" />
+					</KeepAlive>
+				</router-view>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script setup lang="ts">
-import top from "./top/index.vue";
-import sidebar from "./sidebar/index.vue";
+import Top from './top/index.vue'
+import Sidebar from './sidebar/index.vue'
 
-let monitor = ref<number>(0);
+const monitor = ref<number>(0)
 //scroll
 onMounted(() => {
-    window.addEventListener('scroll', handleScroll, true)
+	window.addEventListener('scroll', handleScroll, true)
 })
-const handleScroll = (() => {
-    let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    monitor.value = scrollTop
-})
-
-//Menu  手机端左侧显示隐藏
-let MenuBar = ref<boolean>(false)
-let setMenuBar = (() => {
-    if (!MenuBar.value) {
-        MenuBar.value = true
-    } else {
-        MenuBar.value = false
-    }
-})
-
-
-let buttonMenuBar = (() => {
-    if (MenuBar.value) {
-        MenuBar.value = false
-    }
-})
-
-const clickEven = () => {
-    if (MenuBar.value) {
-        MenuBar.value = false
-    }
+const handleScroll = () => {
+	const scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+	monitor.value = scrollTop
 }
 
+//Menu  手机端左侧显示隐藏
+const MenuBar = ref<boolean>(false)
+const setMenuBar = () => {
+	if (!MenuBar.value) {
+		MenuBar.value = true
+	} else {
+		MenuBar.value = false
+	}
+}
 
+const buttonMenuBar = () => {
+	if (MenuBar.value) {
+		MenuBar.value = false
+	}
+}
+
+const clickEven = () => {
+	if (MenuBar.value) {
+		MenuBar.value = false
+	}
+}
 </script>

@@ -1,53 +1,45 @@
-/*
-* @Description: 专题墙
-* @Author: Chetxu  
-* @Date: 2022-07-11
-* @LastEditors: Chetxu
-* @LastEditTime: 2022-07-11
-*/
 <template>
-  <container :isActive="isActive" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
-    <archive :listPhoto="listPhoto" ref="dialogShow" v-if="homeJudgment === 'pc'" @getTransfer="getTransfer" />
-    <mobilArchive :listPhoto="listPhoto" ref="dialogShow" v-if="homeJudgment === 'mobile'" @getTransfer="getTransfer" />
-  </container>
+	<Container :is-active="isActive" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
+		<Archive v-if="homeJudgment === 'pc'" ref="dialogShow" :list-photo="listPhoto" @getTransfer="getTransfer" />
+		<MobilArchive v-if="homeJudgment === 'mobile'" ref="dialogShow" :list-photo="listPhoto" @getTransfer="getTransfer" />
+	</Container>
 </template>
 
-<script setup lang="ts"  name="archive">
-import mobilArchive from '@/components/mobile/archive/index.vue'
-import archive from '@/components/archive/index.vue'
+<script setup lang="ts" name="archive">
+import MobilArchive from '@/components/mobile/archive/index.vue'
+import Archive from '@/components/archive/index.vue'
 import { judgment } from '@/utils/judgment'
 import { emitter } from '@/utils/eventBus'
-import { mallGoodsCates } from '@/api';
-const router = useRouter();
+import { mallGoodsCates } from '@/api'
+const router = useRouter()
 
-let isActive = ref<number>(1)
-let homeJudgment = ref<string>()
+const isActive = ref<number>(1)
+const homeJudgment = ref<string>()
 const dialogShow = ref()
-let listPhoto = ref<Array<object>>([])
+const listPhoto = ref<Array<object>>([])
 
 //获取文章分类
 onMounted(() => {
-  homeJudgment.value = judgment()
-  mallGoodsCates().then((res: any) => {
-    listPhoto.value.push(...res.data.data)
-    setTimeout(() => {
-      dialogShow.value.archiveShow()
-    }, 500)
-  });
+	homeJudgment.value = judgment()
+	mallGoodsCates().then((res: any) => {
+		listPhoto.value.push(...res.data.data)
+		setTimeout(() => {
+			dialogShow.value.archiveShow()
+		}, 500)
+	})
 })
 
 //分类跳转
-const getTransfer = ((e: number) => {
-  router.push({ name: 'home' });
-  emitter.emit('taskTouch', 0);
-  emitter.emit('taskPageId', e);
-  emitter.emit('searchHide', 0);
-})
+const getTransfer = (e: number) => {
+	router.push({ name: 'home' })
+	emitter.emit('taskTouch', 0)
+	emitter.emit('taskPageId', e)
+	emitter.emit('searchHide', 0)
+}
 </script>
-
 
 <style scoped>
 .moblie-right-container {
-  padding-right: 10px;
+	padding-right: 10px;
 }
 </style>

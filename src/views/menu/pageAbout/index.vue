@@ -1,43 +1,36 @@
-/*
-* @Description: 照片墙
-* @Author: Chetxu
-* @Date: 2022-07-11
-* @LastEditors: Chetxu
-* @LastEditTime: 2022-07-11
-*/
 <template>
-  <container :isActive="isActive" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
-    <card :listPhoto="listPhoto" ref="dialogShow" />
-  </container>
+	<Container :is-active="isActive" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
+		<Card ref="dialogShow" :list-photo="listPhoto" />
+	</Container>
 </template>
 
 <script setup lang="ts" name="about">
-import card from '@/components/cardPhoto/index.vue'
+import Card from '@/components/cardPhoto/index.vue'
 import { judgment } from '@/utils/judgment'
-import { queryPhoto } from '@/api';
+import { queryPhoto } from '@/api'
 const dialogShow = ref()
 
-let isActive = ref<number>(1)
-let homeJudgment = ref<string>()
-let listPhoto = ref<Array<object>>()
+const isActive = ref<number>(1)
+const homeJudgment = ref<string>()
+const listPhoto = ref<Array<object>>()
 
-const addPhoto = (() => {
-  queryPhoto().then((res: any) => {
-    listPhoto.value = res.data.data
-    setTimeout(() => {
-      dialogShow.value.archiveShow()
-    }, 500)
-  });
-});
+const addPhoto = () => {
+	queryPhoto().then((res: any) => {
+		listPhoto.value = res.data.data
+		setTimeout(() => {
+			dialogShow.value.archiveShow()
+		}, 500)
+	})
+}
 addPhoto()
 
 onMounted(() => {
-  homeJudgment.value = judgment()
+	homeJudgment.value = judgment()
 })
 </script>
 
 <style scoped>
 .moblie-right-container {
-  padding-right: 10px;
+	padding-right: 10px;
 }
 </style>

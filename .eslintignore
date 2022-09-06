@@ -1,0 +1,17 @@
+*.sh
+*.md
+*.woff
+*.ttf
+.vscode
+.idea
+.husky
+.local
+/bin
+.eslintrc.js
+.prettierrc.js
+build/*.js
+src/assets
+node_modules
+dist
+auto-import.d.ts
+components.d.ts

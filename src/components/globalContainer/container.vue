@@ -1,26 +1,19 @@
-/*
-* @Description: 背景
-* @Author: Chetxu
-* @Date: 2022-08-12
-* @LastEditors: Chetxu
-* @LastEditTime: 2022-08-12
-*/
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <el-container class="basic-container">
-    <el-main class="basic-container__card" :class="[isActive === 1 ? 'basic-he' : 'height-ti']">
-      <slot></slot>
-    </el-main>
-  </el-container>
+	<el-container class="basic-container">
+		<el-main class="basic-container__card" :class="[isActive === 1 ? 'basic-he' : 'height-ti']">
+			<slot></slot>
+		</el-main>
+	</el-container>
 </template>
 
-
 <script setup lang="ts">
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps({
-  isActive: {
-    type: Number,
-    default: true,
-  }
+	isActive: {
+		type: Number,
+		// eslint-disable-next-line vue/require-valid-default-prop
+		default: true,
+	},
 })
-
 </script>

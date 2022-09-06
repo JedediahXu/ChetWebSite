@@ -1,29 +1,29 @@
 /*
-* @Description: IP
-* @Author: xuhuazhi
-* @Date: 2022-09-05
+ * @Description: IP
+ * @Author: xuhuazhi
+ * @Date: 2022-09-05
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-09-05 17:07:32
-*/
-import { queryIP, queryAmount } from '@/api';
-import Cookies from 'js-cookie';
-import useLanguage from '@/store/index';
-const mainStore = useLanguage();
+ * @LastEditTime: 2022-09-06 09:25:35
+ */
+import { queryIP, queryAmount } from '@/api'
+import Cookies from 'js-cookie'
+import useLanguage from '@/store/index'
+const mainStore = useLanguage()
 
 export default function () {
-  const CheckId = Cookies.get("name")
-  if (CheckId == undefined) {
-    queryAmount().then((res) => {
-      mainStore.setTotalAmount(res.data.data[0].total_amount)
-    })
-  }
-  let totalAmount = ref<number>()
-  let cityname = ref<string>()
-  queryIP(localStorage.getItem('Ip')).then((res: any) => {
-    cityname.value = res.data.data[0].location
-  });
-  return {
-    cityname,
-    totalAmount
-  }
+	const CheckId = Cookies.get('name')
+	if (CheckId == undefined) {
+		queryAmount().then(res => {
+			mainStore.setTotalAmount(res.data.data[0].total_amount)
+		})
+	}
+	const totalAmount = ref<number>()
+	const cityname = ref<string>()
+	queryIP(localStorage.getItem('Ip')).then((res: any) => {
+		cityname.value = res.data.data[0].location
+	})
+	return {
+		cityname,
+		totalAmount,
+	}
 }

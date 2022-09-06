@@ -1,0 +1,7 @@
+build/*.js
+src/assets
+node_modules
+public
+dist
+auto-import.d.ts
+components.d.ts
