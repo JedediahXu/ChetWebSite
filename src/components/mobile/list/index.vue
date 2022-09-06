@@ -34,7 +34,7 @@
 					<el-skeleton-item variant="image" class="image" />
 				</div>
 				<div class="middle-content w-full">
-					<el-skeleton-item variant="p" class="w-1/4" />
+					<el-skeleton-item variant="p" class="middle-width" />
 					<el-skeleton-item variant="p" class="middle-content-p" />
 					<el-skeleton-item variant="text" class="middle-content-el" />
 				</div>
