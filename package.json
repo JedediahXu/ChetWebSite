@@ -6,7 +6,8 @@
 		"dev": "vite --host 0.0.0.0",
 		"build": "vue-tsc --noEmit && vite build",
 		"preview": "vite preview",
-		"postinstall": "patch-package"
+		"postinstall": "patch-package",
+		"prepare": "husky install"
 	},
 	"dependencies": {
 		"axios": "^0.27.2",
@@ -26,6 +27,8 @@
 		"vue3-photo-preview": "^0.2.4"
 	},
 	"devDependencies": {
+		"@commitlint/cli": "^17.1.2",
+		"@commitlint/config-conventional": "^17.1.0",
 		"@tailwindcss/typography": "^0.5.4",
 		"@types/js-cookie": "^3.0.2",
 		"@types/mapbox-gl": "^2.7.3",
@@ -44,6 +47,7 @@
 		"eslint-define-config": "^1.7.0",
 		"eslint-plugin-prettier": "^4.2.1",
 		"eslint-plugin-vue": "^9.4.0",
+		"husky": "^8.0.1",
 		"js-cookie": "^3.0.1",
 		"patch-package": "^6.4.7",
 		"postcss": "^8.4.7",
