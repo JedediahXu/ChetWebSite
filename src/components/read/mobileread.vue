@@ -38,6 +38,7 @@
 </template>
 
 <script setup lang="ts">
+import { updateVolume } from '@/api'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps({
 	reserve: {
@@ -46,6 +47,10 @@ const props = defineProps({
 		// eslint-disable-next-line vue/require-valid-default-prop
 		default: true,
 	},
+})
+
+updateVolume(props.reserve.Id).then((res: any) => {
+	console.log(res)
 })
 
 const returntTop = () => {

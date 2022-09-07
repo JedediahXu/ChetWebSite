@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
 	<div v-if="isLoad" class="article-list">
-		<div v-for="(item, index) in listArticle" :key="index" class="article-item list-item" @click="read(item, index + 1)">
+		<div v-for="(item, index) in listArticle" :key="index" class="article-item list-item" @click="read(item)">
 			<div class="item-background" :style="{ backgroundImage: 'url(' + '/apis' + item.cover_img + ')' }"></div>
 			<div class="item-content">
 				<a class="item-thumb">
@@ -55,7 +55,6 @@
 <script setup lang="ts">
 import Loadmore from '@/components/loadMore/index.vue'
 import { useShow } from '@/utils/useLoad'
-import { updateVolume } from '@/api'
 import type { PropType } from 'vue'
 
 const $router = useRouter()
@@ -80,13 +79,9 @@ const toEmits = () => {
 }
 
 //选中文章 带着内容跳转展示
-const read = (item: object, id) => {
+const read = (item: object) => {
 	sessionStorage.setItem('read', JSON.stringify(item))
 	$router.push({ name: 'read' })
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	updateVolume(id).then((res: any) => {
-		// console.log(res);
-	})
 }
 
 const isLoad = ref<boolean>(false)

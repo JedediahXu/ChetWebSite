@@ -40,12 +40,17 @@
 </template>
 
 <script setup lang="ts">
+import { updateVolume } from '@/api'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps({
 	reserve: {
 		type: Object,
 		required: true,
 	},
+})
+
+updateVolume(props.reserve.Id).then((res: any) => {
+	console.log(res)
 })
 </script>
 
