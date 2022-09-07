@@ -12,8 +12,8 @@
 					<h3 class="text-xl mt-3 font-bold">这个网站的程序（模板）是如何实现的？</h3>
 					<ul class="mt-4 text-base italic bg-gradient-to-r ml-5">
 						<li>前端：基于 Vue + Vite + TypeScript</li>
-						<li>服务端：基于 Node.js 的 express 程序。</li>
-						<li>管理后台：基于 React + 实现的 Web 应用</li>
+						<li>服务端：基于 Node.js 的 express 程序 + Mysql。</li>
+						<li>管理后台：基于 React + TypeScript实现的 Web 应用</li>
 					</ul>
 				</div>
 			</div>

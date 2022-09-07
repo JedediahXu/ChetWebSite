@@ -1,6 +1,6 @@
 
 //照片故事地点
-export let geoPhoto = {
+export const geoPhoto = {
   type: 'FeatureCollection',
   features: [
     {
@@ -56,7 +56,7 @@ export let geoPhoto = {
 }
 
 //轨迹
-export let geoData = {
+export const geoData = {
   type: 'FeatureCollection',
   features: [
     {

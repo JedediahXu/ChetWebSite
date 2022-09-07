@@ -3,7 +3,7 @@
  * @Author: xuhuazhi
  * @Date: 2022-09-05
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-09-06 09:25:38
+ * @LastEditTime: 2022-09-07 16:03:53
  */
 import { ref } from 'vue'
 
@@ -57,8 +57,29 @@ export function useShow() {
 		{
 			Id: 0,
 		},
+		{
+			Id: 0,
+		},
+		{
+			Id: 0,
+		},
+		{
+			Id: 0,
+		},
+		{
+			Id: 0,
+		},
 	])
 	const listArchiveLoad = ref([
+		{
+			Id: 0,
+		},
+		{
+			Id: 0,
+		},
+		{
+			Id: 0,
+		},
 		{
 			Id: 0,
 		},

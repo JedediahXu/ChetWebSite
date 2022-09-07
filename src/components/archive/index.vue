@@ -9,7 +9,7 @@
 				:key="index"
 				class="card border-2 border-base-100 card-compact bg-white/5 hover:bg-gray-300/10 transition-all duration-200 hover:shadow hover:-translate-y-1"
 				:intro="src.img"
-				@click="toJump(index)"
+				@click="toJump(src.Id)"
 			>
 				<figure class="px-12 pt-6 pb-2 w-full aspect-[2/1] items-end">
 					<img class="w-full h-auto" :src="'/apis' + src.cate_photos" alt="Vite" />
@@ -46,7 +46,11 @@ const props = defineProps({
 //分类跳转
 const emits = defineEmits(['getTransfer'])
 const toJump = (index: number) => {
-	emits('getTransfer', index)
+	if (index === 1) {
+		emits('getTransfer', 0)
+	} else {
+		emits('getTransfer', index)
+	}
 }
 
 const isLoad = ref<boolean>(false)
