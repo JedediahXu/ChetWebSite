@@ -20,7 +20,7 @@ import { emitter } from '@/utils/eventBus'
 import { queryArticle } from '@/api'
 
 const isActive = ref<number>(1)
-// mobile and pc  测试
+// mobile and pc
 const homeJudgment = ref<string>()
 homeJudgment.value = judgment()
 
@@ -73,6 +73,7 @@ if (homeJudgment.value == 'pc') {
 		paginationData.value.page_id = index
 		paginationData.value.page_num = 0
 		listArticle.value = []
+		dialogShow.value.listSearchShow()
 		addList()
 	})
 	// 搜索
@@ -91,6 +92,7 @@ if (homeJudgment.value == 'mobile') {
 		paginationData.value.page_id = index
 		paginationData.value.page_num = 0
 		listArticle.value = []
+		dialogShow.value.listSearchShow()
 		addList()
 	})
 	addList()
@@ -108,6 +110,7 @@ if (homeJudgment.value == 'mobile') {
 		paginationData.value.text = ''
 		paginationData.value.page_id = 0
 		paginationData.value.page_num = 0
+		dialogShow.value.listSearchShow()
 		addList()
 		listArticle.value = []
 	})
