@@ -1,12 +1,12 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
 	<div class="bg-base-300 shadow-2xl w-full">
-		<div class="article">
+		<div v-if="newData.length > 0" class="article">
 			<ul class="article-list">
 				<li class="item">
 					<span class="index" data-index="1">1</span>
 					<div class="content">
-						<a href="https://juejin.cn/post/7041038709906472974" target="_blank" class="title" @mouseenter="leave(0)">Vue3.2的setup语法糖和Hook函数 (强烈推荐)</a>
+						<a href="https://juejin.cn/post/7041038709906472974" target="_blank" class="title" @mouseenter="leave(0)">{{ newData[0].article_info.title }}</a>
 						<div class="meta">
 							<span class="item date">2021-12-13</span>
 							<span class="item views"><i class="iconfont icon-eye"></i> 1.3w</span>
@@ -63,9 +63,11 @@
 </template>
 
 <script lang="ts" setup>
-// import { queryJuejin } from '@/api';
+import { queryJuejin } from '@/api'
 
 const showNumber = ref<number>(0)
+const newData = ref<Array<object>>([])
+
 const bannerList = reactive([
 	{
 		img: '/static/img/message/dm.jpeg',
@@ -88,12 +90,18 @@ const leave = (index: number) => {
 	showNumber.value = index
 }
 
-// const queryListJuejin = (() => {
-//   queryJuejin().then((res: any) => {
-//     console.log(res);
-//   })
-// })
-// queryListJuejin()
+const queryListJuejin = () => {
+	queryJuejin().then((res: any) => {
+		newData.value = res.data.data.data
+		console.log(newData.value)
+		//title
+		//view_count 816
+		//digg_count 34
+		//comment_count
+		//res.data.data.data[3].article_info
+	})
+}
+queryListJuejin()
 </script>
 
 <style lang="scss" scoped>

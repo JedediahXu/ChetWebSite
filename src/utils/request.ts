@@ -3,7 +3,7 @@
  * @Author: Chetxu
  * @Date: 2022-06-01
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-09-06 21:51:38
+ * @LastEditTime: 2022-09-12 14:12:09
  */
 import axios from 'axios'
 
@@ -13,7 +13,7 @@ const service = axios.create({
 	baseURL: url.VITE_APP_BASE_API,
 	timeout: 40 * 1000,
 	headers: {
-		'Content-Type': 'application/json;charset=utf-8', // 配置OAuth 2.0的认证头
+		'Content-Type': 'application/json; charset=utf-8', // 配置OAuth 2.0的认证头
 	},
 	withCredentials: true,
 })
