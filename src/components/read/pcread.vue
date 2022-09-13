@@ -189,10 +189,10 @@ updateVolume(props.reserve.Id).then((res: any) => {
 		}
 	}
 
-	article,
-	section {
-		margin: 0 auto;
-		width: 100%;
-	}
+	// article,
+	// section {
+	// 	margin: 0 auto;
+	// 	width: 100%;
+	// }
 }
 </style>

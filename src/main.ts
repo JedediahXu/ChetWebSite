@@ -17,11 +17,13 @@ import VueCookies from 'vue-cookies'
 
 const app = createApp(App)
 const pinia = createPinia()
+
 pinia.use(piniaPluginPersistedstate)
 app.component('Container', basicContainer)
 app.use(pinia).use(VueCookies)
-app.use(i18n).use(vue3PhotoPreview).use(mavonEditor).use(router).mount('#app')
+app.use(i18n).use(vue3PhotoPreview).use(mavonEditor).use(router)
 
+app.mount('#app')
 router.afterEach(() => {
 	window.scrollTo(0, 0)
 })

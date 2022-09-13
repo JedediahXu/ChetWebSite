@@ -6,49 +6,52 @@
 				<li class="item">
 					<span class="index" data-index="1">1</span>
 					<div class="content">
-						<a href="https://juejin.cn/post/7041038709906472974" target="_blank" class="title" @mouseenter="leave(0)">{{ newData[0].article_info.title }}</a>
+						<a href="https://juejin.cn/post/7041038709906472974" target="_blank" class="title" @mouseenter="leave(0)">{{ newData[3].article_info.title }}</a>
 						<div class="meta">
 							<span class="item date">2021-12-13</span>
-							<span class="item views"><i class="iconfont icon-eye"></i> 1.3w</span>
-							<span class="item comments"><i class="iconfont icon-comment"></i> 32</span>
+							<span class="item views"><i class="iconfont icon-eye"></i> {{ newData[3].article_info.view_count }}</span>
+							<span class="item comments"><i class="iconfont icon-comment"></i> {{ newData[3].article_info.comment_count }}</span>
 						</div>
 					</div>
 				</li>
 				<li class="item">
 					<span class="index" data-index="2">2</span>
 					<div class="content">
-						<a href="https://juejin.cn/post/7032832901213323271" target="_blank" class="title" @mouseenter="leave(1)">[最详细的Watch介绍]- Vue3中Watch的使用详情和注意事项</a>
+						<a href="https://juejin.cn/post/7032832901213323271" target="_blank" class="title" @mouseenter="leave(1)">{{ newData[7].article_info.title }}</a>
 						<div class="meta">
 							<span class="item date">2021-11-21</span>
-							<span class="item views"> <i class="iconfont icon-eye"> </i> 748</span>
-							<span class="item comments"> <i class="iconfont icon-comment"> </i> 2</span>
+							<span class="item views"> <i class="iconfont icon-eye"> </i>{{ newData[7].article_info.view_count }}</span>
+							<span class="item comments"> <i class="iconfont icon-comment"> </i> {{ newData[7].article_info.comment_count }}</span>
 						</div>
 					</div>
 				</li>
 				<li class="item">
 					<span class="index" data-index="3">3</span>
 					<div class="content">
-						<a href="https://juejin.cn/post/7031808193344831518" target="_blank" class="title" @mouseenter="leave(2)">2019 Vue，从Object.defineProperty到Proxy的演变......</a>
+						<a href="https://juejin.cn/post/7031808193344831518" target="_blank" class="title" @mouseenter="leave(2)">{{ newData[1].article_info.title }}</a>
 						<div class="meta">
-							<span class="item date">2021-11-18</span><span class="item views"><i class="iconfont icon-eye"></i> 1.3k</span><span class="item comments"><i class="iconfont icon-comment"></i> 29</span>
+							<span class="item date">2021-11-18</span><span class="item views"><i class="iconfont icon-eye"></i>{{ newData[1].article_info.view_count }}</span
+							><span class="item comments"><i class="iconfont icon-comment"></i> {{ newData[1].article_info.comment_count }}</span>
 						</div>
 					</div>
 				</li>
 				<li class="item">
 					<span class="index" data-index="4">4</span>
 					<div class="content">
-						<a href="https://juejin.cn/post/7054729782944071711" target="_blank" class="title" @mouseenter="leave(3)">深入理解Vue异步更新策略及 nextTick原理机制</a>
+						<a href="https://juejin.cn/post/7054729782944071711" target="_blank" class="title" @mouseenter="leave(3)">{{ newData[2].article_info.title }}</a>
 						<div class="meta">
-							<span class="item date">2022-01-19</span><span class="item views"><i class="iconfont icon-eye"></i> 132</span><span class="item comments"><i class="iconfont icon-comment"></i> 5</span>
+							<span class="item date">2022-01-19</span><span class="item views"><i class="iconfont icon-eye"></i>{{ newData[2].article_info.view_count }}</span
+							><span class="item comments"><i class="iconfont icon-comment"></i> {{ newData[2].article_info.comment_count }}</span>
 						</div>
 					</div>
 				</li>
 				<li class="item">
 					<span class="index" data-index="5">5</span>
 					<div class="content">
-						<a href="https://juejin.cn/post/7032244693798748174" target="_blank" class="title" @mouseenter="leave(4)">同事使用的WebUploader而我用的ElementUpload......</a>
+						<a href="https://juejin.cn/post/7032244693798748174" target="_blank" class="title" @mouseenter="leave(4)">{{ newData[8].article_info.title }}</a>
 						<div class="meta">
-							<span class="item date">2021-11-19</span><span class="item views"><i class="iconfont icon-eye"></i> 466</span><span class="item comments"><i class="iconfont icon-comment"></i> 4</span>
+							<span class="item date">2021-11-19</span><span class="item views"><i class="iconfont icon-eye"></i>{{ newData[8].article_info.view_count }}</span>
+							<span class="item comments"><i class="iconfont icon-comment"></i> {{ newData[8].article_info.comment_count }}</span>
 						</div>
 					</div>
 				</li>
@@ -65,9 +68,17 @@
 <script lang="ts" setup>
 import { queryJuejin } from '@/api'
 
-const showNumber = ref<number>(0)
-const newData = ref<Array<object>>([])
+interface JuejinList {
+	article_info: {
+		title?: string
+		view_count?: string
+		digg_count?: string
+		comment_count?: string
+	}
+}
 
+const showNumber = ref<number>(0)
+const newData = ref<Array<JuejinList>>([])
 const bannerList = reactive([
 	{
 		img: '/static/img/message/dm.jpeg',
@@ -85,20 +96,13 @@ const bannerList = reactive([
 		img: '/static/img/message/wx.jpeg',
 	},
 ])
-
 const leave = (index: number) => {
 	showNumber.value = index
 }
-
 const queryListJuejin = () => {
 	queryJuejin().then((res: any) => {
 		newData.value = res.data.data.data
 		console.log(newData.value)
-		//title
-		//view_count 816
-		//digg_count 34
-		//comment_count
-		//res.data.data.data[3].article_info
 	})
 }
 queryListJuejin()
