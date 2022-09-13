@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
 - 更换服务端渲染
 - 性能优化
 - 逻辑抽离 hooks
+- 把相册对接Instagram API
 
 
 
@@ -37,7 +38,6 @@ All notable changes to this project will be documented in this file.
 - 骨架屏
 
 （持续中）
-- 头像动画添加
 - 启动时间
 - 性能优化
 - 搜索为全局搜索 并没有关联放到具体分类文章

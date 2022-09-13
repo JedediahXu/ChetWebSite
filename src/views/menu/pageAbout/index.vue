@@ -16,6 +16,7 @@ const listPhoto = ref<Array<object>>()
 
 const addPhoto = () => {
 	queryPhoto().then((res: any) => {
+		console.log(res.data.data)
 		listPhoto.value = res.data.data
 		setTimeout(() => {
 			dialogShow.value.archiveShow()

@@ -3,7 +3,7 @@
 	<div class="sidebar-top">
 		<div class="avatar mt-2.5">
 			<div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-				<img src="/public/static/img/avatar/xu.jpeg" />
+				<img class="image" src="/public/static/img/avatar/xu.jpeg" />
 			</div>
 		</div>
 		<div class="mt-2.5">
@@ -181,10 +181,14 @@ onMounted(() => {
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .stat-div {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+.image {
+	transform: rotate(190deg);
 }
 </style>

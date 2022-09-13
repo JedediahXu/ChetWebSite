@@ -2,114 +2,114 @@
 
 
 .type-archive {
-  .media-relative {
-    position: relative;
-  }
+	.media-relative {
+		position: relative;
+	}
 
-  .text-overlay {
-    z-index: 9;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    font-weight: 300;
-    color: white;
-    backdrop-filter: blur(14px) brightness(60%);
-  }
+	.text-overlay {
+		z-index: 9;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		padding: 0.5rem;
+		font-size: 1rem;
+		font-weight: 300;
+		color: white;
+		backdrop-filter: blur(14px) brightness(60%);
+	}
 
-  .medias {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 2rem;
+	.medias {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 2rem;
 
-    & .media .background {
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      transform: scale(1.05);
-      transition: transform .25s;
-    }
+		& .media .background {
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			background-position: center;
+			transform: scale(1.05);
+			transition: transform .25s;
+		}
 
-    & .media:hover .background {
-      transform: scale(1.15);
-    }
+		& .media:hover .background {
+			transform: scale(1.15);
+		}
 
-    & .media:hover .mask .icon {
-      transform: scale(1);
-    }
+		& .media:hover .mask .icon {
+			transform: scale(1);
+		}
 
-    & .media:hover .mask {
-      opacity: 1;
-      visibility: visible;
-    }
+		& .media:hover .mask {
+			opacity: 1;
+			visibility: visible;
+		}
 
-    & .media:hover {
-      background-color: var(--module-bg-opaque);
-    }
-
-
-    & .media {
-      position: relative;
-      display: block;
-      height: 255px;
-      width: 220px;
-      cursor: pointer;
-      border-radius: 10px;
-      overflow: hidden;
-      background-color: var(--module-bg);
-      transition: background-color .25s;
-    }
+		& .media:hover {
+			background-color: var(--module-bg-opaque);
+		}
 
 
-    & .media .mask {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 1;
-      background-color: #0000004d;
-      color: #fffc;
-      backdrop-filter: blur(2px);
-      -webkit-backdrop-filter: blur(2px);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity .1s, visibility .1s;
-    }
+		& .media {
+			position: relative;
+			display: block;
+			height: 255px;
+			width: 220px;
+			cursor: pointer;
+			border-radius: 10px;
+			overflow: hidden;
+			background-color: var(--module-bg);
+			transition: background-color .25s;
+		}
 
 
-    & .media .mask .icon {
-      font-size: 3em;
-      transform: scale(1.2);
-      transition: transform .25s;
-    }
+		& .media .mask {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			z-index: 1;
+			background-color: #0000004d;
+			color: #fffc;
+			backdrop-filter: blur(2px);
+			-webkit-backdrop-filter: blur(2px);
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity .1s, visibility .1s;
+		}
 
-  }
 
-  .iconfont {
-    font-size: 1em !important;
-  }
+		& .media .mask .icon {
+			font-size: 3em;
+			transform: scale(1.2);
+			transition: transform .25s;
+		}
 
-  .iconfont {
-    font-family: iconfont !important;
-    font-size: 16px;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+	}
 
-  .template-pc-height {
-    height: 12rem
-  }
+	.iconfont {
+		font-size: 1em !important;
+	}
+
+	.iconfont {
+		font-family: iconfont !important;
+		font-size: 16px;
+		font-style: normal;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	.template-pc-height {
+		height: 12rem
+	}
 
 }

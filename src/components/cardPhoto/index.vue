@@ -7,11 +7,14 @@
 				<PhotoConsumer v-for="src in listPhoto" :key="src" :intro="`/apis` + src.photo" :src="`/apis` + src.photo">
 					<li class="media">
 						<div class="mask">
-							<span class="icon"><i class="iconfont icon-chakan"></i></span>
+							<span class="icon"><i class="iconfont icon-eye"></i></span>
 						</div>
 						<div data-background-image="{{src.photo}}" data-loaded="true" class="background loaded" :style="{ backgroundImage: 'url(' + '/apis' + src.thumbnail_photo + ')' }"></div>
 					</li>
 				</PhotoConsumer>
+				<li class="more">
+					<a class="link" rel="external nofollow noopener" target="_blank" href="https://www.instagram.com/chetserenade"><p>•••</p></a>
+				</li>
 			</PhotoProvider>
 			<template v-else>
 				<el-skeleton v-for="(src, index) in listPhotoLoad" :key="index" class="card border-2 border-base-100 card-compact bg-white/5 hover:bg-gray-300/10 transition-all duration-200 hover:shadow hover:-translate-y-1" animated>
@@ -35,6 +38,9 @@
 							<div data-background-image="{{src.photo}}" data-loaded="true" class="background loaded" :style="{ backgroundImage: 'url(' + '/apis' + src.thumbnail_photo + ')' }"></div>
 						</li>
 					</PhotoConsumer>
+					<li class="moblie-more">
+						<a class="link" rel="external nofollow noopener" target="_blank" href="https://www.instagram.com/chetserenade"><p>•••</p></a>
+					</li>
 				</PhotoProvider>
 
 				<template v-else>

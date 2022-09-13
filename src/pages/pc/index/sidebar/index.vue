@@ -3,7 +3,7 @@
 	<div class="sidebar-top">
 		<div class="avatar mt-2.5">
 			<div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-				<img src="/public/static/img/avatar/xu.jpeg" />
+				<img class="image" src="/public/static/img/avatar/xu.jpeg" />
 			</div>
 		</div>
 		<div class="mt-2.5">
@@ -236,7 +236,7 @@ onMounted(() => {
 })
 </script>
 
-<style>
+<style lang="scss" scoped>
 .stats-div {
 	margin-top: 10px;
 	display: flex;
@@ -248,5 +248,10 @@ onMounted(() => {
 	margin: 0 auto;
 	margin-bottom: 20px;
 	margin-top: 10px;
+}
+
+.image:hover {
+	transform: rotate(190deg);
+	transition: all linear 1s;
 }
 </style>

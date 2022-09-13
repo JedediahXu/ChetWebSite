@@ -102,7 +102,6 @@ const leave = (index: number) => {
 const queryListJuejin = () => {
 	queryJuejin().then((res: any) => {
 		newData.value = res.data.data.data
-		console.log(newData.value)
 	})
 }
 queryListJuejin()
