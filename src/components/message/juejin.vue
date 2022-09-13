@@ -57,6 +57,15 @@
 				</li>
 			</ul>
 		</div>
+		<template v-if="newData.length <= 0">
+			<el-skeleton v-for="(item, index) in jueJinList" :key="index">
+				<template #template>
+					<div>
+						<el-skeleton-item variant="p" class="item template-item" />
+					</div>
+				</template>
+			</el-skeleton>
+		</template>
 	</div>
 	<div class="knight w-full">
 		<div class="pic w-full h-full">
@@ -67,7 +76,7 @@
 
 <script lang="ts" setup>
 import { queryJuejin } from '@/api'
-
+import { useShow } from '@/utils/useLoad'
 interface JuejinList {
 	article_info: {
 		title?: string
@@ -76,6 +85,8 @@ interface JuejinList {
 		comment_count?: string
 	}
 }
+
+const { jueJinList } = useShow()
 
 const showNumber = ref<number>(0)
 const newData = ref<Array<JuejinList>>([])
@@ -203,5 +214,12 @@ ol {
 	margin-bottom: 1em;
 	padding-left: 3em;
 	vertical-align: baseline;
+}
+
+.template-item {
+	width: 100%;
+	line-height: 30px;
+	height: 30px;
+	margin-top: 20px;
 }
 </style>

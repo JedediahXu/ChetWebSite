@@ -3,7 +3,7 @@
  * @Author: xuhuazhi
  * @Date: 2022-09-05
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-09-13 11:03:26
+ * @LastEditTime: 2022-09-13 17:05:46
  */
 import { ref } from 'vue'
 
@@ -209,10 +209,28 @@ export function useShow() {
 			title: 'ChetSerenade',
 		},
 	])
+	const jueJinList = ref([
+		{
+			Id: 0,
+		},
+		{
+			Id: 0,
+		},
+		{
+			Id: 0,
+		},
+		{
+			Id: 0,
+		},
+		{
+			Id: 0,
+		},
+	])
 
 	return {
 		listPhotoLoad,
 		listArchiveLoad,
 		listArticleLoad,
+		jueJinList,
 	}
 }

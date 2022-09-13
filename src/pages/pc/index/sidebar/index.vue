@@ -251,7 +251,7 @@ onMounted(() => {
 }
 
 .image:hover {
-	transform: rotate(190deg);
+	transform: rotate(360deg);
 	transition: all linear 1s;
 }
 </style>

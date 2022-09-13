@@ -187,8 +187,4 @@ onMounted(() => {
 	flex-direction: column;
 	align-items: center;
 }
-
-.image {
-	transform: rotate(190deg);
-}
 </style>
