@@ -9,7 +9,12 @@ $line-space: 22px;
 // }
 
 .prose {
-	color: var(--tw-prose-body);
+	border-radius: 20px;
+	padding: 1rem 2rem;
+	position: relative;
+	overflow: hidden;
+	height: auto;
+	transition: height .25s;
 	max-width: 100%;
 }
 
@@ -66,7 +71,9 @@ $line-space: 22px;
 	}
 
 	img {
-		max-width: 100%;
+		max-width: 100% !important;
+		margin: 0;
+		border-style: none;
 	}
 
 	hr {

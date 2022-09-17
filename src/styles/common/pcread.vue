@@ -7,15 +7,16 @@
 					<div class="title">
 						<h2 class="text">{{ reserve.title }}</h2>
 						<div class="meta">
-							<span style="margin-right: 2rem"><i class="iconfont icon-clock-outline"></i>{{ reserve.pub_date }} </span>
-							<span style="margin-right: 2rem"> <i class="iconfont icon-t"></i>共 {{ reserve.word_count }} 字 需阅读 {{ reserve.reading_time }}分钟 </span>
-							<span style="margin-right: 2rem"
+							<i class="iconfont icon-t"></i>共 {{ reserve.word_count }} 字，需阅读 {{ reserve.reading_time }}分钟
+							<span><i class="iconfont icon-clock-outline"></i>{{ reserve.pub_date }} </span>
+							<div role="separator" class="prose vertical default vertical" data-v-a3ed304c=""></div>
+							<span
 								><i class="iconfont icon-eye"></i><span>{{ reserve.visitor_volume }}</span
 								>次阅读</span
 							>
 						</div>
 					</div>
-					<div class="divider" style="padding: 0; margin-bottom: 20px"></div>
+					<div class="prose"></div>
 					<section class="global-markdown-html">
 						<!-- <div class="figure-wrapper">
             <figure class="image " data-status="loaded">
@@ -26,15 +27,13 @@
                 :src="'/apis' + reserve.cover_img">
             </figure>
           </div> -->
-						<div class="detail-md">
-							<article class="prose dark:prose-invert" style="background-color: hsla(var(--b1) / var(--tw-bg-opacity, 1))">
-								<div v-html="reserve.content"></div>
-							</article>
-						</div>
+						<article class="prose dark:prose-invert">
+							<div v-html="reserve.content"></div>
+						</article>
 					</section>
 				</div>
 			</div>
-			<div class="divider"></div>
+			<div class="prose"></div>
 		</div>
 		<el-backtop :right="100" :bottom="100" />
 	</div>
@@ -63,14 +62,14 @@ updateVolume(props.reserve.Id).then((res: any) => {
 		margin: 1em 0;
 	}
 
-	& .divider {
+	& .prose {
 		padding: 1rem 8rem;
 		border-top: 2px dotted var(--module-bg-darker-1);
 		box-sizing: border-box;
 		margin: 0;
 
 		&.default {
-			--divider-gap: 1rem;
+			--prose-gap: 1rem;
 		}
 	}
 
@@ -99,10 +98,9 @@ updateVolume(props.reserve.Id).then((res: any) => {
 			& .title .meta {
 				display: inline-block;
 				color: var(--text-disabled);
-				font-size: 14px;
+				font-size: 12.432px;
 				user-select: none;
 				line-height: 2;
-				margin-top: 10px;
 			}
 
 			& .title .meta .iconfont {
@@ -196,8 +194,5 @@ updateVolume(props.reserve.Id).then((res: any) => {
 	// 	margin: 0 auto;
 	// 	width: 100%;
 	// }
-}
-
-.detail-md {
 }
 </style>

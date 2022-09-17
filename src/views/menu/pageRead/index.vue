@@ -48,12 +48,11 @@ onActivated(() => {
 	reserve.value = JSON.parse(sessionStorage.getItem('read'))
 	const Disqus = new window.iDisqus('comment', {
 		forum: 'gaoyuzi',
-		site: '/epi',
 		api: '/epi/dashboard/api',
 		mode: 2,
 		timeout: 6000,
 		init: true,
-		url: 'http://gaoyuzi.cn/read?Id=' + reserve.value.Id,
+		url: 'https://chetserenade.info/read?Id=' + reserve.value.Id,
 		title: reserve.value.title,
 	})
 })
@@ -63,12 +62,11 @@ onMounted(() => {
 	emitter.emit('searchHide', 1)
 	const Disqus = new window.iDisqus('comment', {
 		forum: 'gaoyuzi',
-		site: '/epi',
 		api: '/epi/dashboard/api',
 		mode: 2,
 		timeout: 6000,
 		init: true,
-		url: 'http://gaoyuzi.cn/read?Id=' + reserve.value.Id,
+		url: 'https://chetserenade.info/read?Id=' + reserve.value.Id,
 		title: reserve.value.title,
 	})
 })
