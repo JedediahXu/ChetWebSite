@@ -2,7 +2,7 @@
 <!-- eslint-disable vue/no-use-v-if-with-v-for -->
 <template>
 	<div class="p-3.5 type-archive">
-		<div class="not-prose grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 my-1 gap-6">
+		<div class="not-prose grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 my-1 gap-7">
 			<a
 				v-for="(src, index) in listPhoto"
 				v-if="isLoad"
