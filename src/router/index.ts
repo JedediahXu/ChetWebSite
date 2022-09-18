@@ -3,7 +3,7 @@
  * @Author: Chetxu
  * @Date: 2022-06-01
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-09-06 09:26:44
+ * @LastEditTime: 2022-09-17 15:41:35
  */
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import { judgment } from '@/utils/judgment'
@@ -56,7 +56,7 @@ const routes: Array<RouteRecordRaw> = [
 				name: 'read',
 				component: () => import('@/views/menu/pageRead/index.vue'),
 				meta: {
-					keepAlive: false,
+					keepAlive: true,
 				},
 			},
 		],
@@ -72,6 +72,7 @@ const router = createRouter({
 //埋点
 router.beforeEach(async (to, from, next) => {
 	if (to.path) {
+		console.log(to.path)
 		if (window._hmt) {
 			window._hmt.push(['_trackPageview', '/#' + to.fullPath])
 		}

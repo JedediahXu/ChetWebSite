@@ -27,7 +27,7 @@
             </figure>
           </div> -->
 						<div class="detail-md">
-							<article class="prose dark:prose-invert" style="background-color: hsla(var(--b1) / var(--tw-bg-opacity, 1))">
+							<article class="prose pcprose dark:prose-invert" style="background-color: hsla(var(--b1) / var(--tw-bg-opacity, 1))">
 								<div v-html="reserve.content"></div>
 							</article>
 						</div>

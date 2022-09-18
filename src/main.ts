@@ -14,6 +14,9 @@ import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
 import basicContainer from '@/components/globalContainer/container.vue'
 import VueCookies from 'vue-cookies'
+import { mouse } from '@/utils/mouseClick'
+
+mouse()
 
 const app = createApp(App)
 const pinia = createPinia()

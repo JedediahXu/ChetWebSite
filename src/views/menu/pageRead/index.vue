@@ -23,6 +23,10 @@ import Mobileread from '@/components/read/mobileread.vue'
 import Pcread from '@/components/read/pcread.vue'
 import { judgment } from '@/utils/judgment'
 import { emitter } from '@/utils/eventBus'
+import { useRoute } from 'vue-router'
+const route = useRoute() // 第一步
+
+console.log(route.query.id) // 第二步
 
 const isActive = ref<number>(1)
 
