@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
 	<div v-if="isLoad" class="article-list">
-		<div v-for="(item, index) in listArticle" :key="index" class="article-item list-item" @click="read(item, item.Id)">
+		<div v-for="(item, index) in listArticle" :key="index" class="article-item list-item" @click="read(item, item.Id, item.title)">
 			<div class="item-background" :style="{ backgroundImage: 'url(' + '/apis' + item.cover_img + ')' }"></div>
 			<div class="item-content">
 				<a class="item-thumb">
@@ -79,13 +79,12 @@ const toEmits = () => {
 }
 
 //选中文章 带着内容跳转展示
-const read = (item: object, id) => {
-	console.log(id)
-	sessionStorage.setItem('read', JSON.stringify(item))
+const read = (item: object, id, title) => {
 	$router.push({
 		name: 'read',
 		query: {
 			id: id,
+			title: title,
 		},
 	})
 }

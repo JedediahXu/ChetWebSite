@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
 	<div v-if="isLoad" class="list">
-		<div v-for="(item, index) in listArticle" :key="index" class="article-item list-item" @click="read(item)">
+		<div v-for="(item, index) in listArticle" :key="index" class="article-item list-item" @click="read(item, item.Id, item.title)">
 			<div class="thumbnail">
 				<div class="image" :style="{ backgroundImage: 'url(' + '/apis' + item.cover_img + ')' }"></div>
 			</div>
@@ -70,9 +70,14 @@ const toEmits = () => {
 }
 
 //选中文章
-const read = (item: object) => {
-	sessionStorage.setItem('read', JSON.stringify(item))
-	$router.push({ name: 'read' })
+const read = (item: object, id, title) => {
+	$router.push({
+		name: 'read',
+		query: {
+			id: id,
+			title: title,
+		},
+	})
 }
 
 const isLoad = ref<boolean>(false)

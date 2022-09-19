@@ -1,8 +1,8 @@
 <template>
 	<Container :is-active="isActive" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
 		<div class="ueditor">
-			<Pcread v-if="homeJudgment === 'pc'" :reserve="reserve" />
-			<Mobileread v-if="homeJudgment === 'mobile'" :reserve="reserve" />
+			<Pcread v-if="homeJudgment === 'pc'" />
+			<Mobileread v-if="homeJudgment === 'mobile'" />
 			<div :class="homeJudgment === 'mobile' ? 'divider-mobile' : 'divider-pc'">
 				<div id="comment"></div>
 			</div>
@@ -24,11 +24,6 @@ import Pcread from '@/components/read/pcread.vue'
 import { judgment } from '@/utils/judgment'
 import { emitter } from '@/utils/eventBus'
 import { useRoute } from 'vue-router'
-const route = useRoute() // 第一步
-
-console.log(route.query.id) // 第二步
-
-const isActive = ref<number>(1)
 
 interface reserve {
 	Id: number
@@ -42,11 +37,13 @@ interface reserve {
 	title: string
 }
 
-const homeJudgment = ref<string>()
-homeJudgment.value = judgment()
 // eslint-disable-next-line no-redeclare
 const reserve = ref<reserve>()
-reserve.value = JSON.parse(sessionStorage.getItem('read'))
+const isActive = ref<number>(1)
+const homeJudgment = ref<string>()
+homeJudgment.value = judgment()
+const route = useRoute()
+
 onActivated(() => {
 	emitter.emit('searchHide', 1)
 	reserve.value = JSON.parse(sessionStorage.getItem('read'))
@@ -56,8 +53,8 @@ onActivated(() => {
 		mode: 2,
 		timeout: 6000,
 		init: true,
-		url: 'https://chetserenade.info/read?Id=' + reserve.value.Id,
-		title: reserve.value.title,
+		url: 'https://chetserenade.info/read?Id=' + route.query.id,
+		title: route.query.title,
 	})
 })
 
@@ -70,8 +67,8 @@ onMounted(() => {
 		mode: 2,
 		timeout: 6000,
 		init: true,
-		url: 'https://chetserenade.info/read?Id=' + reserve.value.Id,
-		title: reserve.value.title,
+		url: 'https://chetserenade.info/read?Id=' + route.query.id,
+		title: route.query.title,
 	})
 })
 </script>

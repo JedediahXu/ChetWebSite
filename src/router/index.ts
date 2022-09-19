@@ -3,7 +3,7 @@
  * @Author: Chetxu
  * @Date: 2022-06-01
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-09-17 15:41:35
+ * @LastEditTime: 2022-09-19 16:53:52
  */
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import { judgment } from '@/utils/judgment'
@@ -72,7 +72,6 @@ const router = createRouter({
 //埋点
 router.beforeEach(async (to, from, next) => {
 	if (to.path) {
-		console.log(to.path)
 		if (window._hmt) {
 			window._hmt.push(['_trackPageview', '/#' + to.fullPath])
 		}

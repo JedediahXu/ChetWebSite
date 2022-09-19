@@ -3,7 +3,7 @@
  * @Author: ChetXu
  * @Date: 2022-06-01
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-09-16 16:44:26
+ * @LastEditTime: 2022-09-19 21:10:33
  */
 import request from '../utils/request'
 
@@ -54,7 +54,7 @@ export function queryIP(ip) {
 	})
 }
 
-export function updateVolume(Id: number) {
+export function updateVolume(Id: any) {
 	return request({
 		url: `/apis/api/article/updateVolume?Id=${Id}`,
 		method: 'get',
@@ -66,5 +66,13 @@ export function queryJuejin() {
 	return request({
 		url: '/apis/api/article/nuggetsArticles',
 		method: 'post',
+	})
+}
+
+//根据ID 获取文章详情
+export function queryIdListArticle(ip) {
+	return request({
+		url: `/apis/api/article/queryIdListArticle/${ip}`,
+		method: 'get',
 	})
 }

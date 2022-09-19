@@ -37,18 +37,44 @@
 </template>
 
 <script setup lang="ts">
+import { useRoute } from 'vue-router'
+import { queryIdListArticle } from '@/api'
 import { updateVolume } from '@/api'
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const props = defineProps({
-	reserve: {
-		type: Object,
-		required: true,
-		// eslint-disable-next-line vue/require-valid-default-prop
-		default: true,
-	},
+
+interface reserves {
+	Id?: number
+	author_id?: string
+	cate_id?: number
+	content?: string
+	cover_img?: string
+	is_delete?: string
+	pub_date?: string
+	state?: string
+	title?: string
+	word_count?: string
+	visitor_volume?: string
+	reading_time?: string
+}
+
+const route = useRoute()
+const reserve = ref<reserves>({})
+queryIdListArticle(route.query.id).then(res => {
+	if (res.data.data.length <= 0) {
+		reserve.value = {
+			title: '---',
+			visitor_volume: '---',
+			reading_time: '---',
+			pub_date: '---',
+			word_count: '---',
+			content: '---',
+		}
+	}
+	if (res.data.data.length > 0) {
+		reserve.value = res.data.data[0]
+	}
 })
 
-updateVolume(props.reserve.Id).then((res: any) => {
+updateVolume(reserve.value.Id).then((res: any) => {
 	console.log(res)
 })
 
