@@ -183,7 +183,7 @@ const displayArea = (index: any) => {
 
 		.self {
 			width: 50%;
-			padding: 10px;
+			padding: 6px;
 		}
 
 		.knight {
