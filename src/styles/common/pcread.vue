@@ -35,7 +35,7 @@
 			</div>
 			<div class="prose"></div>
 		</div>
-		<el-backtop :right="100" :bottom="100" />
+		<el-backtop :right="70" :bottom="100" />
 	</div>
 </template>
 

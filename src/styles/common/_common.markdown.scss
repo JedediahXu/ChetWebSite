@@ -18,9 +18,13 @@ $line-space: 22px;
 	max-width: 100%;
 }
 
+p {
+	margin-top: 10px !important;
+	margin-bottom: 10px !important;
+}
+
 .prose {
 	word-break: break-word;
-	line-height: 1.75;
 	font-weight: 400;
 	font-size: 16px;
 	overflow-x: hidden;
@@ -64,16 +68,12 @@ $line-space: 22px;
 		margin-top: 5px;
 	}
 
-	p {
-		line-height: inherit;
-		margin-top: $line-space;
-		margin-bottom: $line-space;
-	}
 
 	img {
 		max-width: 100% !important;
 		margin: 0;
 		border-style: none;
+		width: 600px;
 	}
 
 	hr {
@@ -81,8 +81,8 @@ $line-space: 22px;
 		border-bottom: none;
 		border-left: none;
 		border-right: none;
-		margin-top: 32px;
-		margin-bottom: 32px;
+		margin-top: 20px;
+		margin-bottom: 20px;
 	}
 
 	code {
@@ -104,12 +104,11 @@ $line-space: 22px;
 
 		>code {
 			font-size: 12px;
-			padding: 15px 12px;
+			padding: 3px 3px;
 			margin: 0;
 			word-break: normal;
 			display: block;
 			overflow-x: auto;
-			// background: #f8f8f8;
 		}
 	}
 
@@ -163,10 +162,6 @@ $line-space: 22px;
 		&::after {
 			display: block;
 			content: '';
-		}
-
-		&>p {
-			margin: 10px 0;
 		}
 	}
 

@@ -81,6 +81,6 @@ onMounted(() => {
 
 .divider-pc {
 	margin-top: 20px;
-	padding: 1rem 8rem;
+	padding: 1rem 14rem 1rem 3rem;
 }
 </style>

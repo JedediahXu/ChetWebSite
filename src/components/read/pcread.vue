@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
 	<div class="pcContent">
-		<div class="module margin background overflow">
+		<div class="module margin background overflow" style="display: flex">
 			<div id="A_article_content" class="detail">
 				<div class="knowledge">
 					<div class="title">
@@ -34,10 +34,11 @@
 					</section>
 				</div>
 			</div>
+			<div class="detail-title">模板解析</div>
 		</div>
 		<div class="divider"></div>
 	</div>
-	<el-backtop :right="100" :bottom="100" />
+	<el-backtop :right="70" :bottom="50" />
 </template>
 
 <script setup lang="ts">
@@ -92,7 +93,7 @@ updateVolume(reserve.value.Id).then((res: any) => {
 	}
 
 	& .divider {
-		padding: 1rem 8rem;
+		padding: 1rem 14rem 1rem 3rem;
 		border-top: 2px dotted var(--module-bg-darker-1);
 		box-sizing: border-box;
 		margin: 0;
@@ -103,7 +104,7 @@ updateVolume(reserve.value.Id).then((res: any) => {
 	}
 
 	.detail {
-		padding: 1rem 8rem;
+		padding: 1rem 14rem 1rem 3rem;
 		position: relative;
 		overflow: hidden;
 		height: auto;
@@ -112,6 +113,7 @@ updateVolume(reserve.value.Id).then((res: any) => {
 		.knowledge {
 			user-select: text;
 			position: relative;
+			flex: 1;
 
 			& .title {
 				margin: 1em 0 1.5em;
@@ -226,6 +228,13 @@ updateVolume(reserve.value.Id).then((res: any) => {
 	// }
 }
 
-.detail-md {
+.detail-title {
+	display: flex;
+	width: 15%;
+	height: 500px;
+	margin-top: 9rem;
+	border: 1px solid red;
+	position: fixed;
+	right: 10px;
 }
 </style>
