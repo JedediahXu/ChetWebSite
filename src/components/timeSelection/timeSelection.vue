@@ -15,11 +15,9 @@
 </template>
 
 <script setup lang="ts">
-// import { ElMessage } from 'element-plus'
+import { emitter } from '@/utils/eventBus'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const staggerZero = (index: number) => {
-	// ElMessage({
-	// 	message: h('p', null, [h('span', null, '功能暂时未开发...'), h('i', { style: 'color: teal' }, 'd[ o_0 ]b')]),
-	// })
+	emitter.emit('machine', { title: '功能暂时未开发...' })
 }
 </script>

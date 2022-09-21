@@ -15,6 +15,7 @@
 			</div>
 		</div>
 	</div>
+	<Alert />
 </template>
 
 <script setup lang="ts">
