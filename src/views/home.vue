@@ -8,9 +8,9 @@
 		</div>
 		<MobileCarlist v-if="homeJudgment === 'mobile'" ref="dialogShow" :list-article="listArticle" :totale="totale" @getChili="addList" />
 	</Container>
+	<input id="my-modal-4" type="checkbox" class="modal-toggle" />
 </template>
 <script setup lang="ts" name="home">
-import { ElMessage } from 'element-plus'
 import { ref, Ref } from 'vue'
 import Selection from '@/components/timeSelection/timeSelection.vue'
 import MobileCarlist from '@/components/mobile/list/index.vue'
@@ -58,11 +58,7 @@ const addList = () => {
 			dialogShow.value.listShow()
 		}, 700)
 		if (res.data.data.length === 0) {
-			ElMessage({
-				// eslint-disable-next-line no-undef
-				message: h('p', null, [h('span', null, '山穷水尽')]),
-				type: 'warning',
-			})
+			emitter.emit('machine', { title: '春江南尽' })
 		}
 	})
 }

@@ -118,7 +118,7 @@
 import Listvar from '@/components/list/listvar.vue'
 import { emitter } from '@/utils/eventBus'
 import useLanguage from '@/store/index'
-import { ElMessage } from 'element-plus'
+// import { ElMessage } from 'element-plus'
 import useIP from '@/utils/useIP'
 import { useI18n } from 'vue-i18n'
 
@@ -133,13 +133,15 @@ document.onkeydown = function (event) {
 	const e = event || arguments.callee.caller.arguments[0]
 	if (e && e.keyCode == 123) {
 		if (remind.value == true) {
-			ElMessage({
-				dangerouslyUseHTMLString: true,
-				message: `<strong>不对劲🤨,这位<i style="color:red">${cityname.value}-IP:${IP}</i>的朋友,您好!如果反复操作,将会封锁您的IP</strong>`,
-				type: 'warning',
-				duration: 0,
-				showClose: true,
-			})
+			console.log(IP)
+
+			// ElMessage({
+			// 	dangerouslyUseHTMLString: true,
+			// 	message: `<strong>不对劲🤨,这位<i style="color:red">${cityname.value}-IP:${IP}</i>的朋友,您好!如果反复操作,将会封锁您的IP</strong>`,
+			// 	type: 'warning',
+			// 	duration: 0,
+			// 	showClose: true,
+			// })
 		}
 		remind.value = false
 		return false

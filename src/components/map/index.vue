@@ -60,7 +60,7 @@
 <script lang="ts" setup>
 import { geoPhoto, geoData } from '../../../public/config'
 import { initDragMap } from '@/utils/Map/drawMap'
-import { ElMessage } from 'element-plus'
+// import { ElMessage } from 'element-plus'
 import mapboxgl from 'mapbox-gl'
 
 const popup = new mapboxgl.Popup({
@@ -74,9 +74,9 @@ const { map, mapDivElement, marker } = initDragMap(mapboxgl, popup, geoPhoto, ge
 
 //地图按钮
 const great = () => {
-	ElMessage({
-		message: h('p', null, [h('span', null, '全屏等功能后续开发...'), h('i', { style: 'color: teal' }, 'ChetSerenade')]),
-	})
+	// ElMessage({
+	// 	message: h('p', null, [h('span', null, '全屏等功能后续开发...'), h('i', { style: 'color: teal' }, 'ChetSerenade')]),
+	// })
 }
 
 //主菜单

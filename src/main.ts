@@ -13,6 +13,7 @@ import 'vue3-photo-preview/dist/index.css'
 import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
 import basicContainer from '@/components/globalContainer/container.vue'
+import alert from '@/components/alert/alert.vue'
 import VueCookies from 'vue-cookies'
 import { mouse } from '@/utils/mouseClick'
 
@@ -23,6 +24,7 @@ const pinia = createPinia()
 
 pinia.use(piniaPluginPersistedstate)
 app.component('Container', basicContainer)
+app.component('Alert', alert)
 app.use(pinia).use(VueCookies)
 app.use(i18n).use(vue3PhotoPreview).use(mavonEditor).use(router)
 

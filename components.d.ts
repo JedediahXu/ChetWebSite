@@ -5,6 +5,7 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AlertAlert: typeof import('./src/components/alert/alert.vue')['default']
     Archive: typeof import('./src/components/archive/index.vue')['default']
     CardPhoto: typeof import('./src/components/cardPhoto/index.vue')['default']
     ChangeLanguageChangeLanguage: typeof import('./src/components/changeLanguage/changeLanguage.vue')['default']
