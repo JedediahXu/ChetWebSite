@@ -76,7 +76,7 @@ const setisTitle = () => {
 
 .el-message {
 	width: fit-content;
-	max-width: calc(100% - 10px);
+	max-width: calc(100% - 30px);
 	box-sizing: border-box;
 	border-radius: var(--el-border-radius-base);
 	border-width: var(--el-border-width);
@@ -94,7 +94,7 @@ const setisTitle = () => {
 }
 
 .el-message .el-message-icon--warning {
-	color: hsl(var(--b3));
+	color: hsl(var(--nc));
 }
 
 .el-message__icon {
@@ -111,7 +111,7 @@ const setisTitle = () => {
 	align-items: center;
 	position: relative;
 	fill: currentColor;
-	color: var(--color);
+	color: hsl(var(--nc));
 	font-size: inherit;
 }
 
@@ -120,7 +120,7 @@ const setisTitle = () => {
 }
 
 .el-message--warning .el-message__content {
-	color: var(--el-message-text-color);
+	color: hsl(var(--nc));
 	overflow-wrap: anywhere;
 }
 
@@ -143,10 +143,10 @@ p {
 }
 
 .el-message {
-	color: hsl(var(--b3));
+	color: hsl(var(--nc));
 	--el-message-bg-color: hsl(var(--pf));
 	--el-message-border-color: hsl(var(--pf));
-	--el-message-padding: 15px 19px;
+	--el-message-padding: 0.3rem 1.75rem;
 	--el-message-close-size: 16px;
 	--el-message-close-icon-color: hsl(var(--pf));
 }

@@ -10,7 +10,7 @@ declare module '*.vue' {
 	declare module 'iDisqus'
 }
 declare module 'theme-change'
-
+declare module 'ProgressCatalog'
 declare interface Window {
 	_hmt: any
 }

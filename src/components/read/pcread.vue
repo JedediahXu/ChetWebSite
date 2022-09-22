@@ -27,24 +27,25 @@
             </figure>
           </div> -->
 						<div class="detail-md">
-							<article class="prose pcprose dark:prose-invert" style="background-color: hsla(var(--b1) / var(--tw-bg-opacity, 1))">
-								<div v-html="reserve.content"></div>
+							<article class="prose pcprose dark:prose-invert pcprose-color">
+								<div id="loading-md" v-html="reserve.content"></div>
 							</article>
 						</div>
 					</section>
 				</div>
 			</div>
-			<div class="detail-title">模板解析</div>
+			<div id="catalog-content-md" class="detail-title prose"></div>
 		</div>
 		<div class="divider"></div>
 	</div>
-	<el-backtop :right="70" :bottom="50" />
+	<el-backtop :right="50" :bottom="100" />
 </template>
 
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import { queryIdListArticle } from '@/api'
 import { updateVolume } from '@/api'
+import Catalog from '@/utils/catalog'
 
 interface reserves {
 	Id?: number
@@ -82,6 +83,18 @@ queryIdListArticle(route.query.id).then(res => {
 updateVolume(reserve.value.Id).then((res: any) => {
 	console.log(res)
 })
+
+// 使用
+onMounted(() => {
+	setTimeout(() => {
+		new Catalog({
+			contentEl: 'loading-md',
+			catalogEl: 'catalog-content-md',
+			selector: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+			cool: true, // 炫酷模式开关
+		})
+	}, 1000)
+})
 </script>
 
 <style lang="scss" scoped>
@@ -108,6 +121,7 @@ updateVolume(reserve.value.Id).then((res: any) => {
 		position: relative;
 		overflow: hidden;
 		height: auto;
+		width: 100%;
 		transition: height 0.25s;
 
 		.knowledge {
@@ -220,21 +234,18 @@ updateVolume(reserve.value.Id).then((res: any) => {
 			}
 		}
 	}
+}
 
-	// article,
-	// section {
-	// 	margin: 0 auto;
-	// 	width: 100%;
-	// }
+.pcprose-color {
+	background-color: hsla(var(--b1) / var(--tw-bg-opacity, 1));
 }
 
 .detail-title {
 	display: flex;
-	width: 15%;
-	height: 500px;
 	margin-top: 9rem;
-	border: 1px solid red;
 	position: fixed;
-	right: 10px;
+	width: 12rem;
+	height: 50%;
+	right: 14px;
 }
 </style>

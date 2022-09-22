@@ -92,6 +92,7 @@
 
 .webfont.zh.bolder {
   font-family: webfont-bolder;
+	color: hsl(var(--nc));
 }
 
 .webfont.zh {
@@ -101,6 +102,7 @@
 
 .articles .article-load .content .right .iconfont {
   margin-left: 1rem;
+	color: hsl(var(--nc));
 }
 
 .iconfont {
