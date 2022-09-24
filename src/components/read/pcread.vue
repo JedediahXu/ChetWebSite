@@ -80,7 +80,7 @@ queryIdListArticle(route.query.id).then(res => {
 	}
 })
 
-updateVolume(reserve.value.Id).then((res: any) => {
+updateVolume(route.query.id).then((res: any) => {
 	console.log(res)
 })
 
@@ -93,7 +93,7 @@ onMounted(() => {
 			selector: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
 			cool: true, // 炫酷模式开关
 		})
-	}, 1000)
+	}, 800)
 })
 </script>
 

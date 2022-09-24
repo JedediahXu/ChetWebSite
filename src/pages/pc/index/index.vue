@@ -4,6 +4,7 @@
 		<div class="container-left">
 			<Sidebar />
 		</div>
+		<music-chet-vue></music-chet-vue>
 		<div class="container-right">
 			<div class="content">
 				<Top class="right-top" :class="monitor !== 0 ? 'shadow-sm' : ''" />

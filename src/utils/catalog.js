@@ -22,7 +22,7 @@ export default function (opts) {
 
 	try {
 		$catalog.innerHTML = `<div class='cl-wrapper'>${generateHtmlTree(tree, { id: -1 })}<svg class="cl-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-            <path stroke="#42B983" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+            <path stroke="" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
             </svg></div>`
 	} catch (e) {
 		console.error('error in progress-catalog', e)
@@ -118,17 +118,15 @@ export default function (opts) {
 	/**
 	 * 普通模式下滚动事件
 	 */
-	function simpleScrollHandler(el) {
+	function simpleScrollHandler() {
 		let scrollToEl = null
 		for (let i = allCatalogs.length - 1; i >= 0; i--) {
 			if (allCatalogs[i].offsetTop <= $scroll_wrap.scrollTop) {
+				// eslint-disable-next-line @typescript-eslint/no-unused-vars
 				scrollToEl = allCatalogs[i]
 				break
 			}
 		}
-		console.log(scrollToEl)
-		if (scrollToEl) setActiveItem(scrollToEl.id)
-		else setActiveItem(null) // 无匹配的元素
 	}
 
 	/**
@@ -238,20 +236,5 @@ export default function (opts) {
 	 */
 	function isEqual(node, node2) {
 		return node && node2 && typeof node === 'object' && typeof node2 === 'object' && node.id === node2.id
-	}
-
-	/**
-	 *  设置选中的项
-	 */
-	function setActiveItem(id) {
-		const catas = [...$catalog.querySelectorAll(`[${Opt.datasetName}]`)]
-		catas.forEach(T => {
-			if (T.getAttribute(Opt.datasetName) === id) {
-				typeof Opt.activeHook === 'function' && !T.classList.contains(Opt.linkActiveClass) && Opt.activeHook.call(this, T) // 执行active钩子
-				T.classList.add(Opt.linkActiveClass)
-			} else {
-				T.classList.remove(Opt.linkActiveClass)
-			}
-		})
 	}
 }

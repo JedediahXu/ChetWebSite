@@ -74,7 +74,7 @@ queryIdListArticle(route.query.id).then(res => {
 	}
 })
 
-updateVolume(reserve.value.Id).then((res: any) => {
+updateVolume(route.query.id).then((res: any) => {
 	console.log(res)
 })
 
