@@ -3689,10 +3689,10 @@
   "resolved" "https://r2.cnpmjs.org/murmurhash-js/-/murmurhash-js-1.0.0.tgz"
   "version" "1.0.0"
 
-"music-chet-vue@^0.0.8":
-  "integrity" "sha512-nNk/9l9IPYvyMiedLKjuXJGkqovQ7Pm8aMtiOicH7Azb+yAkMngyGs6kmpgdIKxFi0BRm5PFekvvjBMaTHr6vQ=="
-  "resolved" "https://registry.npmjs.org/music-chet-vue/-/music-chet-vue-0.0.8.tgz"
-  "version" "0.0.8"
+"music-chet-vue@^0.0.9":
+  "integrity" "sha512-/+twhIu++egdF/+Zg60Ryc6iWaSdN+OU/jV997QaedCuXgckgfNSlhkt2SNLqmOWJeYzMY+dypexXYnhRQnvkg=="
+  "resolved" "https://registry.npmjs.org/music-chet-vue/-/music-chet-vue-0.0.9.tgz"
+  "version" "0.0.9"
   dependencies:
     "@vitejs/plugin-vue" "^2.2.4"
     "axios" "^0.26.1"
