@@ -3,7 +3,7 @@
 	<div class="sidebar-top">
 		<div class="avatar mt-2.5">
 			<div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-				<img class="image" src="static/img/avatar/xu.jpeg" />
+				<img class="image" src="/static/img/avatar/xu.jpeg" />
 			</div>
 		</div>
 		<div class="mt-2.5">

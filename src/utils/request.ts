@@ -3,13 +3,13 @@
  * @Author: Chetxu
  * @Date: 2022-06-01
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-09-12 14:12:09
+ * @LastEditTime: 2022-09-27 22:43:53
  */
-import axios from 'axios'
+declare const window: Window & { axios: any }
 
 const url: any = import.meta.env // (不存在跨域问题 可使用)
 
-const service = axios.create({
+const service = window.axios.create({
 	baseURL: url.VITE_APP_BASE_API,
 	timeout: 40 * 1000,
 	headers: {
@@ -62,7 +62,7 @@ export function request(config: any) {
 	// eslint-disable-next-line no-async-promise-executor
 	return new Promise(async (resolve, reject) => {
 		try {
-			const result = await axios({
+			const result = await window.axios({
 				...config,
 			})
 			resolve(result)

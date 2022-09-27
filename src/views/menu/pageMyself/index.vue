@@ -73,7 +73,7 @@
 				<label class="modal-box relative">
 					<div class="qrcode-modal wechat">
 						<div class="background"></div>
-						<img class="image" src="static/img/avatar/wechat.jpeg" />
+						<img class="image" src="/static/img/avatar/wechat.jpeg" />
 						<span class="text">👋 &nbsp; Friend me on WeChat</span>
 					</div>
 				</label>
@@ -131,10 +131,10 @@
 
 			<div class="arcades">
 				<div class="item">
-					<img draggable="false" src="static/img/avatar/wechat.jpeg" class="image" />
+					<img draggable="false" src="/static/img/avatar/wechat.jpeg" class="image" />
 				</div>
 				<div class="item">
-					<img draggable="false" src="static/img/avatar/bilibili.jpeg" class="image" />
+					<img draggable="false" src="/static/img/avatar/bilibili.jpeg" class="image" />
 				</div>
 			</div>
 		</div>

@@ -10,11 +10,6 @@
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<title>ChetSerenade</title>
 	<link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
-	<!-- <% if (process.env.NODE_ENV==='production' ) { %>
-    <script>
-      var _hmt = _hmt || [];
-    </script>
-    <% } %> -->
 </head>
 
 <body>
@@ -23,6 +18,8 @@
 	<script type="text/javascript" src="/Disqus/iDisqus.js"></script>
 	<script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
 	<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+	<script src="https://cdn.bootcdn.net/ajax/libs/vue/3.2.39/vue.global.min.js"></script>
+	<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.27.2/axios.js"></script>
 	<script type="text/javascript">
 		var Ip = returnCitySN['cip']
 		var cityname = returnCitySN['cname']
@@ -63,40 +60,40 @@
 		})();
 	</script>
 	<script>
-		//禁止鼠标右击
-		document.oncontextmenu = function () {
-			event.returnValue = false;
-		};
-		let userAgent = navigator.userAgent;
-		//禁用控制台
-		let ConsoleManager = {
-			init: function () {
-				let self = this;
-				let x = document.createElement("div");
-				let isOpening = false,
-					isOpened = false;
-				Object.defineProperty(x, "id", {
-					get: function () {
-						if (!isOpening) {
-							self.onOpen();
-							isOpening = true;
-						}
-						isOpened = true;
-						return true;
-					}
-				});
-				setInterval(function () {
-					isOpened = false;
-					console.info(x);
-					console.clear();
-					if (!isOpened && isOpening) {
-						self.onClose();
-						isOpening = false;
-					}
-				}, 200);
-			}
-		};
-		ConsoleManager.init();
+		// //禁止鼠标右击
+		// document.oncontextmenu = function () {
+		// 	event.returnValue = false;
+		// };
+		// let userAgent = navigator.userAgent;
+		// //禁用控制台
+		// let ConsoleManager = {
+		// 	init: function () {
+		// 		let self = this;
+		// 		let x = document.createElement("div");
+		// 		let isOpening = false,
+		// 			isOpened = false;
+		// 		Object.defineProperty(x, "id", {
+		// 			get: function () {
+		// 				if (!isOpening) {
+		// 					self.onOpen();
+		// 					isOpening = true;
+		// 				}
+		// 				isOpened = true;
+		// 				return true;
+		// 			}
+		// 		});
+		// 		setInterval(function () {
+		// 			isOpened = false;
+		// 			console.info(x);
+		// 			console.clear();
+		// 			if (!isOpened && isOpening) {
+		// 				self.onClose();
+		// 				isOpening = false;
+		// 			}
+		// 		}, 200);
+		// 	}
+		// };
+		// ConsoleManager.init();
 	</script>
 </body>
 

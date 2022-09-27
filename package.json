@@ -12,7 +12,6 @@
 		"postinstall": "patch-package"
 	},
 	"dependencies": {
-		"axios": "^0.27.2",
 		"bytemd": "^1.17.2",
 		"lozad": "^1.16.0",
 		"mavon-editor": "^3.0.0-beta",
@@ -23,10 +22,9 @@
 		"postinstall-postinstall": "^2.1.0",
 		"theme-change": "^2.0.2",
 		"ua-parser-js": "^1.0.2",
-		"vite-plugin-imagemin": "^0.6.1",
-		"vue": "^3.2.25",
+		"vite-plugin-compression": "^0.5.1",
 		"vue-cookies": "^1.8.1",
-		"vue-router": "^4.0.14",
+		"vue-router": "^4.1.5",
 		"vue3-photo-preview": "^0.2.4"
 	},
 	"devDependencies": {
@@ -64,7 +62,7 @@
 		"unplugin-auto-import": "^0.8.8",
 		"unplugin-vue-components": "^0.19.6",
 		"vite": "^2.9.9",
-		"vite-plugin-compression": "^0.5.1",
+		"vite-plugin-resolve-externals": "^0.2.2",
 		"vue-i18n": "^9.1.10",
 		"vue-tsc": "^0.34.7"
 	},

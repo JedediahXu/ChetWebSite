@@ -16,10 +16,13 @@ import basicContainer from '@/components/globalContainer/container.vue'
 import alert from '@/components/alert/alert.vue'
 import VueCookies from 'vue-cookies'
 import { mouse } from '@/utils/mouseClick'
-import MusicChetVue from 'music-chet-vue'
 import 'music-chet-vue/dist/style.css'
+import { judgment } from '@/utils/judgment'
 
-mouse()
+const homeJudgment = judgment()
+if (homeJudgment === 'pc') {
+	mouse()
+}
 
 const app = createApp(App)
 const pinia = createPinia()
@@ -29,8 +32,6 @@ app.component('Container', basicContainer)
 app.component('Alert', alert)
 app.use(pinia).use(VueCookies)
 app.use(i18n).use(vue3PhotoPreview).use(mavonEditor).use(router)
-// 全局引入
-app.use(MusicChetVue)
 app.mount('#app')
 router.afterEach(() => {
 	window.scrollTo(0, 0)

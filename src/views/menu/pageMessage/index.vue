@@ -23,7 +23,7 @@
 					</div>
 				</div>
 				<div v-if="homeJudgment === 'mobile'" class="mobile-component-top">
-					<div class="banner dark mobile mobile-banner" style="background-image: url('/static/img/message/dm.png'); background-repeat: no-repeat; background-size: 100% 100%">
+					<div class="banner dark mobile mobile-banner" style="background-image: url('/static/img/message/dm.jpeg'); background-repeat: no-repeat; background-size: 100% 100%">
 						<div class="content">
 							<h2 class="title">留言</h2>
 							<div class="description">此心光明 亦复何言</div>
