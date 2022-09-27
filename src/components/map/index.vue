@@ -56,21 +56,22 @@
 		</div>
 	</div>
 </template>
-
+<script lang="ts">
+declare const window: Window & { mapboxgl: any }
+</script>
 <script lang="ts" setup>
 import { geoPhoto, geoData } from '../../../public/config'
 import { initDragMap } from '@/utils/Map/drawMap'
 import { emitter } from '@/utils/eventBus'
-import mapboxgl from 'mapbox-gl'
 
-const popup = new mapboxgl.Popup({
+const popup = new window.mapboxgl.Popup({
 	closeButton: false,
 	closeOnClick: false,
 })
 
 //地图数据
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const { map, mapDivElement, marker } = initDragMap(mapboxgl, popup, geoPhoto, geoData)
+const { map, mapDivElement, marker } = initDragMap(window.mapboxgl, popup, geoPhoto, geoData)
 
 //地图按钮
 const great = () => {

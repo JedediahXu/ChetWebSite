@@ -3,13 +3,13 @@
  * @Author: Chetxu
  * @Date: 2022-07-09
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-09-06 21:52:46
+ * @LastEditTime: 2022-09-27 10:24:11
  */
 
 import { Popups } from './Popups'
 import { Ref } from 'vue'
 
-export function addPhoto(map: Ref, popup: mapboxgl.Popup, geoPhoto: any) {
+export function addPhoto(map: Ref, popup: unknown, geoPhoto: unknown) {
 	map.value.on('load', () => {
 		map.value.addSource('places', {
 			type: 'geojson',

@@ -1,5 +1,4 @@
 import { onMounted, Ref, ref } from 'vue'
-import mapboxgl, { Map, Marker } from 'mapbox-gl'
 import { mapThreeDim } from './mapThreeDim'
 import { skyLoad } from './skyLoad'
 import { click } from './click'
@@ -7,13 +6,13 @@ import { addPhoto } from './addPhoto'
 import { addPointMk } from './addPointMk'
 import { Popups } from './Popups'
 
-export function initDragMap(mapboxgl: { accessToken: string }, popup: any, geoPhoto: any, geoData: any) {
+declare const window: Window & { mapboxgl: any }
+
+export function initDragMap(mapboxgl: { accessToken: string }, popup: unknown, geoPhoto: unknown, geoData: unknown) {
 	const mapDivElement: Ref<HTMLDivElement | null> = ref(null)
-	const map: Ref<Map> = ref({}) as Ref<Map>
-	const marker: Ref<Marker> = ref({}) as Ref<Marker>
-
+	const map: any = ref({})
+	const marker: unknown = ref({})
 	onMounted(initMap)
-
 	return {
 		map,
 		mapDivElement,
@@ -36,9 +35,9 @@ export function initDragMap(mapboxgl: { accessToken: string }, popup: any, geoPh
  * @param popup
  * @param arr
  */
-function mapNew(map: Ref<Map>, mapDivElement: Ref<HTMLDivElement | null>, marker: Ref<Marker>, popup: mapboxgl.Popup, geoPhoto: any, geoData: any, arr: [number, number]) {
+function mapNew(map: any, mapDivElement: Ref<HTMLDivElement | null>, marker: any, popup: unknown, geoPhoto: unknown, geoData: unknown, arr: [number, number]) {
 	if (mapDivElement.value !== null) {
-		map.value = new mapboxgl.Map({
+		map.value = new window.mapboxgl.Map({
 			container: mapDivElement.value, // container id
 			center: arr, // 初始坐标系
 			minZoom: 1.7, // 设置最小拉伸比例
@@ -54,7 +53,7 @@ function mapNew(map: Ref<Map>, mapDivElement: Ref<HTMLDivElement | null>, marker
 			// console.log(e.lngLat, '---------')
 		})
 
-		marker.value = new mapboxgl.Marker().setLngLat(arr).addTo(map.value)
+		marker.value = new window.mapboxgl.Marker().setLngLat(arr).addTo(map.value)
 
 		mapThreeDim(map) //渲染模型高度
 		skyLoad(map) //转动后的天空层
@@ -63,7 +62,7 @@ function mapNew(map: Ref<Map>, mapDivElement: Ref<HTMLDivElement | null>, marker
 		click(map, popup) //移除坐标弹窗
 		Popups(map, popup) //弹窗信息
 
-		const scale = new mapboxgl.ScaleControl({
+		const scale = new window.mapboxgl.ScaleControl({
 			maxWidth: 100,
 			unit: 'metric',
 		})

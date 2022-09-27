@@ -20,7 +20,7 @@
   height: 590px;
   width: 1345px;
   margin: 0px auto;
-  background-image: url('/static/img/404/404.gif');
+  background-image: url('/assets/img/404/404.gif');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;

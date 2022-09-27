@@ -4,6 +4,9 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import visualizer from 'rollup-plugin-visualizer'
+import viteImagemin from 'vite-plugin-imagemin'
+// gzip压缩
+import viteCompression from 'vite-plugin-compression'
 const path = require('path')
 
 export default defineConfig({
@@ -37,12 +40,42 @@ export default defineConfig({
 			extensions: ['vue'],
 			directoryAsNamespace: true,
 		}),
+		viteCompression(),
+		viteImagemin({
+			gifsicle: {
+				optimizationLevel: 7,
+				interlaced: false,
+			},
+			optipng: {
+				optimizationLevel: 7,
+			},
+			mozjpeg: {
+				quality: 20,
+			},
+			pngquant: {
+				quality: [0.8, 0.9],
+				speed: 4,
+			},
+			svgo: {
+				plugins: [
+					{
+						name: 'removeViewBox',
+					},
+					{
+						name: 'removeEmptyAttrs',
+						active: false,
+					},
+				],
+			},
+		}),
 	],
 	define: {
 		'process.env': {},
 	},
 	resolve: {
 		alias: {
+			// eslint-disable-next-line prettier/prettier
+			'assets': path.resolve(__dirname, './src/assets'),
 			'@': path.resolve(__dirname, './src'),
 			'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js',
 		},

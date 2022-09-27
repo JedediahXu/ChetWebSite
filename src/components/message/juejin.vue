@@ -92,19 +92,19 @@ const showNumber = ref<number>(0)
 const newData = ref<Array<JuejinList>>([])
 const bannerList = reactive([
 	{
-		img: '/static/img/message/dm.jpeg',
+		img: 'static/img/message/dm.png',
 	},
 	{
-		img: '/static/img/message/gch.jpeg',
+		img: 'static/img/message/gch.jpeg',
 	},
 	{
-		img: '/static/img/message/jh.jpeg',
+		img: 'static/img/message/jh.jpeg',
 	},
 	{
-		img: '/static/img/message/vue.jpeg',
+		img: 'static/img/message/vue.jpeg',
 	},
 	{
-		img: '/static/img/message/wx.jpeg',
+		img: 'static/img/message/wx.jpeg',
 	},
 ])
 const leave = (index: number) => {

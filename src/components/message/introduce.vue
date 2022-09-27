@@ -10,6 +10,6 @@
 		<p>- 本站不会因为你的观点倾向而做出任何干预你产生的数据的行为，即便它与站长的或主流观点是相悖的。</p>
 	</div>
 	<div class="knight">
-		<img src="/static/img/message/preview.gif" class="knight-image w-full h-full" />
+		<img src="static/img/message/preview.gif" class="knight-image w-full h-full" />
 	</div>
 </template>

@@ -3,13 +3,13 @@
  * @Author: Chetxu
  * @Date: 2022-07-09
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-09-06 21:52:50
+ * @LastEditTime: 2022-09-27 10:24:16
  */
 
 import { Popups } from './Popups'
 import { Ref } from 'vue'
 
-export function addPointMk(map: Ref, popup: mapboxgl.Popup, geoData: any) {
+export function addPointMk(map: Ref, popup: unknown, geoData: unknown) {
 	map.value.on('load', () => {
 		map.value.addSource('placers', {
 			type: 'geojson',

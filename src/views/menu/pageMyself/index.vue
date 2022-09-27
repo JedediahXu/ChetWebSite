@@ -1,7 +1,7 @@
 <template>
 	<Container :is-active="isActive" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
 		<div v-if="homeJudgment === 'pc'" class="componentMap">
-			<div v-if="visible" class="hero h-0.5 bg-origin-border" style="background-image: url('/static/img/avatar/arch.jpeg'); height: 23rem">
+			<div v-if="visible" class="hero h-0.5 bg-origin-border" style="background-image: url('static/img/avatar/arch.jpeg'); height: 23rem">
 				<div class="hero-overlay bg-opacity-60"></div>
 				<div class="hero-content text-center text-neutral-content">
 					<div class="max-w-md">
@@ -73,7 +73,7 @@
 				<label class="modal-box relative">
 					<div class="qrcode-modal wechat">
 						<div class="background"></div>
-						<img class="image" src="/static/img/avatar/wechat.jpeg" />
+						<img class="image" src="static/img/avatar/wechat.jpeg" />
 						<span class="text">👋 &nbsp; Friend me on WeChat</span>
 					</div>
 				</label>
@@ -81,7 +81,7 @@
 			<TrajectoryMap />
 		</div>
 		<div v-if="homeJudgment === 'mobile'" class="componentMap">
-			<div v-if="visible" class="hero h-0.5 bg-origin-border" style="background-image: url('/static/img/avatar/arch.jpeg'); height: 23rem">
+			<div v-if="visible" class="hero h-0.5 bg-origin-border" style="background-image: url('static/img/avatar/arch.jpeg'); height: 23rem">
 				<div class="hero-overlay bg-opacity-60"></div>
 				<div class="moblie-hero-content text-center text-neutral-content moblie-content">
 					<div class="max-w-md">
@@ -131,10 +131,10 @@
 
 			<div class="arcades">
 				<div class="item">
-					<img draggable="false" src="/static/img/avatar/wechat.jpeg" class="image" />
+					<img draggable="false" src="static/img/avatar/wechat.jpeg" class="image" />
 				</div>
 				<div class="item">
-					<img draggable="false" src="/static/img/avatar/bilibili.jpeg" class="image" />
+					<img draggable="false" src="static/img/avatar/bilibili.jpeg" class="image" />
 				</div>
 			</div>
 		</div>

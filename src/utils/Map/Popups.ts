@@ -3,11 +3,11 @@
  * @Author: Chetxu
  * @Date: 2022-07-09
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-09-06 21:53:06
+ * @LastEditTime: 2022-09-27 10:10:05
  */
 import { Ref } from 'vue'
 
-export function Popups(map: Ref, popup: mapboxgl.Popup) {
+export function Popups(map: Ref, popup: any) {
 	map.value.on('click', 'places', (e: any) => {
 		// 将光标样式更改为UI指示器
 		map.value.getCanvas().style.cursor = 'pointer'

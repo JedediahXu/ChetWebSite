@@ -3,7 +3,7 @@
  * @Author: Chetxu
  * @Date: 2022-07-09
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-09-06 21:53:02
+ * @LastEditTime: 2022-09-27 10:24:27
  */
 import { Ref } from 'vue'
 
@@ -11,7 +11,7 @@ export function mapThreeDim(map: Ref) {
 	map.value.on('load', () => {
 		const layers = map.value.getStyle().layers
 		if (layers !== undefined) {
-			const labelLayerId = layers.find((layer: { layout: { [x: string]: any }; type: string }) => {
+			const labelLayerId = layers.find((layer: { layout: { [x: string]: unknown }; type: string }) => {
 				if ('layout' in layer && layer.layout !== undefined) {
 					return layer.type === 'symbol' && layer.layout['text-field']
 				} else {
