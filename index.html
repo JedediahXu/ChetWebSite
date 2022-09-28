@@ -13,7 +13,103 @@
 </head>
 
 <body>
-	<div id="app"></div>
+	<div id="app">
+		<style>
+			#loader-wrapper {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100vw;
+				height: 100vh;
+				z-index: 999999;
+			}
+
+			#loader {
+				display: block;
+				position: relative;
+				left: 50%;
+				top: 40%;
+				z-index: 1001;
+				width: 90px;
+				height: 90px;
+				margin: -45px 0 0 -45px;
+				border-radius: 50%;
+				border: 3px solid transparent;
+				border-top-color: #FF79C6;
+				-webkit-animation: spin 2s linear infinite;
+				-ms-animation: spin 2s linear infinite;
+				-moz-animation: spin 2s linear infinite;
+				-o-animation: spin 2s linear infinite;
+				animation: spin 2s linear infinite;
+			}
+
+			#loader:before {
+				content: "";
+				position: absolute;
+				top: 5px;
+				left: 5px;
+				right: 5px;
+				bottom: 5px;
+				border-radius: 50%;
+				border: 3px solid transparent;
+				border-top-color: #fe9501;
+				-webkit-animation: spin 3s linear infinite;
+				-moz-animation: spin 3s linear infinite;
+				-o-animation: spin 3s linear infinite;
+				-ms-animation: spin 3s linear infinite;
+				animation: spin 3s linear infinite;
+			}
+
+			#loader:after {
+				content: "";
+				position: absolute;
+				top: 15px;
+				left: 15px;
+				right: 15px;
+				bottom: 15px;
+				border-radius: 50%;
+				border: 3px solid transparent;
+				border-top-color: #560DF8;
+				-moz-animation: spin 1.5s linear infinite;
+				-o-animation: spin 1.5s linear infinite;
+				-ms-animation: spin 1.5s linear infinite;
+				-webkit-animation: spin 1.5s linear infinite;
+				animation: spin 1.5s linear infinite;
+			}
+
+			@-webkit-keyframes spin {
+				0% {
+					-webkit-transform: rotate(0deg);
+					-ms-transform: rotate(0deg);
+					transform: rotate(0deg);
+				}
+
+				100% {
+					-webkit-transform: rotate(360deg);
+					-ms-transform: rotate(360deg);
+					transform: rotate(360deg);
+				}
+			}
+
+			@keyframes spin {
+				0% {
+					-webkit-transform: rotate(0deg);
+					-ms-transform: rotate(0deg);
+					transform: rotate(0deg);
+				}
+
+				100% {
+					-webkit-transform: rotate(360deg);
+					-ms-transform: rotate(360deg);
+					transform: rotate(360deg);
+				}
+			}
+
+		</style>
+		<div id="loader-wrapper">
+			<div id="loader"></div>
+		</div>
+	</div>
 	<script type="module" src="/src/main.ts"></script>
 	<script type="text/javascript" src="/Disqus/iDisqus.js"></script>
 	<script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
@@ -60,40 +156,39 @@
 		})();
 	</script>
 	<script>
-		// //禁止鼠标右击
-		// document.oncontextmenu = function () {
-		// 	event.returnValue = false;
-		// };
-		// let userAgent = navigator.userAgent;
-		// //禁用控制台
-		// let ConsoleManager = {
-		// 	init: function () {
-		// 		let self = this;
-		// 		let x = document.createElement("div");
-		// 		let isOpening = false,
-		// 			isOpened = false;
-		// 		Object.defineProperty(x, "id", {
-		// 			get: function () {
-		// 				if (!isOpening) {
-		// 					self.onOpen();
-		// 					isOpening = true;
-		// 				}
-		// 				isOpened = true;
-		// 				return true;
-		// 			}
-		// 		});
-		// 		setInterval(function () {
-		// 			isOpened = false;
-		// 			console.info(x);
-		// 			console.clear();
-		// 			if (!isOpened && isOpening) {
-		// 				self.onClose();
-		// 				isOpening = false;
-		// 			}
-		// 		}, 200);
-		// 	}
-		// };
-		// ConsoleManager.init();
+		document.oncontextmenu = function () {
+			event.returnValue = false;
+		};
+		let userAgent = navigator.userAgent;
+		//禁用控制台
+		let ConsoleManager = {
+			init: function () {
+				let self = this;
+				let x = document.createElement("div");
+				let isOpening = false,
+					isOpened = false;
+				Object.defineProperty(x, "id", {
+					get: function () {
+						if (!isOpening) {
+							self.onOpen();
+							isOpening = true;
+						}
+						isOpened = true;
+						return true;
+					}
+				});
+				setInterval(function () {
+					isOpened = false;
+					console.info(x);
+					console.clear();
+					if (!isOpened && isOpening) {
+						self.onClose();
+						isOpening = false;
+					}
+				}, 200);
+			}
+		};
+		ConsoleManager.init();
 	</script>
 </body>
 
