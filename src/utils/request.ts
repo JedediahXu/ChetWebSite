@@ -3,7 +3,7 @@
  * @Author: Chetxu
  * @Date: 2022-06-01
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-09-28 09:08:43
+ * @LastEditTime: 2022-09-28 16:30:17
  */
 declare const window: Window & { axios: any }
 
