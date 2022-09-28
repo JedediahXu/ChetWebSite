@@ -16,6 +16,8 @@ import VueCookies from 'vue-cookies'
 import { mouse } from '@/utils/mouseClick'
 import 'music-chet-vue/dist/style.css'
 import { judgment } from '@/utils/judgment'
+import MusicChetVue from 'music-chet-vue'
+import 'music-chet-vue/dist/style.css'
 
 const homeJudgment = judgment()
 if (homeJudgment === 'pc') {
@@ -28,7 +30,7 @@ const pinia = createPinia()
 pinia.use(piniaPluginPersistedstate)
 app.component('Container', basicContainer)
 app.component('Alert', alert)
-app.use(pinia).use(VueCookies)
+app.use(pinia).use(VueCookies).use(MusicChetVue)
 app.use(i18n).use(vue3PhotoPreview).use(router)
 app.mount('#app')
 router.afterEach(() => {
