@@ -156,39 +156,39 @@
 		})();
 	</script>
 	<script>
-		document.oncontextmenu = function () {
-			event.returnValue = false;
-		};
-		let userAgent = navigator.userAgent;
-		//禁用控制台
-		let ConsoleManager = {
-			init: function () {
-				let self = this;
-				let x = document.createElement("div");
-				let isOpening = false,
-					isOpened = false;
-				Object.defineProperty(x, "id", {
-					get: function () {
-						if (!isOpening) {
-							self.onOpen();
-							isOpening = true;
-						}
-						isOpened = true;
-						return true;
-					}
-				});
-				setInterval(function () {
-					isOpened = false;
-					console.info(x);
-					console.clear();
-					if (!isOpened && isOpening) {
-						self.onClose();
-						isOpening = false;
-					}
-				}, 200);
-			}
-		};
-		ConsoleManager.init();
+		// document.oncontextmenu = function () {
+		// 	event.returnValue = false;
+		// };
+		// let userAgent = navigator.userAgent;
+		// //禁用控制台
+		// let ConsoleManager = {
+		// 	init: function () {
+		// 		let self = this;
+		// 		let x = document.createElement("div");
+		// 		let isOpening = false,
+		// 			isOpened = false;
+		// 		Object.defineProperty(x, "id", {
+		// 			get: function () {
+		// 				if (!isOpening) {
+		// 					self.onOpen();
+		// 					isOpening = true;
+		// 				}
+		// 				isOpened = true;
+		// 				return true;
+		// 			}
+		// 		});
+		// 		setInterval(function () {
+		// 			isOpened = false;
+		// 			console.info(x);
+		// 			console.clear();
+		// 			if (!isOpened && isOpening) {
+		// 				self.onClose();
+		// 				isOpening = false;
+		// 			}
+		// 		}, 200);
+		// 	}
+		// };
+		// ConsoleManager.init();
 	</script>
 </body>
 

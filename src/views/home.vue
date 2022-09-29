@@ -58,7 +58,7 @@ const addList = () => {
 			dialogShow.value.listShow()
 		}, 700)
 		if (res.data.data.length === 0) {
-			emitter.emit('machine', { title: '春尽江南' })
+			emitter.emit('machine', { title: '春尽江南', mail: false })
 		}
 	})
 }

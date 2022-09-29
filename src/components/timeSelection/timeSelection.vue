@@ -18,6 +18,6 @@
 import { emitter } from '@/utils/eventBus'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const staggerZero = (index: number) => {
-	emitter.emit('machine', { title: '功能暂时未开发...' })
+	emitter.emit('machine', { title: '功能暂时未开发...', mail: false })
 }
 </script>

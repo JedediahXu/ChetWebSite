@@ -3,7 +3,7 @@
  * @Author: ChetXu
  * @Date: 2022-06-01
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-09-19 21:10:33
+ * @LastEditTime: 2022-09-29 08:27:25
  */
 import request from '../utils/request'
 
@@ -74,5 +74,16 @@ export function queryIdListArticle(ip) {
 	return request({
 		url: `/apis/api/article/queryIdListArticle/${ip}`,
 		method: 'get',
+	})
+}
+
+export function addeMaile(mails) {
+	const params = {
+		mail: mails,
+	}
+	return request({
+		url: '/apis/api/article/addeMail',
+		method: 'get',
+		params,
 	})
 }

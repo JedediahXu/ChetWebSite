@@ -2,8 +2,8 @@
 <template>
 	<transition>
 		<div v-if="islet === true" class="alert-top">
-			<div class="el-message el-message--warning is-closable" role="alert" style="top: 6%; z-index: 2005">
-				<i class="el-icon el-message__icon el-message-icon--warning">
+			<div :class="istitle.mail == true ? 'el-message-lg' : 'el-messagecolor'" class="el-message el-message--warning is-closable" role="alert" style="top: 6%; z-index: 2005">
+				<i v-if="istitle.mail === false" class="el-icon el-message__icon el-message-icon--warning">
 					<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
 						<path
 							fill="currentColor"
@@ -11,6 +11,9 @@
 						></path>
 					</svg>
 				</i>
+				<svg v-if="istitle.mail === true" xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+				</svg>
 				<p class="el-message__content">{{ istitle.title }}</p>
 			</div>
 		</div>
@@ -93,9 +96,9 @@ const setisTitle = () => {
 	align-items: center;
 }
 
-.el-message .el-message-icon--warning {
-	color: hsl(var(--nc));
-}
+// .el-message .el-message-icon--warning {
+// 	color: hsl(var(--nc));
+// }
 
 .el-message__icon {
 	margin-right: 10px;
@@ -120,7 +123,6 @@ const setisTitle = () => {
 }
 
 .el-message--warning .el-message__content {
-	color: hsl(var(--nc));
 	overflow-wrap: anywhere;
 }
 
@@ -142,12 +144,21 @@ p {
 	margin-inline-end: 0px;
 }
 
-.el-message {
+.el-messagecolor {
 	color: hsl(var(--nc));
 	--el-message-bg-color: hsl(var(--pf));
 	--el-message-border-color: hsl(var(--pf));
-	--el-message-padding: 0.3rem 1.75rem;
+	--el-message-padding: 0.3rem 0.7rem;
 	--el-message-close-size: 16px;
 	--el-message-close-icon-color: hsl(var(--pf));
+}
+
+.el-message-lg {
+	color: hsl(var(--bc));
+	--el-message-bg-color: hsl(var(--su));
+	--el-message-border-color: hsl(var(--su));
+	--el-message-padding: 0.3rem 0.7rem;
+	--el-message-close-size: 16px;
+	--el-message-close-icon-color: hsl(var(--bc));
 }
 </style>

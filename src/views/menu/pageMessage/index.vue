@@ -1,3 +1,5 @@
+<!-- eslint-disable vue/multi-word-component-names -->
+<!-- eslint-disable vue/no-deprecated-v-on-native-modifier -->
 <template>
 	<Container :is-active="isActive" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
 		<div class="component-body">
@@ -30,7 +32,13 @@
 						</div>
 					</div>
 				</div>
-				<div class="divider"></div>
+
+				<div class="relative">
+					<input v-model="mail" type="text" placeholder="支持任何邮箱格式" class="input input-bordered w-80" @keyup.enter.native="subScription(mail)" />
+					<button class="btn btn-primary absolute top-0 right-0 rounded-l-none" @click="subScription(mail)">订阅最新文章</button>
+				</div>
+				<span class="label-text" style="font-size: 10px; color: red; margin-top: 10px">博主发布新文章后，将会第一时间通过邮箱的形式通知到您！</span>
+				<div class="divider" style="margin-top: 30px"></div>
 				<div id="comment"></div>
 			</div>
 		</div>
@@ -48,7 +56,9 @@ declare const window: Window & { iDisqus: any }
 import MessageFriendly from '@/components/message/friendlylink.vue'
 import Comintroduce from '@/components/message/introduce.vue'
 import ComwellKnown from '@/components/message/wellknown.vue'
+import { emitter } from '@/utils/eventBus'
 import Comjuejin from '@/components/message/juejin.vue'
+import { addeMaile } from '@/api'
 import { judgment } from '@/utils/judgment'
 const homeJudgment = ref<string>()
 const isActive = ref<number>(1)
@@ -65,6 +75,23 @@ onMounted(() => {
 		title: '总评论',
 	})
 })
+
+const checkEmail = mails => {
+	const reg = /^[a-zA-Z0-9]+([-_.][A-Za-zd]+)*@([a-zA-Z0-9]+[-.])+[A-Za-zd]{2,5}$/
+	if (reg.test(mails)) {
+		addeMaile(mails).then(res => {
+			emitter.emit('machine', { title: res.data.message, mail: true })
+			mail.value = null
+		})
+	} else {
+		emitter.emit('machine', { title: '邮箱格式不对！', mail: false })
+	}
+}
+
+const mail = ref<any>()
+const subScription = mails => {
+	checkEmail(mails)
+}
 
 //切换菜单
 const displaySwitch = ref(1)

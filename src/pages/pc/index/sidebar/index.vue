@@ -118,7 +118,7 @@ const IP = localStorage.getItem('Ip')
 document.onkeydown = function (event) {
 	const e = event || arguments.callee.caller.arguments[0]
 	if (e && e.keyCode == 123) {
-		emitter.emit('machine', { title: `${cityname.value},IP为:${IP} 的朋友,您好!如果反复操作,将会封锁您的IP` })
+		emitter.emit('machine', { title: `${cityname.value},IP为:${IP} 的朋友,您好!如果反复操作,将会封锁您的IP`, mail: false })
 		return false
 	}
 }

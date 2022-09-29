@@ -9,7 +9,7 @@
 				<!-- 主视图层级 -->
 				<router-view v-slot="{ Component }">
 					<KeepAlive :include="['home', 'message', 'about', 'archive']">
-						<Component :is="Component" />
+						<component :is="Component" />
 					</KeepAlive>
 				</router-view>
 			</div>

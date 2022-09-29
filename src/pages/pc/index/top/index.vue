@@ -4,7 +4,7 @@
 	<div>
 		<div class="navbar bg-base-100">
 			<div class="flex-1 flex-space">
-				<a class="btn btn-ghost normal-case text-xl flex-right">ChetSerenade</a>
+				<label for="my-modal-6" class="btn btn-ghost normal-case text-xl flex-right">文章订阅</label>
 				<div v-show="num === 0" class="relative mr-6">
 					<input v-model="dataSearch" type="text" placeholder="Search" class="input input-bordered w-80" @keyup.enter.native="onSearch(dataSearch)" />
 					<button class="btn btn-primary absolute top-0 right-0 rounded-l-none" @click="onSearch(dataSearch)">Search</button>
@@ -25,7 +25,6 @@
 						</svg>
 					</button>
 				</div>
-
 				<ChangeTheme />
 				<ChangeLanguage />
 			</div>

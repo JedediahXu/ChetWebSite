@@ -75,7 +75,7 @@ const { map, mapDivElement, marker } = initDragMap(window.mapboxgl, popup, geoPh
 
 //地图按钮
 const great = () => {
-	emitter.emit('machine', { title: '功能暂未开发' })
+	emitter.emit('machine', { title: '功能暂未开发', mail: false })
 }
 
 //主菜单
