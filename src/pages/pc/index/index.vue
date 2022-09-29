@@ -67,7 +67,9 @@ const checkEmail = mails => {
 
 const mail = ref<any>()
 const subScription = mails => {
-	checkEmail(mails)
+	if (mails) {
+		checkEmail(mails)
+	}
 }
 
 //scroll

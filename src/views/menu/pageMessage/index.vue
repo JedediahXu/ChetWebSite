@@ -32,13 +32,15 @@
 						</div>
 					</div>
 				</div>
-
-				<div class="relative">
-					<input v-model="mail" type="text" placeholder="支持任何邮箱格式" class="input input-bordered w-80" @keyup.enter.native="subScription(mail)" />
-					<button class="btn btn-primary absolute top-0 right-0 rounded-l-none" @click="subScription(mail)">订阅最新文章</button>
+				<div v-if="homeJudgment === 'mobile'">
+					<div class="relative">
+						<input v-model="mail" type="text" placeholder="支持任何邮箱格式" class="input input-bordered w-80" @keyup.enter.native="subScription(mail)" />
+						<button class="btn btn-primary absolute top-0 right-0 rounded-l-none" @click="subScription(mail)">订阅最新文章</button>
+					</div>
+					<span class="label-text" style="font-size: 10px; color: red; margin-top: 10px">博主发布新文章后，将会第一时间通过邮箱的形式通知到您！</span>
+					<div class="divider" style="margin-top: 30px"></div>
 				</div>
-				<span class="label-text" style="font-size: 10px; color: red; margin-top: 10px">博主发布新文章后，将会第一时间通过邮箱的形式通知到您！</span>
-				<div class="divider" style="margin-top: 30px"></div>
+
 				<div id="comment"></div>
 			</div>
 		</div>
@@ -90,7 +92,9 @@ const checkEmail = mails => {
 
 const mail = ref<any>()
 const subScription = mails => {
-	checkEmail(mails)
+	if (mails) {
+		checkEmail(mails)
+	}
 }
 
 //切换菜单
