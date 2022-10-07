@@ -23,8 +23,7 @@
 <script lang="ts" setup>
 import { emitter } from '@/utils/eventBus'
 
-//sb 写法
-const istitle = ref<any>({})
+const istitle = ref<unknown>({})
 const islet = ref<boolean>(false)
 
 emitter.on('machine', data => {
