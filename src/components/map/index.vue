@@ -31,7 +31,7 @@
 				<ul class="folders">
 					<li class="item" @click="displayPhot(0)">
 						<i class="iconfont icon-route"> </i><span class="text">2022 山东淄博</span>
-						<span class="count">(2)</span>
+						<span class="count">(1)</span>
 					</li>
 					<li class="item" @click="displayPhot(1)">
 						<i class="iconfont icon-route"> </i><span class="text">2018 山东滕州</span>
@@ -40,12 +40,12 @@
 					<li class="item" @click="displayPhot(2)">
 						<i class="iconfont icon-route"></i>
 						<span class="text">2012 上海世博</span>
-						<span class="count">(0)</span>
+						<span class="count">(1)</span>
 					</li>
 					<li class="item" @click="displayPhot(3)">
 						<i class="iconfont icon-route"></i>
 						<span class="text">2008 山东临沂</span>
-						<span class="count">(0)</span>
+						<span class="count">(1)</span>
 					</li>
 					<li class="item">
 						<i class="iconfont icon-route"></i>

@@ -90,7 +90,7 @@ const checkEmail = mails => {
 	}
 }
 
-const mail = ref<any>()
+const mail = ref<unknown>()
 const subScription = mails => {
 	if (mails) {
 		checkEmail(mails)
@@ -99,7 +99,7 @@ const subScription = mails => {
 
 //切换菜单
 const displaySwitch = ref(1)
-const displayArea = (index: any) => {
+const displayArea = index => {
 	displaySwitch.value = index
 }
 </script>

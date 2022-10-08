@@ -13,7 +13,9 @@
 					</li>
 				</PhotoConsumer>
 				<li class="more">
-					<a class="link" rel="external nofollow noopener" target="_blank" href="https://www.instagram.com/chetserenade"><p>•••</p></a>
+					<a class="link" rel="external nofollow noopener" target="_blank" href="https://www.instagram.com/chetserenade">
+						<p>•••</p>
+					</a>
 				</li>
 			</PhotoProvider>
 			<template v-else>
@@ -39,7 +41,9 @@
 						</li>
 					</PhotoConsumer>
 					<li class="moblie-more">
-						<a class="link" rel="external nofollow noopener" target="_blank" href="https://www.instagram.com/chetserenade"><p>•••</p></a>
+						<a class="link" rel="external nofollow noopener" target="_blank" href="https://www.instagram.com/chetserenade">
+							<p>•••</p>
+						</a>
 					</li>
 				</PhotoProvider>
 
@@ -64,7 +68,7 @@ const homeJudgment = ref<string>()
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps({
 	listPhoto: {
-		type: Array as PropType<any>,
+		type: Array as PropType<unknown>,
 		required: true,
 		default: Array,
 	},

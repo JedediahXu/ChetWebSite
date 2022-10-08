@@ -48,11 +48,27 @@ import Loadmore from '@/components/loadMore/index.vue'
 import { useShow } from '@/utils/useLoad'
 import type { PropType } from 'vue'
 
+interface typeList {
+	Id: number
+	author_id?: string
+	cate_id?: number
+	content?: string
+	cover_img?: string
+	is_delete?: string
+	pub_date?: string
+	state?: string
+	title: string
+	word_count?: string
+	visitor_volume?: string
+	reading_time?: string
+	introduce: string
+}
+
 const $router = useRouter()
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps({
 	listArticle: {
-		type: Array as PropType<any>,
+		type: Array as PropType<typeList[]>,
 		required: true,
 		// eslint-disable-next-line vue/require-valid-default-prop
 		default: true,

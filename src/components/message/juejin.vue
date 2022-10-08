@@ -77,6 +77,7 @@
 <script lang="ts" setup>
 import { queryJuejin } from '@/api'
 import { useShow } from '@/utils/useLoad'
+
 interface JuejinList {
 	article_info: {
 		title?: string
@@ -111,7 +112,7 @@ const leave = (index: number) => {
 	showNumber.value = index
 }
 const queryListJuejin = () => {
-	queryJuejin().then((res: any) => {
+	queryJuejin().then(res => {
 		newData.value = res.data.data.data
 	})
 }

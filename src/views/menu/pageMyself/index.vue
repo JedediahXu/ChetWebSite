@@ -48,7 +48,6 @@
 							<li>理解前端工程化,掌握 Webpack、Vite配置与构建,能够根据项目进行适度优化</li>
 							<li>了解浏览器渲染、数据可视化、前端性能优化等方面知识</li>
 							<li>了解 HTTP 协议,Node.js,PHP,Mysql,Linux,Shell,Jenkins,熟练使用 Git</li>
-							<!-- <li style="color: hsl(var(--er));">想要了解更多点击下方微信,欢迎与我畅谈～</li> -->
 						</ul>
 						<div class="socials">
 							<span class="mini mt-3">

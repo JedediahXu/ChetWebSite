@@ -65,7 +65,7 @@ const checkEmail = mails => {
 	}
 }
 
-const mail = ref<any>()
+const mail = ref<unknown>()
 const subScription = mails => {
 	if (mails) {
 		checkEmail(mails)

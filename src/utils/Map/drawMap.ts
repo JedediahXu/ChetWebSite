@@ -49,7 +49,7 @@ function mapNew(map: any, mapDivElement: Ref<HTMLDivElement | null>, marker: any
 		})
 
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-		map.value.on('click', function (e: any) {
+		map.value.on('click', function (e) {
 			// console.log(e.lngLat, '---------')
 		})
 

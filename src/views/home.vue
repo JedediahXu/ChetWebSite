@@ -19,11 +19,6 @@ import { judgment } from '@/utils/judgment'
 import { emitter } from '@/utils/eventBus'
 import { queryArticle } from '@/api'
 
-const isActive = ref<number>(1)
-// mobile and pc
-const homeJudgment = ref<string>()
-homeJudgment.value = judgment()
-
 interface info {
 	page_num: string
 	page_size: number
@@ -36,6 +31,11 @@ interface pagination {
 	page_id: number
 	text: string
 }
+
+const isActive = ref<number>(1)
+// mobile and pc
+const homeJudgment = ref<string>()
+homeJudgment.value = judgment()
 
 const listArticle = ref([])
 const totale = ref<info>()
@@ -50,7 +50,7 @@ const paginationData: Ref = ref<pagination>({
 // 获取数据
 const addList = () => {
 	paginationData.value.page_num++
-	queryArticle(paginationData.value).then((res: any) => {
+	queryArticle(paginationData.value).then(res => {
 		listArticle.value.push(...res.data.data)
 		totale.value = { ...res.data.paging }
 		totale.value.page_size = listArticle.value.length

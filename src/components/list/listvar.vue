@@ -42,9 +42,9 @@ export default {
 
 <script lang="ts" setup>
 import { uaParser } from '@/utils/useDetails'
-const userAgent = ref<any>('')
+const userAgent = ref<string>('')
 
-const uaResult = computed(() => uaParser(userAgent))
+const uaResult = computed(() => uaParser(userAgent.value))
 const osIconName = computed(() => {
 	const osName = uaResult.value.result.os.name
 	return osName && osIconsNameMap[osName]

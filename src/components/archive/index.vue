@@ -34,10 +34,19 @@
 import { useShow } from '@/utils/useLoad'
 import type { PropType } from 'vue'
 
+interface typePhoto {
+	img: string
+	name: string
+	page_id: string
+	text: string
+	cate_photos: string
+	Id: number
+}
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps({
 	listPhoto: {
-		type: Array as PropType<any>,
+		type: Array as PropType<typePhoto[]>,
 		required: true,
 		default: Array,
 	},

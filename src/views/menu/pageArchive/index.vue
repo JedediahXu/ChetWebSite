@@ -13,15 +13,24 @@ import { emitter } from '@/utils/eventBus'
 import { mallGoodsCates } from '@/api'
 const router = useRouter()
 
+interface typePhoto {
+	img: string
+	name: string
+	page_id: string
+	text: string
+	cate_photos: string
+	Id: number
+}
+
 const isActive = ref<number>(1)
 const homeJudgment = ref<string>()
 const dialogShow = ref()
-const listPhoto = ref<Array<object>>([])
+const listPhoto = ref<Array<typePhoto>>([])
 
 //获取文章分类
 onMounted(() => {
 	homeJudgment.value = judgment()
-	mallGoodsCates().then((res: any) => {
+	mallGoodsCates().then(res => {
 		listPhoto.value.push(...res.data.data)
 		setTimeout(() => {
 			dialogShow.value.archiveShow()

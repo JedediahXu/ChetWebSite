@@ -61,6 +61,7 @@ interface reserves {
 	visitor_volume?: string
 	reading_time?: string
 }
+
 const route = useRoute()
 const reserve = ref<reserves>({})
 queryIdListArticle(route.query.id).then(res => {
@@ -80,7 +81,7 @@ queryIdListArticle(route.query.id).then(res => {
 	}
 })
 
-updateVolume(route.query.id).then((res: any) => {
+updateVolume(route.query.id).then(res => {
 	console.log(res)
 })
 

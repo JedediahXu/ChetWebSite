@@ -58,7 +58,7 @@ service.interceptors.response.use(
 	},
 )
 
-export function request(config: any) {
+export function request(config) {
 	// eslint-disable-next-line no-async-promise-executor
 	return new Promise(async (resolve, reject) => {
 		try {

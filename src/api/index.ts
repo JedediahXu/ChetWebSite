@@ -3,7 +3,7 @@
  * @Author: ChetXu
  * @Date: 2022-06-01
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-09-29 08:27:25
+ * @LastEditTime: 2022-10-08 10:49:37
  */
 import request from '../utils/request'
 
@@ -54,7 +54,7 @@ export function queryIP(ip) {
 	})
 }
 
-export function updateVolume(Id: any) {
+export function updateVolume(Id) {
 	return request({
 		url: `/apis/api/article/updateVolume?Id=${Id}`,
 		method: 'get',
