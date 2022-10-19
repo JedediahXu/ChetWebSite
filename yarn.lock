@@ -4793,10 +4793,10 @@ vite-plugin-resolve-externals@^0.2.2:
   resolved "https://registry.npmjs.org/vite-plugin-resolve-externals/-/vite-plugin-resolve-externals-0.2.2.tgz"
   integrity sha512-RHwCA5z+oGwxlqVSJq43qjphpImq8N44NwqjUVqK3aH13R1C4JJM7ApRtOmkfU2x/paN7kdSwf252VVfKEVsQw==
 
-vite@^2.9.9:
-  version "2.9.9"
-  resolved "https://r.cnpmjs.org/vite/-/vite-2.9.9.tgz"
-  integrity sha512-ffaam+NgHfbEmfw/Vuh6BHKKlI/XIAhxE5QSS7gFLIngxg171mg1P3a4LSRME0z2ZU1ScxoKzphkipcYwSD5Ew==
+vite@^2.9.13:
+  version "2.9.13"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-2.9.13.tgz#859cb5d4c316c0d8c6ec9866045c0f7858ca6abc"
+  integrity sha512-AsOBAaT0AD7Mhe8DuK+/kE4aWYFMx/i0ZNi98hJclxb4e0OhQcZYUrvLjIaQ8e59Ui7txcvKMiJC1yftqpQoDw==
   dependencies:
     esbuild "^0.14.27"
     postcss "^8.4.13"
