@@ -64,7 +64,7 @@
 		"vite": "^2.9.9",
 		"vite-plugin-resolve-externals": "^0.2.2",
 		"vue-i18n": "^9.1.10",
-		"vue-tsc": "^0.34.7"
+		"vue-tsc": "^1.0.8"
 	},
 	"config": {
 		"commitizen": {

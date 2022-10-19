@@ -26,7 +26,7 @@ module.exports = defineConfig({
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended', // typescript-eslint推荐规则,
 		'prettier',
-		'plugin:prettier/recommended',
+		'plugin:prettier/recommended',  //整合
 		'./.eslintrc-auto-import.json', // 这是unplugin-auto-import/vite相关配置，自动引入vue相关api
 	],
 	// 解决 error  Component name "index" should always be multi-word  vue/multi-word-component-names
@@ -40,7 +40,7 @@ module.exports = defineConfig({
 	],
 	rules: {
 		// 禁止使用 var
-		// 'no-var': 'error',
+		'no-var': 'error',
 		semi: 'off',
 		// 优先使用 interface 而不是 type
 		'@typescript-eslint/consistent-type-definitions': ['error', 'interface'],

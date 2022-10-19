@@ -1,11 +1,11 @@
 <template>
 	<Container :is-active="isActive" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
-		<Card ref="dialogShow" :list-photo="listPhoto" />
+		<CardList ref="dialogShow" :list-photo="listPhoto" />
 	</Container>
 </template>
 
 <script setup lang="ts" name="about">
-import Card from '@/components/cardPhoto/index.vue'
+import CardList from '@/components/cardPhoto/index.vue'
 import { judgment } from '@/utils/judgment'
 import { queryPhoto } from '@/api'
 const dialogShow = ref()
@@ -16,7 +16,6 @@ const listPhoto = ref<Array<object>>()
 
 const addPhoto = () => {
 	queryPhoto().then(res => {
-		console.log(res.data.data)
 		listPhoto.value = res.data.data
 		setTimeout(() => {
 			dialogShow.value.archiveShow()
