@@ -5,9 +5,7 @@
 
 Continuous development ...
 
-计划 v 2.0.0  重构所有逻辑代码、更换为Nuxt.js
-
-d[ o_0 ]b
+Plan v 2.0.0 refactor all logical code and replace it with Nuxt.js
 
 ### 文件资源目录 📚
 
