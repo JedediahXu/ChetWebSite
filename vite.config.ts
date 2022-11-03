@@ -58,7 +58,7 @@ export default defineConfig({
 	},
 	// base: '/',
 	server: {
-		// host: '10.101.126.3',
+		//host: '10.101.126.3',
 		port: 3005,
 		open: true,
 		proxy: {
