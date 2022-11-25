@@ -3,7 +3,7 @@
  * @Author: Chetxu
  * @Date: 2022-06-01
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-11-17 10:42:09
+ * @LastEditTime: 2022-11-17 09:42:31
  */
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import { judgment } from '@/utils/judgment'

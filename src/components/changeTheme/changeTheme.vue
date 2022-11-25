@@ -40,7 +40,7 @@
 					</div>
 				</button>
 			</li>
-			<li>
+			<!-- <li>
 				<button class="btn" :class="buttonColor == 'dracula' ? 'buttonColor' : ''" style="background-color: #ff79c6" @click.native="theme('dracula')">
 					<div class="col-span-5 row-span-3 row-start-1 flex gap-1">
 						<div class="flex-grow text-sm font-bold">pink</div>
@@ -63,7 +63,7 @@
 						</div>
 					</div>
 				</button>
-			</li>
+			</li> -->
 		</ul>
 	</div>
 </template>

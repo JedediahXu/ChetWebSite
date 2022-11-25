@@ -6,7 +6,7 @@
 Continuous development ...
 
 Plan v 2.0.0 refactor all logical code and replace it with Nuxt.js
-
+		
 ### 文件资源目录 📚
 
 ```texts
@@ -43,4 +43,3 @@ ChetWebSite
 ├─ tsconfig.json          # typescript 全局配置
 └─ vite.config.ts         # vite 配置
 ```
-

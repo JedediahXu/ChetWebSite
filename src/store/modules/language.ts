@@ -3,7 +3,7 @@
  * @Author: Chetxu
  * @Date: 2022-06-16
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-09-06 09:26:37
+ * @LastEditTime: 2022-11-17 10:48:37
  */
 import Cookies from 'js-cookie'
 import { createI18n } from 'vue-i18n'
@@ -11,6 +11,7 @@ import elementEnLocale from 'element-plus/lib/locale/lang/en'
 import elementZhLocale from 'element-plus/lib/locale/lang/zh-cn'
 
 import enLocale from '@/language/en'
+
 import zhLocale from '@/language/zh-cn'
 
 const langKey = 'i18nLang-key'

@@ -3,7 +3,7 @@
  * @Author: ChetXu
  * @Date: 2022-09-05
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-09-06 09:25:33
+ * @LastEditTime: 2022-11-17 11:44:20
  */
 import parser from 'ua-parser-js'
 

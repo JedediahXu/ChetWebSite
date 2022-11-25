@@ -3,7 +3,7 @@
  * @Author: Chetxu
  * @Date: 2022-08-12
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-09-06 09:25:27
+ * @LastEditTime: 2022-11-17 11:06:09
  */
 export function judgment() {
 	const userAgent = window.navigator.userAgent

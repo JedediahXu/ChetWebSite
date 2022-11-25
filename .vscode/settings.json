@@ -24,5 +24,7 @@
     "Vite",
     "vuex",
     "webllknown"
-  ]
+  ],
+  "testing.automaticallyOpenPeekView": "never",
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
