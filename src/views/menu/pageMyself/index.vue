@@ -18,7 +18,7 @@
 									<i class="iconfont icon-twitter"> </i>
 									<span class="text">Twitter</span>
 								</a>
-								<a class="item instagram" rel="external nofollow noopener" target="_blank" href="">
+								<a class="item instagram" rel="external nofollow noopener" target="_blank" href="https://www.instagram.com/chetserenade">
 									<i class="iconfont icon-instagram"></i>
 									<span class="text">Instagram</span>
 								</a>

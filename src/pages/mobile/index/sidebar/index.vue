@@ -7,7 +7,12 @@
 			</div>
 		</div>
 		<div class="mt-2.5">
-			<a class="link link-secondary">{{ t('PAGE_FREELANCER_SLOGAN') }}</a>
+			<a
+				class="link link-secondary"
+				href="https://baike.baidu.com/item/%E5%BD%A2%E8%80%8C%E4%B8%8A%E8%80%85%E8%B0%93%E4%B9%8B%E9%81%93%E5%BD%A2%E8%80%8C%E4%B8%8B%E8%80%85%E8%B0%93%E4%B9%8B%E5%99%A8/62345932?fr=aladdin"
+				target="_blank"
+				>{{ t('PAGE_FREELANCER_SLOGAN') }}</a
+			>
 		</div>
 		<ul class="menu bg-base-100 p-2 rounded-box rounded-color w-11/12">
 			<li class="menu-list-top" @click="pushJump(0)">

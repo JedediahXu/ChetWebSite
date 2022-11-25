@@ -7,7 +7,7 @@ const zhLocale = {
 	PAGE_APP: '留言',
 	CONNECT_MAIL: '邮箱',
 	CONNECT_GITHUB: 'GitHub',
-	SENTENCE: '生活,也让他人生活',
+	SENTENCE: '"𝑇ℎ𝑒𝑟𝑒 𝑖𝑠 𝑜𝑛𝑙𝑦 𝑜𝑛𝑒 ℎ𝑒𝑟𝑜𝑖𝑠𝑚 𝑖𝑛 𝑡ℎ𝑒 𝑤𝑜𝑟𝑙𝑑: 𝑡𝑜 𝑠𝑒𝑒 𝑡ℎ𝑒 𝑤𝑜𝑟𝑙𝑑 𝑎𝑠 𝑖𝑡 𝑖𝑠, 𝑎𝑛𝑑 𝑡𝑜 𝑙𝑜𝑣𝑒 𝑖𝑡."',
 }
 
 export default zhLocale
