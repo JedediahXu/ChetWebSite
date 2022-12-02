@@ -68,7 +68,7 @@ const homeJudgment = ref<string>()
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps({
 	listPhoto: {
-		type: Array as PropType<unknown>,
+		type: Array as PropType<any>,
 		required: true,
 		default: Array,
 	},

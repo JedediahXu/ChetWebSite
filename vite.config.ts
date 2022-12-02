@@ -43,12 +43,13 @@ export default defineConfig({
 		}),
 		viteCompression(),
 		resolveExternalsPlugin({
-			'Vue': 'Vue',
-			'axios': 'axios'
+			Vue: 'Vue',
+			axios: 'axios',
 		}),
 	],
 	define: {
-		'process.env': {},
+		// 'process.env': {},
+		__VUE_OPTIONS_API__: false, //关闭option特性 优化打包体积
 	},
 	resolve: {
 		alias: {
