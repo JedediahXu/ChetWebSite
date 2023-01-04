@@ -2,7 +2,14 @@
 <template>
 	<div class="dropdown dropdown-end">
 		<div tabindex="0" class="btn gap-1 normal-case btn-ghost" @click="select()">
-			<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block h-5 w-5 stroke-current md:h-6 md:w-6">
+			<svg
+				width="20"
+				height="20"
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				class="inline-block h-5 w-5 stroke-current md:h-6 md:w-6"
+			>
 				<path
 					stroke-linecap="round"
 					stroke-linejoin="round"
@@ -11,13 +18,28 @@
 				></path>
 			</svg>
 			<span class="hidden md:inline">主题</span>
-			<svg width="12px" height="12px" class="ml-1 hidden h-3 w-3 fill-current opacity-60 sm:inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048">
+			<svg
+				width="12px"
+				height="12px"
+				class="ml-1 hidden h-3 w-3 fill-current opacity-60 sm:inline-block"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 2048 2048"
+			>
 				<path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
 			</svg>
 		</div>
-		<ul v-if="selectTheme === false" tabindex="0" class="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4 menu-back">
+		<ul
+			v-if="selectTheme === false"
+			tabindex="0"
+			class="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4 menu-back"
+		>
 			<li>
-				<button class="btn" :class="buttonColor == 'light' ? 'buttonColor' : ''" style="background-color: #ffffff" @click.native="theme('light')">
+				<button
+					class="btn"
+					:class="buttonColor == 'light' ? 'buttonColor' : ''"
+					style="background-color: #ffffff"
+					@click.native="theme('light')"
+				>
 					<div class="col-span-5 row-span-3 row-start-1 flex gap-1">
 						<div class="flex-grow text-sm font-bold">light</div>
 						<div class="flex flex-shrink-0 flex-wrap gap-1">
@@ -29,7 +51,12 @@
 				</button>
 			</li>
 			<li>
-				<button class="btn" :class="buttonColor == 'dark' ? 'buttonColor' : ''" style="background-color: #6419e6" @click.native="theme('dark')">
+				<button
+					class="btn"
+					:class="buttonColor == 'dark' ? 'buttonColor' : ''"
+					style="background-color: #6419e6"
+					@click.native="theme('dark')"
+				>
 					<div class="col-span-5 row-span-3 row-start-1 flex gap-1">
 						<div class="flex-grow text-sm font-bold">dark</div>
 						<div class="flex flex-shrink-0 flex-wrap gap-1">

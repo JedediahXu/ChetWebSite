@@ -1,7 +1,20 @@
 <template>
-	<Container :is-active="isActive" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
-		<Archive v-if="homeJudgment === 'pc'" ref="dialogShow" :list-photo="listPhoto" @getTransfer="getTransfer" />
-		<MobilArchive v-if="homeJudgment === 'mobile'" ref="dialogShow" :list-photo="listPhoto" @getTransfer="getTransfer" />
+	<Container
+		:is-active="isActive"
+		:class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'"
+	>
+		<Archive
+			v-if="homeJudgment === 'pc'"
+			ref="dialogShow"
+			:list-photo="listPhoto"
+			@getTransfer="getTransfer"
+		/>
+		<MobilArchive
+			v-if="homeJudgment === 'mobile'"
+			ref="dialogShow"
+			:list-photo="listPhoto"
+			@getTransfer="getTransfer"
+		/>
 	</Container>
 </template>
 

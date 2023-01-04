@@ -14,13 +14,19 @@
 				<figure class="px-12 pt-6 pb-2 w-full aspect-[2/1] items-end">
 					<img class="w-full h-auto" :src="'/apis' + src.cate_photos" alt="Vite" />
 				</figure>
+
 				<div class="card-body text-center">
 					<span class="text-xs">{{ src.name }}</span>
 				</div>
 			</a>
 
 			<template v-else>
-				<el-skeleton v-for="(src, index) in listArchiveLoad" :key="index" class="card border-2 border-base-100 card-compact bg-white/5 hover:bg-gray-300/10 transition-all duration-200 hover:shadow hover:-translate-y-1" animated>
+				<el-skeleton
+					v-for="(src, index) in listArchiveLoad"
+					:key="index"
+					class="card border-2 border-base-100 card-compact bg-white/5 hover:bg-gray-300/10 transition-all duration-200 hover:shadow hover:-translate-y-1"
+					animated
+				>
 					<template #template>
 						<el-skeleton-item variant="image" class="template-pc-height" />
 					</template>
@@ -64,6 +70,7 @@ const toJump = (index: number) => {
 
 const isLoad = ref<boolean>(false)
 const { listArchiveLoad } = useShow()
+
 //骨架显示
 const archiveShow = () => {
 	isLoad.value = true

@@ -1,195 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<title>ChetSerenade</title>
+		<link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet" />
+	</head>
 
-<head>
-	<meta charset="UTF-8" />
-	<link rel="icon" href="/favicon.ico" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="viewport"
-		content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<title>ChetSerenade</title>
-	<link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
-</head>
-
-<body>
-	<div id="app">
-		<style>
-			#loader-wrapper {
-				position: fixed;
-				top: 0;
-				left: 0;
-				width: 100vw;
-				height: 100vh;
-				z-index: 999999;
-			}
-
-			#loader {
-				display: block;
-				position: relative;
-				left: 50%;
-				top: 40%;
-				z-index: 1001;
-				width: 90px;
-				height: 90px;
-				margin: -45px 0 0 -45px;
-				border-radius: 50%;
-				border: 3px solid transparent;
-				border-top-color: #FF79C6;
-				-webkit-animation: spin 2s linear infinite;
-				-ms-animation: spin 2s linear infinite;
-				-moz-animation: spin 2s linear infinite;
-				-o-animation: spin 2s linear infinite;
-				animation: spin 2s linear infinite;
-			}
-
-			#loader:before {
-				content: "";
-				position: absolute;
-				top: 5px;
-				left: 5px;
-				right: 5px;
-				bottom: 5px;
-				border-radius: 50%;
-				border: 3px solid transparent;
-				border-top-color: #fe9501;
-				-webkit-animation: spin 3s linear infinite;
-				-moz-animation: spin 3s linear infinite;
-				-o-animation: spin 3s linear infinite;
-				-ms-animation: spin 3s linear infinite;
-				animation: spin 3s linear infinite;
-			}
-
-			#loader:after {
-				content: "";
-				position: absolute;
-				top: 15px;
-				left: 15px;
-				right: 15px;
-				bottom: 15px;
-				border-radius: 50%;
-				border: 3px solid transparent;
-				border-top-color: #560DF8;
-				-moz-animation: spin 1.5s linear infinite;
-				-o-animation: spin 1.5s linear infinite;
-				-ms-animation: spin 1.5s linear infinite;
-				-webkit-animation: spin 1.5s linear infinite;
-				animation: spin 1.5s linear infinite;
-			}
-
-			@-webkit-keyframes spin {
-				0% {
-					-webkit-transform: rotate(0deg);
-					-ms-transform: rotate(0deg);
-					transform: rotate(0deg);
+	<body>
+		<div id="app">
+			<style>
+				#loader-wrapper {
+					position: fixed;
+					top: 0;
+					left: 0;
+					width: 100vw;
+					height: 100vh;
+					z-index: 999999;
 				}
 
-				100% {
-					-webkit-transform: rotate(360deg);
-					-ms-transform: rotate(360deg);
-					transform: rotate(360deg);
+				#loader {
+					display: block;
+					position: relative;
+					left: 50%;
+					top: 40%;
+					z-index: 1001;
+					width: 90px;
+					height: 90px;
+					margin: -45px 0 0 -45px;
+					border-radius: 50%;
+					border: 3px solid transparent;
+					border-top-color: #ff79c6;
+					-webkit-animation: spin 2s linear infinite;
+					-ms-animation: spin 2s linear infinite;
+					-moz-animation: spin 2s linear infinite;
+					-o-animation: spin 2s linear infinite;
+					animation: spin 2s linear infinite;
 				}
-			}
 
-			@keyframes spin {
-				0% {
-					-webkit-transform: rotate(0deg);
-					-ms-transform: rotate(0deg);
-					transform: rotate(0deg);
+				#loader:before {
+					content: '';
+					position: absolute;
+					top: 5px;
+					left: 5px;
+					right: 5px;
+					bottom: 5px;
+					border-radius: 50%;
+					border: 3px solid transparent;
+					border-top-color: #fe9501;
+					-webkit-animation: spin 3s linear infinite;
+					-moz-animation: spin 3s linear infinite;
+					-o-animation: spin 3s linear infinite;
+					-ms-animation: spin 3s linear infinite;
+					animation: spin 3s linear infinite;
 				}
 
-				100% {
-					-webkit-transform: rotate(360deg);
-					-ms-transform: rotate(360deg);
-					transform: rotate(360deg);
+				#loader:after {
+					content: '';
+					position: absolute;
+					top: 15px;
+					left: 15px;
+					right: 15px;
+					bottom: 15px;
+					border-radius: 50%;
+					border: 3px solid transparent;
+					border-top-color: #560df8;
+					-moz-animation: spin 1.5s linear infinite;
+					-o-animation: spin 1.5s linear infinite;
+					-ms-animation: spin 1.5s linear infinite;
+					-webkit-animation: spin 1.5s linear infinite;
+					animation: spin 1.5s linear infinite;
 				}
-			}
 
-		</style>
-		<div id="loader-wrapper">
-			<div id="loader"></div>
+				@-webkit-keyframes spin {
+					0% {
+						-webkit-transform: rotate(0deg);
+						-ms-transform: rotate(0deg);
+						transform: rotate(0deg);
+					}
+
+					100% {
+						-webkit-transform: rotate(360deg);
+						-ms-transform: rotate(360deg);
+						transform: rotate(360deg);
+					}
+				}
+
+				@keyframes spin {
+					0% {
+						-webkit-transform: rotate(0deg);
+						-ms-transform: rotate(0deg);
+						transform: rotate(0deg);
+					}
+
+					100% {
+						-webkit-transform: rotate(360deg);
+						-ms-transform: rotate(360deg);
+						transform: rotate(360deg);
+					}
+				}
+			</style>
+			<div id="loader-wrapper">
+				<div id="loader"></div>
+			</div>
 		</div>
-	</div>
-	<script type="module" src="/src/main.ts"></script>
-	<script type="text/javascript" src="/Disqus/iDisqus.js"></script>
-	<script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
-	<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
-	<script src="https://cdn.bootcdn.net/ajax/libs/vue/3.2.39/vue.global.min.js"></script>
-	<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.27.2/axios.js"></script>
-	<script type="text/javascript">
-		var Ip = returnCitySN['cip']
-		var cityname = returnCitySN['cname']
-		localStorage.setItem('Ip', Ip)
-		localStorage.setItem('cityname', cityname)
-	</script>
-	<script>
-		window.onload = function () {
-			document.addEventListener("touchstart", function (event) {
-				if (event.touches.length > 1) {
-					event.preventDefault();
-				}
-			});
-			var lastTouchEnd = 0;
-			document.addEventListener(
-				"touchend",
-				function (event) {
-					var now = new Date().getTime();
-					if (now - lastTouchEnd <= 300) {
-						event.preventDefault();
+		<script type="module" src="/src/main.ts"></script>
+		<script type="text/javascript" src="/Disqus/iDisqus.js"></script>
+		<script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
+		<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+		<script src="https://cdn.bootcdn.net/ajax/libs/vue/3.2.45/vue.global.prod.js"></script>
+		<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.27.2/axios.js"></script>
+		<script type="text/javascript">
+			let Ip = returnCitySN['cip']
+			let cityname = returnCitySN['cname']
+			localStorage.setItem('Ip', Ip)
+			localStorage.setItem('cityname', cityname)
+		</script>
+		<script>
+			window.onload = function () {
+				document.addEventListener('touchstart', function (event) {
+					if (event.touches.length > 1) {
+						event.preventDefault()
 					}
-					lastTouchEnd = now;
-				},
-				false
-			);
-			document.addEventListener("gesturestart", function (event) {
-				event.preventDefault();
-			});
-		};
-	</script>
-	<script>
-		var _hmt = _hmt || [];
-		(function () {
-			var hm = document.createElement("script");
-			hm.src = "https://hm.baidu.com/hm.js?54818920b21956b8d2d7e3e951398987";
-			var s = document.getElementsByTagName("script")[0];
-			s.parentNode.insertBefore(hm, s);
-		})();
-	</script>
-	<!-- <script>
-		document.oncontextmenu = function () {
-			event.returnValue = false;
-		};
-		let userAgent = navigator.userAgent;
-		//禁用控制台
-		let ConsoleManager = {
-			init: function () {
-				let self = this;
-				let x = document.createElement("div");
-				let isOpening = false,
-					isOpened = false;
-				Object.defineProperty(x, "id", {
-					get: function () {
-						if (!isOpening) {
-							self.onOpen();
-							isOpening = true;
+				})
+				var lastTouchEnd = 0
+				document.addEventListener(
+					'touchend',
+					function (event) {
+						var now = new Date().getTime()
+						if (now - lastTouchEnd <= 300) {
+							event.preventDefault()
 						}
-						isOpened = true;
-						return true;
-					}
-				});
-				setInterval(function () {
-					isOpened = false;
-					console.info(x);
-					console.clear();
-					if (!isOpened && isOpening) {
-						self.onClose();
-						isOpening = false;
-					}
-				}, 200);
+						lastTouchEnd = now
+					},
+					false,
+				)
+				document.addEventListener('gesturestart', function (event) {
+					event.preventDefault()
+				})
 			}
-		};
-		ConsoleManager.init();
-	</script> -->
-</body>
-
+		</script>
+		<script>
+			var _hmt = _hmt || []
+			;(function () {
+				var hm = document.createElement('script')
+				hm.src = 'https://hm.baidu.com/hm.js?54818920b21956b8d2d7e3e951398987'
+				var s = document.getElementsByTagName('script')[0]
+				s.parentNode.insertBefore(hm, s)
+			})()
+		</script>
+	</body>
 </html>

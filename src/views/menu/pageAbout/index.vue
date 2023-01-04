@@ -1,5 +1,8 @@
 <template>
-	<Container :is-active="isActive" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
+	<Container
+		:is-active="isActive"
+		:class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'"
+	>
 		<CardList ref="dialogShow" :list-photo="listPhoto" />
 	</Container>
 </template>

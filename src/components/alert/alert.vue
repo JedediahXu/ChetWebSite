@@ -2,7 +2,12 @@
 <template>
 	<transition>
 		<div v-if="islet === true" class="alert-top">
-			<div :class="istitle.mail == true ? 'el-message-lg' : 'el-messagecolor'" class="el-message el-message--warning is-closable" role="alert" style="top: 6%; z-index: 2005">
+			<div
+				:class="istitle.mail == true ? 'el-message-lg' : 'el-messagecolor'"
+				class="el-message el-message--warning is-closable"
+				role="alert"
+				style="top: 6%; z-index: 2005"
+			>
 				<i v-if="istitle.mail === false" class="el-icon el-message__icon el-message-icon--warning">
 					<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
 						<path
@@ -11,7 +16,13 @@
 						></path>
 					</svg>
 				</i>
-				<svg v-if="istitle.mail === true" xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+				<svg
+					v-if="istitle.mail === true"
+					xmlns="http://www.w3.org/2000/svg"
+					class="stroke-current flex-shrink-0 h-6 w-6"
+					fill="none"
+					viewBox="0 0 24 24"
+				>
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
 				</svg>
 				<p class="el-message__content">{{ istitle.title }}</p>

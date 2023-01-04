@@ -5,17 +5,41 @@
 			<div class="mapbox-wrapper">
 				<div class="mapbox mapboxgl-map">
 					<div class="mapboxgl-canary"></div>
-					<div class="mapboxgl-canvas-container mapboxgl-interactive mapboxgl-touch-drag-pan mapboxgl-touch-zoom-rotate">
-						<div id="mapContainer" ref="mapDivElement" tabindex="0" aria-label="Map" role="region" width="100%" class="mapContainer" height="39vh;"></div>
+					<div
+						class="mapboxgl-canvas-container mapboxgl-interactive mapboxgl-touch-drag-pan mapboxgl-touch-zoom-rotate"
+					>
+						<div
+							id="mapContainer"
+							ref="mapDivElement"
+							tabindex="0"
+							aria-label="Map"
+							role="region"
+							width="100%"
+							class="mapContainer"
+							height="39vh;"
+						></div>
 					</div>
 					<div class="mapboxgl-control-container">
 						<div class="mapboxgl-ctrl-bottom-left">
-							<div class="mapboxgl-ctrl"><a class="mapboxgl-ctrl-logo" target="_blank" rel="noopener nofollow" href="https://www.mapbox.com/" aria-label="Mapbox logo"></a></div>
+							<div class="mapboxgl-ctrl">
+								<a
+									class="mapboxgl-ctrl-logo"
+									target="_blank"
+									rel="noopener nofollow"
+									href="https://www.mapbox.com/"
+									aria-label="Mapbox logo"
+								></a>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class="toolbar">
-					<a class="button" rel="external nofollow noopener" target="_blank" href="https://www.google.com/maps/d/embed?mid=1sRx6t0Yj1TutbwORCvjwTMgr70r62Z6w&amp;z=3">
+					<a
+						class="button"
+						rel="external nofollow noopener"
+						target="_blank"
+						href="https://www.google.com/maps/d/embed?mid=1sRx6t0Yj1TutbwORCvjwTMgr70r62Z6w&amp;z=3"
+					>
 						<i class="iconfont icon-google-maps"></i>
 					</a>
 					<button class="button" @click="great">
@@ -87,6 +111,9 @@ const displayBut = () => {
 const displayPhot = (i: number) => {
 	const mapContainer = geoPhoto.features[i].geometry.coordinates
 	map.value.flyTo({ center: [mapContainer[0], mapContainer[1]], zoom: 14 })
-	popup.setLngLat([mapContainer[0], mapContainer[1]]).setHTML(geoPhoto.features[i].properties.description).addTo(map.value)
+	popup
+		.setLngLat([mapContainer[0], mapContainer[1]])
+		.setHTML(geoPhoto.features[i].properties.description)
+		.addTo(map.value)
 }
 </script>

@@ -7,8 +7,13 @@
 					<div class="title">
 						<h2 class="text">{{ reserve.title }}</h2>
 						<div class="meta">
-							<span style="margin-right: 2rem"><i class="iconfont icon-clock-outline"></i>{{ reserve.pub_date }} </span>
-							<span style="margin-right: 2rem"> <i class="iconfont icon-t"></i>共 {{ reserve.word_count }} 字 需阅读 {{ reserve.reading_time }}分钟 </span>
+							<span style="margin-right: 2rem"
+								><i class="iconfont icon-clock-outline"></i>{{ reserve.pub_date }}
+							</span>
+							<span style="margin-right: 2rem">
+								<i class="iconfont icon-t"></i>共 {{ reserve.word_count }} 字 需阅读
+								{{ reserve.reading_time }}分钟
+							</span>
 							<span style="margin-right: 2rem"
 								><i class="iconfont icon-eye"></i><span>{{ reserve.visitor_volume }}</span
 								>次阅读</span

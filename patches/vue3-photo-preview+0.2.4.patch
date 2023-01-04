@@ -1,5 +1,5 @@
 diff --git a/node_modules/vue3-photo-preview/dist/index.css b/node_modules/vue3-photo-preview/dist/index.css
-index 9c1d81e..f3107de 100644
+index 9c1d81e..fea0cac 100644
 --- a/node_modules/vue3-photo-preview/dist/index.css
 +++ b/node_modules/vue3-photo-preview/dist/index.css
 @@ -1,167 +1,199 @@

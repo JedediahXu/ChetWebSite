@@ -21,7 +21,9 @@ export default function (opts) {
 	const tree = getCatalogsTree(allCatalogs)
 
 	try {
-		$catalog.innerHTML = `<div class='cl-wrapper'>${generateHtmlTree(tree, { id: -1 })}<svg class="cl-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+		$catalog.innerHTML = `<div class='cl-wrapper'>${generateHtmlTree(tree, {
+			id: -1,
+		})}<svg class="cl-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
             <path stroke="" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
             </svg></div>`
 	} catch (e) {
@@ -108,7 +110,10 @@ export default function (opts) {
 		})
 		if (visibleItems > 0 && pathStart < pathEnd && Opt.cool) {
 			tocPath.setAttribute('stroke-dashoffset', '1')
-			tocPath.setAttribute('stroke-dasharray', `1, ${pathStart}, ${pathEnd - pathStart}, ${pathLength}`)
+			tocPath.setAttribute(
+				'stroke-dasharray',
+				`1, ${pathStart}, ${pathEnd - pathStart}, ${pathLength}`,
+			)
 			tocPath.setAttribute('opacity', '1')
 		} else {
 			tocPath.setAttribute('opacity', '0')
@@ -140,7 +145,8 @@ export default function (opts) {
 		} else {
 			document.getElementById(datasetId).style.backgroundColor = 'pink'
 			target.style.backgroundColor = 'pink'
-			target.classList.contains(Opt.linkClass) && document.getElementById(datasetId).scrollIntoView({ behavior: 'smooth', block: 'center' })
+			target.classList.contains(Opt.linkClass) &&
+				document.getElementById(datasetId).scrollIntoView({ behavior: 'smooth', block: 'center' })
 		}
 	}
 
@@ -235,6 +241,8 @@ export default function (opts) {
 	 * 判断是否是相同节点
 	 */
 	function isEqual(node, node2) {
-		return node && node2 && typeof node === 'object' && typeof node2 === 'object' && node.id === node2.id
+		return (
+			node && node2 && typeof node === 'object' && typeof node2 === 'object' && node.id === node2.id
+		)
 	}
 }

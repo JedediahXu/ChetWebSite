@@ -1,12 +1,26 @@
 <template>
-	<Container :is-active="isActive" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
+	<Container
+		:is-active="isActive"
+		:class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'"
+	>
 		<div v-if="homeJudgment === 'pc'" class="list-conter">
 			<div>
 				<Selection />
-				<Carlist ref="dialogShow" :list-article="listArticle" :totale="totale" @getChili="addList" />
+				<Carlist
+					ref="dialogShow"
+					:list-article="listArticle"
+					:totale="totale"
+					@getChili="addList"
+				/>
 			</div>
 		</div>
-		<MobileCarlist v-if="homeJudgment === 'mobile'" ref="dialogShow" :list-article="listArticle" :totale="totale" @getChili="addList" />
+		<MobileCarlist
+			v-if="homeJudgment === 'mobile'"
+			ref="dialogShow"
+			:list-article="listArticle"
+			:totale="totale"
+			@getChili="addList"
+		/>
 	</Container>
 	<input id="my-modal-4" type="checkbox" class="modal-toggle" />
 </template>

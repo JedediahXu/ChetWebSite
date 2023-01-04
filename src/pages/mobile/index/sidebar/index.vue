@@ -17,7 +17,13 @@
 		<ul class="menu bg-base-100 p-2 rounded-box rounded-color w-11/12">
 			<li class="menu-list-top" @click="pushJump(0)">
 				<a :class="touch === 0 ? 'active' : ''">
-					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-5 w-5"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
 						<path
 							stroke-linecap="round"
 							stroke-linejoin="round"
@@ -30,7 +36,13 @@
 			</li>
 			<li class="menu-list-top" @click="pushJump(1)">
 				<a :class="touch === 1 ? 'active' : ''">
-					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-5 w-5"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
 						<path
 							stroke-linecap="round"
 							stroke-linejoin="round"
@@ -43,7 +55,13 @@
 			</li>
 			<li class="menu-list-top" @click="pushJump(2)">
 				<a :class="touch === 2 ? 'active' : ''">
-					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-5 w-5"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
 						<path
 							stroke-linecap="round"
 							stroke-linejoin="round"
@@ -56,7 +74,13 @@
 			</li>
 			<li class="menu-list-top" @click="pushJump(3)">
 				<a :class="touch === 3 ? 'active' : ''">
-					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-5 w-5"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
 						<path
 							stroke-linecap="round"
 							stroke-linejoin="round"
@@ -69,8 +93,19 @@
 			</li>
 			<li class="menu-list-top" @click="pushJump(4)">
 				<a :class="touch === 4 ? 'active' : ''">
-					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-5 w-5"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+						/>
 					</svg>
 					{{ t('PAGE_APP') }}
 				</a>
@@ -81,7 +116,7 @@
 				<div class="stat">
 					<div class="stat-div">
 						<div class="stats shadow">
-							{{ cityname }}
+							<!--							{{ cityname }}-->
 						</div>
 						<div class="stats shadow">
 							<Listvar />
@@ -108,7 +143,7 @@ import useLanguage from '@/store/index'
 
 const { t } = useI18n()
 const $router = useRouter()
-const { cityname } = useIP()
+useIP()
 const mainStore = useLanguage()
 
 const touch = ref<unknown>(0)

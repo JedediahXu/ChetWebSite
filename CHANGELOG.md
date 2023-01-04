@@ -15,7 +15,7 @@ All notable changes to this project will be documented in this file.
 
 
 
-### v1.0.0 （执行中）
+### v1.0.0 （执行完毕）
 - README 完善
 - 图片要有 hover 渐变效果
 - 相关文章的样式不足一行时是需要优化的
@@ -36,8 +36,6 @@ All notable changes to this project will be documented in this file.
 - 统计访问
 - 百度统计
 - 骨架屏
-
-（持续中）
 - 启动时间
 - 性能优化
 - 搜索为全局搜索 并没有关联放到具体分类文章

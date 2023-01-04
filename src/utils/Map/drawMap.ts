@@ -8,7 +8,12 @@ import { Popups } from './Popups'
 
 declare const window: Window & { mapboxgl: any }
 
-export function initDragMap(mapboxgl: { accessToken: string }, popup: unknown, geoPhoto: unknown, geoData: unknown) {
+export function initDragMap(
+	mapboxgl: { accessToken: string },
+	popup: unknown,
+	geoPhoto: unknown,
+	geoData: unknown,
+) {
 	const mapDivElement: Ref<HTMLDivElement | null> = ref(null)
 	const map: any = ref({})
 	const marker: unknown = ref({})
@@ -23,8 +28,12 @@ export function initDragMap(mapboxgl: { accessToken: string }, popup: unknown, g
 	 * initialization mapbox
 	 */
 	function initMap() {
-		mapboxgl.accessToken = 'pk.eyJ1Ijoic2VyZW5hZGUwOTE2IiwiYSI6ImNsNWRieWNrZTBwdWgzYm8yZXNiZno2NWsifQ.IKHQFsbqXEpXC3wPWDDs1A'
-		mapNew(map, mapDivElement, marker, popup, geoPhoto, geoData, [Number(117.98417547037542), Number(36.81708160054497)])
+		mapboxgl.accessToken =
+			'pk.eyJ1Ijoic2VyZW5hZGUwOTE2IiwiYSI6ImNsNWRieWNrZTBwdWgzYm8yZXNiZno2NWsifQ.IKHQFsbqXEpXC3wPWDDs1A'
+		mapNew(map, mapDivElement, marker, popup, geoPhoto, geoData, [
+			Number(117.98417547037542),
+			Number(36.81708160054497),
+		])
 	}
 }
 /**
@@ -35,7 +44,15 @@ export function initDragMap(mapboxgl: { accessToken: string }, popup: unknown, g
  * @param popup
  * @param arr
  */
-function mapNew(map: any, mapDivElement: Ref<HTMLDivElement | null>, marker: any, popup: unknown, geoPhoto: unknown, geoData: unknown, arr: [number, number]) {
+function mapNew(
+	map: any,
+	mapDivElement: Ref<HTMLDivElement | null>,
+	marker: any,
+	popup: unknown,
+	geoPhoto: unknown,
+	geoData: unknown,
+	arr: [number, number],
+) {
 	if (mapDivElement.value !== null) {
 		map.value = new window.mapboxgl.Map({
 			container: mapDivElement.value, // container id
@@ -47,12 +64,10 @@ function mapNew(map: any, mapDivElement: Ref<HTMLDivElement | null>, marker: any
 			bearing: 0, //地图的初始方向，值是北的逆时针度数，默认是0，即是正北,-17.6
 			antialias: false, //抗锯齿，通过false关闭提升性能
 		})
-
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		map.value.on('click', function (e) {
 			// console.log(e.lngLat, '---------')
 		})
-
 		marker.value = new window.mapboxgl.Marker().setLngLat(arr).addTo(map.value)
 
 		mapThreeDim(map) //渲染模型高度

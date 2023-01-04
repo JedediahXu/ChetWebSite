@@ -9,7 +9,6 @@ declare const window: Window & { axios: any }
 
 const url: any = import.meta.env // (不存在跨域问题 可使用)
 
-console.log(url)
 const service = window.axios.create({
 	baseURL: url.VITE_APP_BASE_API,
 	timeout: 40 * 1000,

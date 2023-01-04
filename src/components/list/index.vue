@@ -1,11 +1,22 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
 	<div v-if="isLoad" class="article-list">
-		<div v-for="(item, index) in listArticle" :key="index" class="article-item list-item" @click="read(item, item.Id, item.title)">
-			<div class="item-background" :style="{ backgroundImage: 'url(' + '/apis' + item.cover_img + ')' }"></div>
+		<div
+			v-for="(item, index) in listArticle"
+			:key="index"
+			class="article-item list-item"
+			@click="read(item, item.Id, item.title)"
+		>
+			<div
+				class="item-background"
+				:style="{ backgroundImage: 'url(' + '/apis' + item.cover_img + ')' }"
+			></div>
 			<div class="item-content">
 				<a class="item-thumb">
-					<div class="image" :style="{ backgroundImage: 'url(' + '/apis' + item.cover_img + ')' }"></div>
+					<div
+						class="image"
+						:style="{ backgroundImage: 'url(' + '/apis' + item.cover_img + ')' }"
+					></div>
 				</a>
 				<div class="item-body">
 					<div class="item-content item-grid">
@@ -36,7 +47,12 @@
 	</div>
 
 	<template v-else>
-		<el-skeleton v-for="(item, index) in listArticleLoad" :key="index" class="item-skeleton" animated>
+		<el-skeleton
+			v-for="(item, index) in listArticleLoad"
+			:key="index"
+			class="item-skeleton"
+			animated
+		>
 			<template #template>
 				<el-skeleton-item variant="image" class="item-skeleton-image" />
 				<div class="middle-content">

@@ -47,12 +47,12 @@ export function queryAmount() {
 	})
 }
 
-export function queryIP(ip) {
-	return request({
-		url: `/IP/api.php?query=${ip}&co=&resource_id=6006&oe=utf8`,
-		method: 'get',
-	})
-}
+// export function queryIP(ip) {
+// 	return request({
+// 		url: `/IP/api.php?query=${ip}&co=&resource_id=6006&oe=utf8`,
+// 		method: 'get',
+// 	})
+// }
 
 export function updateVolume(Id) {
 	return request({

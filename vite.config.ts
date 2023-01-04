@@ -48,8 +48,8 @@ export default defineConfig({
 		}),
 	],
 	define: {
-		// 'process.env': {},
-		__VUE_OPTIONS_API__: false, //关闭option特性 优化打包体积
+		'process.env': {},
+		__VUE_OPTIONS_API__: true, //关闭option特性 优化打包体积
 	},
 	resolve: {
 		alias: {
