@@ -31,7 +31,7 @@ export default defineConfig({
 			resolvers: [ElementPlusResolver()],
 		}),
 		visualizer({
-			open: true, //注意这里要设置为true，否则无效
+			open: true, 
 			gzipSize: true,
 			brotliSize: true,
 		}),
@@ -49,7 +49,7 @@ export default defineConfig({
 	],
 	define: {
 		'process.env': {},
-		__VUE_OPTIONS_API__: false, //关闭option特性 优化打包体积
+		__VUE_OPTIONS_API__: false,
 	},
 	resolve: {
 		alias: {
