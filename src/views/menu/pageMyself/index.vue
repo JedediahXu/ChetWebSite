@@ -1,7 +1,14 @@
 <template>
-	<Container :is-active="isActive" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
+	<Container
+		:is-active="isActive"
+		:class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'"
+	>
 		<div v-if="homeJudgment === 'pc'" class="componentMap">
-			<div v-if="visible" class="hero h-0.5 bg-origin-border" style="background-image: url('static/img/avatar/arch.jpeg'); height: 23rem">
+			<div
+				v-if="visible"
+				class="hero h-0.5 bg-origin-border"
+				style="background-image: url('static/img/avatar/arch.jpeg'); height: 23rem"
+			>
 				<div class="hero-overlay bg-opacity-60"></div>
 				<div class="hero-content text-center text-neutral-content">
 					<div class="max-w-md">
@@ -10,19 +17,39 @@
 						<span class="webfont bolder zh boldEn mt-4">{{ t('SENTENCE') }}</span>
 						<div class="socials">
 							<span class="normal mt-3">
-								<a class="item github" rel="external nofollow noopener" target="_blank" href="https://github.com/ChetSerenade">
+								<a
+									class="item github"
+									rel="external nofollow noopener"
+									target="_blank"
+									href="https://github.com/ChetSerenade"
+								>
 									<i class="iconfont icon-github"> </i>
 									<span class="text">GitHub</span>
 								</a>
-								<a class="item twitter" rel="external nofollow noopener" target="_blank" href="https://twitter.com/Lc0916x">
+								<a
+									class="item twitter"
+									rel="external nofollow noopener"
+									target="_blank"
+									href="https://twitter.com/Lc0916x"
+								>
 									<i class="iconfont icon-twitter"> </i>
 									<span class="text">Twitter</span>
 								</a>
-								<a class="item instagram" rel="external nofollow noopener" target="_blank" href="https://www.instagram.com/chetserenade">
+								<a
+									class="item instagram"
+									rel="external nofollow noopener"
+									target="_blank"
+									href="https://www.instagram.com/chetserenade"
+								>
 									<i class="iconfont icon-instagram"></i>
 									<span class="text">Instagram</span>
 								</a>
-								<a class="item youtube" rel="external nofollow noopener" target="_blank" href="https://www.youtube.com/channel/UCpdQkDyM_c2rLeFNJWc0crQ">
+								<a
+									class="item youtube"
+									rel="external nofollow noopener"
+									target="_blank"
+									href="https://www.youtube.com/channel/UCpdQkDyM_c2rLeFNJWc0crQ"
+								>
 									<i class="iconfont icon-youtube"></i>
 									<span class="text">YouTube</span>
 								</a>
@@ -51,13 +78,23 @@
 						</ul>
 						<div class="socials">
 							<span class="mini mt-3">
-								<a class="item telegram" rel="external nofollow noopener" target="_blank" href="https://telegram.org">
+								<a
+									class="item telegram"
+									rel="external nofollow noopener"
+									target="_blank"
+									href="https://telegram.org"
+								>
 									<i class="iconfont icon-telegram"></i>
 								</a>
 								<label class="item wechat" for="my-modal-4">
 									<i class="iconfont icon-wechat"></i>
 								</label>
-								<a class="item douban" rel="external nofollow noopener" target="_blank" href="https://www.douban.com/people/173379845/?_i=7245653SJgyqt3">
+								<a
+									class="item douban"
+									rel="external nofollow noopener"
+									target="_blank"
+									href="https://www.douban.com/people/173379845/?_i=7245653SJgyqt3"
+								>
 									<i class="iconfont icon-douban"></i>
 								</a>
 							</span>
@@ -80,7 +117,11 @@
 			<TrajectoryMap />
 		</div>
 		<div v-if="homeJudgment === 'mobile'" class="componentMap">
-			<div v-if="visible" class="hero h-0.5 bg-origin-border" style="background-image: url('static/img/avatar/arch.jpeg'); height: 23rem">
+			<div
+				v-if="visible"
+				class="hero h-0.5 bg-origin-border"
+				style="background-image: url('static/img/avatar/arch.jpeg'); height: 23rem"
+			>
 				<div class="hero-overlay bg-opacity-60"></div>
 				<div class="moblie-hero-content text-center text-neutral-content moblie-content">
 					<div class="max-w-md">
@@ -89,15 +130,30 @@
 					</div>
 					<div class="socials">
 						<span class="moblie-normal mt-3">
-							<a class="moblie-item github" rel="external nofollow noopener" target="_blank" href="https://github.com/ChetSerenade">
+							<a
+								class="moblie-item github"
+								rel="external nofollow noopener"
+								target="_blank"
+								href="https://github.com/ChetSerenade"
+							>
 								<i class="iconfont icon-github"> </i>
 								<span class="text">GitHub</span>
 							</a>
-							<a class="moblie-item twitter" rel="external nofollow noopener" target="_blank" href="https://twitter.com/Lc0916x">
+							<a
+								class="moblie-item twitter"
+								rel="external nofollow noopener"
+								target="_blank"
+								href="https://twitter.com/Lc0916x"
+							>
 								<i class="iconfont icon-twitter"> </i>
 								<span class="text">Twitter</span>
 							</a>
-							<a class="moblie-item youtube" rel="external nofollow noopener" target="_blank" href="https://www.youtube.com/channel/UCpdQkDyM_c2rLeFNJWc0crQ">
+							<a
+								class="moblie-item youtube"
+								rel="external nofollow noopener"
+								target="_blank"
+								href="https://www.youtube.com/channel/UCpdQkDyM_c2rLeFNJWc0crQ"
+							>
 								<i class="iconfont icon-youtube"></i>
 								<span class="text">YouTube</span>
 							</a>
@@ -241,7 +297,14 @@ const switchCV = (index: number) => {
 		& .item.instagram {
 			opacity: 0.8;
 			background: #ed4956;
-			background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+			background: linear-gradient(
+				45deg,
+				#f09433 0%,
+				#e6683c 25%,
+				#dc2743 50%,
+				#cc2366 75%,
+				#bc1888 100%
+			);
 		}
 
 		& .item .iconfont {

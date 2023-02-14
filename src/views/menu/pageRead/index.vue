@@ -1,5 +1,8 @@
 <template>
-	<Container :is-active="isActive" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
+	<Container
+		:is-active="isActive"
+		:class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'"
+	>
 		<div class="ueditor">
 			<Pcread v-if="homeJudgment === 'pc'" />
 			<Mobileread v-if="homeJudgment === 'mobile'" />

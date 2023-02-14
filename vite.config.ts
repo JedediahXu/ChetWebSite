@@ -31,7 +31,7 @@ export default defineConfig({
 			resolvers: [ElementPlusResolver()],
 		}),
 		visualizer({
-			open: true, 
+			open: true,
 			gzipSize: true,
 			brotliSize: true,
 		}),
@@ -49,7 +49,7 @@ export default defineConfig({
 	],
 	define: {
 		'process.env': {},
-		__VUE_OPTIONS_API__: false,
+		__VUE_OPTIONS_API__: true,
 	},
 	resolve: {
 		alias: {
