@@ -5,7 +5,7 @@ const zhLocale = {
 	PAGE_ABOUT: '万象更新',
 	PAGE_SPONSOR: '素履以往',
 	PAGE_APP: '留言',
-	CONNECT_MAIL: '邮箱',
+	CONNECT_MAIL: '邮箱11',
 	CONNECT_GITHUB: 'GitHub',
 	SENTENCE: '"𝑇ℎ𝑒𝑟𝑒 𝑖𝑠 𝑜𝑛𝑙𝑦 𝑜𝑛𝑒 ℎ𝑒𝑟𝑜𝑖𝑠𝑚 𝑖𝑛 𝑡ℎ𝑒 𝑤𝑜𝑟𝑙𝑑: 𝑡𝑜 𝑠𝑒𝑒 𝑡ℎ𝑒 𝑤𝑜𝑟𝑙𝑑 𝑎𝑠 𝑖𝑡 𝑖𝑠, 𝑎𝑛𝑑 𝑡𝑜 𝑙𝑜𝑣𝑒 𝑖𝑡."',
 }
