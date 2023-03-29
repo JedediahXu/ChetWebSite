@@ -22,16 +22,16 @@ export const mouse = () => {
 		'友善',
 	]
 	let flag = true
-	document.body.addEventListener('click', function (e) {
+	document.body.addEventListener('click', function (e: MouseEvent): void {
 		if (flag) {
-			const X = e.clientX //点击的x坐标
-			const Y = e.clientY //点击的y坐标
-			let curT = Y
+			const X: number = e.clientX //点击的x坐标
+			const Y: number = e.clientY //点击的y坐标
+			let curT: number = Y
 			let curF = 20 //字体的大小
 			let curO = 1 //opacity
 			// 随机出现的标题
-			const title = arr[Math.floor(Math.random() * 13)]
-			const span = document.createElement('span')
+			const title: string = arr[Math.floor(Math.random() * 13)]
+			const span: HTMLSpanElement = document.createElement('span')
 			span.className = 'idName'
 			span.innerText = title
 			//初始化节点
@@ -41,7 +41,7 @@ export const mouse = () => {
 			span.style.opacity = curO as any
 			span.style.left = X + 'px'
 			document.body.appendChild(span)
-			const a = document.getElementsByClassName('idName')[0] as HTMLElement
+			const a: HTMLElement = document.getElementsByClassName('idName')[0] as HTMLElement
 			// 随机颜色
 			a.style.color =
 				'rgb(' +
@@ -52,7 +52,7 @@ export const mouse = () => {
 				Math.floor(Math.random() * 225) +
 				')'
 			// 开启定时器
-			const timer = setInterval(() => {
+			const timer: NodeJS.Timer = setInterval(() => {
 				curT -= 10
 				curF += 1
 				curO -= 0.1
