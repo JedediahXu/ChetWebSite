@@ -1,5 +1,15 @@
 // @see: https://cz-git.qbenben.com/zh/guide
 /** @type {import('cz-git').UserConfig} */
+const types = ['build', 'ci', 'chore', 'docs', 'feat', 'fix', 'pref', 'refactor', 'revert', 'style',
+	'test',
+]
+
+const typeEnum = {
+	rules: {
+		'type-enum': [2, 'always', types],
+	},
+	value: () => types,
+}
 
 module.exports = {
 	ignores: [commit => commit.includes('init')],
@@ -12,7 +22,7 @@ module.exports = {
 		'subject-empty': [2, 'never'],
 		'type-empty': [2, 'never'],
 		'subject-case': [0],
-		'type-enum': [2, 'always', ['feat', 'fix', 'docs', 'style', 'refactor', 'perf', 'test', 'build', 'ci', 'chore', 'revert', 'wip', 'workflow', 'types', 'release']],
+		'type-enum': typeEnum.rules['type-enum'],
 	},
 	prompt: {
 		messages: {
@@ -95,17 +105,61 @@ module.exports = {
 			// 	emoji: '⏪️',
 			// },
 			// 中文版
-			{ value: '特性', name: '特性:   🚀  新增功能', emoji: '🚀' },
-			{ value: '修复', name: '修复:   🧩  修复缺陷', emoji: '🧩' },
-			{ value: '文档', name: '文档:   📚  文档变更', emoji: '📚' },
-			{ value: '格式', name: '格式:   🎨  代码格式（不影响功能，例如空格、分号等格式修正）', emoji: '🎨' },
-			{ value: '重构', name: '重构:   ♻️  代码重构（不包括 bug 修复、功能新增）', emoji: '♻️' },
-			{ value: '性能', name: '性能:   ⚡️  性能优化', emoji: '⚡️' },
-			{ value: '测试', name: '测试:   ✅  添加疏漏测试或已有测试改动', emoji: '✅' },
-			{ value: '构建', name: '构建:   📦️  构建流程、外部依赖变更（如升级 npm 包、修改 webpack 配置等）', emoji: '📦️' },
-			{ value: '集成', name: '集成:   🎡  修改 CI 配置、脚本', emoji: '🎡' },
-			{ value: '回退', name: '回退:   ⏪️  回滚 commit', emoji: '⏪️' },
-			{ value: '其他', name: '其他:   🔨  对构建过程或辅助工具和库的更改（不影响源文件、测试用例）', emoji: '🔨' },
+			{
+				value: '特性',
+				name: '特性:   🚀  新增功能',
+				emoji: '🚀',
+			},
+			{
+				value: '修复',
+				name: '修复:   🧩  修复缺陷',
+				emoji: '🧩',
+			},
+			{
+				value: '文档',
+				name: '文档:   📚  文档变更',
+				emoji: '📚',
+			},
+			{
+				value: '格式',
+				name: '格式:   🎨  代码格式（不影响功能，例如空格、分号等格式修正）',
+				emoji: '🎨',
+			},
+			{
+				value: '重构',
+				name: '重构:   ♻️  代码重构（不包括 bug 修复、功能新增）',
+				emoji: '♻️',
+			},
+			{
+				value: '性能',
+				name: '性能:   ⚡️  性能优化',
+				emoji: '⚡️',
+			},
+			{
+				value: '测试',
+				name: '测试:   ✅  添加疏漏测试或已有测试改动',
+				emoji: '✅',
+			},
+			{
+				value: '构建',
+				name: '构建:   📦️  构建流程、外部依赖变更（如升级 npm 包、修改 webpack 配置等）',
+				emoji: '📦️',
+			},
+			{
+				value: '集成',
+				name: '集成:   🎡  修改 CI 配置、脚本',
+				emoji: '🎡',
+			},
+			{
+				value: '回退',
+				name: '回退:   ⏪️  回滚 commit',
+				emoji: '⏪️',
+			},
+			{
+				value: '其他',
+				name: '其他:   🔨  对构建过程或辅助工具和库的更改（不影响源文件、测试用例）',
+				emoji: '🔨',
+			},
 		],
 		useEmoji: true,
 		themeColorCode: '',
@@ -120,7 +174,10 @@ module.exports = {
 		breaklineNumber: 100,
 		breaklineChar: '|',
 		skipQuestions: [],
-		issuePrefixs: [{ value: 'closed', name: 'closed:   ISSUES has been processed' }],
+		issuePrefixs: [{
+			value: 'closed',
+			name: 'closed:   ISSUES has been processed',
+		}, ],
 		customIssuePrefixsAlign: 'top',
 		emptyIssuePrefixsAlias: 'skip',
 		customIssuePrefixsAlias: 'custom',
