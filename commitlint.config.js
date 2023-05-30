@@ -216,7 +216,7 @@ const types = [
 	'refactor',
 	'revert',
 	'style',
-	'test'
+	'test',
 ]
 
 const typeEnum = {
