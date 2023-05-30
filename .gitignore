@@ -1,2 +1,9 @@
+.vscode
+.idea
 node_modules
 /patches
+dist/
+
+.hbuilder*
+.history*
+package-lock.json
