@@ -1,7 +1,10 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <!-- eslint-disable vue/no-deprecated-v-on-native-modifier -->
 <template>
-	<Container :is-active="isActive" :class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'">
+	<Container
+		:is-active="isActive"
+		:class="judgment() === 'mobile' ? 'moblie-top-container' : 'moblie-right-container'"
+	>
 		<div class="component-body">
 			<div class="component">
 				<div v-if="homeJudgment === 'pc'" class="component-top">
@@ -18,14 +21,45 @@
 						<Comintroduce />
 					</div>
 					<div class="component-right">
-						<button class="btn btn-outline btn-secondary mt-5 w-40" :class="displaySwitch == 1 ? 'btn-click-secondary' : ''" @click="displayArea(1)">掘金文章</button>
-						<button class="btn btn-outline btn-accent mt-5 w-40" :class="displaySwitch == 2 ? 'btn-click' : ''" @click="displayArea(2)">众而周知</button>
-						<button class="btn btn-outline mt-5 w-40" :class="displaySwitch == 3 ? 'btn-click-outline' : ''" @click="displayArea(3)">小站介绍</button>
-						<button class="btn btn-outline btn-primary mt-5 w-40" :class="displaySwitch == 4 ? 'btn-click-primary' : ''" @click="displayArea(4)">友情链接</button>
+						<button
+							class="btn btn-outline btn-secondary mt-5 w-40"
+							:class="displaySwitch == 1 ? 'btn-click-secondary' : ''"
+							@click="displayArea(1)"
+						>
+							掘金文章
+						</button>
+						<button
+							class="btn btn-outline btn-accent mt-5 w-40"
+							:class="displaySwitch == 2 ? 'btn-click' : ''"
+							@click="displayArea(2)"
+						>
+							众而周知
+						</button>
+						<button
+							class="btn btn-outline mt-5 w-40"
+							:class="displaySwitch == 3 ? 'btn-click-outline' : ''"
+							@click="displayArea(3)"
+						>
+							小站介绍
+						</button>
+						<button
+							class="btn btn-outline btn-primary mt-5 w-40"
+							:class="displaySwitch == 4 ? 'btn-click-primary' : ''"
+							@click="displayArea(4)"
+						>
+							友情链接
+						</button>
 					</div>
 				</div>
 				<div v-if="homeJudgment === 'mobile'" class="mobile-component-top">
-					<div class="banner dark mobile mobile-banner" style="background-image: url('/static/img/message/dm.jpeg'); background-repeat: no-repeat; background-size: 100% 100%">
+					<div
+						class="banner dark mobile mobile-banner"
+						style="
+							background-image: url('/static/img/message/dm.jpeg');
+							background-repeat: no-repeat;
+							background-size: 100% 100%;
+						"
+					>
 						<div class="content">
 							<h2 class="title">留言</h2>
 							<div class="description">此心光明 亦复何言</div>
@@ -34,10 +68,23 @@
 				</div>
 				<div v-if="homeJudgment === 'mobile'">
 					<div class="relative">
-						<input v-model="mail" type="text" placeholder="支持任何邮箱格式" class="input input-bordered w-80" @keyup.enter.native="subScription(mail)" />
-						<button class="btn btn-primary absolute top-0 right-0 rounded-l-none" @click="subScription(mail)">订阅最新文章</button>
+						<input
+							v-model="mail"
+							type="text"
+							placeholder="支持任何邮箱格式"
+							class="input input-bordered w-80"
+							@keyup.enter.native="subScription(mail)"
+						/>
+						<button
+							class="btn btn-primary absolute top-0 right-0 rounded-l-none"
+							@click="subScription(mail)"
+						>
+							订阅最新文章
+						</button>
 					</div>
-					<span class="label-text" style="font-size: 10px; color: red; margin-top: 10px">博主发布新文章后，将会第一时间通过邮箱的形式通知到您！</span>
+					<span class="label-text" style="font-size: 10px; color: red; margin-top: 10px"
+						>博主发布新文章后，将会第一时间通过邮箱的形式通知到您！</span
+					>
 					<div class="divider" style="margin-top: 30px"></div>
 				</div>
 

@@ -209,7 +209,7 @@ const pushJump = (index: number) => {
 			break
 	}
 }
-//防止从URl直接输入路由地址
+// Prevents routing addresses from being entered directly from urls
 const array: string = window.location.pathname
 const urlJump = () => {
 	switch (array) {
