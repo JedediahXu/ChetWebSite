@@ -56,7 +56,7 @@ module.exports = defineConfig({
 					// 添加自定义消息来帮助解释为什么不使用它
 					Foo: "Don't use Foo because it is unsafe",
 
-					// 添加自定义消息，并告诉插件如何修复它
+					//添加自定义消息，并告诉插件如何修复它
 					String: {
 						message: 'Use string instead',
 						fixWith: 'string',
