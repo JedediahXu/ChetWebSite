@@ -4,15 +4,15 @@
 	"version": "0.0.0",
 	"scripts": {
 		"dev": "vite --host 0.0.0.0",
+		"build": "vue-tsc --noEmit && vite build",
 		"preview": "vite preview",
 		"prepare": "husky install",
-		"release": "standard-version",
-		"postinstall": "patch-package",
-		"lint:fix": "pnpm run lint --fix",
 		"lint": "eslint --ext .js,.vue src",
-		"build": "vue-tsc --noEmit && vite build",
-		"new": "pnpm run -C packages/add-component new",
-		"commit": "git pull && git add -A && git-cz && git push"
+		"lint:fix": "pnpm run lint --fix",
+		"release": "standard-version",
+		"commit": "git pull && git add -A && git-cz && git push",
+		"postinstall": "patch-package",
+		"new": "pnpm run -C packages/add-component new"
 	},
 	"dependencies": {
 		"bytemd": "^1.17.2",
