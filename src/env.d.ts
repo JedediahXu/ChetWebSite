@@ -7,7 +7,6 @@ declare module '*.vue' {
 	export default component
 	declare module 'mapbox-gl'
 	declare module 'mockjs'
-	declare module 'iDisqus'
 }
 declare module 'theme-change'
 declare module 'ProgressCatalog'

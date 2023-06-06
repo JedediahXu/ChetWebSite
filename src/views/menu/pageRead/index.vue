@@ -18,7 +18,7 @@
 export default {
 	name: 'Message',
 }
-declare const window: Window & { iDisqus: any }
+// declare const window: Window & { iDisqus: any }
 </script>
 
 <script setup lang="ts">
@@ -26,7 +26,7 @@ import Mobileread from '@/components/read/mobileread.vue'
 import Pcread from '@/components/read/pcread.vue'
 import { judgment } from '@/utils/judgment'
 import { emitter } from '@/utils/eventBus'
-import { useRoute } from 'vue-router'
+// import { useRoute } from 'vue-router'
 
 interface reserve {
 	Id: number
@@ -45,34 +45,34 @@ const reserve = ref<reserve>()
 const isActive = ref<number>(1)
 const homeJudgment = ref<string>()
 homeJudgment.value = judgment()
-const route = useRoute()
+// const route = useRoute()
 
 onActivated(() => {
 	emitter.emit('searchHide', 1)
 	reserve.value = JSON.parse(sessionStorage.getItem('read'))
-	const Disqus = new window.iDisqus('comment', {
-		forum: 'gaoyuzi',
-		api: '/epi/dashboard/api',
-		mode: 2,
-		timeout: 6000,
-		init: true,
-		url: 'https://chetserenade.info/read?Id=' + route.query.id,
-		title: route.query.title,
-	})
+	// const Disqus = new window.iDisqus('comment', {
+	// 	forum: 'gaoyuzi',
+	// 	api: '/epi/dashboard/api',
+	// 	mode: 2,
+	// 	timeout: 6000,
+	// 	init: true,
+	// 	url: 'https://chetserenade.info/read?Id=' + route.query.id,
+	// 	title: route.query.title,
+	// })
 })
 
 onMounted(() => {
 	window.scrollTo(0, 0)
 	emitter.emit('searchHide', 1)
-	const Disqus = new window.iDisqus('comment', {
-		forum: 'gaoyuzi',
-		api: '/epi/dashboard/api',
-		mode: 2,
-		timeout: 6000,
-		init: true,
-		url: 'https://chetserenade.info/read?Id=' + route.query.id,
-		title: route.query.title,
-	})
+	// const Disqus = new window.iDisqus('comment', {
+	// 	forum: 'gaoyuzi',
+	// 	api: '/epi/dashboard/api',
+	// 	mode: 2,
+	// 	timeout: 6000,
+	// 	init: true,
+	// 	url: 'https://chetserenade.info/read?Id=' + route.query.id,
+	// 	title: route.query.title,
+	// })
 })
 </script>
 

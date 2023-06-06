@@ -87,12 +87,6 @@ export default defineConfig({
 				changeOrigin: true,
 				rewrite: path => path.replace(/^\/IP/, ''),
 			},
-			'/epi': {
-				target: 'https://epiphanys.me',
-				ws: true,
-				changeOrigin: true,
-				rewrite: path => path.replace(/^\/epi/, ''),
-			},
 		},
 	},
 })

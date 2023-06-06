@@ -98,7 +98,6 @@
 export default {
 	name: 'Message',
 }
-declare const window: Window & { iDisqus: any }
 </script>
 
 <script lang="ts" setup>
@@ -114,15 +113,15 @@ const isActive = ref<number>(1)
 
 onMounted(() => {
 	homeJudgment.value = judgment()
-	const Disqus = new window.iDisqus('comment', {
-		forum: 'gaoyuzi-cn',
-		site: '/epi',
-		api: '/epi/dashboard/api',
-		mode: 2,
-		timeout: 6000,
-		init: true,
-		title: '总评论',
-	})
+	// const Disqus = new window.iDisqus('comment', {
+	// 	forum: 'gaoyuzi-cn',
+	// 	site: '/epi',
+	// 	api: '/epi/dashboard/api',
+	// 	mode: 2,
+	// 	timeout: 6000,
+	// 	init: true,
+	// 	title: '总评论',
+	// })
 })
 
 const checkEmail = mails => {
