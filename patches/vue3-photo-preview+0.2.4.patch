@@ -1,446 +1,661 @@
 diff --git a/node_modules/vue3-photo-preview/dist/index.css b/node_modules/vue3-photo-preview/dist/index.css
-index 9c1d81e..fea0cac 100644
+index 9c1d81e..25df59e 100644
 --- a/node_modules/vue3-photo-preview/dist/index.css
 +++ b/node_modules/vue3-photo-preview/dist/index.css
-@@ -1,167 +1,199 @@
+@@ -1,349 +1,391 @@
  @-webkit-keyframes PhotoView__rotate {
-   from {
-     -webkit-transform: rotate(0deg);
+-  from {
+-    -webkit-transform: rotate(0deg);
 -            transform: rotate(0deg);
-+    transform: rotate(0deg);
-   }
-+
-   to {
-     -webkit-transform: rotate(360deg);
+-  }
+-  to {
+-    -webkit-transform: rotate(360deg);
 -            transform: rotate(360deg);
-+    transform: rotate(360deg);
-   }
+-  }
++	from {
++		-webkit-transform: rotate(0deg);
++		transform: rotate(0deg);
++	}
++
++	to {
++		-webkit-transform: rotate(360deg);
++		transform: rotate(360deg);
++	}
  }
 +
  @keyframes PhotoView__rotate {
-   from {
-     -webkit-transform: rotate(0deg);
+-  from {
+-    -webkit-transform: rotate(0deg);
 -            transform: rotate(0deg);
-+    transform: rotate(0deg);
-   }
-+
-   to {
-     -webkit-transform: rotate(360deg);
+-  }
+-  to {
+-    -webkit-transform: rotate(360deg);
 -            transform: rotate(360deg);
-+    transform: rotate(360deg);
-   }
+-  }
++	from {
++		-webkit-transform: rotate(0deg);
++		transform: rotate(0deg);
++	}
++
++	to {
++		-webkit-transform: rotate(360deg);
++		transform: rotate(360deg);
++	}
  }
 +
  @-webkit-keyframes PhotoView__delayShow {
 -  0%, 50% {
+-    opacity: 0;
+-  }
+-  100% {
+-    opacity: 1;
+-  }
 +
-+  0%,
-+  50% {
-     opacity: 0;
-   }
++	0%,
++	50% {
++		opacity: 0;
++	}
 +
-   100% {
-     opacity: 1;
-   }
++	100% {
++		opacity: 1;
++	}
  }
 +
  @keyframes PhotoView__delayShow {
 -  0%, 50% {
+-    opacity: 0;
+-  }
+-  100% {
+-    opacity: 1;
+-  }
 +
-+  0%,
-+  50% {
-     opacity: 0;
-   }
++	0%,
++	50% {
++		opacity: 0;
++	}
 +
-   100% {
-     opacity: 1;
-   }
++	100% {
++		opacity: 1;
++	}
  }
 +
  .PhotoView__Spinner {
-   -webkit-animation: PhotoView__delayShow 0.4s linear both;
+-  -webkit-animation: PhotoView__delayShow 0.4s linear both;
 -          animation: PhotoView__delayShow 0.4s linear both;
-+  animation: PhotoView__delayShow 0.4s linear both;
++	-webkit-animation: PhotoView__delayShow 0.4s linear both;
++	animation: PhotoView__delayShow 0.4s linear both;
  }
 +
  .PhotoView__Spinner svg {
-   display: block;
-   -webkit-animation: PhotoView__rotate 0.6s linear infinite;
+-  display: block;
+-  -webkit-animation: PhotoView__rotate 0.6s linear infinite;
 -          animation: PhotoView__rotate 0.6s linear infinite;
-+  animation: PhotoView__rotate 0.6s linear infinite;
++	display: block;
++	-webkit-animation: PhotoView__rotate 0.6s linear infinite;
++	animation: PhotoView__rotate 0.6s linear infinite;
  }
 +
  @-webkit-keyframes PhotoView__animateIn {
-   from {
-     opacity: 0.4;
-     -webkit-transform: scale(0.2);
+-  from {
+-    opacity: 0.4;
+-    -webkit-transform: scale(0.2);
 -            transform: scale(0.2);
-+    transform: scale(0.2);
-   }
-+
-   to {
-     opacity: 1;
-     -webkit-transform: scale(1);
+-  }
+-  to {
+-    opacity: 1;
+-    -webkit-transform: scale(1);
 -            transform: scale(1);
-+    transform: scale(1);
-   }
+-  }
++	from {
++		opacity: 0.4;
++		-webkit-transform: scale(0.2);
++		transform: scale(0.2);
++	}
++
++	to {
++		opacity: 1;
++		-webkit-transform: scale(1);
++		transform: scale(1);
++	}
  }
 +
  @keyframes PhotoView__animateIn {
-   from {
-     opacity: 0.4;
-     -webkit-transform: scale(0.2);
+-  from {
+-    opacity: 0.4;
+-    -webkit-transform: scale(0.2);
 -            transform: scale(0.2);
-+    transform: scale(0.2);
-   }
-+
-   to {
-     opacity: 1;
-     -webkit-transform: scale(1);
+-  }
+-  to {
+-    opacity: 1;
+-    -webkit-transform: scale(1);
 -            transform: scale(1);
-+    transform: scale(1);
-   }
+-  }
++	from {
++		opacity: 0.4;
++		-webkit-transform: scale(0.2);
++		transform: scale(0.2);
++	}
++
++	to {
++		opacity: 1;
++		-webkit-transform: scale(1);
++		transform: scale(1);
++	}
  }
 +
  @-webkit-keyframes PhotoView__animateOut {
-   from {
-     opacity: 1;
-     -webkit-transform: scale(1);
+-  from {
+-    opacity: 1;
+-    -webkit-transform: scale(1);
 -            transform: scale(1);
-+    transform: scale(1);
-   }
-+
-   to {
-     opacity: 0;
-     -webkit-transform: scale(0.2);
+-  }
+-  to {
+-    opacity: 0;
+-    -webkit-transform: scale(0.2);
 -            transform: scale(0.2);
-+    transform: scale(0.2);
-   }
+-  }
++	from {
++		opacity: 1;
++		-webkit-transform: scale(1);
++		transform: scale(1);
++	}
++
++	to {
++		opacity: 0;
++		-webkit-transform: scale(0.2);
++		transform: scale(0.2);
++	}
  }
 +
  @keyframes PhotoView__animateOut {
-   from {
-     opacity: 1;
-     -webkit-transform: scale(1);
+-  from {
+-    opacity: 1;
+-    -webkit-transform: scale(1);
 -            transform: scale(1);
-+    transform: scale(1);
-   }
-+
-   to {
-     opacity: 0;
-     -webkit-transform: scale(0.2);
+-  }
+-  to {
+-    opacity: 0;
+-    -webkit-transform: scale(0.2);
 -            transform: scale(0.2);
-+    transform: scale(0.2);
-   }
+-  }
++	from {
++		opacity: 1;
++		-webkit-transform: scale(1);
++		transform: scale(1);
++	}
++
++	to {
++		opacity: 0;
++		-webkit-transform: scale(0.2);
++		transform: scale(0.2);
++	}
  }
 +
  .PhotoView__PhotoWrap {
-   display: -webkit-box;
-   display: -ms-flexbox;
-   display: flex;
-   -webkit-box-pack: center;
+-  display: -webkit-box;
+-  display: -ms-flexbox;
+-  display: flex;
+-  -webkit-box-pack: center;
 -      -ms-flex-pack: center;
 -          justify-content: center;
-+  -ms-flex-pack: center;
-+  justify-content: center;
-   -webkit-box-align: center;
+-  -webkit-box-align: center;
 -      -ms-flex-align: center;
 -          align-items: center;
-+  -ms-flex-align: center;
-+  align-items: center;
++	display: -webkit-box;
++	display: -ms-flexbox;
++	display: flex;
++	-webkit-box-pack: center;
++	-ms-flex-pack: center;
++	justify-content: center;
++	-webkit-box-align: center;
++	-ms-flex-align: center;
++	align-items: center;
  }
 +
  .PhotoView__PhotoWrap .PhotoView__PhotoBox {
 -  width: 0;
 -  height: 0;
-   display: -webkit-box;
-   display: -ms-flexbox;
-   display: flex;
-   -webkit-box-pack: center;
+-  display: -webkit-box;
+-  display: -ms-flexbox;
+-  display: flex;
+-  -webkit-box-pack: center;
 -      -ms-flex-pack: center;
 -          justify-content: center;
-+  -ms-flex-pack: center;
-+  justify-content: center;
-   -webkit-box-align: center;
+-  -webkit-box-align: center;
 -      -ms-flex-align: center;
 -          align-items: center;
-+  -ms-flex-align: center;
-+  align-items: center;
++	display: -webkit-box;
++	display: -ms-flexbox;
++	display: flex;
++	-webkit-box-pack: center;
++	-ms-flex-pack: center;
++	justify-content: center;
++	-webkit-box-align: center;
++	-ms-flex-align: center;
++	align-items: center;
  }
 +
  .PhotoView__PhotoWrap .PhotoView__PhotoBox.PhotoView__animateIn {
-   opacity: 0.4;
-   -webkit-animation: PhotoView__animateIn 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) both;
+-  opacity: 0.4;
+-  -webkit-animation: PhotoView__animateIn 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) both;
 -          animation: PhotoView__animateIn 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) both;
-+  animation: PhotoView__animateIn 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) both;
++	opacity: 0.4;
++	-webkit-animation: PhotoView__animateIn 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) both;
++	animation: PhotoView__animateIn 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) both;
  }
 +
  .PhotoView__PhotoWrap .PhotoView__PhotoBox.PhotoView__animateOut {
-   opacity: 1;
-   -webkit-animation: PhotoView__animateOut 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) both;
+-  opacity: 1;
+-  -webkit-animation: PhotoView__animateOut 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) both;
 -          animation: PhotoView__animateOut 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) both;
-+  animation: PhotoView__animateOut 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) both;
++	opacity: 1;
++	-webkit-animation: PhotoView__animateOut 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) both;
++	animation: PhotoView__animateOut 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) both;
  }
 +
  .PhotoView__PhotoWrap .PhotoView__PhotoBox .PhotoView__Photo {
-   -ms-touch-action: none;
+-  -ms-touch-action: none;
 -      touch-action: none;
-+  touch-action: none;
-   cursor: -webkit-grab;
-   cursor: grab;
+-  cursor: -webkit-grab;
+-  cursor: grab;
++	-ms-touch-action: none;
++	touch-action: none;
++	cursor: -webkit-grab;
++	cursor: grab;
  }
 +
  .PhotoView__PhotoWrap .PhotoView__PhotoBox .PhotoView__Photo:active {
-   cursor: -webkit-grabbing;
-   cursor: grabbing;
+-  cursor: -webkit-grabbing;
+-  cursor: grabbing;
++	cursor: -webkit-grabbing;
++	cursor: grabbing;
  }
 +
  @-webkit-keyframes PhotoView__fade {
-   from {
-     opacity: 0;
-   }
+-  from {
+-    opacity: 0;
+-  }
+-  to {
+-    opacity: 1;
+-  }
++	from {
++		opacity: 0;
++	}
 +
-   to {
-     opacity: 1;
-   }
++	to {
++		opacity: 1;
++	}
  }
 +
  @keyframes PhotoView__fade {
-   from {
-     opacity: 0;
-   }
+-  from {
+-    opacity: 0;
+-  }
+-  to {
+-    opacity: 1;
+-  }
++	from {
++		opacity: 0;
++	}
 +
-   to {
-     opacity: 1;
-   }
++	to {
++		opacity: 1;
++	}
  }
 +
  .PhotoSlider__Wrapper.PhotoSlider__Clean .PhotoSlider__BannerWrap,
  .PhotoSlider__Wrapper.PhotoSlider__Clean .PhotoSlider__ArrowLeft,
  .PhotoSlider__Wrapper.PhotoSlider__Clean .PhotoSlider__ArrowRight,
  .PhotoSlider__Wrapper.PhotoSlider__Clean .PhotoSlider__FooterWrap {
-   opacity: 0;
+-  opacity: 0;
++	opacity: 0;
  }
 +
  @media (any-hover: hover) {
-+
-   .PhotoSlider__Wrapper.PhotoSlider__Clean .PhotoSlider__BannerWrap:hover,
+-  .PhotoSlider__Wrapper.PhotoSlider__Clean .PhotoSlider__BannerWrap:hover,
 -.PhotoSlider__Wrapper.PhotoSlider__Clean .PhotoSlider__ArrowLeft:hover,
 -.PhotoSlider__Wrapper.PhotoSlider__Clean .PhotoSlider__ArrowRight:hover,
 -.PhotoSlider__Wrapper.PhotoSlider__Clean .PhotoSlider__FooterWrap:hover {
-+  .PhotoSlider__Wrapper.PhotoSlider__Clean .PhotoSlider__ArrowLeft:hover,
-+  .PhotoSlider__Wrapper.PhotoSlider__Clean .PhotoSlider__ArrowRight:hover,
-+  .PhotoSlider__Wrapper.PhotoSlider__Clean .PhotoSlider__FooterWrap:hover {
-     opacity: 0;
-   }
+-    opacity: 0;
+-  }
++
++	.PhotoSlider__Wrapper.PhotoSlider__Clean .PhotoSlider__BannerWrap:hover,
++	.PhotoSlider__Wrapper.PhotoSlider__Clean .PhotoSlider__ArrowLeft:hover,
++	.PhotoSlider__Wrapper.PhotoSlider__Clean .PhotoSlider__ArrowRight:hover,
++	.PhotoSlider__Wrapper.PhotoSlider__Clean .PhotoSlider__FooterWrap:hover {
++		opacity: 0;
++	}
  }
-@@ -175,17 +207,20 @@
+ 
+ .PhotoSlider__Wrapper.PhotoSlider__Hide .PhotoSlider__BannerWrap,
+ .PhotoSlider__Wrapper.PhotoSlider__Hide .PhotoSlider__ArrowLeft,
+ .PhotoSlider__Wrapper.PhotoSlider__Hide .PhotoSlider__ArrowRight,
+ .PhotoSlider__Wrapper.PhotoSlider__Hide .PhotoSlider__FooterWrap {
+-  opacity: 0;
++	opacity: 0;
+ }
  
  .PhotoSlider__Wrapper {
-   position: fixed;
+-  position: fixed;
 -  left: 0;
 -  top: 0;
 -  width: 100%;
 -  height: 100%;
-+  right: 0;
-+  left: 50%;
-+  top: 40%;
-+  transform: translate(-50%, -40%);
-+  margin: 0 auto;
-+  width: 80vw;
-+  height: 86vh;
-+  border: 0.618rem solid #fff;
-+  border-radius: 4px;
-   overflow: hidden;
-   z-index: 2000;
+-  overflow: hidden;
+-  z-index: 2000;
 -  -webkit-user-select: none;
 -     -moz-user-select: none;
 -      -ms-user-select: none;
 -          user-select: none;
-+  user-select: none;
++	position: fixed;
++	right: 0;
++	left: 50%;
++	top: 40%;
++	transform: translate(-50%, -40%);
++	margin: 0 auto;
++	width: 80vw;
++	height: 86vh;
++	border: 0.618rem solid #fff;
++	border-radius: 4px;
++	overflow: hidden;
++	z-index: 2000;
++	user-select: none;
  }
 +
  .PhotoSlider__Wrapper .PhotoSlider__Backdrop {
-   position: absolute;
-   top: 0;
-@@ -194,15 +229,18 @@
-   height: 100%;
-   z-index: -1;
+-  position: absolute;
+-  top: 0;
+-  left: 0;
+-  width: 100%;
+-  height: 100%;
+-  z-index: -1;
++	position: absolute;
++	top: 0;
++	left: 0;
++	width: 100%;
++	height: 100%;
++	z-index: -1;
  }
 +
  .PhotoSlider__Wrapper .PhotoSlider__Backdrop.PhotoSlider__fadeIn {
-   opacity: 0;
-   -webkit-animation: PhotoView__fade 0.4s linear both;
+-  opacity: 0;
+-  -webkit-animation: PhotoView__fade 0.4s linear both;
 -          animation: PhotoView__fade 0.4s linear both;
-+  animation: PhotoView__fade 0.4s linear both;
++	opacity: 0;
++	-webkit-animation: PhotoView__fade 0.4s linear both;
++	animation: PhotoView__fade 0.4s linear both;
  }
 +
  .PhotoSlider__Wrapper .PhotoSlider__Backdrop.PhotoSlider__fadeOut {
-   opacity: 1;
+-  opacity: 1;
 -  animation: PhotoView__fade 0.4s linear both reverse;
-+  animation: PhotoView__fade 0.1s linear both reverse;
++	opacity: 1;
++	animation: PhotoView__fade 0.4s linear both reverse;
  }
 +
  .PhotoSlider__Wrapper .PhotoSlider__BannerWrap {
-   position: absolute;
-   left: 0;
-@@ -211,56 +249,51 @@
-   display: -ms-flexbox;
-   display: flex;
-   -webkit-box-pack: justify;
+-  position: absolute;
+-  left: 0;
+-  top: 0;
+-  display: -webkit-box;
+-  display: -ms-flexbox;
+-  display: flex;
+-  -webkit-box-pack: justify;
 -      -ms-flex-pack: justify;
 -          justify-content: space-between;
-+  -ms-flex-pack: justify;
-+  justify-content: space-between;
-   -webkit-box-align: center;
+-  -webkit-box-align: center;
 -      -ms-flex-align: center;
 -          align-items: center;
-+  -ms-flex-align: center;
-+  align-items: center;
-   width: 100%;
+-  width: 100%;
 -  height: 44px;
-+  height: 29px;
-   color: white;
-   background-color: rgba(0, 0, 0, 0.5);
-   -webkit-transition: opacity 0.2s ease-out;
-   transition: opacity 0.2s ease-out;
-   z-index: 20;
- }
+-  color: white;
+-  background-color: rgba(0, 0, 0, 0.5);
+-  -webkit-transition: opacity 0.2s ease-out;
+-  transition: opacity 0.2s ease-out;
+-  z-index: 20;
+-}
 -@media (any-hover: hover) {
 -  .PhotoSlider__Wrapper .PhotoSlider__BannerWrap:hover {
 -    opacity: 1;
 -  }
--}
++	position: absolute;
++	left: 0;
++	top: 0;
++	display: -webkit-box;
++	display: -ms-flexbox;
++	display: flex;
++	-webkit-box-pack: justify;
++	-ms-flex-pack: justify;
++	justify-content: space-between;
++	-webkit-box-align: center;
++	-ms-flex-align: center;
++	align-items: center;
++	width: 100%;
++	height: 29px;
++	color: white;
++	background-color: rgba(0, 0, 0, 0.5);
++	-webkit-transition: opacity 0.2s ease-out;
++	transition: opacity 0.2s ease-out;
++	z-index: 20;
+ }
++
 +
  .PhotoSlider__Wrapper .PhotoSlider__BannerWrap .PhotoSlider__Counter {
 -  padding: 0 10px;
-   font-size: 14px;
-   opacity: 0.75;
+-  font-size: 14px;
+-  opacity: 0.75;
++	font-size: 14px;
++	opacity: 0.75;
  }
 +
  .PhotoSlider__Wrapper .PhotoSlider__BannerWrap .PhotoSlider__BannerRight {
-   display: -webkit-box;
-   display: -ms-flexbox;
+-  display: -webkit-box;
+-  display: -ms-flexbox;
 -  display: flex;
-   -webkit-box-pack: center;
+-  -webkit-box-pack: center;
 -      -ms-flex-pack: center;
 -          justify-content: center;
-+  -ms-flex-pack: center;
-   -webkit-box-align: center;
+-  -webkit-box-align: center;
 -      -ms-flex-align: center;
 -          align-items: center;
-+  -ms-flex-align: center;
-+  display: flex;
-+  justify-content: flex-end;
-+  align-items: center;
-   height: 100%;
-+  width: 80%;
+-  height: 100%;
++	display: -webkit-box;
++	display: -ms-flexbox;
++	-webkit-box-pack: center;
++	-ms-flex-pack: center;
++	justify-content: center;
++	-webkit-box-align: center;
++	-ms-flex-align: center;
++	display: flex;
++	justify-content: flex-end;
++	align-items: center;
++	height: 100%;
++	width: 80%;
  }
 +
  .PhotoSlider__Wrapper .PhotoSlider__BannerWrap .PhotoSlider__BannerRight .PhotoSlider__BannerIcon {
-   vertical-align: top;
-   -webkit-box-sizing: border-box;
+-  vertical-align: top;
+-  -webkit-box-sizing: border-box;
 -          box-sizing: border-box;
-+  box-sizing: border-box;
-   padding: 10px;
-   opacity: 0.75;
-   cursor: pointer;
-   -webkit-transition: all 0.2s linear;
-   transition: all 0.2s linear;
- }
+-  padding: 10px;
+-  opacity: 0.75;
+-  cursor: pointer;
+-  -webkit-transition: all 0.2s linear;
+-  transition: all 0.2s linear;
+-}
 -@media (any-hover: hover) {
 -  .PhotoSlider__Wrapper .PhotoSlider__BannerWrap .PhotoSlider__BannerRight .PhotoSlider__BannerIcon:hover {
 -    opacity: 1;
 -  }
--}
++	vertical-align: top;
++	-webkit-box-sizing: border-box;
++	box-sizing: border-box;
++	padding: 10px;
++	opacity: 0.75;
++	cursor: pointer;
++	-webkit-transition: all 0.2s linear;
++	transition: all 0.2s linear;
+ }
 +
 +
  .PhotoSlider__Wrapper .PhotoSlider__PhotoBox {
-   position: absolute;
-   top: 0;
-@@ -271,20 +304,23 @@
-   display: -ms-flexbox;
-   display: flex;
-   -webkit-box-pack: center;
+-  position: absolute;
+-  top: 0;
+-  left: 0;
+-  width: 100%;
+-  height: 100%;
+-  display: -webkit-box;
+-  display: -ms-flexbox;
+-  display: flex;
+-  -webkit-box-pack: center;
 -      -ms-flex-pack: center;
 -          justify-content: center;
-+  -ms-flex-pack: center;
-+  justify-content: center;
-   -webkit-box-align: center;
+-  -webkit-box-align: center;
 -      -ms-flex-align: center;
 -          align-items: center;
-+  -ms-flex-align: center;
-+  align-items: center;
-   z-index: 10;
-   overflow: hidden;
+-  z-index: 10;
+-  overflow: hidden;
++	position: absolute;
++	top: 0;
++	left: 0;
++	width: 100%;
++	height: 100%;
++	display: -webkit-box;
++	display: -ms-flexbox;
++	display: flex;
++	-webkit-box-pack: center;
++	-ms-flex-pack: center;
++	justify-content: center;
++	-webkit-box-align: center;
++	-ms-flex-align: center;
++	align-items: center;
++	z-index: 10;
++	overflow: hidden;
  }
 +
  .PhotoSlider__Wrapper .PhotoSlider__ArrowLeft {
-   left: 0;
+-  left: 0;
++	left: 0;
  }
 +
  .PhotoSlider__Wrapper .PhotoSlider__ArrowRight {
-   right: 0;
+-  right: 0;
++	right: 0;
  }
 +
  .PhotoSlider__Wrapper .PhotoSlider__ArrowLeft,
  .PhotoSlider__Wrapper .PhotoSlider__ArrowRight {
-   position: absolute;
-@@ -302,37 +338,40 @@
-   display: -ms-flexbox;
-   display: flex;
-   -webkit-box-pack: center;
+-  position: absolute;
+-  top: 0;
+-  bottom: 0;
+-  margin: auto 0 auto 0;
+-  width: 70px;
+-  height: 100px;
+-  opacity: 0.7;
+-  z-index: 20;
+-  cursor: pointer;
+-  -webkit-transition: opacity 0.2s linear;
+-  transition: opacity 0.2s linear;
+-  display: -webkit-box;
+-  display: -ms-flexbox;
+-  display: flex;
+-  -webkit-box-pack: center;
 -      -ms-flex-pack: center;
 -          justify-content: center;
-+  -ms-flex-pack: center;
-+  justify-content: center;
-   -webkit-box-align: center;
+-  -webkit-box-align: center;
 -      -ms-flex-align: center;
 -          align-items: center;
-+  -ms-flex-align: center;
-+  align-items: center;
++	position: absolute;
++	top: 0;
++	bottom: 0;
++	margin: auto 0 auto 0;
++	width: 70px;
++	height: 100px;
++	opacity: 0.7;
++	z-index: 20;
++	cursor: pointer;
++	-webkit-transition: opacity 0.2s linear;
++	transition: opacity 0.2s linear;
++	display: -webkit-box;
++	display: -ms-flexbox;
++	display: flex;
++	-webkit-box-pack: center;
++	-ms-flex-pack: center;
++	justify-content: center;
++	-webkit-box-align: center;
++	-ms-flex-align: center;
++	align-items: center;
  }
 +
  @media (any-hover: hover) {
-+
-   .PhotoSlider__Wrapper .PhotoSlider__ArrowLeft:hover,
+-  .PhotoSlider__Wrapper .PhotoSlider__ArrowLeft:hover,
 -.PhotoSlider__Wrapper .PhotoSlider__ArrowRight:hover {
-+  .PhotoSlider__Wrapper .PhotoSlider__ArrowRight:hover {
-     opacity: 1;
-   }
+-    opacity: 1;
+-  }
++
++	.PhotoSlider__Wrapper .PhotoSlider__ArrowLeft:hover,
++	.PhotoSlider__Wrapper .PhotoSlider__ArrowRight:hover {
++		opacity: 1;
++	}
  }
 +
  .PhotoSlider__Wrapper .PhotoSlider__ArrowLeft svg,
  .PhotoSlider__Wrapper .PhotoSlider__ArrowRight svg {
-   -webkit-box-sizing: content-box;
+-  -webkit-box-sizing: content-box;
 -          box-sizing: content-box;
-+  box-sizing: content-box;
-   padding: 10px;
-   width: 24px;
-   height: 24px;
-   fill: white;
-   background: rgba(0, 0, 0, 0.3);
+-  padding: 10px;
+-  width: 24px;
+-  height: 24px;
+-  fill: white;
+-  background: rgba(0, 0, 0, 0.3);
++	-webkit-box-sizing: content-box;
++	box-sizing: content-box;
++	padding: 10px;
++	width: 24px;
++	height: 24px;
++	fill: white;
++	background: rgba(0, 0, 0, 0.3);
  }
 +
  .PhotoSlider__Wrapper .PhotoSlider__FooterWrap {
-   position: absolute;
-   left: 0;
-   bottom: 0;
-   -webkit-box-sizing: border-box;
+-  position: absolute;
+-  left: 0;
+-  bottom: 0;
+-  -webkit-box-sizing: border-box;
 -          box-sizing: border-box;
-+  box-sizing: border-box;
-   width: 100%;
+-  width: 100%;
 -  min-height: 44px;
 -  padding: 10px;
-+  min-height: 20px;
-   line-height: 1.5;
-   font-size: 14px;
-   text-align: justify;
-@@ -342,6 +381,7 @@
-   transition: opacity 0.2s ease-out;
-   z-index: 20;
+-  line-height: 1.5;
+-  font-size: 14px;
+-  text-align: justify;
+-  color: #ccc;
+-  background-color: rgba(0, 0, 0, 0.5);
+-  -webkit-transition: opacity 0.2s ease-out;
+-  transition: opacity 0.2s ease-out;
+-  z-index: 20;
++	position: absolute;
++	left: 0;
++	bottom: 0;
++	-webkit-box-sizing: border-box;
++	box-sizing: border-box;
++	width: 100%;
++	min-height: 20px;
++	line-height: 1.5;
++	font-size: 14px;
++	text-align: justify;
++	color: #ccc;
++	background-color: rgba(0, 0, 0, 0.5);
++	-webkit-transition: opacity 0.2s ease-out;
++	transition: opacity 0.2s ease-out;
++	z-index: 20;
  }
 +
  @media (any-hover: hover) {
-   .PhotoSlider__Wrapper .PhotoSlider__FooterWrap:hover {
-     opacity: 1;
+-  .PhotoSlider__Wrapper .PhotoSlider__FooterWrap:hover {
+-    opacity: 1;
+-  }
++	.PhotoSlider__Wrapper .PhotoSlider__FooterWrap:hover {
++		opacity: 1;
++	}
+ }
